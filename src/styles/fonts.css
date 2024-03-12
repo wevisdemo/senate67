@@ -1,0 +1,23 @@
+@font-face {
+	font-family: "Crushual";
+	font-weight: 900;
+	src: url("../fonts/Crushual0.36-Black.otf");
+}
+
+@font-face {
+	font-family: "Sarabun";
+	font-weight: 400;
+	src: url("../fonts/Sarabun-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Sarabun";
+	font-weight: 700;
+	src: url("../fonts/Sarabun-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Trirong";
+	font-weight: 700;
+	src: url("../fonts/Trirong-Bold.ttf");
+}
