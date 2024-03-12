@@ -1,5 +1,6 @@
 ---
 import "../styles/typography.css";
+import NavBar from "../components/NavBar.astro";
 
 interface Props {
 	title: string;
@@ -19,6 +20,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="body-01">
+		<NavBar />
 		<slot />
 	</body>
 </html>

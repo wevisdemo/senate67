@@ -1,0 +1,28 @@
+---
+import SenateLogo from "./SenateLogo.astro";
+import.meta.env.PUBLIC_BUILD_TARGET;
+
+const navigationRoutes = [
+	{ name: "หน้าหลัก", url: "/" },
+	{ name: "ค้นหาผู้สมัคร", url: "/" },
+	{ name: "Checklist Game", url: "/" },
+	{ name: "ผลการเลือกตั้ง", url: "/" },
+];
+---
+
+<div class="navbar bg-neutral">
+	<div class="flex-1">
+		<SenateLogo />
+	</div>
+	<div class="flex-none body-03 text-base-100">
+		{
+			navigationRoutes.map((route) => {
+				return (
+					<a class="btn btn-ghost no-animation" href={route.url}>
+						{route.name}
+					</a>
+				);
+			})
+		}
+	</div>
+</div>
