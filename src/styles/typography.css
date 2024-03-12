@@ -1,0 +1,43 @@
+.body-03 {
+	@apply leading-[150%] text-[12px];
+}
+
+.body-02 {
+	@apply leading-[150%] text-[14px];
+}
+
+.body-01 {
+	@apply leading-[150%] text-[16px];
+}
+
+.heading-03 {
+	@apply text-[16px] leading-[140px] font-bold;
+}
+
+.heading-02 {
+	@apply text-[20px] leading-[140px] font-bold;
+}
+
+.heading-01 {
+	@apply text-[24px] leading-[140px] font-bold;
+}
+
+.link-02 {
+	@apply text-[12px] leading-[150px];
+}
+
+.link-01 {
+	@apply text-[14px] leading-[150px];
+}
+
+.heading-responsive-03 {
+	@apply text-[28px] md:text-[34px] md:leading-[110%] font-bold;
+}
+
+.heading-responsive-02 {
+	@apply text-[36px] md:text-[42px] md:leading-[110%] font-bold;
+}
+
+.heading-responsive-01 {
+	@apply text-[40px] md:text-[50px] md:leading-[110%] font-bold;
+}
