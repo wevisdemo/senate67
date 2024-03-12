@@ -1,0 +1,57 @@
+---
+import SenateHeroLogo from "./SenateHeroLogo.astro";
+import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
+
+const registered_senates = 112;
+const updated_at = new Date().toLocaleString("th-TH", {
+	year: "numeric",
+	month: "short",
+	day: "numeric",
+	timeZone: "Asia/Bangkok",
+});
+---
+
+<div class="flex items-center justify-center h-screen bg-secondary">
+	<div class="flex gap-10">
+		<div>
+			<SenateHeroLogo />
+		</div>
+		<div class="flex items-center">
+			<div class="flex flex-col gap-5">
+				<div class="text-center body-02">
+					<p class="text-neutral">
+						สว. ระบบใหม่ “แบ่งกลุ่มอาชีพ” และ “เลือกกันเอง”
+					</p>
+					<p class="font-bold text-primary">
+						ประชาชนก็เลือกได้ ถ้าเข้าไปสมัคร!
+					</p>
+				</div>
+
+				<div class="text-center">
+					<p class="body-01 text-neutral">มีผู้แสดงตัวเป็นผู้สมัครแล้ว</p>
+					<p class="heading-responsive-01 text-neutral">
+						{registered_senates} คน
+					</p>
+					<p class="body-03 text-neutral">อัปเดตข้อมูล {updated_at}</p>
+				</div>
+
+				<div class="flex flex-col justify-center">
+					<button class="btn w-full bg-primary text-base-100"
+						>แสดงตัวเป็นผู้สมัคร</button
+					>
+					<button class="btn w-full bg-primary text-base-100"
+						>ค้นหาผู้สมัคร</button
+					>
+
+					<a class="mx-auto text-accent underline text-[16px]" href="/"
+						>รู้จักแคมเปญ</a
+					>
+				</div>
+
+				<div class="flex justify-center">
+					<SocialMediaButtons />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
