@@ -3,6 +3,8 @@ import InformationDetailCard from "./InformationDetailCard.astro";
 import WeWatchPhoneButton from "../../buttons/WeWatchPhoneButton.astro";
 import ECTPhoneButton from "../../buttons/ECTPhoneButton.astro";
 import PossibleApplyGroups from "./PossibleApplyGroups.astro";
+import OpenInNew from "../../icons/OpenInNew.astro";
+import ArrowRight from "../../icons/ArrowRight.astro";
 ---
 
 <InformationDetailCard title="วิธีสมัคร สว.">
@@ -64,6 +66,18 @@ import PossibleApplyGroups from "./PossibleApplyGroups.astro";
 	</ol>
 
 	<PossibleApplyGroups />
+
+	<a
+		class="mx-auto inline-flex content-center items-center gap-2 text-accent underline"
+		href="https://www.ilaw.or.th/articles/21466"
+		>อ่านวิธีเตรียมตัวสมัครเพิ่มเติม <OpenInNew /></a
+	>
+	<a
+		class="mx-auto inline-flex content-center items-center gap-2 text-accent underline"
+		href="https://www.ilaw.or.th/articles/16805"
+		>ดาวน์โหลดคู่มือผู้สมัคร <OpenInNew /></a
+	>
+
 	<p class="text-center">หากยังมีข้อสงสัย โทรปรึกษาได้ที่</p>
 	<WeWatchPhoneButton />
 	<p class="text-center">หรือโทรถาม กกต. โดยตรง</p>
@@ -72,5 +86,5 @@ import PossibleApplyGroups from "./PossibleApplyGroups.astro";
 		เพื่อประกอบการพิจารณา ลองสำรวจผู้สมัครคนอื่นๆ
 		ในพื้นที่และกลุ่มอาชีพเดียวกับคุณดู
 	</p>
-	<a class="btn btn-secondary w-full">ค้นหาผู้สมัคร</a>
+	<a class="btn btn-secondary w-full">ค้นหาผู้สมัคร<ArrowRight /></a>
 </InformationDetailCard>
