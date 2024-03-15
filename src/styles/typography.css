@@ -19,7 +19,7 @@
 }
 
 .heading-01 {
-	@apply font-trirong text-[24px] leading-[140px] font-bold;
+	@apply font-trirong text-[24px] leading-[33.6px] font-bold;
 }
 
 .link-02 {

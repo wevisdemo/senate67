@@ -1,0 +1,25 @@
+---
+import InformationDetailCard from "./InformationDetailCard.astro";
+import Phone from "../../icons/Phone.astro";
+import OpenNew from "../../icons/OpenNew.astro";
+import WeWatchPhoneButton from "../../buttons/WeWatchPhoneButton.astro";
+import ECTPhoneButton from "../../buttons/ECTPhoneButton.astro";
+---
+
+<InformationDetailCard title="ใครสมัคร สว. ได้บ้าง">
+	<p class="text-center">
+		นอกจากจะต้อง<b>มีสัญชาติไทย</b>โดยกำเนิด
+		<b>อายุ 40 ปีขึ้นไป</b>นับจากวันสมัคร และมีความรู้ ความเชี่ยวชาญ
+		และประสบการณ์หรือ ทำงานด้านที่สมัคร<b>ไม่น้อยกว่า 10 ปี</b>แล้ว
+		<b class="text-primary">ยังมีคุณสมบัติต้องห้ามอีกจำนวนหนึ่ง</b
+		>ที่ต้องพิจารณา
+	</p>
+	<p class="text-center">เพื่อความสะดวก เราได้เตรียมเกมไว้ให้คุณลองเช็คแล้ว</p>
+	<a class="btn btn-secondary w-full"
+		>เล่นเกม “ฉันสมัคร สว. ได้ไหม?” <OpenNew /></a
+	>
+	<p class="text-center">หรือโทรมาปรึกษาเพิ่มเติม ได้ที่</p>
+	<WeWatchPhoneButton />
+	<p class="text-center">หรือโทรถาม กกต. โดยตรง</p>
+	<ECTPhoneButton />
+</InformationDetailCard>

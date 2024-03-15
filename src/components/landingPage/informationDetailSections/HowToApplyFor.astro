@@ -1,0 +1,76 @@
+---
+import InformationDetailCard from "./InformationDetailCard.astro";
+import WeWatchPhoneButton from "../../buttons/WeWatchPhoneButton.astro";
+import ECTPhoneButton from "../../buttons/ECTPhoneButton.astro";
+import PossibleApplyGroups from "./PossibleApplyGroups.astro";
+---
+
+<InformationDetailCard title="วิธีสมัคร สว.">
+	<div class="border-b border-base-300"></div>
+	<ol class="flex flex-col md:flex-row">
+		<li>
+			<span class="heading-02" style="line-height:26px;">
+				1. เลือกอำเภอ/เขตที่เคยมีความเกี่ยวข้องด้วย
+			</span>
+			<div class="body-02 font-normal space-y-1">
+				<p>สามารถเลือก 1 อำเภอ/เขตใดก็ได้ที่..</p>
+				<ul class="list-disc list-inside ml-2">
+					<li><b>เกิด</b></li>
+					<li>
+						<b>มีชื่ออยู่ในทะเบียนบ้าน</b>ติดต่อกันไม่น้อยกว่า 2 ปี
+						(นับถึงวันสมัคร)
+					</li>
+					<li><b>เคยมีชื่ออยู่ในทะเบียนบ้าน</b>ไม่น้อยกว่า 2 ปี</li>
+					<li><b>ทำงาน</b>ติดต่อกันไม่น้อยกว่า 2 ปี</li>
+					<li><b>เคยทำงาน</b>ไม่น้อยกว่า 2 ปี</li>
+					<li>
+						<b>เป็นที่ตั้งของสถานศึกษาที่เคยศึกษา</b> ติดต่อกันไม่น้อยกว่า 2 ปีการศึกษา
+					</li>
+				</ul>
+			</div>
+		</li>
+		<div class="border-b md:border-l border-base-300 my-4 md:my-0 md:mx-4">
+		</div>
+		<li>
+			<span class="heading-02" style="line-height:26px;"
+				>2. เลือกกลุ่มอาชีพ</span
+			>
+			<div class="body-02 font-normal space-y-1">
+				<p>โดยต้องเป็นอาชีพที่ทำ หรือเคยทำติดต่อกันอย่างน้อย 10 ปี</p>
+				<ul class="list-disc list-inside ml-2">
+					<li><b>กลุ่มบริหารราชการแผ่นดิน และความมั่นคง</b></li>
+					<li><b>กลุ่มกฎหมายและกระบวนการ ยุติธรรม</b></li>
+					<li><b>กลุ่มการศึกษา</b></li>
+					<li><b>กลุ่มสาธารณสุข</b></li>
+					<li><b>กลุ่มทำนา ทำไร่</b></li>
+					<li><b>กลุ่มทำสวน ประมง เลี้ยงสัตว์</b></li>
+					<li><b>กลุ่มลูกจ้าง ผู้ใช้แรงงาน</b></li>
+					<li><b>กลุ่มผู้ประกอบกิจการ SMEs</b></li>
+					<li><b>กลุ่มผู้ประกอบกิจการอื่น</b></li>
+					<li><b>กลุ่มผู้ประกอบอุตสาหกรรม</b></li>
+					<li><b>กลุ่มสิ่งแวดล้อม อสังหาริมทรัพย์ พลังงาน</b></li>
+					<li><b>กลุ่มท่องเที่ยว โรงแรม</b></li>
+					<li><b>กลุ่มวิทยาศาสตร์ เทคโนโลยี</b></li>
+					<li><b>กลุ่มศิลปะ ดนตรี บันเทิง กีฬา</b></li>
+					<li><b>กลุ่มประชาสังคม</b></li>
+					<li><b>กลุ่มสื่อสารมวลชน นักเขียน</b></li>
+					<li><b>กลุ่มอาชีพอิสระ</b></li>
+					<li><b>กลุ่มสตรี</b></li>
+					<li><b>กลุ่มผู้สูงอายุ คนพิการ ชาติพันธุ์</b></li>
+					<li><b>กลุ่มอื่นๆ</b></li>
+				</ul>
+			</div>
+		</li>
+	</ol>
+
+	<PossibleApplyGroups />
+	<p class="text-center">หากยังมีข้อสงสัย โทรปรึกษาได้ที่</p>
+	<WeWatchPhoneButton />
+	<p class="text-center">หรือโทรถาม กกต. โดยตรง</p>
+	<ECTPhoneButton />
+	<p class="text-center">
+		เพื่อประกอบการพิจารณา ลองสำรวจผู้สมัครคนอื่นๆ
+		ในพื้นที่และกลุ่มอาชีพเดียวกับคุณดู
+	</p>
+	<a class="btn btn-secondary w-full">ค้นหาผู้สมัคร</a>
+</InformationDetailCard>
