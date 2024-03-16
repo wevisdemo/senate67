@@ -1,6 +1,7 @@
 ---
 import SenateHeroLogo from "./SenateHeroLogo.astro";
 import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
+import OpenInNew from "../icons/OpenInNew.astro";
 
 const registered_senates = 112;
 const updated_at = new Date().toLocaleString("th-TH", {
@@ -34,15 +35,22 @@ const updated_at = new Date().toLocaleString("th-TH", {
 				</div>
 
 				<div class="flex flex-col justify-center gap-1">
-					<button class="btn w-full bg-primary text-base-100"
-						>แสดงตัวเป็นผู้สมัคร</button
-					>
-					<button class="btn w-full bg-primary text-base-100"
-						>ค้นหาผู้สมัคร</button
-					>
+					<a
+						class="btn w-full bg-primary text-base-100"
+						href="https://forms.gle/AiPQPxvqFex2a7Hk8"
+						>แสดงตัวเป็นผู้สมัคร <OpenInNew fill="#fff" />
+					</a>
+					{
+						import.meta.env.PUBLIC_BUILD_TARGET !== "production" && (
+							<button class="btn w-full bg-primary text-base-100">
+								ค้นหาผู้สมัคร
+							</button>
+						)
+					}
 
-					<a class="mx-auto text-accent underline text-[16px]" href="/"
-						>รู้จักแคมเปญ</a
+					<a
+						class="mx-auto text-accent underline text-[16px]"
+						href="#meet-the-campaign">รู้จักแคมเปญ</a
 					>
 				</div>
 
