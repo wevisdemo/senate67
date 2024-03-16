@@ -8,6 +8,16 @@ import Timeline from "./informationDetailSections/Timeline.astro";
 import OpenInNew from "../icons/OpenInNew.astro";
 import ArrowRight from "../icons/ArrowRight.astro";
 import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
+import TableOfContents from "./informationDetailSections/TableOfContents.astro";
+
+const contents = [
+	{ title: "ทำไมต้องมีแคมเปญนี้", id: "why-do-we-need-this" },
+	{ title: "ใครสมัคร สว. ได้บ้าง", id: "who-can-apply-for" },
+	{ title: "วิธีสมัคร สว.", id: "how-to-apply-for" },
+	{ title: "วิธีคัดเลือก สว.", id: "how-the-system-works" },
+	{ title: "ไทม์ไลน์การเลือก สว.", id: "timeline" },
+	{ title: "สว. ต้องทำอะไรบ้าง", id: "what-they-do" },
+];
 ---
 
 <section class="bg-primary">
@@ -18,6 +28,8 @@ import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
 		<h1 class="heading-responsive-01 text-base-100 text-center">
 			รู้จักแคมเปญ
 		</h1>
+
+		<TableOfContents contents={contents} />
 
 		<WhyDoWeNeedThis />
 

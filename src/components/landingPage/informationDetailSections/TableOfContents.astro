@@ -1,0 +1,29 @@
+---
+import ArrowDown from "../../icons/ArrowDown.astro";
+const { contents } = Astro.props as {
+	contents: { id: string; title: string }[];
+};
+---
+
+<div class="bg-info rounded-sm p-[10px] text-[#0058C1]">
+	<h2 class="body-02 font-bold md:hidden">สารบัญ</h2>
+	<ul class="flex flex-col md:flex-row">
+		{
+			contents.map((item, idx, arr) => (
+				<>
+					<li class="flex-1 px-[10px]">
+						<a
+							href={`#${item.id}`}
+							class="inline-flex justify-between w-full py-[5px]"
+						>
+							{item.title} <ArrowDown />
+						</a>
+					</li>
+					{idx !== arr.length - 1 && (
+						<div class="border-b md:border-b-0 md:border-r border-[#0058C1] opacity-20" />
+					)}
+				</>
+			))
+		}
+	</ul>
+</div>
