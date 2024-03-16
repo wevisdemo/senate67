@@ -1,1 +1,57 @@
-<div></div>
+---
+import PersonHappy from "../../icons/PersonHappy.astro";
+import StarHappy from "../../icons/StarHappy.astro";
+---
+
+<ol class="space-y-3 mx-5">
+	<li class="space-y-3">
+		<p>
+			<b>1. ผู้ชนะระดับจังหวัดเลือกคนใน “กลุ่มอาชีพ” ตัวเอง</b>
+			<b class="text-primary">ไม่เกิน 10 โหวต</b>
+			โดยโหวตตัวเองได้ แต่โหวตคนเดียวหลายคะแนนไม่ได้
+		</p>
+
+		<img
+			src="/selecting-sytem/a-winner-has-10-votes.svg"
+			alt="ผู้ชนะลงคะแนนได้ 10 คะแนน"
+			class="mx-auto"
+		/>
+
+		<div class="bg-base-200 p-2 flex justify-center">
+			<p class="inline-flex items-center gap-2">
+				<StarHappy /><span>ผู้เข้ารอบ = <b>40 อันดับแรก</b>ของแต่ละกลุ่ม</span>
+			</p>
+		</div>
+	</li>
+	<li>
+		<p><b>2. จับสลากแบ่งสาย</b> แต่ละสาย มี 3-5 กลุ่ม</p>
+	</li>
+	<li class="space-y-3">
+		<p>
+			<b>3. ผู้เข้ารอบในขั้นที่ 1 โหวตผู้สมัครกลุ่มอื่นในสายเดียวกัน</b>
+			<b class="text-primary">กลุ่มละ 5 โหวต</b>
+		</p>
+
+		<img
+			src="/selecting-sytem/cross-voting-country.svg"
+			alt="ผู้เข้ารอบโหวตผู้สมัครกลุ่มอื่นในสายเดียวกันกลุ่มละ 5 โหวต"
+			class="mx-auto"
+		/>
+
+		<div class="bg-secondary p-2 flex flex-col content-center gap-1">
+			<p class="inline-flex items-center gap-2 content-center mx-auto">
+				<StarHappy /><span>ผู้ชนะ = <b>3 อันดับแรก</b>ของแต่ละกลุ่ม</span>
+			</p>
+
+			<p class="text-center body-03 opacity-50">
+				อันดับที่ 11-15 ของแต่ละกลุ่ม เป็นรายชื่อสำรอง
+			</p>
+		</div>
+
+		<img
+			src="/selecting-sytem/top-10-winners-country.svg"
+			alt="ผู้ชนะ 10 อันดับแรกของแต่ละกลุ่มได้เป็นสมาชิกวุฒิสภา"
+			class="mx-auto"
+		/>
+	</li>
+</ol>

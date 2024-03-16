@@ -5,10 +5,13 @@ import LevelProvince from "./LevelProvince.astro";
 import LevelCountry from "./LevelCountry.astro";
 ---
 
-<InformationDetailCard
-	title="วิธีคัดเลือก สว."
-	subtitle="แบบ “เลือกกันเอง” และ “เลือกไขว้”"
->
+<div class="flex flex-col rounded-[5px] bg-base-100 gap-[10px] pt-[40px]">
+	<h1 class="heading-01 leading-8 text-primary text-center">
+		วิธีคัดเลือก สว.
+	</h1>
+	<p class="body-01 text-primary text-center">
+		แบบ “เลือกกันเอง” และ “เลือกไขว้”
+	</p>
 	<p class="text-center">
 		พ.ร.ป.สว.ฯ มาตรา 40-42 ออกแบบการเลือก สว. เป็นสามระดับ ดังนี้
 	</p>
@@ -20,11 +23,30 @@ import LevelCountry from "./LevelCountry.astro";
 		class="mx-auto"
 	/>
 
-	<div class="flex flex-col md:flex-row">
-		<LevelAmphoe />
-
-		<LevelProvince />
-
-		<LevelCountry />
+	<div class="step-levels grid grid-cols-1 md:grid-cols-3">
+		<div class="border-r border-primary">
+			<div class="body-01 px-1 py-2 bg-info text-center font-bold">
+				ระดับอำเภอ
+			</div>
+			<div class="my-5">
+				<LevelAmphoe />
+			</div>
+		</div>
+		<div class="border-r border-primary">
+			<div class="body-01 px-1 py-2 bg-info text-center font-bold">
+				ระดับจังหวัด
+			</div>
+			<div class="my-5">
+				<LevelProvince />
+			</div>
+		</div>
+		<div>
+			<div class="body-01 px-1 py-2 bg-info text-center font-bold">
+				ระดับประเทศ
+			</div>
+			<div class="my-5">
+				<LevelCountry />
+			</div>
+		</div>
 	</div>
-</InformationDetailCard>
+</div>
