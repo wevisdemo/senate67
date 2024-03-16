@@ -11,11 +11,11 @@
 }
 
 .heading-03 {
-	@apply font-trirong text-[16px] leading-[140px] font-bold;
+	@apply font-trirong text-[16px] leading-[22.4px] font-bold;
 }
 
 .heading-02 {
-	@apply font-trirong text-[20px] leading-[140px] font-bold;
+	@apply font-trirong text-[20px] leading-[28px] font-bold;
 }
 
 .heading-01 {
@@ -23,11 +23,11 @@
 }
 
 .link-02 {
-	@apply font-sarabun text-[12px] leading-[150px];
+	@apply font-sarabun text-[12px] leading-[16.8px];
 }
 
 .link-01 {
-	@apply font-sarabun text-[14px] leading-[150px];
+	@apply font-sarabun text-[14px] leading-[19.6px];
 }
 
 .heading-responsive-03 {
