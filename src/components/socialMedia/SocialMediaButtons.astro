@@ -2,10 +2,12 @@
 import FacebookLogo from "./FacebookLogo.astro";
 import XLogo from "./XLogo.astro";
 import LineLogo from "./LineLogo.astro";
+
+const { className, color } = Astro.props;
 ---
 
-<div class="flex gap-2">
-	<FacebookLogo />
-	<XLogo />
-	<LineLogo />
+<div class="flex gap-2 justify-center">
+	<FacebookLogo color={color} />
+	<XLogo color={color} />
+	<LineLogo color={color} />
 </div>
