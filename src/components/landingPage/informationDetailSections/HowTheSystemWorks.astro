@@ -1,16 +1,30 @@
 ---
 import InformationDetailCard from "./InformationDetailCard.astro";
+import LevelAmphoe from "./LevelAmphoe.astro";
+import LevelProvince from "./LevelProvince.astro";
+import LevelCountry from "./LevelCountry.astro";
 ---
 
 <InformationDetailCard
 	title="วิธีคัดเลือก สว."
 	subtitle="แบบ “เลือกกันเอง” และ “เลือกไขว้”"
 >
-	<p>
-		นอกจากจะต้องมีสัญชาติไทยโดยกำเนิ อายุ 40 ปีขึ้นไปนับจากวันสมัคร และมีความรู้
-		ความเชี่ยวชาญ และประสบการณ์หรือ ทำงานด้านที่สมัคร ไม่น้อยกว่า 10 ปีแล้ว
-		ยังมีคุณสมบัติต้องห้ามอีกจำนวนหนึ่งที่ต้องพิจารณา
+	<p class="text-center">
+		พ.ร.ป.สว.ฯ มาตรา 40-42 ออกแบบการเลือก สว. เป็นสามระดับ ดังนี้
 	</p>
 
-	<p>เพื่อความสะดวก เราได้เตรียมเกมไว้ให้คุณลองเช็คแล้ว</p>
+	<img
+		src="/selecting-system-overview.svg"
+		alt=""
+		width="260px"
+		class="mx-auto"
+	/>
+
+	<div class="flex flex-col md:flex-row">
+		<LevelAmphoe />
+
+		<LevelProvince />
+
+		<LevelCountry />
+	</div>
 </InformationDetailCard>

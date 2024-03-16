@@ -1,0 +1,39 @@
+<svg width="22" height="105" viewBox="0 0 22 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1.44006" y="0.599121" width="19.1199" height="75.2398" rx="3.55995" stroke="#101C3D"/>
+  <circle cx="11" cy="10.1592" r="5.5" fill="#FFF8C4" stroke="#101C3D"/>
+  <circle cx="9.00018" cy="9.15967" r="1" fill="#101C3D"/>
+  <circle cx="13.0004" cy="9.15967" r="1" fill="#101C3D"/>
+  <path d="M9.50031 11.6597C9.50031 11.6597 11.0003 15.1597 12.5003 11.6597" stroke="#101C3D"/>
+  <circle cx="11" cy="24.189" r="5.5" fill="#FFF8C4" stroke="#101C3D"/>
+  <circle cx="9.00018" cy="23.1895" r="1" fill="#101C3D"/>
+  <circle cx="13.0004" cy="23.1895" r="1" fill="#101C3D"/>
+  <path d="M9.50031 25.6895C9.50031 25.6895 11.0003 29.1895 12.5003 25.6895" stroke="#101C3D"/>
+  <circle cx="11" cy="38.2192" r="5.5" fill="#FFF8C4" stroke="#101C3D"/>
+  <circle cx="9.00018" cy="37.2197" r="1" fill="#101C3D"/>
+  <circle cx="13.0004" cy="37.2197" r="1" fill="#101C3D"/>
+  <path d="M9.50031 39.7197C9.50031 39.7197 11.0003 43.2197 12.5003 39.7197" stroke="#101C3D"/>
+  <circle cx="11" cy="52.249" r="5.5" fill="#FFF8C4" stroke="#101C3D"/>
+  <circle cx="9.00018" cy="51.2495" r="1" fill="#101C3D"/>
+  <circle cx="13.0004" cy="51.2495" r="1" fill="#101C3D"/>
+  <path d="M9.50031 53.7495C9.50031 53.7495 11.0003 57.2495 12.5003 53.7495" stroke="#101C3D"/>
+  <circle cx="11" cy="66.2788" r="5.5" fill="#FFF8C4" stroke="#101C3D"/>
+  <circle cx="9.00018" cy="65.2793" r="1" fill="#101C3D"/>
+  <circle cx="13.0004" cy="65.2793" r="1" fill="#101C3D"/>
+  <path d="M9.50031 67.7793C9.50031 67.7793 11.0003 71.2793 12.5003 67.7793" stroke="#101C3D"/>
+  <circle cx="11" cy="84.3691" r="5.5" fill="#D4D4D4" stroke="#101C3D"/>
+  <circle cx="9.00018" cy="83.3696" r="1" fill="#101C3D"/>
+  <circle cx="13.0004" cy="83.3696" r="1" fill="#101C3D"/>
+  <line x1="9.50031" y1="86.8696" x2="12.5003" y2="86.8696" stroke="#101C3D"/>
+  <circle cx="11" cy="98.3989" r="5.5" fill="#D4D4D4" stroke="#101C3D"/>
+  <circle cx="9.00018" cy="97.3994" r="1" fill="#101C3D"/>
+  <circle cx="13.0004" cy="97.3994" r="1" fill="#101C3D"/>
+  <line x1="9.50031" y1="100.899" x2="12.5003" y2="100.899" stroke="#101C3D"/>
+  <rect x="0.940063" y="70" width="20.1154" height="34.3984" fill="url(#paint0_linear_80_3234)"/>
+  <defs>
+  <linearGradient id="paint0_linear_80_3234" x1="10.9978" y1="70" x2="10.9978" y2="104.398" gradientUnits="userSpaceOnUse">
+  <stop stop-color="white" stop-opacity="0"/>
+  <stop offset="1" stop-color="white"/>
+  </linearGradient>
+  </defs>
+  </svg>
+  

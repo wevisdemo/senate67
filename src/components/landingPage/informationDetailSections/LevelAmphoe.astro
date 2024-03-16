@@ -1,0 +1,65 @@
+---
+import PersonHappy from "../../icons/PersonHappy.astro";
+import StarHappy from "../../icons/StarHappy.astro";
+---
+
+<ul class="space-y-3">
+	<li class="space-y-3">
+		<p>
+			<b>1. ผู้สมัครเลือกคนใน “กลุ่มอาชีพ” ตัวเอง</b>
+			<b class="text-primary">ไม่เกิน 2 โหวต</b> โดยโหวตตัวเองได้ แต่โหวตคนเดียว
+			2 คะแนนไม่ได้
+		</p>
+
+		<img
+			src="/selecting-sytem/a-person-has-2-votes.svg"
+			alt="ผู้สมัครแต่ละคนมีมากสุดสองคะแนน"
+			class="mx-auto"
+		/>
+
+		<div class="bg-base-200 py-1 flex justify-center">
+			<p class="inline-flex items-center gap-2 text-center">
+				<PersonHappy />ผู้เข้ารอบ = 5 อันดับแรกของแต่ละกลุ่ม
+			</p>
+		</div>
+
+		<img
+			src="/selecting-sytem/top-5-people.svg"
+			alt="top five from the group"
+			class="mx-auto"
+		/>
+	</li>
+
+	<li class="space-y-3">
+		<p>
+			<b>2. จับสลากแบ่งสาย</b> แต่ละสายมี 3-5 กลุ่ม
+		</p>
+
+		<img
+			src="/selecting-sytem/lottery.svg"
+			alt="lottery"
+			class="mx-auto w-full"
+		/>
+	</li>
+
+	<li class="space-y-3">
+		<p>
+			<b>3. ผู้เข้ารอบในขั้นที่ 1 โหวตผู้สมัครกลุ่มอื่นในสายเดียวกัน</b>
+			<b class="text-primary">กลุ่มละ 1 โหวต</b>
+		</p>
+
+		<img src="/selecting-sytem/cross-voting.svg" alt="voting" class="mx-auto" />
+
+		<div class="bg-secondary py-1 flex justify-center">
+			<p class="inline-flex items-center gap-2 text-center">
+				<StarHappy />ผู้ชนะ = 3 อันดับแรกของแต่ละกลุ่ม
+			</p>
+		</div>
+
+		<img
+			src="/selecting-sytem/top-3-winners-amphoe.svg"
+			alt="3 อันดับแรกของแต่ละกลุ่ม"
+			class="mx-auto"
+		/>
+	</li>
+</ul>
