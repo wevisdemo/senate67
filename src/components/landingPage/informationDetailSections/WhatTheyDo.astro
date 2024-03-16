@@ -1,16 +1,55 @@
 ---
 import InformationDetailCard from "./InformationDetailCard.astro";
+
+const responsibilities = [
+	{
+		title: "เดินหน้ารัฐธรรมนูญประชาชน",
+		description: `ต้องอาศัยเสียง สว. หนึ่งในสามลงมติให้มีสภาร่างรัฐธรรมนูญ  (สสร.)  เพื่อ "เขียนใหม่ทั้งฉบับ" จาก สว. 200 คน ต้องมีคนพร้อม
+โหวตอย่างน้อย 67 คน`,
+		image: "/do-write-constitution.svg",
+	},
+	{
+		title: "พิจารณากฎหมาย",
+		description:
+			"สว. มีอำนาจลงมติเพื่อออกกฎหมาย แม้บทบาทจะน้อยกว่า สส. แต่ถ้า สว. ไม่สนับสนุนสิทธิเสรีภาพ กฎหมายดีๆ ก็ผ่านได้ยาก",
+		image: "/do-consider-law.svg",
+	},
+	{
+		title: "ตรวจสอบการทำงานรัฐบาล",
+		description:
+			"สว. สามารถตรวจสอบรัฐบาลได้ ผ่านการอภิปรายในสภา และสะท้อนปัญหาของประชาชนผ่านการตั้งกระทู้ถาม",
+		image: "/do-check-government.svg",
+	},
+	{
+		title: "เคาะเลือกคนมาตรวจสอบรัฐบาล",
+		description:
+			"สว. เป็นด่านสำคัญที่จะลงมติรับรองให้ใครมาเป็นตุลาการศาลรัฐธรรมนูญ - องค์กรอิสระ (เช่น  กกต. ป.ป.ช.) ตุลาการศาลปกครองสูงสุด อัยการสูงสุด ฯลฯ จึงต้องการ สว. ที่ใจเป็นอิสระ",
+		image: "/do-appoint-people.svg",
+	},
+];
 ---
 
 <InformationDetailCard
 	title="สว. ต้องทำอะไรบ้าง"
 	subtitle="จะต้องสานต่อภารกิจประชาธิปไตย"
 >
-	<p>
-		นอกจากจะต้องมีสัญชาติไทยโดยกำเนิ อายุ 40 ปีขึ้นไปนับจากวันสมัคร และมีความรู้
-		ความเชี่ยวชาญ และประสบการณ์หรือ ทำงานด้านที่สมัคร ไม่น้อยกว่า 10 ปีแล้ว
-		ยังมีคุณสมบัติต้องห้ามอีกจำนวนหนึ่งที่ต้องพิจารณา
-	</p>
+	<ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+		{
+			responsibilities.map((responsibility, index) => (
+				<li class="text-center">
+					<img
+						src={responsibility.image}
+						alt={responsibility.title}
+						class="mx-auto"
+					/>
+					<h3 class="body-01 font-bold">{responsibility.title}</h3>
+					<p class="body-02">{responsibility.description}</p>
+				</li>
+			))
+		}
+	</ul>
 
-	<p>เพื่อความสะดวก เราได้เตรียมเกมไว้ให้คุณลองเช็คแล้ว</p>
+	<p class="text-center text-primary font-bold">
+		*สว. ชุดใหม่จะไม่มีอำนาจโหวตเลือกนายกรัฐมนตรีแล้ว
+	</p>
 </InformationDetailCard>
