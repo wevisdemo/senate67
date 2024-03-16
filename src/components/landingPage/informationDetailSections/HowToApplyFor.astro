@@ -82,9 +82,19 @@ import ArrowRight from "../../icons/ArrowRight.astro";
 	<WeWatchPhoneButton />
 	<p class="text-center">หรือโทรถาม กกต. โดยตรง</p>
 	<ECTPhoneButton />
-	<p class="text-center">
-		เพื่อประกอบการพิจารณา ลองสำรวจผู้สมัครคนอื่นๆ
-		ในพื้นที่และกลุ่มอาชีพเดียวกับคุณดู
-	</p>
-	<a class="btn btn-secondary w-full">ค้นหาผู้สมัคร<ArrowRight /></a>
+
+	{
+		import.meta.env.PUBLIC_BUILD_TARGET !== "production" && (
+			<>
+				<p class="text-center">
+					เพื่อประกอบการพิจารณา ลองสำรวจผู้สมัครคนอื่นๆ
+					ในพื้นที่และกลุ่มอาชีพเดียวกับคุณดู
+				</p>
+				<a class="btn btn-secondary w-full">
+					ค้นหาผู้สมัคร
+					<ArrowRight />
+				</a>
+			</>
+		)
+	}
 </InformationDetailCard>
