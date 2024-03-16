@@ -14,12 +14,25 @@ import ECTPhoneButton from "../../buttons/ECTPhoneButton.astro";
 		<b class="text-primary">ยังมีคุณสมบัติต้องห้ามอีกจำนวนหนึ่ง</b
 		>ที่ต้องพิจารณา
 	</p>
-	<p class="text-center">เพื่อความสะดวก เราได้เตรียมเกมไว้ให้คุณลองเช็คแล้ว</p>
-	<a class="btn btn-secondary w-full"
-		>เล่นเกม “ฉันสมัคร สว. ได้ไหม?” <OpenNew /></a
-	>
-	<p class="text-center">หรือโทรมาปรึกษาเพิ่มเติม ได้ที่</p>
-	<WeWatchPhoneButton />
+	{
+		import.meta.env.PUBLIC_BUILD_TARGET === "production" ? (
+			<>
+				<p class="text-center">เพื่อความสะดวก โทรมาปรึกษาเพิ่มเติม ได้ที่</p>
+				<WeWatchPhoneButton />
+			</>
+		) : (
+			<>
+				<p class="text-center">
+					เพื่อความสะดวก เราได้เตรียมเกมไว้ให้คุณลองเช็คแล้ว
+				</p>
+				<a class="btn btn-secondary w-full">
+					เล่นเกม “ฉันสมัคร สว. ได้ไหม?” <OpenNew />
+				</a>
+				<p class="text-center">หรือโทรมาปรึกษาเพิ่มเติม ได้ที่</p>
+				<WeWatchPhoneButton />
+			</>
+		)
+	}
 	<p class="text-center">หรือโทรถาม กกต. โดยตรง</p>
 	<ECTPhoneButton />
 </InformationDetailCard>
