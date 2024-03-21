@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import QuestionLabel from "../components/checklist/QuestionLabel.astro";
+import ChecklistData from "../datas/senate_checklist.json";
+---
+
+<Layout title="สว 67">
+	<section class="flex items-center justify-center h-screen bg-secondary">
+		<div
+			class="w-[288px] md:w-[650px] flex flex-col gap-[30px] items-center mt-10 md:mt-0"
+		>
+			<div class="flex flex-col gap-1">
+				<h1 class="heading-responsive-01 text-neutral text-center">
+					ฉันสมัคร สว. ได้ไหม?
+				</h1>
+				<h2 class="heading-01 text-neutral text-center">
+					ตรวจสอบคุณสมบัติสมัคร สว. 2567
+				</h2>
+			</div>
+			<img src="/women-thinking.svg" alt="women-thinking" class="mx-auto" />
+			<p class="body-01 text-center">
+				สำหรับคนที่สนใจสมัคร สว. แต่ยังไม่แน่ใจว่า ตัวเองมีคุณสมบัติครบหรือไม่
+				ติดข้อห้ามข้อไหน ลงสมัครกลุ่มไหนได้บ้าง เลือกสมัครที่อำเภอไหนได้บ้าง
+				มาทางนี้ <b>เช็คก่อนให้ชัวร์จะได้เตรียมตัวได้ถูก</b>
+			</p>
+		</div>
+	</section>
+	{
+		ChecklistData.map((data: any, index: number) => (
+			<section class="flex flex-col gap-5 items-center justify-center h-screen bg-secondary">
+				<QuestionLabel number={index + 1} />
+				<h1 class="heading-02 text-center">{data.question}</h1>
+				<div class="flex gap-[10px]">
+					<button class="btn btn-outline">{data.answer1_label}</button>
+					<button class="btn btn-outline">{data.answer2_label}</button>
+				</div>
+			</section>
+		))
+	}
+</Layout>
