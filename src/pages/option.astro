@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DistrictSelectionSection from "../components/optionPage/DistrictSelectionSection.astro";
+---
+
+<Layout title="สว 67">
+	<section class="flex flex-col px-[16px] py-[30px] bg-secondary mt-10">
+		<a
+			class="body-01 md:text-[16px] text-[14px] text-accent underline md:mt-[20px] mt-[10px]"
+			href="/checklist">ฉันสมัคร สว. ได้ไหม?</a
+		>
+		<h1
+			class="heading-responsive-01 text-neutral mt-[30px] mx-auto md:mb-[60px] mb-[30px]"
+		>
+			ฉันมีทางเลือก สมัคร สว. แบบไหนบ้าง
+		</h1>
+	</section>
+	<DistrictSelectionSection />
+</Layout>
