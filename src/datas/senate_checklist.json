@@ -6,7 +6,9 @@
 		"answer1_explanation": "",
 		"answer2_label": "ไม่ใช่",
 		"answer2_result": "failed",
-		"answer2_explanation": "อายุไม่ถึง 40 ปีเต็ม นับถึงเดือนพฤษภาคม 2567"
+		"answer2_explanation": "อายุไม่ถึง 40 ปีเต็ม นับถึงเดือนพฤษภาคม 2567",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "มีสัญชาติไทยตั้งแต่เกิดหรือไม่?",
@@ -15,7 +17,9 @@
 		"answer1_explanation": "",
 		"answer2_label": "ไม่ใช่",
 		"answer2_result": "failed",
-		"answer2_explanation": "ไม่มีสัญชาติไทยตั้งแต่เกิด"
+		"answer2_explanation": "ไม่มีสัญชาติไทยตั้งแต่เกิด",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "ปัจจุบันคุณทำงานเป็นข้าราชการ พนักงาน หรือลูกจ้างของหน่วยงานรัฐ หรือรัฐวิสาหกิจ หรือไม่?",
@@ -24,7 +28,9 @@
 		"answer1_explanation": "ต้องลาออกจากงานข้าราชการ พนักงานหรือลูกจ้างของรัฐ",
 		"answer2_label": "ไม่เป็น",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "เป็นตุลาการศาลรัฐธรรมนูญ​ หรือเป็นผู้ดำรงตำแหน่งในองค์กรอิสระ?",
@@ -33,7 +39,9 @@
 		"answer1_explanation": "ต้องลาออกจากตำแหน่งตุลาการ หรือกรรมการองค์กรอิสระ",
 		"answer2_label": "ไม่เป็น",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "เป็นเจ้าของหรือผู้ถือหุ้น ในกิจการหนังสือพิมพ์หรือสื่อมวลชน?",
@@ -42,7 +50,9 @@
 		"answer1_explanation": "ต้องลาออกหรือขายหุ้นในกิจการสื่อมวลชน",
 		"answer2_label": "ไม่เป็น",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "เป็นสมาชิกพรรคการเมือง?",
@@ -51,7 +61,9 @@
 		"answer1_explanation": "ต้องลาออกจากการเป็นสมาชิกพรรค",
 		"answer2_label": "ไม่เป็น",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "เป็นพระภิกษุ สามเณร นักพรต หรือนักบวช?",
@@ -60,7 +72,9 @@
 		"answer1_explanation": "ต้องลาสิกขา หรือออกจากสถานะนักบวชของศาสนานั้นๆ",
 		"answer2_label": "ไม่เป็น",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "เป็นบุคคลล้มละลายอยู่จนถึงเดือนพฤษภาคม 2567 หรือเคยเป็นบุคคลล้มละลายทุจริต?",
@@ -69,7 +83,9 @@
 		"answer1_explanation": "เป็นบุคคลล้มละลายอยู่จนถึงเดือนพฤษภาคม 2567",
 		"answer2_label": "ไม่เป็น",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "เป็นบุคคลวิกลจริต หรือจิตฟั่นเฟือนไม่สมประกอบ?",
@@ -78,7 +94,9 @@
 		"answer1_explanation": "เป็นบุคคลวิกลจริต หรือจิตฟั่นเฟือนไม่สมประกอบ",
 		"answer2_label": "ไม่เป็น",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "อยู่ในระหว่างถูกเพิกถอนสิทธิเลือกตั้ง หรือระงับสิทธิสมัครรับเลือกตั้ง?",
@@ -87,7 +105,9 @@
 		"answer1_explanation": "อยู่ในระหว่างถูกเพิกถอนสิทธิเลือกตั้ง หรือระงับสิทธิสมัครรับเลือกตั้ง",
 		"answer2_label": "ไม่ใช่",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "เคยต้องคำพิพากษาถึงที่สุดว่า ทำความผิดต่อตำแหน่งหน้าที่ราชการ ความผิดเกี่ยวกับทรัพย์ที่กระทำโดยทุจริต ความผิดฐานฉ้อโกงประชาชน ความผิดฐานเป็นผู้ผลิตหรือผู้คายาเสพติด ความผิดฐานเป็นเจ้ามือการพนัน ความผิดฐานค้ามนุษย์ ความผิดฐานฟอกเงิน?",
@@ -96,7 +116,9 @@
 		"answer1_explanation": "เคยต้องคำพิพากษาถึงที่สุดว่า ทำความผิดต่อตำแหน่งหน้าที่ราชการ ความผิดเกี่ยวกับทรัพย์ที่กระทำโดยทุจริต ความผิดฐานฉ้อโกงประชาชน ความผิดฐานเป็นผู้ผลิตหรือผู้คายาเสพติด ความผิดฐานเป็นเจ้ามือการพนัน ความผิดฐานค้ามนุษย์ ความผิดฐานฟอกเงิน",
 		"answer2_label": "ไม่ใช่",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "เคยต้องคำพิพากษาถึงที่สุดว่า ร่ำรวยผิดปกติ หรือมีความผิดตามกฎหมายป.ป.ช. หรือทุจริตการเลือกตั้ง?",
@@ -105,7 +127,9 @@
 		"answer1_explanation": "เคยต้องคำพิพากษาถึงที่สุดว่า ร่ำรวยผิดปกติ หรือมีความผิดตามกฎหมายป.ป.ช. หรือทุจริตการเลือกตั้ง",
 		"answer2_label": "ไม่ใช่",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "เคยพ้นจากราชการเพราะทุจริตต่อหน้าที่?",
@@ -114,7 +138,9 @@
 		"answer1_explanation": "เคยพ้นจากราชการเพราะทุจริตต่อหน้าที่",
 		"answer2_label": "ไม่ใช่",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "เป็นรัฐมนตรี เป็นสส. เป็นผู้ดำรงตำแหน่งในพรรคการเมือง เป็นผู้บริหารท้องถิ่น เป็นสมาชิกสภาท้องถิ่น หรือพ้นจากตำแหน่งมาไม่เกิน 5 ปี นับจนถึงพ.ค.67?",
@@ -123,7 +149,9 @@
 		"answer1_explanation": "เป็นรัฐมนตรี เป็นสส. เป็นผู้ดำรงตำแหน่งในพรรคการเมือง เป็นผู้บริหารท้องถิ่น เป็นสมาชิกสภาท้องถิ่น หรือพ้นจากตำแหน่งมาไม่เกิน 5 ปี นับจนถึงพ.ค.67",
 		"answer2_label": "ไม่ใช่",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "เป็นบุพการี คู่สมรส หรือบุตร ของสส. สว. ข้าราชการการเมือง สมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น?",
@@ -132,7 +160,9 @@
 		"answer1_explanation": "เป็นบุพการี คู่สมรส หรือบุตร ของสส. สว. ข้าราชการการเมือง สมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น",
 		"answer2_label": "ไม่ใช่",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	},
 	{
 		"question": "เป็นบุพการี คู่สมรส หรือบุตร ของผู้ที่จะสมัครสว. ในปี 2567?",
@@ -141,6 +171,8 @@
 		"answer1_explanation": "เป็นบุพการี คู่สมรส หรือบุตร ของผู้ที่จะสมัครสว. ในปี 2567 (ในครอบครัวนึงให้เลือกลงสมัครได้คนเดียวนะ)",
 		"answer2_label": "ไม่ใช่",
 		"answer2_result": "sucess",
-		"answer2_explanation": ""
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": ""
 	}
 ]

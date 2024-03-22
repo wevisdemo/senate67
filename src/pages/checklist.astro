@@ -2,6 +2,24 @@
 import Layout from "../layouts/Layout.astro";
 import QuestionLabel from "../components/checklist/QuestionLabel.astro";
 import ChecklistData from "../datas/senate_checklist.json";
+
+export enum AnswerResult {
+	Sucess = "sucess",
+	Failed = "failed",
+	Caution = "caution",
+}
+
+export type IChecklistData = {
+	question: string;
+	answer1_label: string;
+	answer1_explanation: string;
+	answer1_result: AnswerResult;
+	answer2_label: string;
+	answer2_explanation: string;
+	answer2_result: AnswerResult;
+	user_answer: AnswerResult;
+	user_answer_explanation: string;
+};
 ---
 
 <Layout title="สว 67">
@@ -25,16 +43,149 @@ import ChecklistData from "../datas/senate_checklist.json";
 			</p>
 		</div>
 	</section>
+	<div
+		class="w-screen h-9 bg-base-200 p-[10px] fixed bottom-0 flex items-center justify-center"
+	>
+		{
+			ChecklistData.map((data: any, index: number) => (
+				<div class="flex items-center">
+					{index !== 0 && <div class="w-[3px] md:w-5 h-[1px] bg-neutral" />}
+					{data.user_answer === AnswerResult.Sucess ? (
+						<img src="/sucess-step.svg" alt="sucess" class="cursor-pointer" />
+					) : data.user_answer === AnswerResult.Failed ? (
+						<img src="/failed-step.svg" alt="failed" class="cursor-pointer" />
+					) : data.user_answer === AnswerResult.Caution ? (
+						<img src="/caution-step.svg" alt="caution" class="cursor-pointer" />
+					) : (
+						<img src="/default-step.svg" alt="default" class="cursor-pointer" />
+					)}
+				</div>
+			))
+		}
+	</div>
 	{
 		ChecklistData.map((data: any, index: number) => (
-			<section class="flex flex-col gap-5 items-center justify-center h-screen bg-secondary">
-				<QuestionLabel number={index + 1} />
-				<h1 class="heading-02 text-center">{data.question}</h1>
-				<div class="flex gap-[10px]">
-					<button class="btn btn-outline">{data.answer1_label}</button>
-					<button class="btn btn-outline">{data.answer2_label}</button>
+			<section class="flex items-center justify-center h-screen bg-secondary">
+				<div class="flex flex-col items-center justify-center gap-5 w-[288px] md:w-[650px]">
+					<QuestionLabel number={index + 1} />
+					<h1 class="heading-02 text-center">{data.question}</h1>
+					<div class="flex gap-[10px]">
+						<button class="btn btn-outline w-20">{data.answer1_label}</button>
+						<button class="btn btn-outline w-20">{data.answer2_label}</button>
+					</div>
+					{data.user_answer === AnswerResult.Sucess && (
+						<div class="flex flex-col items-center justify-center gap-[5px]">
+							<img src="/checkmark.svg" alt="check" />
+							<p class="body-01 text-center text-primary">คุณได้ไปต่อ!</p>
+						</div>
+					)}
+					{data.user_answer === AnswerResult.Failed && (
+						<div class="flex flex-col items-center justify-center gap-[5px]">
+							<img src="/close.svg" alt="close" />
+							<p class="body-01 text-center text-accent">
+								{data.user_answer_explanation}
+							</p>
+						</div>
+					)}
+					{data.user_answer === AnswerResult.Caution && (
+						<div class="flex flex-col items-center justify-center gap-[5px]">
+							<img src="/warning.svg" alt="warning" />
+							<p class="body-01 text-center text-neutral">
+								{data.user_answer_explanation}
+							</p>
+						</div>
+					)}
 				</div>
 			</section>
 		))
+	}
+	{
+		ChecklistData.some((data: any) => data.user_answer === "") && (
+			<section class="flex items-center justify-center h-screen bg-secondary">
+				<div class="w-[288px] md:w-[650px] flex flex-col gap-5 items-center justify-center">
+					<h1 class="heading-responsive-02 text-neutral text-center">สรุปผล</h1>
+					<p class="body-01 text-center text-neutral">
+						ยังสรุปผลไม่ได้ เพราะคุณยังตอบคำถามไม่ครบ
+						รบกวนกลับขึ้นไปตอบให้ครบก่อน
+					</p>
+				</div>
+			</section>
+		)
+	}
+	{
+		ChecklistData.every(
+			(data: any) => data.user_answer === AnswerResult.Sucess,
+		) && (
+			<section class="flex items-center justify-center h-screen bg-info">
+				<div class="w-[288px] md:w-[650px] flex flex-col gap-5 items-center justify-center">
+					<h1 class="heading-responsive-02 text-neutral text-center">สรุปผล</h1>
+					<img src="/sucess-large.svg" alt="sucess" />
+					<h2 class="heading-01">คุณสมบัติผ่านหมด!</h2>
+					<div class="flex flex-col gap-[10px] items-center w-full">
+						<p class="body-01 font-bold">ชวนสำรวจต่อว่า</p>
+						<div class="w-full bg-secondary py-[10px] px-4 body-01 rounded-lg text-center font-bold">
+							ฉันมีทางเลือก สมัคร สว. แบบไหนบ้าง
+						</div>
+					</div>
+				</div>
+			</section>
+		)
+	}
+	{
+		ChecklistData.some(
+			(data: any) => data.user_answer === AnswerResult.Caution,
+		) &&
+			ChecklistData.every(
+				(data: any) => data.user_answer !== AnswerResult.Failed,
+			) && (
+				<section class="flex items-center justify-center h-screen bg-base-200">
+					<div class="w-[288px] md:w-[650px] flex flex-col gap-5 items-center justify-center">
+						<h1 class="heading-responsive-02 text-neutral text-center">
+							สรุปผล
+						</h1>
+						<img src="/caution-large.svg" alt="caution" />
+						<h2 class="heading-01 text-center">
+							มีเงื่อนไขที่ต้องไปดำเนินการต่อ
+						</h2>
+						<div>
+							{ChecklistData.filter(
+								(data) => data.user_answer === AnswerResult.Caution,
+							).map((data, number) => (
+								<div>
+									{number + 1}. {data.user_answer_explanation}
+								</div>
+							))}
+						</div>
+						<div class="flex flex-col gap-[10px] items-center w-full">
+							<p class="body-01 font-bold">ชวนสำรวจต่อว่า</p>
+							<div class="w-full bg-secondary py-[10px] px-4 body-01 rounded-lg text-center font-bold">
+								ฉันมีทางเลือก สมัคร สว. แบบไหนบ้าง
+							</div>
+						</div>
+					</div>
+				</section>
+			)
+	}
+	{
+		ChecklistData.some(
+			(data: any) => data.user_answer === AnswerResult.Failed,
+		) && (
+			<section class="flex items-center justify-center h-screen bg-accent">
+				<div class="w-[288px] md:w-[650px] flex flex-col gap-5 items-center justify-center">
+					<h1 class="heading-responsive-02 text-neutral text-center">สรุปผล</h1>
+					<img src="/failed-large.svg" alt="failed" />
+					<h2 class="heading-01 text-center">มีคุณสมบัติที่ไม่ผ่าน</h2>
+					<div>
+						{ChecklistData.filter(
+							(data) => data.user_answer === AnswerResult.Failed,
+						).map((data, number) => (
+							<div>
+								{number + 1}. {data.user_answer_explanation}
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+		)
 	}
 </Layout>
