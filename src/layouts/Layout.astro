@@ -2,23 +2,41 @@
 import "../styles/fonts.css";
 import "../styles/typography.css";
 import NavBar from "../components/NavBar.astro";
+import { PRODUCTION_URL } from "../constants";
 
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
+const og = new URL("/og.png", PRODUCTION_URL).href;
+const siteName = "สมัครเพื่อโหวต";
+const description =
+	"สว. ระบบใหม่ “แบ่งกลุ่มอาชีพ” และ “เลือกกันเอง” ประชาชนก็เลือกได้ ถ้าเข้าไปสมัคร!";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={og} />
+		<meta property="og:url" content={PRODUCTION_URL} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={siteName} />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={og} />
+		<meta name="twitter:image:alt" content={title} />
+		<meta name="twitter:url" content={PRODUCTION_URL} />
 
 		{
 			import.meta.env.PUBLIC_BUILD_TARGET === "production" && (
