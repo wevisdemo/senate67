@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import {
 	getLocationMap,
 	getProvinceList,
-	random4Digit,
 	type Location,
 } from "../../data/senate_option";
+// import AutoComplete from "./AutoComplete";
 
 interface PropsType {
 	id: string;
@@ -18,6 +18,7 @@ const LocationSelection: React.FC<PropsType> = ({
 	// catch event if province and district are not default then do onChange result
 	const handleChange = (provinceTarget: string, districtTarget: string) => {
 		if (provinceTarget !== "default" && districtTarget !== "default") {
+			// if (provinceTarget !== "" && districtTarget !== "") {
 			const isDistrictInProvince = checkIsDistrictIsInProvice(
 				provinceTarget,
 				districtTarget,
@@ -44,6 +45,8 @@ const LocationSelection: React.FC<PropsType> = ({
 	const locationMap = getLocationMap();
 	const [province, setProvince] = useState("default");
 	const [district, setDistrict] = useState("default");
+	// const [province, setProvince] = useState("");
+	// const [district, setDistrict] = useState("");
 
 	useEffect(() => {
 		handleChange(province, district);
@@ -51,6 +54,12 @@ const LocationSelection: React.FC<PropsType> = ({
 
 	return (
 		<div className="flex space-x-[2px]">
+			{/* <AutoComplete
+				placeholder="เลือกจังหวัด"
+				options={provinceList || []}
+				value={province}
+				onChange={setProvince}
+			/> */}
 			<select
 				className="select w-full body-01"
 				value={province}
@@ -67,6 +76,13 @@ const LocationSelection: React.FC<PropsType> = ({
 					</option>
 				))}
 			</select>
+			{/* <AutoComplete
+				placeholder="อำเภอ/เขต"
+				options={locationMap[province] || []}
+				disabled={province === ""}
+				value={district}
+				onChange={setDistrict}
+			/> */}
 			<select
 				className="select w-full body-01"
 				disabled={province === "default"}

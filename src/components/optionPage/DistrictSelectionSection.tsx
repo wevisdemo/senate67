@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import QuestionLabel from "./QuestionLabel.tsx";
-import DistrictSelector from "./LocationSelection.tsx";
 import LocationListSelection from "./LocationList.tsx";
 import { locationQuestions, type Location } from "../../data/senate_option.ts";
 
