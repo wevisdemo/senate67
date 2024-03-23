@@ -10,11 +10,11 @@ if (import.meta.env.PUBLIC_BUILD_TARGET !== "production") {
 }
 ---
 
-<div class="navbar bg-neutral top-0 fixed min-h-10">
+<div class="navbar bg-neutral top-0 fixed min-h-10 body-03 text-base-100">
 	<div class="flex-1">
 		<SenateLogo />
 	</div>
-	<div class="flex-none body-03 text-base-100 hidden md:block">
+	<div class="flex-none hidden md:block">
 		{
 			navigationRoutes.map((route) => {
 				return (
@@ -25,4 +25,96 @@ if (import.meta.env.PUBLIC_BUILD_TARGET !== "production") {
 			})
 		}
 	</div>
+
+	<div>
+		<button class="nav-hamburger btn btn-ghost no-animation md:hidden">
+			<svg
+				class="hamburger-icon"
+				width="15"
+				height="12"
+				viewBox="0 0 15 12"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<rect width="15" height="2" fill="white"></rect>
+				<rect y="5" width="15" height="2" fill="white"></rect>
+				<rect y="10" width="15" height="2" fill="white"></rect>
+			</svg>
+		</button>
+	</div>
+
+	<div
+		class="nav-menu w-full bg-neutral text-center absolute top-0 left-0 translate-y-16 flex-col md:hidden"
+		style="display: none;"
+	>
+		{
+			navigationRoutes.map((route) => {
+				return (
+					<div>
+						<a class="btn btn-ghost no-animation" href={route.url}>
+							{route.name}
+						</a>
+					</div>
+				);
+			})
+		}
+	</div>
 </div>
+
+<script>
+	let isOpen = false;
+	const toggleMenu = () => {
+		isOpen = !isOpen;
+		const menu = document.querySelector(".nav-menu") as HTMLElement;
+		if (menu) {
+			menu.style.display = isOpen ? "block" : "none";
+		}
+
+		const hamburgerIcon = document.querySelector(
+			".hamburger-icon",
+		) as SVGElement;
+
+		if (hamburgerIcon) {
+			const hamburgerLine1 = hamburgerIcon.querySelector(
+				"rect:nth-child(1)",
+			) as SVGRectElement;
+			const hamburgerLine2 = hamburgerIcon.querySelector(
+				"rect:nth-child(2)",
+			) as SVGRectElement;
+			const hamburgerLine3 = hamburgerIcon.querySelector(
+				"rect:nth-child(3)",
+			) as SVGRectElement;
+			if (isOpen) {
+				hamburgerLine1.style.display = "none";
+
+				hamburgerLine2.setAttribute("x", "13");
+				hamburgerLine2.setAttribute("y", "2.38806");
+				hamburgerLine2.setAttribute("transform", "rotate(135 13 2.38806)");
+
+				hamburgerLine3.setAttribute("x", "2.3934");
+				hamburgerLine3.setAttribute("y", "1.00525");
+				hamburgerLine3.setAttribute("transform", "rotate(45 2.3934 1.00525)");
+			} else {
+				hamburgerLine1.setAttribute("style", "display: block");
+				hamburgerLine2.setAttribute("x", "0");
+				hamburgerLine2.setAttribute("y", "5");
+				hamburgerLine2.setAttribute(
+					"transform",
+					"rotate(0deg) translate(0px, 0px)",
+				);
+				hamburgerLine3.setAttribute("x", "0");
+				hamburgerLine3.setAttribute("y", "10");
+				hamburgerLine3.setAttribute(
+					"transform",
+					"rotate(0deg) translate(0px, 0px)",
+				);
+			}
+		}
+	};
+
+	const menu = document.querySelector(".nav-hamburger");
+
+	if (menu) {
+		menu.addEventListener("click", toggleMenu);
+	}
+</script>
