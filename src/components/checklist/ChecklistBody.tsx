@@ -1,4 +1,5 @@
 import React from "react";
+import scrollama from "scrollama";
 import defaultChecklistData from "../../data/senate_checklist.json";
 import QuestionLabel from "../optionPage/QuestionLabel";
 import SelectButton from "./SelectButton";
@@ -14,6 +15,30 @@ export type ChecklistData = typeof defaultChecklistData;
 export default function ChecklistBody() {
 	const [checklistData, setChecklistData] =
 		React.useState<ChecklistData>(defaultChecklistData);
+
+	const [questionReadFlags, setQuestionReadFlags] = React.useState<boolean[]>(
+		new Array(defaultChecklistData.length).fill(false),
+	);
+
+	const questionsContainer = React.useRef<HTMLDivElement>(null);
+
+	React.useEffect(() => {
+		if (!questionsContainer.current) return;
+
+		const scroller = scrollama();
+
+		scroller
+			.setup({ step: questionsContainer.current.childNodes })
+			.onStepExit(({ index, direction }) => {
+				if (direction === "down") {
+					setQuestionReadFlags(
+						questionReadFlags.map((val, i) => (i === index ? true : val)),
+					);
+				}
+			});
+
+		return () => scroller.destroy();
+	}, [questionReadFlags]);
 
 	function updateAnswer(
 		index: number,
@@ -73,66 +98,70 @@ export default function ChecklistBody() {
 					</a>
 				))}
 			</div>
-			{checklistData.map((data, index) => (
-				<section
-					id={`question-${index + 1}`}
-					key={index}
-					className="flex items-center justify-center h-screen bg-secondary"
-				>
-					<div className="flex flex-col items-center justify-center gap-5 w-[288px] md:w-[650px]">
-						<QuestionLabel number={index + 1} />
-						<h1 className="heading-02 text-center">{data.question}</h1>
-						<div className="flex gap-[10px]">
-							<SelectButton
-								isActive={data.user_answer === data.answer1_result}
-								onClick={() =>
-									updateAnswer(
-										index,
-										data.answer1_result,
-										data.answer1_explanation,
-									)
-								}
-							>
-								{data.answer1_label}
-							</SelectButton>
-							<SelectButton
-								isActive={data.user_answer === data.answer2_result}
-								onClick={() =>
-									updateAnswer(
-										index,
-										data.answer2_result,
-										data.answer2_explanation,
-									)
-								}
-							>
-								{data.answer2_label}
-							</SelectButton>
+			<div ref={questionsContainer}>
+				{checklistData.map((data, index) => (
+					<section
+						id={`question-${index + 1}`}
+						key={index}
+						className={`flex items-center justify-center h-screen transition-colors duration-500 ${!questionReadFlags[index] || data.user_answer ? "bg-secondary" : "bg-[#F9D142]"}`}
+					>
+						<div className="flex flex-col items-center justify-center gap-5 w-[288px] md:w-[650px]">
+							<QuestionLabel number={index + 1} />
+							<h1 className="heading-02 text-center">{data.question}</h1>
+							<div className="flex gap-[10px]">
+								<SelectButton
+									isActive={data.user_answer === data.answer1_result}
+									onClick={() =>
+										updateAnswer(
+											index,
+											data.answer1_result,
+											data.answer1_explanation,
+										)
+									}
+								>
+									{data.answer1_label}
+								</SelectButton>
+								<SelectButton
+									isActive={data.user_answer === data.answer2_result}
+									onClick={() =>
+										updateAnswer(
+											index,
+											data.answer2_result,
+											data.answer2_explanation,
+										)
+									}
+								>
+									{data.answer2_label}
+								</SelectButton>
+							</div>
+							{data.user_answer === AnswerResult.Sucess && (
+								<div className="flex flex-col items-center justify-center gap-[5px]">
+									<img src="/checkmark.svg" alt="check" />
+									<p className="body-01 text-center text-primary">
+										คุณได้ไปต่อ!
+									</p>
+								</div>
+							)}
+							{data.user_answer === AnswerResult.Failed && (
+								<div className="flex flex-col items-center justify-center gap-[5px]">
+									<img src="/close.svg" alt="close" />
+									<p className="body-01 text-center text-accent">
+										{data.user_answer_explanation}
+									</p>
+								</div>
+							)}
+							{data.user_answer === AnswerResult.Caution && (
+								<div className="flex flex-col items-center justify-center gap-[5px]">
+									<img src="/warning.svg" alt="warning" />
+									<p className="body-01 text-center text-neutral">
+										{data.user_answer_explanation}
+									</p>
+								</div>
+							)}
 						</div>
-						{data.user_answer === AnswerResult.Sucess && (
-							<div className="flex flex-col items-center justify-center gap-[5px]">
-								<img src="/checkmark.svg" alt="check" />
-								<p className="body-01 text-center text-primary">คุณได้ไปต่อ!</p>
-							</div>
-						)}
-						{data.user_answer === AnswerResult.Failed && (
-							<div className="flex flex-col items-center justify-center gap-[5px]">
-								<img src="/close.svg" alt="close" />
-								<p className="body-01 text-center text-accent">
-									{data.user_answer_explanation}
-								</p>
-							</div>
-						)}
-						{data.user_answer === AnswerResult.Caution && (
-							<div className="flex flex-col items-center justify-center gap-[5px]">
-								<img src="/warning.svg" alt="warning" />
-								<p className="body-01 text-center text-neutral">
-									{data.user_answer_explanation}
-								</p>
-							</div>
-						)}
-					</div>
-				</section>
-			))}
+					</section>
+				))}
+			</div>
 			{checklistData.some((data) => data.user_answer === "") && (
 				<section className="flex items-center justify-center h-screen bg-secondary">
 					<div className="w-[288px] md:w-[650px] flex flex-col gap-5 items-center justify-center">
