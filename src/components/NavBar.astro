@@ -44,8 +44,7 @@ if (import.meta.env.PUBLIC_BUILD_TARGET !== "production") {
 	</div>
 
 	<div
-		class="nav-menu w-full bg-neutral text-center absolute top-0 left-0 translate-y-16 flex-col md:hidden"
-		style="display: none;"
+		class="nav-menu w-full bg-neutral text-center absolute top-0 left-0 translate-y-16 flex-col hidden md:hidden"
 	>
 		{
 			navigationRoutes.map((route) => {
@@ -67,7 +66,7 @@ if (import.meta.env.PUBLIC_BUILD_TARGET !== "production") {
 		isOpen = !isOpen;
 		const menu = document.querySelector(".nav-menu") as HTMLElement;
 		if (menu) {
-			menu.style.display = isOpen ? "block" : "none";
+			menu.classList.toggle("hidden");
 		}
 
 		const hamburgerIcon = document.querySelector(
