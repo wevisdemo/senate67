@@ -37,7 +37,11 @@ export default function ChecklistBody() {
 		<>
 			<div className="w-screen h-9 bg-base-200 p-[10px] fixed bottom-0 flex items-center justify-center">
 				{checklistData.map((data, index) => (
-					<div key={index} className="flex items-center">
+					<a
+						key={index}
+						href={`#question-${index + 1}`}
+						className="flex items-center"
+					>
 						{index !== 0 && (
 							<div className="w-[3px] md:w-5 h-[1px] bg-neutral" />
 						)}
@@ -66,11 +70,12 @@ export default function ChecklistBody() {
 								className="cursor-pointer"
 							/>
 						)}
-					</div>
+					</a>
 				))}
 			</div>
 			{checklistData.map((data, index) => (
 				<section
+					id={`question-${index + 1}`}
 					key={index}
 					className="flex items-center justify-center h-screen bg-secondary"
 				>
@@ -79,6 +84,7 @@ export default function ChecklistBody() {
 						<h1 className="heading-02 text-center">{data.question}</h1>
 						<div className="flex gap-[10px]">
 							<SelectButton
+								isActive={data.user_answer === data.answer1_result}
 								onClick={() =>
 									updateAnswer(
 										index,
@@ -90,6 +96,7 @@ export default function ChecklistBody() {
 								{data.answer1_label}
 							</SelectButton>
 							<SelectButton
+								isActive={data.user_answer === data.answer2_result}
 								onClick={() =>
 									updateAnswer(
 										index,
@@ -151,9 +158,9 @@ export default function ChecklistBody() {
 						<h2 className="heading-01">คุณสมบัติผ่านหมด!</h2>
 						<div className="flex flex-col gap-[10px] items-center w-full">
 							<p className="body-01 font-bold">ชวนสำรวจต่อว่า</p>
-							<div className="w-full bg-secondary py-[10px] px-4 body-01 rounded-lg text-center font-bold">
+							<a href="/option" className="w-full btn btn-secondary">
 								ฉันมีทางเลือก สมัคร สว. แบบไหนบ้าง
-							</div>
+							</a>
 						</div>
 					</div>
 				</section>
@@ -184,9 +191,9 @@ export default function ChecklistBody() {
 							</div>
 							<div className="flex flex-col gap-[10px] items-center w-full">
 								<p className="body-01 font-bold">ชวนสำรวจต่อว่า</p>
-								<div className="w-full bg-secondary py-[10px] px-4 body-01 rounded-lg text-center font-bold">
+								<a href="/option" className="w-full btn btn-secondary">
 									ฉันมีทางเลือก สมัคร สว. แบบไหนบ้าง
-								</div>
+								</a>
 							</div>
 						</div>
 					</section>
@@ -201,15 +208,13 @@ export default function ChecklistBody() {
 						</h1>
 						<img src="/failed-large.svg" alt="failed" />
 						<h2 className="heading-01 text-center">มีคุณสมบัติที่ไม่ผ่าน</h2>
-						<div>
+						<ol className="list-decimal ml-4">
 							{checklistData
 								.filter((data) => data.user_answer === AnswerResult.Failed)
 								.map((data, index) => (
-									<div key={index}>
-										{index + 1}. {data.user_answer_explanation}
-									</div>
+									<li key={index}>{data.user_answer_explanation}</li>
 								))}
-						</div>
+						</ol>
 					</div>
 				</section>
 			)}
