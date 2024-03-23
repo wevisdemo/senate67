@@ -1,0 +1,90 @@
+---
+const partners = [
+	{
+		name: "iLaw",
+		logo: "/partners/logo-05.png",
+	},
+	{
+		name: "Human Rights Lawyers Association",
+		logo: "/partners/logo-05-1.png",
+	},
+	{
+		name: "แนวร่วมธรรมศาสตร์และการชุมนุม",
+		logo: "public/partners/logo-13.png",
+	},
+	{
+		name: "คณะรณรงค์เพื่อรัฐธรรมนูญฉบับประชาชน",
+		logo: "public/partners/logo-12.png",
+	},
+	{
+		name: "กป.อพช.",
+		logo: "public/partners/logo-11.png",
+	},
+	{
+		name: "คปอ.",
+		logo: "public/partners/logo-11-1.png",
+	},
+	{
+		name: "เครือข่ายแรงงานเพื่อสิทธิประชาชน",
+		logo: "public/partners/logo-11-2.png",
+	},
+	{
+		name: "FIP",
+		logo: "public/partners/logo-11-3.png",
+	},
+	{
+		name: "THE PATANI",
+		logo: "public/partners/logo-11-4.png",
+	},
+	{
+		name: "DRG",
+		logo: "public/partners/logo-11-5.png",
+	},
+	{
+		name: "คบเพลิง",
+		logo: "public/partners/logo-01-1.png",
+	},
+	{
+		name: "กลุ่มนครเสรีเพื่อประชาธิปไตย",
+		logo: "public/partners/logo-01.png",
+	},
+	{
+		logo: "public/partners/logo-03.png",
+		name: "CALL",
+	},
+	{
+		logo: "public/partners/logo-04.png",
+		name: "ACT LAB",
+	},
+	{
+		logo: "public/partners/logo-04-1.png",
+		name: "NEO LANNA",
+	},
+	{
+		logo: "public/partners/logo-09.png",
+		name: "WeVis",
+	},
+	{
+		logo: "public/partners/logo-10.png",
+		name: "We Watch",
+	},
+];
+---
+
+<div class="py-10 px-4 flex">
+	<div class="mx-auto text-center space-y-5">
+		<h2 class="heading-02">ผู้จัดแคมเปญ</h2>
+		<div class="flex flex-wrap gap-2 justify-center">
+			{
+				partners.map((partner) => (
+					<img
+						src={partner.logo}
+						alt={partner.name}
+						width="44px"
+						height="44px"
+					/>
+				))
+			}
+		</div>
+	</div>
+</div>
