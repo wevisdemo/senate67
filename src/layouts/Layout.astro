@@ -10,9 +10,8 @@ interface Props {
 
 const { title } = Astro.props;
 const og = new URL("/og.png", PRODUCTION_URL).href;
-const siteName = "สมัครเพื่อโหวต";
-const description =
-	"สว. ระบบใหม่ “แบ่งกลุ่มอาชีพ” และ “เลือกกันเอง” ประชาชนก็เลือกได้ ถ้าเข้าไปสมัคร!";
+const siteName = "สว. 67 สมัครเพื่อโหวต";
+const description = "ประชาชนก็เลือกได้ ถ้าเข้าไปสมัคร!";
 ---
 
 <!doctype html>
@@ -37,7 +36,6 @@ const description =
 		<meta name="twitter:image" content={og} />
 		<meta name="twitter:image:alt" content={title} />
 		<meta name="twitter:url" content={PRODUCTION_URL} />
-
 		<meta name="theme-color" content="#101C3D" />
 
 		{
