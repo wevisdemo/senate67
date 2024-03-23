@@ -1,18 +1,22 @@
 ---
 import SenateLogo from "./SenateLogo.astro";
 
-const navigationRoutes = [{ name: "หน้าหลัก", url: "/" }];
+const navigationRoutes = [
+	{ name: "หน้าหลัก", url: "/" },
+	{ name: "Checklist Game", url: "/checklist" },
+];
 
 if (import.meta.env.PUBLIC_BUILD_TARGET !== "production") {
 	navigationRoutes.push({ name: "ค้นหาผู้สมัคร", url: "/search" });
-	navigationRoutes.push({ name: "Checklist Game", url: "/checklist" });
 	navigationRoutes.push({ name: "ผลการเลือกตั้ง", url: "/result" });
 }
 ---
 
 <div class="navbar bg-neutral top-0 fixed min-h-10 body-03 text-base-100">
 	<div class="flex-1">
-		<SenateLogo />
+		<a href="/">
+			<SenateLogo />
+		</a>
 	</div>
 	<div class="flex-none hidden md:block">
 		{

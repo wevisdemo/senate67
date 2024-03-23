@@ -2,6 +2,7 @@
 import SenateHeroLogo from "./SenateHeroLogo.astro";
 import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
 import OpenInNew from "../icons/OpenInNew.astro";
+import ArrowRight from "../icons/ArrowRight.astro";
 
 const registered_senates = 0;
 const updated_at = new Date("2023-03-16").toLocaleString("th-TH", {
@@ -35,6 +36,9 @@ const updated_at = new Date("2023-03-16").toLocaleString("th-TH", {
 				</div>
 
 				<div class="flex flex-col justify-center gap-1">
+					<a class="btn w-full bg-primary text-base-100" href="/checklist"
+						>ฉันสมัคร สว. ได้ไหม? <ArrowRight className="fill-base-100" />
+					</a>
 					<a
 						class="btn w-full bg-primary text-base-100"
 						href="https://forms.gle/AiPQPxvqFex2a7Hk8"
