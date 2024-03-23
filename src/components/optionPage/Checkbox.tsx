@@ -14,6 +14,9 @@ const Checkbox: React.FC<CheckboxProps> = ({
 }: CheckboxProps) => {
 	const [checked, setChecked] = React.useState(forceChecked ? true : false);
 	const getCheckImg = () => {
+		if (forceChecked) {
+			return "/checkbox-selected-circle.svg";
+		}
 		if (checked) {
 			return "/checkbox-selected.svg";
 		} else {
