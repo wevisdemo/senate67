@@ -4,11 +4,43 @@ import ECTPhoneButton from "../buttons/ECTPhoneButton.astro";
 import Phone from "../icons/Phone.tsx";
 import OpenInNew from "../icons/OpenInNew.tsx";
 import ArrowRight from "../icons/ArrowRight.tsx";
+import ResultCard from "./ResultCard.tsx";
 
-interface PropsType {
-	title: string;
-	canAppend?: boolean;
+interface PropsType {}
+
+interface Result {
+	province: string;
+	district: string;
+	attribute: string;
 }
+
+const mockResults: Result[] = [
+	{
+		province: "กรุงเทพมหานคร",
+		district: "บางรัก",
+		attribute: "กลุ่มการบริหารราชการแผ่นดินและความมั่นคง",
+	},
+	{
+		province: "กรุงเทพมหานคร",
+		district: "บางรัก",
+		attribute: "กลุ่มการศึกษา",
+	},
+	{
+		province: "กรุงเทพมหานคร",
+		district: "บางรัก",
+		attribute: "กลุ่มการสาธารณสุข",
+	},
+	{
+		province: "กรุงเทพมหานคร",
+		district: "บางรัก",
+		attribute: "กลุ่มอาชีพทำสวน ป่าไม้ ปศุสัตว์ ประมง",
+	},
+	{
+		province: "กรุงเทพมหานคร",
+		district: "บางรัก",
+		attribute: "กลุ่มอาชีพทำนา ปลูกพืชล้มลุก",
+	},
+];
 
 const ResultForRegisterSection: React.FC = () => {
 	const isHideFeature = (): boolean => {
@@ -20,10 +52,29 @@ const ResultForRegisterSection: React.FC = () => {
 			<h1 className="heading-responsive-02">สรุปผล</h1>
 			<div className="flex flex-col w-full max-w-[650px] space-y-[10px]">
 				<div>
-					<h2 className="heading-01">คุณมีทางเลือกในการสมัคร สว. xx แบบ</h2>
+					<h2 className="heading-01">
+						คุณมีทางเลือกในการสมัคร สว. {mockResults.length} แบบ
+					</h2>
 					<p className="body-01">เลือกสมัครได้แบบเดียวเท่านั้นนะ</p>
 				</div>
-				<div>{/* result */}</div>
+				<div className="flex text-left pl-[12px]">
+					<span className="body-03 w-[50%]">อำเภอ/เขต</span>
+					<span className="body-03 w-[50%]">กลุ่มอาชีพ/คุณสมบัติ</span>
+				</div>
+				<div className="grid space-y-[10px]">
+					{mockResults.map((result, index) => (
+						<div className="flex items-center">
+							<span className="body-03 mr-[8px]">{index}</span>
+							<ResultCard
+								key={`result-${index}`}
+								province={result.province}
+								district={result.district}
+								attribute={result.attribute}
+							/>
+							{/* todo: implement xx total candidate */}
+						</div>
+					))}
+				</div>
 				<a
 					className="mx-auto inline-flex content-center items-center gap-2 text-accent underline"
 					href="https://www.ilaw.or.th/articles/21466"
