@@ -1,0 +1,29 @@
+export default ({ className }: { className: string }) => (
+	<svg
+		width="16"
+		height="17"
+		viewBox="0 0 16 17"
+		fill="none"
+		className={className}
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<g clipPath="url(#clip0_238_857)">
+			<path
+				fillRule="evenodd"
+				clipRule="evenodd"
+				d="M1 3.09912H7V4.09912H2V14.0991H12V9.09912H13V15.0991H1V3.09912Z"
+			></path>
+			<path d="M7.94975 1.09957L7.93667 2.09765L13.3061 2.1072L6.18198 9.2313L6.88909 9.9384L14.0132 2.8143L14.0107 8.1717L15.0208 8.17064V1.09957H7.94975Z"></path>
+		</g>
+		<defs>
+			<clipPath id="clip0_238_857">
+				<rect
+					width="16"
+					height="16"
+					fill="white"
+					transform="translate(0 0.0991211)"
+				></rect>
+			</clipPath>
+		</defs>
+	</svg>
+);

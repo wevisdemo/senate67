@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface PropsType {
 	title: string;
@@ -9,29 +9,30 @@ const DistrictSelector: React.FC<PropsType> = ({
 	title,
 	canAppend = false,
 }: PropsType) => {
+	const [value, setValue] = useState("default");
 	return (
 		<div className="md:max-w-[650px] w-full space-y-[10px]">
 			<p className="body-01 font-bold">{title}</p>
 			<div className="flex space-x-[2px]">
-				<select className="select w-full body-01">
-					<option disabled selected>
+				<select className="select w-full body-01" defaultValue={"default"}>
+					<option value={"default"} disabled>
 						เลือกจังหวัด
 					</option>
-					<option>Homer</option>
-					<option>Marge</option>
-					<option>Bart</option>
-					<option>Lisa</option>
-					<option>Maggie</option>
+					<option value="Homer">Homer</option>
+					<option value="Marge">Marge</option>
+					<option value="Bart">Bart</option>
+					<option value="Lisa">Lisa</option>
+					<option value="Maggie">Maggie</option>
 				</select>
-				<select className="select w-full body-01">
-					<option disabled selected>
+				<select className="select w-full body-01" defaultValue={"default"}>
+					<option value={"default"} disabled>
 						อำเภอ/เขต
 					</option>
-					<option>Homer</option>
-					<option>Marge</option>
-					<option>Bart</option>
-					<option>Lisa</option>
-					<option>Maggie</option>
+					<option value="Homer">Homer</option>
+					<option value="Marge">Marge</option>
+					<option value="Bart">Bart</option>
+					<option value="Lisa">Lisa</option>
+					<option value="Maggie">Maggie</option>
 				</select>
 			</div>
 			{canAppend && (
