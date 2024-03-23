@@ -28,7 +28,7 @@ const PersonalSelectionSection: React.FC<PropsType> = ({
 	};
 	return (
 		<section className="flex flex-col bg-primary items-center space-y-[20px] py-[20px] pb-[40px]">
-			<QuestionLabel number={3} />
+			<QuestionLabel number={3} light />
 			<h2 className="heading-01 text-base-100 text-center px-[16px]">
 				มีคุณสมบัติใดต่อไปนี้หรือไม่
 			</h2>

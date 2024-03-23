@@ -28,7 +28,7 @@ const OccupationSelectionSection: React.FC<PropsType> = ({
 	};
 	return (
 		<section className="flex flex-col bg-primary items-center space-y-[20px] py-[20px]">
-			<QuestionLabel number={2} />
+			<QuestionLabel number={2} light />
 			<h2 className="heading-01 text-base-100 text-center px-[16px]">
 				คุณเคยทำงานเป็นเวลาไม่น้อยกว่า 10 ปี ในกลุ่มอาชีพใดบ้าง?
 			</h2>
