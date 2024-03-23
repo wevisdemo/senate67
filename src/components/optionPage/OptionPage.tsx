@@ -1,17 +1,42 @@
+import type { Location, Result } from "../../data/senate_option.ts";
 import DistrictSelectionSection from "./DistrictSelectionSection";
 import OccupationSelectionSection from "./OccupationSelectionSection.tsx";
 import PersonalSelectionSection from "./PersonalSelectionSection.tsx";
 import ResultForRegisterSection from "./ResultForRegisterSection.tsx";
-import React from "react";
+import React, { useState } from "react";
+
 const OptionsPage: React.FC = () => {
+	const [locations, setLocations] = useState<Location[]>([]);
+	const [occupations, setOccupations] = useState<string[]>(["กลุ่มอื่นๆ"]);
+	const [personals, setPersonals] = useState<string[]>([]);
+
+	const getResults = (): Result[] => {
+		const attributes = [...occupations, ...personals];
+		return locations.reduce((acc: Result[], location) => {
+			const attributeResults: Result[] = attributes.map((attribute) => {
+				return {
+					province: location.province,
+					district: location.district,
+					attribute: attribute,
+				};
+			});
+
+			acc = [...acc, ...attributeResults];
+			return acc;
+		}, []);
+	};
 	return (
 		<>
 			<DistrictSelectionSection
-				onChangeResult={(result) => console.log("result => ", result)}
+				onChangeResults={(results) => setLocations(results)}
 			/>
-			<OccupationSelectionSection />
-			<PersonalSelectionSection />
-			<ResultForRegisterSection />
+			<OccupationSelectionSection
+				onChangeResults={(results) => setOccupations(results)}
+			/>
+			<PersonalSelectionSection
+				onChangeResults={(results) => setPersonals(results)}
+			/>
+			<ResultForRegisterSection results={getResults()} />
 		</>
 	);
 };

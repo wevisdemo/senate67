@@ -5,66 +5,48 @@ import Phone from "../icons/Phone.tsx";
 import OpenInNew from "../icons/OpenInNew.tsx";
 import ArrowRight from "../icons/ArrowRight.tsx";
 import ResultCard from "./ResultCard.tsx";
+import type { Result } from "../../data/senate_option.ts";
 
-interface PropsType {}
-
-interface Result {
-	province: string;
-	district: string;
-	attribute: string;
+interface PropsType {
+	results: Result[];
 }
 
-const mockResults: Result[] = [
-	{
-		province: "กรุงเทพมหานคร",
-		district: "บางรัก",
-		attribute: "กลุ่มการบริหารราชการแผ่นดินและความมั่นคง",
-	},
-	{
-		province: "กรุงเทพมหานคร",
-		district: "บางรัก",
-		attribute: "กลุ่มการศึกษา",
-	},
-	{
-		province: "กรุงเทพมหานคร",
-		district: "บางรัก",
-		attribute: "กลุ่มการสาธารณสุข",
-	},
-	{
-		province: "กรุงเทพมหานคร",
-		district: "บางรัก",
-		attribute: "กลุ่มอาชีพทำสวน ป่าไม้ ปศุสัตว์ ประมง",
-	},
-	{
-		province: "กรุงเทพมหานคร",
-		district: "บางรัก",
-		attribute: "กลุ่มอาชีพทำนา ปลูกพืชล้มลุก",
-	},
-];
-
-const ResultForRegisterSection: React.FC = () => {
+const ResultForRegisterSection: React.FC<PropsType> = ({
+	results,
+}: PropsType) => {
 	const isHideFeature = (): boolean => {
 		return import.meta.env.PUBLIC_BUILD_TARGET === "production" ? true : false;
 	};
 
 	return (
 		<section className="flex flex-col justify-center items-center text-center py-[60px] md:py-[120px]">
-			<h1 className="heading-responsive-02">สรุปผล</h1>
-			<div className="flex flex-col w-full max-w-[650px] space-y-[10px]">
-				<div>
-					<h2 className="heading-01">
-						คุณมีทางเลือกในการสมัคร สว. {mockResults.length} แบบ
-					</h2>
-					<p className="body-01">เลือกสมัครได้แบบเดียวเท่านั้นนะ</p>
-				</div>
-				<div className="flex text-left pl-[12px]">
-					<span className="body-03 w-[50%]">อำเภอ/เขต</span>
-					<span className="body-03 w-[50%]">กลุ่มอาชีพ/คุณสมบัติ</span>
-				</div>
+			<h1 className="heading-responsive-02 mb-[20px]">สรุปผล</h1>
+			<div className="flex flex-col w-full max-w-[650px] space-y-[10px] px-[16px]">
+				{results.length === 0 && (
+					<p className="body-01 py-[20px]">
+						ยังสรุปผลไม่ได้ เพราะ{" "}
+						<span className="font-bold"> คุณยังไม่ได้เลือกอำเภอ/เขต</span>
+						ที่มีความเกี่ยวข้อง
+					</p>
+				)}
+				{results.length > 0 && (
+					<>
+						<div>
+							<h2 className="heading-01">
+								คุณมีทางเลือกในการสมัคร สว. {results.length} แบบ
+							</h2>
+							<p className="body-01">เลือกสมัครได้แบบเดียวเท่านั้นนะ</p>
+						</div>
+						<div className="flex text-left pl-[12px]">
+							<span className="body-03 w-[50%]">อำเภอ/เขต</span>
+							<span className="body-03 w-[50%]">กลุ่มอาชีพ/คุณสมบัติ</span>
+						</div>
+					</>
+				)}
 				<div className="grid space-y-[10px]">
-					{mockResults.map((result, index) => (
+					{results.map((result, index) => (
 						<div className="flex items-center" key={`result-${index}`}>
-							<span className="body-03 mr-[8px]">{index}</span>
+							<span className="body-03 mr-[8px]">{index + 1}</span>
 							<ResultCard
 								province={result.province}
 								district={result.district}
@@ -116,20 +98,21 @@ const ResultForRegisterSection: React.FC = () => {
 				</p>
 				<a
 					className="btn btn-primary w-full text-base-100"
-					href="tel:021418888"
+					href="https://forms.gle/AiPQPxvqFex2a7Hk8"
+					target="_blank"
 				>
 					แสดงตัวเป็นผู้สมัคร
 					<OpenInNew className="fill-base-100" />
 				</a>
-				<p className="text-center">สำรวจผู้สมัครคนอื่นๆ ได้ที่</p>
 				{isHideFeature() && (
-					<a
-						className="btn btn-primary w-full text-base-100"
-						href="tel:021418888"
-					>
-						ค้นหาผู้สมัคร
-						<ArrowRight className="fill-base-100" />
-					</a>
+					<>
+						<p className="text-center">สำรวจผู้สมัครคนอื่นๆ ได้ที่</p>
+
+						<a className="btn btn-primary w-full text-base-100" href="/">
+							ค้นหาผู้สมัคร
+							<ArrowRight className="fill-base-100" />
+						</a>
+					</>
 				)}
 			</div>
 		</section>

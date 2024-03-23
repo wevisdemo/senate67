@@ -18,8 +18,26 @@ const LocationSelection: React.FC<PropsType> = ({
 	// catch event if province and district are not default then do onChange result
 	const handleChange = (provinceTarget: string, districtTarget: string) => {
 		if (provinceTarget !== "default" && districtTarget !== "default") {
+			const isDistrictInProvince = checkIsDistrictIsInProvice(
+				provinceTarget,
+				districtTarget,
+			);
+			if (!isDistrictInProvince) {
+				const newDistrict = getLocationMap()[provinceTarget][0];
+				setDistrict(newDistrict);
+				onChangeResult({ province: provinceTarget, district: newDistrict });
+				return;
+			}
 			onChangeResult({ province: provinceTarget, district: districtTarget });
 		}
+	};
+
+	const checkIsDistrictIsInProvice = (province: string, district: string) => {
+		const locationMap = getLocationMap();
+		if (locationMap[province]) {
+			return locationMap[province].includes(district);
+		}
+		return false;
 	};
 
 	const provinceList = getProvinceList();
@@ -62,11 +80,7 @@ const LocationSelection: React.FC<PropsType> = ({
 				</option>
 				{locationMap[province] &&
 					locationMap[province].map((item) => (
-						<option
-							key={id + "-" + item}
-							value={item}
-							onClick={() => setDistrict(item)}
-						>
+						<option key={id + "-" + item} value={item}>
 							{item}
 						</option>
 					))}

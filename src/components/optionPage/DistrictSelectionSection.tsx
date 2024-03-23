@@ -5,16 +5,16 @@ import LocationListSelection from "./LocationList.tsx";
 import { locationQuestions, type Location } from "../../data/senate_option.ts";
 
 interface PropsType {
-	onChangeResult: (locations: Location[]) => void;
+	onChangeResults: (locations: Location[]) => void;
 }
 
 const DistrictSelectionSection: React.FC<PropsType> = ({
-	onChangeResult,
+	onChangeResults,
 }: PropsType) => {
 	const [results, setResults] = useState<Location[][]>([]);
 
 	const removeDuplicates = (locations: Location[]): Location[] => {
-		const unique = locations.map((item) => item.province + item.district);
+		const unique = locations.map((item) => item.province + "-" + item.district);
 		const uniqueSet = new Set(unique);
 		return Array.from(uniqueSet).map((item) => {
 			const [province, district] = item.split("-");
@@ -27,7 +27,7 @@ const DistrictSelectionSection: React.FC<PropsType> = ({
 		setResults(newResults);
 
 		const allLocation = newResults.flat();
-		onChangeResult(removeDuplicates(allLocation));
+		onChangeResults(removeDuplicates(allLocation));
 	};
 
 	return (

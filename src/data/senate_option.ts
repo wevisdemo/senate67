@@ -1,8 +1,14 @@
 import defaultProvince from "./province.json";
 
-interface CheckboxInfo {
+export interface CheckboxInfo {
 	title: string;
 	description?: string;
+}
+
+export interface Result {
+	province: string;
+	district: string;
+	attribute: string;
 }
 
 interface LocationQuestion {
@@ -30,7 +36,7 @@ export const locationQuestions: LocationQuestion[] = [
 	},
 ];
 
-const occupationList: CheckboxInfo[] = [
+export const occupationListData: CheckboxInfo[] = [
 	{
 		title: "กลุ่มการบริหารราชการแผ่นดินและความมั่นคง",
 		description: "เช่น อดีตข้าราชการ เจ้าหน้าที่รัฐ หรืออื่นๆ ในทำนองเดียวกัน",
@@ -106,7 +112,7 @@ const occupationList: CheckboxInfo[] = [
 	},
 ];
 
-const personalList: CheckboxInfo[] = [
+export const personalListData: CheckboxInfo[] = [
 	{ title: "เป็นผู้หญิง โดยเพศกำเนิด" },
 	{
 		title:
@@ -128,8 +134,8 @@ export const getLocations = (): Location[] => {
 export const getProvinceList = (): string[] => {
 	const locations: Location[] = getLocations();
 	const provinces: string[] = locations.map((location) => location.province);
-	// remove duplicate province
-	return [...new Set(provinces)];
+	// remove duplicate province and sort
+	return [...new Set(provinces)].sort();
 };
 
 export const getDistrictList = (province: string): string[] => {
@@ -153,6 +159,11 @@ export const getLocationMap = (): LocationMap => {
 		}
 		locationMap[location.province].push(location.district);
 	});
+
+	// sort district in locationMap
+	for (const province in locationMap) {
+		locationMap[province].sort();
+	}
 	return locationMap;
 };
 
