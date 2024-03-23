@@ -1,0 +1,46 @@
+---
+interface Props {
+	index: number;
+	answer: string;
+	answerLabel: string;
+}
+
+const { index, answer, answerLabel } = Astro.props;
+---
+
+<!-- Store the message prop as a data attribute. -->
+<select-button
+	data-answer={answer}
+	data-index={index}
+	data-answerLabel={answerLabel}
+>
+	<button class="btn btn-outline w-20">{answerLabel}</button>
+</select-button>
+
+<script>
+	import { checklistData } from "../../store/checklistdata";
+
+	class SelectButton extends HTMLElement {
+		constructor() {
+			super();
+
+			const { index, answer } = this.dataset;
+			const button = this.querySelector("button");
+			button?.addEventListener("click", () => {
+				let temp = checklistData.get();
+				const answerIndex = index as unknown as number;
+				temp[answerIndex].user_answer = answer as string;
+				if (answer === temp[answerIndex].answer1_result) {
+					temp[answerIndex].user_answer_explanation = temp[answerIndex]
+						.answer1_explanation as string;
+				} else {
+					temp[answerIndex].user_answer_explanation = temp[answerIndex]
+						.answer2_explanation as string;
+				}
+				checklistData.set(temp);
+			});
+		}
+	}
+
+	customElements.define("select-button", SelectButton);
+</script>

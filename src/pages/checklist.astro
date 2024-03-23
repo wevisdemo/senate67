@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import QuestionLabel from "../components/checklist/QuestionLabel.astro";
-import ChecklistData from "../datas/senate_checklist.json";
+import { checklistData } from "../store/checklistdata";
+import SelectButton from "../components/checklist/SelectButton.astro";
 
 export enum AnswerResult {
 	Sucess = "sucess",
@@ -13,13 +14,15 @@ export type IChecklistData = {
 	question: string;
 	answer1_label: string;
 	answer1_explanation: string;
-	answer1_result: AnswerResult;
+	answer1_result: string;
 	answer2_label: string;
 	answer2_explanation: string;
-	answer2_result: AnswerResult;
-	user_answer: AnswerResult;
+	answer2_result: string;
+	user_answer: string;
 	user_answer_explanation: string;
 };
+
+const ChecklistData = checklistData.get();
 ---
 
 <Layout title="สว 67">
@@ -70,8 +73,16 @@ export type IChecklistData = {
 					<QuestionLabel number={index + 1} />
 					<h1 class="heading-02 text-center">{data.question}</h1>
 					<div class="flex gap-[10px]">
-						<button class="btn btn-outline w-20">{data.answer1_label}</button>
-						<button class="btn btn-outline w-20">{data.answer2_label}</button>
+						<SelectButton
+							index={index}
+							answerLabel={data.answer1_label}
+							answer={data.answer1_result}
+						/>
+						<SelectButton
+							index={index}
+							answerLabel={data.answer2_label}
+							answer={data.answer2_result}
+						/>
 					</div>
 					{data.user_answer === AnswerResult.Sucess && (
 						<div class="flex flex-col items-center justify-center gap-[5px]">
