@@ -9,6 +9,7 @@ import OpenInNew from "../icons/OpenInNew.astro";
 import ArrowRight from "../icons/ArrowRight.astro";
 import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
 import TableOfContents from "./informationDetailSections/TableOfContents.astro";
+import ArrowUp from "../icons/ArrowUp.astro";
 
 const contents = [
 	{ title: "ทำไมต้องมีแคมเปญนี้", id: "why-do-we-need-this" },
@@ -63,5 +64,28 @@ const contents = [
 		<div class="mx-auto">
 			<SocialMediaButtons color="#FCEB71" />
 		</div>
+
+		<div
+			class="btn-go-to-toc text-center text-info fixed bottom-0 left-0 w-full bg-gradient-to-t from-primary to-transparent p-3 hidden md:hidden"
+		>
+			<a class="btn btn-ghost" href="#meet-the-campaign">
+				<span class="underline">กลับด้านบน</span>
+				<ArrowUp /></a
+			>
+		</div>
 	</div>
 </section>
+
+<script>
+	window.addEventListener("scroll", () => {
+		const tableOfContents = document.querySelector("#table-of-contents");
+		const goToTableOfContentsBtn = document.querySelector(".btn-go-to-toc");
+		if (!tableOfContents || !goToTableOfContentsBtn) return;
+
+		if (tableOfContents.getBoundingClientRect().top < 0) {
+			goToTableOfContentsBtn.classList.remove("hidden");
+		} else {
+			goToTableOfContentsBtn.classList.add("hidden");
+		}
+	});
+</script>
