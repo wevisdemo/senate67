@@ -1,8 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import DistrictSelectionSection from "../components/optionPage/DistrictSelectionSection.astro";
-import OccupationSelectionSection from "../components/optionPage/OccupationSelectionSection.astro";
-import PersonalSelectionSection from "../components/optionPage/PersonalSelectionSection.astro";
+import OptionPage from "../components/optionPage/OptionPage.tsx";
 ---
 
 <Layout title="สว 67">
@@ -17,7 +15,5 @@ import PersonalSelectionSection from "../components/optionPage/PersonalSelection
 			ฉันมีทางเลือก สมัคร สว. แบบไหนบ้าง
 		</h1>
 	</section>
-	<DistrictSelectionSection />
-	<OccupationSelectionSection />
-	<PersonalSelectionSection />
+	<OptionPage client:load />
 </Layout>
