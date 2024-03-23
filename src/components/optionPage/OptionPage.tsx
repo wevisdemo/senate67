@@ -6,7 +6,9 @@ import React from "react";
 const OptionsPage: React.FC = () => {
 	return (
 		<>
-			<DistrictSelectionSection />
+			<DistrictSelectionSection
+				onChangeResult={(result) => console.log("result => ", result)}
+			/>
 			<OccupationSelectionSection />
 			<PersonalSelectionSection />
 			<ResultForRegisterSection />

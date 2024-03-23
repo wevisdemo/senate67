@@ -1,0 +1,3714 @@
+[
+	{
+		"district": "กงไกรลาศ",
+		"province": "สุโขทัย"
+	},
+	{
+		"district": "กงหรา",
+		"province": "พัทลุง"
+	},
+	{
+		"district": "กบินทร์บุรี",
+		"province": "ปราจีนบุรี"
+	},
+	{
+		"district": "กมลาไสย",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "กรงปินัง",
+		"province": "ยะลา"
+	},
+	{
+		"district": "กระทุ่มแบน",
+		"province": "สมุทรสาคร"
+	},
+	{
+		"district": "กระนวน",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "กระบุรี",
+		"province": "ระนอง"
+	},
+	{
+		"district": "กระสัง",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "กระแสสินธุ์",
+		"province": "สงขลา"
+	},
+	{
+		"district": "กะทู้",
+		"province": "ภูเก็ต"
+	},
+	{
+		"district": "กะปง",
+		"province": "พังงา"
+	},
+	{
+		"district": "กะเปอร์",
+		"province": "ระนอง"
+	},
+	{
+		"district": "กะพ้อ",
+		"province": "ปัตตานี"
+	},
+	{
+		"district": "กันตัง",
+		"province": "ตรัง"
+	},
+	{
+		"district": "กันทรลักษ์",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "กันทรวิชัย",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "กันทรารมย์",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "กัลยาณิวัฒนา",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "กาญจนดิษฐ์",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "กาบเชิง",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "กาบัง",
+		"province": "ยะลา"
+	},
+	{
+		"district": "กำแพงแสน",
+		"province": "นครปฐม"
+	},
+	{
+		"district": "กุฉินารายณ์",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "กุดข้าวปุ้น",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "กุดจับ",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "กุดชุม",
+		"province": "ยโสธร"
+	},
+	{
+		"district": "กุดบาก",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "กุดรัง",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "กุมภวาปี",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "กุยบุรี",
+		"province": "ประจวบคีรีขันธ์"
+	},
+	{
+		"district": "กุสุมาลย์",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "กู่แก้ว",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "เกษตรวิสัย",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "เกษตรสมบูรณ์",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "เก้าเลี้ยว",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "เกาะกูด",
+		"province": "ตราด"
+	},
+	{
+		"district": "เกาะคา",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "เกาะจันทร์",
+		"province": "ชลบุรี"
+	},
+	{
+		"district": "เกาะช้าง",
+		"province": "ตราด"
+	},
+	{
+		"district": "เกาะพะงัน",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "เกาะยาว",
+		"province": "พังงา"
+	},
+	{
+		"district": "เกาะลันตา",
+		"province": "กระบี่"
+	},
+	{
+		"district": "เกาะสมุย",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "เกาะสีชัง",
+		"province": "ชลบุรี"
+	},
+	{
+		"district": "แก่งกระจาน",
+		"province": "เพชรบุรี"
+	},
+	{
+		"district": "แก้งคร้อ",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "แก่งคอย",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "แก้งสนามนาง",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "แก่งหางแมว",
+		"province": "จันทบุรี"
+	},
+	{
+		"district": "แกดำ",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "แกลง",
+		"province": "ระยอง"
+	},
+	{
+		"district": "โกรกพระ",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "โกสัมพีนคร",
+		"province": "กำแพงเพชร"
+	},
+	{
+		"district": "โกสุมพิสัย",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "ขนอม",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "ขลุง",
+		"province": "จันทบุรี"
+	},
+	{
+		"district": "ขาณุวรลักษบุรี",
+		"province": "กำแพงเพชร"
+	},
+	{
+		"district": "ขามทะเลสอ",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "ขามสะแกแสง",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "ขุขันธ์",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "ขุนตาล",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "ขุนยวม",
+		"province": "แม่ฮ่องสอน"
+	},
+	{
+		"district": "ขุนหาญ",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "เขมราฐ",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "เขวาสินรินทร์",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "เขาค้อ",
+		"province": "เพชรบูรณ์"
+	},
+	{
+		"district": "เขาคิชฌกูฏ",
+		"province": "จันทบุรี"
+	},
+	{
+		"district": "เขาฉกรรจ์",
+		"province": "สระแก้ว"
+	},
+	{
+		"district": "เขาชะเมา",
+		"province": "ระยอง"
+	},
+	{
+		"district": "เขาชัยสน",
+		"province": "พัทลุง"
+	},
+	{
+		"district": "เขาพนม",
+		"province": "กระบี่"
+	},
+	{
+		"district": "เขาย้อย",
+		"province": "เพชรบุรี"
+	},
+	{
+		"district": "เขาวง",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "เขาสมิง",
+		"province": "ตราด"
+	},
+	{
+		"district": "เขาสวนกวาง",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "เขื่องใน",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "โขงเจียม",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "คง",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "ครบุรี",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "คลองขลุง",
+		"province": "กำแพงเพชร"
+	},
+	{
+		"district": "คลองเขื่อน",
+		"province": "ฉะเชิงเทรา"
+	},
+	{
+		"district": "คลองท่อม",
+		"province": "กระบี่"
+	},
+	{
+		"district": "คลองลาน",
+		"province": "กำแพงเพชร"
+	},
+	{
+		"district": "คลองหลวง",
+		"province": "ปทุมธานี"
+	},
+	{
+		"district": "คลองหอยโข่ง",
+		"province": "สงขลา"
+	},
+	{
+		"district": "คลองหาด",
+		"province": "สระแก้ว"
+	},
+	{
+		"district": "คลองใหญ่",
+		"province": "ตราด"
+	},
+	{
+		"district": "ควนกาหลง",
+		"province": "สตูล"
+	},
+	{
+		"district": "ควนขนุน",
+		"province": "พัทลุง"
+	},
+	{
+		"district": "ควนโดน",
+		"province": "สตูล"
+	},
+	{
+		"district": "ควนเนียง",
+		"province": "สงขลา"
+	},
+	{
+		"district": "คอนสวรรค์",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "คอนสาร",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "ค้อวัง",
+		"province": "ยโสธร"
+	},
+	{
+		"district": "ค่ายบางระจัน",
+		"province": "สิงห์บุรี"
+	},
+	{
+		"district": "คำเขื่อนแก้ว",
+		"province": "ยโสธร"
+	},
+	{
+		"district": "คำชะอี",
+		"province": "มุกดาหาร"
+	},
+	{
+		"district": "คำตากล้า",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "คำม่วง",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "คีรีมาศ",
+		"province": "สุโขทัย"
+	},
+	{
+		"district": "คีรีรัฐนิคม",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "คุระบุรี",
+		"province": "พังงา"
+	},
+	{
+		"district": "คูเมือง",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "เคียนซา",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "แคนดง",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "โคกเจริญ",
+		"province": "ลพบุรี"
+	},
+	{
+		"district": "โคกโพธิ์",
+		"province": "ปัตตานี"
+	},
+	{
+		"district": "โคกโพธิ์ไชย",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "โคกศรีสุพรรณ",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "โคกสำโรง",
+		"province": "ลพบุรี"
+	},
+	{
+		"district": "โคกสูง",
+		"province": "สระแก้ว"
+	},
+	{
+		"district": "ฆ้องชัย",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "งาว",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "จตุรพักตรพิมาน",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "จอมทอง",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "จอมบึง",
+		"province": "ราชบุรี"
+	},
+	{
+		"district": "จอมพระ",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "จะนะ",
+		"province": "สงขลา"
+	},
+	{
+		"district": "จะแนะ",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "จักราช",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "จังหาร",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "จัตุรัส",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "จุน",
+		"province": "พะเยา"
+	},
+	{
+		"district": "จุฬาภรณ์",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "เจริญศิลป์",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "เจาะไอร้อง",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "แจ้ห่ม",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "ฉวาง",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "เฉลิมพระเกียรติ",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "เฉลิมพระเกียรติ",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "เฉลิมพระเกียรติ",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "เฉลิมพระเกียรติ",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "เฉลิมพระเกียรติ",
+		"province": "น่าน"
+	},
+	{
+		"district": "ชนแดน",
+		"province": "เพชรบูรณ์"
+	},
+	{
+		"district": "ชนบท",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "ชะอวด",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "ชะอำ",
+		"province": "เพชรบุรี"
+	},
+	{
+		"district": "ชัยบาดาล",
+		"province": "ลพบุรี"
+	},
+	{
+		"district": "ชัยบุรี",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "ช้างกลาง",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "ชาติตระการ",
+		"province": "พิษณุโลก"
+	},
+	{
+		"district": "ชานุมาน",
+		"province": "อำนาจเจริญ"
+	},
+	{
+		"district": "ชำนิ",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "ชื่นชม",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "ชุมตาบง",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "ชุมพลบุรี",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "ชุมพวง",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "ชุมแพ",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "ชุมแสง",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "เชียงกลาง",
+		"province": "น่าน"
+	},
+	{
+		"district": "เชียงขวัญ",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "เชียงของ",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "เชียงคาน",
+		"province": "เลย"
+	},
+	{
+		"district": "เชียงคำ",
+		"province": "พะเยา"
+	},
+	{
+		"district": "เชียงดาว",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "เชียงม่วน",
+		"province": "พะเยา"
+	},
+	{
+		"district": "เชียงยืน",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "เชียงแสน",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "เชียรใหญ่",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "โชคชัย",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "ไชยปราการ",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "ไชยวาน",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "ไชยา",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "ไชโย",
+		"province": "อ่างทอง"
+	},
+	{
+		"district": "ซับใหญ่",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "ซำสูง",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "เซกา",
+		"province": "บึงกาฬ"
+	},
+	{
+		"district": "โซ่พิสัย",
+		"province": "บึงกาฬ"
+	},
+	{
+		"district": "ดงเจริญ",
+		"province": "พิจิตร"
+	},
+	{
+		"district": "ดงหลวง",
+		"province": "มุกดาหาร"
+	},
+	{
+		"district": "ดอกคำใต้",
+		"province": "พะเยา"
+	},
+	{
+		"district": "ดอนจาน",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "ดอนเจดีย์",
+		"province": "สุพรรณบุรี"
+	},
+	{
+		"district": "ดอนตาล",
+		"province": "มุกดาหาร"
+	},
+	{
+		"district": "ดอนตูม",
+		"province": "นครปฐม"
+	},
+	{
+		"district": "ดอนพุด",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "ดอนมดแดง",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "ดอนสัก",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "ดอยเต่า",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "ดอยสะเก็ด",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "ดอยหลวง",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "ดอยหล่อ",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "ด่านขุนทด",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "ด่านช้าง",
+		"province": "สุพรรณบุรี"
+	},
+	{
+		"district": "ด่านซ้าย",
+		"province": "เลย"
+	},
+	{
+		"district": "ด่านมะขามเตี้ย",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "ดำเนินสะดวก",
+		"province": "ราชบุรี"
+	},
+	{
+		"district": "เดชอุดม",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "เด่นชัย",
+		"province": "แพร่"
+	},
+	{
+		"district": "เดิมบางนางบวช",
+		"province": "สุพรรณบุรี"
+	},
+	{
+		"district": "ตรอน",
+		"province": "อุตรดิตถ์"
+	},
+	{
+		"district": "ตระการพืชผล",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "ตะกั่วทุ่ง",
+		"province": "พังงา"
+	},
+	{
+		"district": "ตะกั่วป่า",
+		"province": "พังงา"
+	},
+	{
+		"district": "ตะพานหิน",
+		"province": "พิจิตร"
+	},
+	{
+		"district": "ตะโหมด",
+		"province": "พัทลุง"
+	},
+	{
+		"district": "ตากใบ",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "ตากฟ้า",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "ตาคลี",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "ตาพระยา",
+		"province": "สระแก้ว"
+	},
+	{
+		"district": "ตาลสุม",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "เต่างอย",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "ถลาง",
+		"province": "ภูเก็ต"
+	},
+	{
+		"district": "ถ้ำพรรณรา",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "เถิน",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "ทรายทองวัฒนา",
+		"province": "กำแพงเพชร"
+	},
+	{
+		"district": "ทรายมูล",
+		"province": "ยโสธร"
+	},
+	{
+		"district": "ทองผาภูมิ",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "ทองแสนขัน",
+		"province": "อุตรดิตถ์"
+	},
+	{
+		"district": "ทับคล้อ",
+		"province": "พิจิตร"
+	},
+	{
+		"district": "ทับปุด",
+		"province": "พังงา"
+	},
+	{
+		"district": "ทับสะแก",
+		"province": "ประจวบคีรีขันธ์"
+	},
+	{
+		"district": "ทัพทัน",
+		"province": "อุทัยธานี"
+	},
+	{
+		"district": "ท่าคันโท",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "ท่าฉาง",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "ท่าชนะ",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "ท่าช้าง",
+		"province": "สิงห์บุรี"
+	},
+	{
+		"district": "ท่าแซะ",
+		"province": "ชุมพร"
+	},
+	{
+		"district": "ท่าตะเกียบ",
+		"province": "ฉะเชิงเทรา"
+	},
+	{
+		"district": "ท่าตะโก",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "ท่าตูม",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "ท่าบ่อ",
+		"province": "หนองคาย"
+	},
+	{
+		"district": "ท่าปลา",
+		"province": "อุตรดิตถ์"
+	},
+	{
+		"district": "ท่าแพ",
+		"province": "สตูล"
+	},
+	{
+		"district": "ท่าม่วง",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "ท่ามะกา",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "ท้ายเหมือง",
+		"province": "พังงา"
+	},
+	{
+		"district": "ท่ายาง",
+		"province": "เพชรบุรี"
+	},
+	{
+		"district": "ท่าเรือ",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "ท่าลี่",
+		"province": "เลย"
+	},
+	{
+		"district": "ท่าวังผา",
+		"province": "น่าน"
+	},
+	{
+		"district": "ท่าวุ้ง",
+		"province": "ลพบุรี"
+	},
+	{
+		"district": "ท่าศาลา",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "ท่าสองยาง",
+		"province": "ตาก"
+	},
+	{
+		"district": "ท่าหลวง",
+		"province": "ลพบุรี"
+	},
+	{
+		"district": "ท่าใหม่",
+		"province": "จันทบุรี"
+	},
+	{
+		"district": "ท่าอุเทน",
+		"province": "นครพนม"
+	},
+	{
+		"district": "ทุ่งเขาหลวง",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "ทุ่งช้าง",
+		"province": "น่าน"
+	},
+	{
+		"district": "ทุ่งตะโก",
+		"province": "ชุมพร"
+	},
+	{
+		"district": "ทุ่งฝน",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "ทุ่งยางแดง",
+		"province": "ปัตตานี"
+	},
+	{
+		"district": "ทุ่งศรีอุดม",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "ทุ่งสง",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "ทุ่งเสลี่ยม",
+		"province": "สุโขทัย"
+	},
+	{
+		"district": "ทุ่งหว้า",
+		"province": "สตูล"
+	},
+	{
+		"district": "ทุ่งหัวช้าง",
+		"province": "ลำพูน"
+	},
+	{
+		"district": "ทุ่งใหญ่",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "เทพสถิต",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "เทพา",
+		"province": "สงขลา"
+	},
+	{
+		"district": "เทพารักษ์",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "เทิง",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "ไทยเจริญ",
+		"province": "ยโสธร"
+	},
+	{
+		"district": "ไทรงาม",
+		"province": "กำแพงเพชร"
+	},
+	{
+		"district": "ไทรน้อย",
+		"province": "นนทบุรี"
+	},
+	{
+		"district": "ไทรโยค",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "ธวัชบุรี",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "ธัญบุรี",
+		"province": "ปทุมธานี"
+	},
+	{
+		"district": "ธาตุพนม",
+		"province": "นครพนม"
+	},
+	{
+		"district": "ธารโต",
+		"province": "ยะลา"
+	},
+	{
+		"district": "นครชัยศรี",
+		"province": "นครปฐม"
+	},
+	{
+		"district": "นครไทย",
+		"province": "พิษณุโลก"
+	},
+	{
+		"district": "นครหลวง",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "นบพิตำ",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "นากลาง",
+		"province": "หนองบัวลำภู"
+	},
+	{
+		"district": "นาแก",
+		"province": "นครพนม"
+	},
+	{
+		"district": "นาคู",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "นางรอง",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "นาจะหลวย",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "นาเชือก",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "นาด้วง",
+		"province": "เลย"
+	},
+	{
+		"district": "นาดี",
+		"province": "ปราจีนบุรี"
+	},
+	{
+		"district": "นาดูน",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "นาตาล",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "นาทม",
+		"province": "นครพนม"
+	},
+	{
+		"district": "นาทวี",
+		"province": "สงขลา"
+	},
+	{
+		"district": "นาน้อย",
+		"province": "น่าน"
+	},
+	{
+		"district": "นาบอน",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "นาโพธิ์",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "นามน",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "นายายอาม",
+		"province": "จันทบุรี"
+	},
+	{
+		"district": "นายูง",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "นาเยีย",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "นาโยง",
+		"province": "ตรัง"
+	},
+	{
+		"district": "นาวัง",
+		"province": "หนองบัวลำภู"
+	},
+	{
+		"district": "นาหม่อม",
+		"province": "สงขลา"
+	},
+	{
+		"district": "นาหมื่น",
+		"province": "น่าน"
+	},
+	{
+		"district": "นาหว้า",
+		"province": "นครพนม"
+	},
+	{
+		"district": "นาแห้ว",
+		"province": "เลย"
+	},
+	{
+		"district": "น้ำเกลี้ยง",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "น้ำขุ่น",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "น้ำปาด",
+		"province": "อุตรดิตถ์"
+	},
+	{
+		"district": "น้ำพอง",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "น้ำยืน",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "น้ำโสม",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "น้ำหนาว",
+		"province": "เพชรบูรณ์"
+	},
+	{
+		"district": "นิคมคำสร้อย",
+		"province": "มุกดาหาร"
+	},
+	{
+		"district": "นิคมน้ำอูน",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "นิคมพัฒนา",
+		"province": "ระยอง"
+	},
+	{
+		"district": "เนินขาม",
+		"province": "ชัยนาท"
+	},
+	{
+		"district": "เนินมะปราง",
+		"province": "พิษณุโลก"
+	},
+	{
+		"district": "เนินสง่า",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "โนนคูณ",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "โนนดินแดง",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "โนนแดง",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "โนนไทย",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "โนนนารายณ์",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "โนนศิลา",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "โนนสะอาด",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "โนนสัง",
+		"province": "หนองบัวลำภู"
+	},
+	{
+		"district": "โนนสุวรรณ",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "โนนสูง",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "บรบือ",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "บรรพตพิสัย",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "บ่อเกลือ",
+		"province": "น่าน"
+	},
+	{
+		"district": "บ่อทอง",
+		"province": "ชลบุรี"
+	},
+	{
+		"district": "บ่อพลอย",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "บ่อไร่",
+		"province": "ตราด"
+	},
+	{
+		"district": "บันนังสตา",
+		"province": "ยะลา"
+	},
+	{
+		"district": "บัวเชด",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "บัวลาย",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "บัวใหญ่",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "บางกรวย",
+		"province": "นนทบุรี"
+	},
+	{
+		"district": "บางกระทุ่ม",
+		"province": "พิษณุโลก"
+	},
+	{
+		"district": "บางกล่ำ",
+		"province": "สงขลา"
+	},
+	{
+		"district": "บางแก้ว",
+		"province": "พัทลุง"
+	},
+	{
+		"district": "บางขัน",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "บางคนที",
+		"province": "สมุทรสงคราม"
+	},
+	{
+		"district": "บางคล้า",
+		"province": "ฉะเชิงเทรา"
+	},
+	{
+		"district": "บางซ้าย",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "บางไทร",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "บางน้ำเปรี้ยว",
+		"province": "ฉะเชิงเทรา"
+	},
+	{
+		"district": "บางบ่อ",
+		"province": "สมุทรปราการ"
+	},
+	{
+		"district": "บางบัวทอง",
+		"province": "นนทบุรี"
+	},
+	{
+		"district": "บางบาล",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "บางปลาม้า",
+		"province": "สุพรรณบุรี"
+	},
+	{
+		"district": "บางปะกง",
+		"province": "ฉะเชิงเทรา"
+	},
+	{
+		"district": "บางปะหัน",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "บางปะอิน",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "บางพลี",
+		"province": "สมุทรปราการ"
+	},
+	{
+		"district": "บางแพ",
+		"province": "ราชบุรี"
+	},
+	{
+		"district": "บางมูลนาก",
+		"province": "พิจิตร"
+	},
+	{
+		"district": "บางระกำ",
+		"province": "พิษณุโลก"
+	},
+	{
+		"district": "บางระจัน",
+		"province": "สิงห์บุรี"
+	},
+	{
+		"district": "บางละมุง",
+		"province": "ชลบุรี"
+	},
+	{
+		"district": "บางเลน",
+		"province": "นครปฐม"
+	},
+	{
+		"district": "บางสะพาน",
+		"province": "ประจวบคีรีขันธ์"
+	},
+	{
+		"district": "บางสะพานน้อย",
+		"province": "ประจวบคีรีขันธ์"
+	},
+	{
+		"district": "บางเสาธง",
+		"province": "สมุทรปราการ"
+	},
+	{
+		"district": "บางใหญ่",
+		"province": "นนทบุรี"
+	},
+	{
+		"district": "บาเจาะ",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "บ้านกรวด",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "บ้านเขว้า",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "บ้านคา",
+		"province": "ราชบุรี"
+	},
+	{
+		"district": "บ้านค่าย",
+		"province": "ระยอง"
+	},
+	{
+		"district": "บ้านโคก",
+		"province": "อุตรดิตถ์"
+	},
+	{
+		"district": "บ้านฉาง",
+		"province": "ระยอง"
+	},
+	{
+		"district": "บ้านด่าน",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "บ้านด่านลานหอย",
+		"province": "สุโขทัย"
+	},
+	{
+		"district": "บ้านดุง",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "บ้านตาก",
+		"province": "ตาก"
+	},
+	{
+		"district": "บ้านตาขุน",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "บ้านแท่น",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "บ้านธิ",
+		"province": "ลำพูน"
+	},
+	{
+		"district": "บ้านนา",
+		"province": "นครนายก"
+	},
+	{
+		"district": "บ้านนาเดิม",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "บ้านนาสาร",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "บ้านบึง",
+		"province": "ชลบุรี"
+	},
+	{
+		"district": "บ้านโป่ง",
+		"province": "ราชบุรี"
+	},
+	{
+		"district": "บ้านผือ",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "บ้านไผ่",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "บ้านฝาง",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "บ้านแพง",
+		"province": "นครพนม"
+	},
+	{
+		"district": "บ้านแพรก",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "บ้านแพ้ว",
+		"province": "สมุทรสาคร"
+	},
+	{
+		"district": "บ้านโพธิ์",
+		"province": "ฉะเชิงเทรา"
+	},
+	{
+		"district": "บ้านม่วง",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "บ้านไร่",
+		"province": "อุทัยธานี"
+	},
+	{
+		"district": "บ้านลาด",
+		"province": "เพชรบุรี"
+	},
+	{
+		"district": "บ้านสร้าง",
+		"province": "ปราจีนบุรี"
+	},
+	{
+		"district": "บ้านหมอ",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "บ้านหมี่",
+		"province": "ลพบุรี"
+	},
+	{
+		"district": "บ้านหลวง",
+		"province": "น่าน"
+	},
+	{
+		"district": "บ้านเหลื่อม",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "บ้านแหลม",
+		"province": "เพชรบุรี"
+	},
+	{
+		"district": "บ้านใหม่ไชยพจน์",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "บ้านแฮด",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "บ้านโฮ่ง",
+		"province": "ลำพูน"
+	},
+	{
+		"district": "บำเหน็จณรงค์",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "บึงโขงหลง",
+		"province": "บึงกาฬ"
+	},
+	{
+		"district": "บึงนาราง",
+		"province": "พิจิตร"
+	},
+	{
+		"district": "บึงบูรพ์",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "บึงสามพัน",
+		"province": "เพชรบูรณ์"
+	},
+	{
+		"district": "บึงสามัคคี",
+		"province": "กำแพงเพชร"
+	},
+	{
+		"district": "บุ่งคล้า",
+		"province": "บึงกาฬ"
+	},
+	{
+		"district": "บุณฑริก",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "เบญจลักษ์",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "เบตง",
+		"province": "ยะลา"
+	},
+	{
+		"district": "ปง",
+		"province": "พะเยา"
+	},
+	{
+		"district": "ปทุมรัตต์",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "ปทุมราชวงศา",
+		"province": "อำนาจเจริญ"
+	},
+	{
+		"district": "ประโคนชัย",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "ประจักษ์ศิลปาคม",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "ประจันตคาม",
+		"province": "ปราจีนบุรี"
+	},
+	{
+		"district": "ประทาย",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "ปรางค์กู่",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "ปราณบุรี",
+		"province": "ประจวบคีรีขันธ์"
+	},
+	{
+		"district": "ปราสาท",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "ปลวกแดง",
+		"province": "ระยอง"
+	},
+	{
+		"district": "ปลาปาก",
+		"province": "นครพนม"
+	},
+	{
+		"district": "ปลายพระยา",
+		"province": "กระบี่"
+	},
+	{
+		"district": "ปะคำ",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "ปะทิว",
+		"province": "ชุมพร"
+	},
+	{
+		"district": "ปะนาเระ",
+		"province": "ปัตตานี"
+	},
+	{
+		"district": "ปะเหลียน",
+		"province": "ตรัง"
+	},
+	{
+		"district": "ปักธงชัย",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "ปัว",
+		"province": "น่าน"
+	},
+	{
+		"district": "ปากเกร็ด",
+		"province": "นนทบุรี"
+	},
+	{
+		"district": "ปากคาด",
+		"province": "บึงกาฬ"
+	},
+	{
+		"district": "ปากชม",
+		"province": "เลย"
+	},
+	{
+		"district": "ปากช่อง",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "ปากท่อ",
+		"province": "ราชบุรี"
+	},
+	{
+		"district": "ปากพนัง",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "ปากพลี",
+		"province": "นครนายก"
+	},
+	{
+		"district": "ปากพะยูน",
+		"province": "พัทลุง"
+	},
+	{
+		"district": "ปางมะผ้า",
+		"province": "แม่ฮ่องสอน"
+	},
+	{
+		"district": "ปางศิลาทอง",
+		"province": "กำแพงเพชร"
+	},
+	{
+		"district": "ป่าซาง",
+		"province": "ลำพูน"
+	},
+	{
+		"district": "ป่าแดด",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "ป่าติ้ว",
+		"province": "ยโสธร"
+	},
+	{
+		"district": "ป่าบอน",
+		"province": "พัทลุง"
+	},
+	{
+		"district": "ป่าพะยอม",
+		"province": "พัทลุง"
+	},
+	{
+		"district": "ป่าโมก",
+		"province": "อ่างทอง"
+	},
+	{
+		"district": "ปาย",
+		"province": "แม่ฮ่องสอน"
+	},
+	{
+		"district": "เปือยน้อย",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "แปลงยาว",
+		"province": "ฉะเชิงเทรา"
+	},
+	{
+		"district": "โป่งน้ำร้อน",
+		"province": "จันทบุรี"
+	},
+	{
+		"district": "ผักไห่",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "ผาขาว",
+		"province": "เลย"
+	},
+	{
+		"district": "ฝาง",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "เฝ้าไร่",
+		"province": "หนองคาย"
+	},
+	{
+		"district": "พญาเม็งราย",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "พนม",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "พนมดงรัก",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "พนมทวน",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "พนมไพร",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "พนมสารคาม",
+		"province": "ฉะเชิงเทรา"
+	},
+	{
+		"district": "พนัสนิคม",
+		"province": "ชลบุรี"
+	},
+	{
+		"district": "พนา",
+		"province": "อำนาจเจริญ"
+	},
+	{
+		"district": "พบพระ",
+		"province": "ตาก"
+	},
+	{
+		"district": "พยัคฆภูมิพิสัย",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "พยุห์",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "พยุหะคีรี",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "พรเจริญ",
+		"province": "บึงกาฬ"
+	},
+	{
+		"district": "พรรณนานิคม",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "พรหมคีรี",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "พรหมบุรี",
+		"province": "สิงห์บุรี"
+	},
+	{
+		"district": "พรหมพิราม",
+		"province": "พิษณุโลก"
+	},
+	{
+		"district": "พระทองคำ",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "พระนครศรีอยุธยา",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "พระประแดง",
+		"province": "สมุทรปราการ"
+	},
+	{
+		"district": "พระพรหม",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "พระพุทธบาท",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "พระยืน",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "พระสมุทรเจดีย์",
+		"province": "สมุทรปราการ"
+	},
+	{
+		"district": "พระแสง",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "พรานกระต่าย",
+		"province": "กำแพงเพชร"
+	},
+	{
+		"district": "พร้าว",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "พล",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "พลับพลาชัย",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "พะโต๊ะ",
+		"province": "ชุมพร"
+	},
+	{
+		"district": "พังโคน",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "พัฒนานิคม",
+		"province": "ลพบุรี"
+	},
+	{
+		"district": "พาน",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "พานทอง",
+		"province": "ชลบุรี"
+	},
+	{
+		"district": "พิชัย",
+		"province": "อุตรดิตถ์"
+	},
+	{
+		"district": "พิบูลมังสาหาร",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "พิบูลย์รักษ์",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "พิปูน",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "พิมาย",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "พุทธมณฑล",
+		"province": "นครปฐม"
+	},
+	{
+		"district": "พุทไธสง",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "พุนพิน",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "เพ็ญ",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "โพทะเล",
+		"province": "พิจิตร"
+	},
+	{
+		"district": "โพธาราม",
+		"province": "ราชบุรี"
+	},
+	{
+		"district": "โพธิ์ชัย",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "โพธิ์ตาก",
+		"province": "หนองคาย"
+	},
+	{
+		"district": "โพธิ์ทอง",
+		"province": "อ่างทอง"
+	},
+	{
+		"district": "โพธิ์ไทร",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "โพธิ์ประทับช้าง",
+		"province": "พิจิตร"
+	},
+	{
+		"district": "โพธิ์ศรีสุวรรณ",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "โพนทราย",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "โพนทอง",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "โพนนาแก้ว",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "โพนพิสัย",
+		"province": "หนองคาย"
+	},
+	{
+		"district": "โพนสวรรค์",
+		"province": "นครพนม"
+	},
+	{
+		"district": "ไพรบึง",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "ไพศาลี",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "ฟากท่า",
+		"province": "อุตรดิตถ์"
+	},
+	{
+		"district": "ภักดีชุมพล",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "ภาชี",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "ภูกระดึง",
+		"province": "เลย"
+	},
+	{
+		"district": "ภูกามยาว",
+		"province": "พะเยา"
+	},
+	{
+		"district": "ภูเขียว",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "ภูซาง",
+		"province": "พะเยา"
+	},
+	{
+		"district": "ภูผาม่าน",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "ภูพาน",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "ภูเพียง",
+		"province": "น่าน"
+	},
+	{
+		"district": "ภูเรือ",
+		"province": "เลย"
+	},
+	{
+		"district": "ภูเวียง",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "ภูสิงห์",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "ภูหลวง",
+		"province": "เลย"
+	},
+	{
+		"district": "มโนรมย์",
+		"province": "ชัยนาท"
+	},
+	{
+		"district": "มวกเหล็ก",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "ม่วงสามสิบ",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "มหาชนะชัย",
+		"province": "ยโสธร"
+	},
+	{
+		"district": "มหาราช",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "มะขาม",
+		"province": "จันทบุรี"
+	},
+	{
+		"district": "มะนัง",
+		"province": "สตูล"
+	},
+	{
+		"district": "มัญจาคีรี",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "มายอ",
+		"province": "ปัตตานี"
+	},
+	{
+		"district": "เมยวดี",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "เมืองกระบี่",
+		"province": "กระบี่"
+	},
+	{
+		"district": "เมืองกาญจนบุรี",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "เมืองกาฬสินธุ์",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "เมืองกำแพงเพชร",
+		"province": "กำแพงเพชร"
+	},
+	{
+		"district": "เมืองขอนแก่น",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "เมืองจันทบุรี",
+		"province": "จันทบุรี"
+	},
+	{
+		"district": "เมืองจันทร์",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "เมืองฉะเชิงเทรา",
+		"province": "ฉะเชิงเทรา"
+	},
+	{
+		"district": "เมืองชลบุรี",
+		"province": "ชลบุรี"
+	},
+	{
+		"district": "เมืองชัยนาท",
+		"province": "ชัยนาท"
+	},
+	{
+		"district": "เมืองชัยภูมิ",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "เมืองชุมพร",
+		"province": "ชุมพร"
+	},
+	{
+		"district": "เมืองเชียงราย",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "เมืองเชียงใหม่",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "เมืองตรัง",
+		"province": "ตรัง"
+	},
+	{
+		"district": "เมืองตราด",
+		"province": "ตราด"
+	},
+	{
+		"district": "เมืองตาก",
+		"province": "ตาก"
+	},
+	{
+		"district": "เมืองนครนายก",
+		"province": "นครนายก"
+	},
+	{
+		"district": "เมืองนครปฐม",
+		"province": "นครปฐม"
+	},
+	{
+		"district": "เมืองนครพนม",
+		"province": "นครพนม"
+	},
+	{
+		"district": "เมืองนครราชสีมา",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "เมืองนครศรีธรรมราช",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "เมืองนครสวรรค์",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "เมืองนนทบุรี",
+		"province": "นนทบุรี"
+	},
+	{
+		"district": "เมืองนราธิวาส",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "เมืองน่าน",
+		"province": "น่าน"
+	},
+	{
+		"district": "เมืองบึงกาฬ",
+		"province": "บึงกาฬ"
+	},
+	{
+		"district": "เมืองบุรีรัมย์",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "เมืองปทุมธานี",
+		"province": "ปทุมธานี"
+	},
+	{
+		"district": "เมืองประจวบคีรีขันธ์",
+		"province": "ประจวบคีรีขันธ์"
+	},
+	{
+		"district": "เมืองปราจีนบุรี",
+		"province": "ปราจีนบุรี"
+	},
+	{
+		"district": "เมืองปัตตานี",
+		"province": "ปัตตานี"
+	},
+	{
+		"district": "เมืองปาน",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "เมืองพะเยา",
+		"province": "พะเยา"
+	},
+	{
+		"district": "เมืองพังงา",
+		"province": "พังงา"
+	},
+	{
+		"district": "เมืองพัทลุง",
+		"province": "พัทลุง"
+	},
+	{
+		"district": "เมืองพิจิตร",
+		"province": "พิจิตร"
+	},
+	{
+		"district": "เมืองพิษณุโลก",
+		"province": "พิษณุโลก"
+	},
+	{
+		"district": "เมืองเพชรบุรี",
+		"province": "เพชรบุรี"
+	},
+	{
+		"district": "เมืองเพชรบูรณ์",
+		"province": "เพชรบูรณ์"
+	},
+	{
+		"district": "เมืองแพร่",
+		"province": "แพร่"
+	},
+	{
+		"district": "เมืองภูเก็ต",
+		"province": "ภูเก็ต"
+	},
+	{
+		"district": "เมืองมหาสารคาม",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "เมืองมุกดาหาร",
+		"province": "มุกดาหาร"
+	},
+	{
+		"district": "เมืองแม่ฮ่องสอน",
+		"province": "แม่ฮ่องสอน"
+	},
+	{
+		"district": "เมืองยโสธร",
+		"province": "ยโสธร"
+	},
+	{
+		"district": "เมืองยะลา",
+		"province": "ยะลา"
+	},
+	{
+		"district": "เมืองยาง",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "เมืองร้อยเอ็ด",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "เมืองระนอง",
+		"province": "ระนอง"
+	},
+	{
+		"district": "เมืองระยอง",
+		"province": "ระยอง"
+	},
+	{
+		"district": "เมืองราชบุรี",
+		"province": "ราชบุรี"
+	},
+	{
+		"district": "เมืองลพบุรี",
+		"province": "ลพบุรี"
+	},
+	{
+		"district": "เมืองลำปาง",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "เมืองลำพูน",
+		"province": "ลำพูน"
+	},
+	{
+		"district": "เมืองเลย",
+		"province": "เลย"
+	},
+	{
+		"district": "เมืองศรีสะเกษ",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "เมืองสกลนคร",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "เมืองสงขลา",
+		"province": "สงขลา"
+	},
+	{
+		"district": "เมืองสตูล",
+		"province": "สตูล"
+	},
+	{
+		"district": "เมืองสมุทรปราการ",
+		"province": "สมุทรปราการ"
+	},
+	{
+		"district": "เมืองสมุทรสงคราม",
+		"province": "สมุทรสงคราม"
+	},
+	{
+		"district": "เมืองสมุทรสาคร",
+		"province": "สมุทรสาคร"
+	},
+	{
+		"district": "เมืองสรวง",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "เมืองสระแก้ว",
+		"province": "สระแก้ว"
+	},
+	{
+		"district": "เมืองสระบุรี",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "เมืองสิงห์บุรี",
+		"province": "สิงห์บุรี"
+	},
+	{
+		"district": "เมืองสุโขทัย",
+		"province": "สุโขทัย"
+	},
+	{
+		"district": "เมืองสุพรรณบุรี",
+		"province": "สุพรรณบุรี"
+	},
+	{
+		"district": "เมืองสุราษฎร์ธานี",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "เมืองสุรินทร์",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "เมืองหนองคาย",
+		"province": "หนองคาย"
+	},
+	{
+		"district": "เมืองหนองบัวลำภู",
+		"province": "หนองบัวลำภู"
+	},
+	{
+		"district": "เมืองอ่างทอง",
+		"province": "อ่างทอง"
+	},
+	{
+		"district": "เมืองอำนาจเจริญ",
+		"province": "อำนาจเจริญ"
+	},
+	{
+		"district": "เมืองอุดรธานี",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "เมืองอุตรดิตถ์",
+		"province": "อุตรดิตถ์"
+	},
+	{
+		"district": "เมืองอุทัยธานี",
+		"province": "อุทัยธานี"
+	},
+	{
+		"district": "เมืองอุบลราชธานี",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "แม่จริม",
+		"province": "น่าน"
+	},
+	{
+		"district": "แม่จัน",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "แม่แจ่ม",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "แม่ใจ",
+		"province": "พะเยา"
+	},
+	{
+		"district": "แม่แตง",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "แม่ทะ",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "แม่ทา",
+		"province": "ลำพูน"
+	},
+	{
+		"district": "แม่เปิน",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "แม่พริก",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "แม่ฟ้าหลวง",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "แม่เมาะ",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "แม่ระมาด",
+		"province": "ตาก"
+	},
+	{
+		"district": "แม่ริม",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "แม่ลาน",
+		"province": "ปัตตานี"
+	},
+	{
+		"district": "แม่ลาน้อย",
+		"province": "แม่ฮ่องสอน"
+	},
+	{
+		"district": "แม่ลาว",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "แม่วงก์",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "แม่วาง",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "แม่สรวย",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "แม่สอด",
+		"province": "ตาก"
+	},
+	{
+		"district": "แม่สะเรียง",
+		"province": "แม่ฮ่องสอน"
+	},
+	{
+		"district": "แม่สาย",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "แม่ออน",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "แม่อาย",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "ไม้แก่น",
+		"province": "ปัตตานี"
+	},
+	{
+		"district": "ยะรัง",
+		"province": "ปัตตานี"
+	},
+	{
+		"district": "ยะหริ่ง",
+		"province": "ปัตตานี"
+	},
+	{
+		"district": "ยะหา",
+		"province": "ยะลา"
+	},
+	{
+		"district": "ยางชุมน้อย",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "ยางตลาด",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "ยางสีสุราช",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "ย่านตาขาว",
+		"province": "ตรัง"
+	},
+	{
+		"district": "ยี่งอ",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "ร้องกวาง",
+		"province": "แพร่"
+	},
+	{
+		"district": "ร่องคำ",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "ร่อนพิบูลย์",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "ระแงะ",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "ระโนด",
+		"province": "สงขลา"
+	},
+	{
+		"district": "รัตนบุรี",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "รัตนวาปี",
+		"province": "หนองคาย"
+	},
+	{
+		"district": "รัตภูมิ",
+		"province": "สงขลา"
+	},
+	{
+		"district": "รัษฎา",
+		"province": "ตรัง"
+	},
+	{
+		"district": "ราชสาส์น",
+		"province": "ฉะเชิงเทรา"
+	},
+	{
+		"district": "รามัน",
+		"province": "ยะลา"
+	},
+	{
+		"district": "ราษีไศล",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "รือเสาะ",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "เรณูนคร",
+		"province": "นครพนม"
+	},
+	{
+		"district": "ลอง",
+		"province": "แพร่"
+	},
+	{
+		"district": "ละงู",
+		"province": "สตูล"
+	},
+	{
+		"district": "ละแม",
+		"province": "ชุมพร"
+	},
+	{
+		"district": "ละหานทราย",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "ละอุ่น",
+		"province": "ระนอง"
+	},
+	{
+		"district": "ลับแล",
+		"province": "อุตรดิตถ์"
+	},
+	{
+		"district": "ลาดบัวหลวง",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "ลาดยาว",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "ลาดหลุมแก้ว",
+		"province": "ปทุมธานี"
+	},
+	{
+		"district": "ลานกระบือ",
+		"province": "กำแพงเพชร"
+	},
+	{
+		"district": "ลานสกา",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "ลานสัก",
+		"province": "อุทัยธานี"
+	},
+	{
+		"district": "ลำดวน",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "ลำทะเมนชัย",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "ลำทับ",
+		"province": "กระบี่"
+	},
+	{
+		"district": "ลำปลายมาศ",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "ลำลูกกา",
+		"province": "ปทุมธานี"
+	},
+	{
+		"district": "ลำสนธิ",
+		"province": "ลพบุรี"
+	},
+	{
+		"district": "ลี้",
+		"province": "ลำพูน"
+	},
+	{
+		"district": "ลืออำนาจ",
+		"province": "อำนาจเจริญ"
+	},
+	{
+		"district": "เลาขวัญ",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "เลิงนกทา",
+		"province": "ยโสธร"
+	},
+	{
+		"district": "วชิรบารมี",
+		"province": "พิจิตร"
+	},
+	{
+		"district": "วังจันทร์",
+		"province": "ระยอง"
+	},
+	{
+		"district": "วังเจ้า",
+		"province": "ตาก"
+	},
+	{
+		"district": "วังชิ้น",
+		"province": "แพร่"
+	},
+	{
+		"district": "วังทรายพูน",
+		"province": "พิจิตร"
+	},
+	{
+		"district": "วังทอง",
+		"province": "พิษณุโลก"
+	},
+	{
+		"district": "วังน้อย",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "วังน้ำเขียว",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "วังน้ำเย็น",
+		"province": "สระแก้ว"
+	},
+	{
+		"district": "วังโป่ง",
+		"province": "เพชรบูรณ์"
+	},
+	{
+		"district": "วังม่วง",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "วังยาง",
+		"province": "นครพนม"
+	},
+	{
+		"district": "วังวิเศษ",
+		"province": "ตรัง"
+	},
+	{
+		"district": "วังสมบูรณ์",
+		"province": "สระแก้ว"
+	},
+	{
+		"district": "วังสะพุง",
+		"province": "เลย"
+	},
+	{
+		"district": "วังสามหมอ",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "วังหิน",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "วังเหนือ",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "วัฒนานคร",
+		"province": "สระแก้ว"
+	},
+	{
+		"district": "วัดโบสถ์",
+		"province": "พิษณุโลก"
+	},
+	{
+		"district": "วัดเพลง",
+		"province": "ราชบุรี"
+	},
+	{
+		"district": "วัดสิงห์",
+		"province": "ชัยนาท"
+	},
+	{
+		"district": "วานรนิวาส",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "วาปีปทุม",
+		"province": "มหาสารคาม"
+	},
+	{
+		"district": "วาริชภูมิ",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "วารินชำราบ",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "วิเชียรบุรี",
+		"province": "เพชรบูรณ์"
+	},
+	{
+		"district": "วิภาวดี",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "วิเศษชัยชาญ",
+		"province": "อ่างทอง"
+	},
+	{
+		"district": "วิหารแดง",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "เวียงเก่า",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "เวียงแก่น",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "เวียงชัย",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "เวียงเชียงรุ้ง",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "เวียงป่าเป้า",
+		"province": "เชียงราย"
+	},
+	{
+		"district": "เวียงสระ",
+		"province": "สุราษฎร์ธานี"
+	},
+	{
+		"district": "เวียงสา",
+		"province": "น่าน"
+	},
+	{
+		"district": "เวียงหนองล่อง",
+		"province": "ลำพูน"
+	},
+	{
+		"district": "เวียงแหง",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "แว้ง",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "แวงน้อย",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "แวงใหญ่",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "ศรีเชียงใหม่",
+		"province": "หนองคาย"
+	},
+	{
+		"district": "ศรีณรงค์",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "ศรีเทพ",
+		"province": "เพชรบูรณ์"
+	},
+	{
+		"district": "ศรีธาตุ",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "ศรีนคร",
+		"province": "สุโขทัย"
+	},
+	{
+		"district": "ศรีนครินทร์",
+		"province": "พัทลุง"
+	},
+	{
+		"district": "ศรีบรรพต",
+		"province": "พัทลุง"
+	},
+	{
+		"district": "ศรีบุญเรือง",
+		"province": "หนองบัวลำภู"
+	},
+	{
+		"district": "ศรีประจันต์",
+		"province": "สุพรรณบุรี"
+	},
+	{
+		"district": "ศรีมหาโพธิ",
+		"province": "ปราจีนบุรี"
+	},
+	{
+		"district": "ศรีมโหสถ",
+		"province": "ปราจีนบุรี"
+	},
+	{
+		"district": "ศรีเมืองใหม่",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "ศรีรัตนะ",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "ศรีราชา",
+		"province": "ชลบุรี"
+	},
+	{
+		"district": "ศรีวิไล",
+		"province": "บึงกาฬ"
+	},
+	{
+		"district": "ศรีสงคราม",
+		"province": "นครพนม"
+	},
+	{
+		"district": "ศรีสมเด็จ",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "ศรีสวัสดิ์",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "ศรีสัชนาลัย",
+		"province": "สุโขทัย"
+	},
+	{
+		"district": "ศรีสาคร",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "ศรีสำโรง",
+		"province": "สุโขทัย"
+	},
+	{
+		"district": "ศิลาลาด",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "ศีขรภูมิ",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "สตึก",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "สทิงพระ",
+		"province": "สงขลา"
+	},
+	{
+		"district": "สนม",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "สนามชัยเขต",
+		"province": "ฉะเชิงเทรา"
+	},
+	{
+		"district": "สบปราบ",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "สบเมย",
+		"province": "แม่ฮ่องสอน"
+	},
+	{
+		"district": "สมเด็จ",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "สรรคบุรี",
+		"province": "ชัยนาท"
+	},
+	{
+		"district": "สรรพยา",
+		"province": "ชัยนาท"
+	},
+	{
+		"district": "สระใคร",
+		"province": "หนองคาย"
+	},
+	{
+		"district": "สระโบสถ์",
+		"province": "ลพบุรี"
+	},
+	{
+		"district": "สร้างคอม",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "สวนผึ้ง",
+		"province": "ราชบุรี"
+	},
+	{
+		"district": "สวรรคโลก",
+		"province": "สุโขทัย"
+	},
+	{
+		"district": "สว่างแดนดิน",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "สว่างวีระวงศ์",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "สว่างอารมณ์",
+		"province": "อุทัยธานี"
+	},
+	{
+		"district": "สวี",
+		"province": "ชุมพร"
+	},
+	{
+		"district": "สหัสขันธ์",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "สอง",
+		"province": "แพร่"
+	},
+	{
+		"district": "สองแคว",
+		"province": "น่าน"
+	},
+	{
+		"district": "ส่องดาว",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "สองพี่น้อง",
+		"province": "สุพรรณบุรี"
+	},
+	{
+		"district": "สอยดาว",
+		"province": "จันทบุรี"
+	},
+	{
+		"district": "สะเดา",
+		"province": "สงขลา"
+	},
+	{
+		"district": "สะบ้าย้อย",
+		"province": "สงขลา"
+	},
+	{
+		"district": "สะเมิง",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "สังขละบุรี",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "สังขะ",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "สังคม",
+		"province": "หนองคาย"
+	},
+	{
+		"district": "สัตหีบ",
+		"province": "ชลบุรี"
+	},
+	{
+		"district": "สันกำแพง",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "สันติสุข",
+		"province": "น่าน"
+	},
+	{
+		"district": "สันทราย",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "สันป่าตอง",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "สากเหล็ก",
+		"province": "พิจิตร"
+	},
+	{
+		"district": "สามโก้",
+		"province": "อ่างทอง"
+	},
+	{
+		"district": "สามโคก",
+		"province": "ปทุมธานี"
+	},
+	{
+		"district": "สามง่าม",
+		"province": "พิจิตร"
+	},
+	{
+		"district": "สามเงา",
+		"province": "ตาก"
+	},
+	{
+		"district": "สามชัย",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "สามชุก",
+		"province": "สุพรรณบุรี"
+	},
+	{
+		"district": "สามพราน",
+		"province": "นครปฐม"
+	},
+	{
+		"district": "สามร้อยยอด",
+		"province": "ประจวบคีรีขันธ์"
+	},
+	{
+		"district": "สายบุรี",
+		"province": "ปัตตานี"
+	},
+	{
+		"district": "สารภี",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "สำโรง",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "สำโรงทาบ",
+		"province": "สุรินทร์"
+	},
+	{
+		"district": "สิเกา",
+		"province": "ตรัง"
+	},
+	{
+		"district": "สิงหนคร",
+		"province": "สงขลา"
+	},
+	{
+		"district": "สิชล",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "สิรินธร",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "สีคิ้ว",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "สีชมพู",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "สีดา",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "สุขสำราญ",
+		"province": "ระนอง"
+	},
+	{
+		"district": "สุคิริน",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "สุวรรณคูหา",
+		"province": "หนองบัวลำภู"
+	},
+	{
+		"district": "สุวรรณภูมิ",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "สุไหงโก-ลก",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "สุไหงปาดี",
+		"province": "นราธิวาส"
+	},
+	{
+		"district": "สูงเนิน",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "สูงเม่น",
+		"province": "แพร่"
+	},
+	{
+		"district": "เสนา",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "เสนางคนิคม",
+		"province": "อำนาจเจริญ"
+	},
+	{
+		"district": "เสริมงาม",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "เสลภูมิ",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "เสาไห้",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "เสิงสาง",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "แสวงหา",
+		"province": "อ่างทอง"
+	},
+	{
+		"district": "หนองกี่",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "หนองกุงศรี",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "หนองขาหย่าง",
+		"province": "อุทัยธานี"
+	},
+	{
+		"district": "หนองแค",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "หนองจิก",
+		"province": "ปัตตานี"
+	},
+	{
+		"district": "หนองฉาง",
+		"province": "อุทัยธานี"
+	},
+	{
+		"district": "หนองแซง",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "หนองโดน",
+		"province": "สระบุรี"
+	},
+	{
+		"district": "หนองนาคำ",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "หนองบัว",
+		"province": "นครสวรรค์"
+	},
+	{
+		"district": "หนองบัวแดง",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "หนองบัวระเหว",
+		"province": "ชัยภูมิ"
+	},
+	{
+		"district": "หนองบุญมาก",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "หนองปรือ",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "หนองไผ่",
+		"province": "เพชรบูรณ์"
+	},
+	{
+		"district": "หนองพอก",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "หนองม่วง",
+		"province": "ลพบุรี"
+	},
+	{
+		"district": "หนองม่วงไข่",
+		"province": "แพร่"
+	},
+	{
+		"district": "หนองมะโมง",
+		"province": "ชัยนาท"
+	},
+	{
+		"district": "หนองเรือ",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "หนองวัวซอ",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "หนองสองห้อง",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "หนองสูง",
+		"province": "มุกดาหาร"
+	},
+	{
+		"district": "หนองเสือ",
+		"province": "ปทุมธานี"
+	},
+	{
+		"district": "หนองแสง",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "หนองหงส์",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "หนองหญ้าไซ",
+		"province": "สุพรรณบุรี"
+	},
+	{
+		"district": "หนองหญ้าปล้อง",
+		"province": "เพชรบุรี"
+	},
+	{
+		"district": "หนองหาน",
+		"province": "อุดรธานี"
+	},
+	{
+		"district": "หนองหิน",
+		"province": "เลย"
+	},
+	{
+		"district": "หนองใหญ่",
+		"province": "ชลบุรี"
+	},
+	{
+		"district": "หนองฮี",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "หล่มเก่า",
+		"province": "เพชรบูรณ์"
+	},
+	{
+		"district": "หล่มสัก",
+		"province": "เพชรบูรณ์"
+	},
+	{
+		"district": "หลังสวน",
+		"province": "ชุมพร"
+	},
+	{
+		"district": "ห้วยกระเจา",
+		"province": "กาญจนบุรี"
+	},
+	{
+		"district": "ห้วยคต",
+		"province": "อุทัยธานี"
+	},
+	{
+		"district": "ห้วยแถลง",
+		"province": "นครราชสีมา"
+	},
+	{
+		"district": "ห้วยทับทัน",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "ห้วยผึ้ง",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "ห้วยเม็ก",
+		"province": "กาฬสินธุ์"
+	},
+	{
+		"district": "ห้วยยอด",
+		"province": "ตรัง"
+	},
+	{
+		"district": "ห้วยราช",
+		"province": "บุรีรัมย์"
+	},
+	{
+		"district": "หว้านใหญ่",
+		"province": "มุกดาหาร"
+	},
+	{
+		"district": "หันคา",
+		"province": "ชัยนาท"
+	},
+	{
+		"district": "หัวตะพาน",
+		"province": "อำนาจเจริญ"
+	},
+	{
+		"district": "หัวไทร",
+		"province": "นครศรีธรรมราช"
+	},
+	{
+		"district": "หัวหิน",
+		"province": "ประจวบคีรีขันธ์"
+	},
+	{
+		"district": "ห้างฉัตร",
+		"province": "ลำปาง"
+	},
+	{
+		"district": "หางดง",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "หาดสำราญ",
+		"province": "ตรัง"
+	},
+	{
+		"district": "หาดใหญ่",
+		"province": "สงขลา"
+	},
+	{
+		"district": "เหนือคลอง",
+		"province": "กระบี่"
+	},
+	{
+		"district": "เหล่าเสือโก้ก",
+		"province": "อุบลราชธานี"
+	},
+	{
+		"district": "แหลมงอบ",
+		"province": "ตราด"
+	},
+	{
+		"district": "แหลมสิงห์",
+		"province": "จันทบุรี"
+	},
+	{
+		"district": "องครักษ์",
+		"province": "นครนายก"
+	},
+	{
+		"district": "อมก๋อย",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "อรัญประเทศ",
+		"province": "สระแก้ว"
+	},
+	{
+		"district": "อัมพวา",
+		"province": "สมุทรสงคราม"
+	},
+	{
+		"district": "อากาศอำนวย",
+		"province": "สกลนคร"
+	},
+	{
+		"district": "อาจสามารถ",
+		"province": "ร้อยเอ็ด"
+	},
+	{
+		"district": "อ่าวลึก",
+		"province": "กระบี่"
+	},
+	{
+		"district": "อินทร์บุรี",
+		"province": "สิงห์บุรี"
+	},
+	{
+		"district": "อุทัย",
+		"province": "พระนครศรีอยุธยา"
+	},
+	{
+		"district": "อุทุมพรพิสัย",
+		"province": "ศรีสะเกษ"
+	},
+	{
+		"district": "อุบลรัตน์",
+		"province": "ขอนแก่น"
+	},
+	{
+		"district": "อุ้มผาง",
+		"province": "ตาก"
+	},
+	{
+		"district": "อู่ทอง",
+		"province": "สุพรรณบุรี"
+	},
+	{
+		"district": "เอราวัณ",
+		"province": "เลย"
+	},
+	{
+		"district": "ฮอด",
+		"province": "เชียงใหม่"
+	},
+	{
+		"district": "พระนคร",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ดุสิต",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "หนองจอก",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บางรัก",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บางเขน",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บางกะปิ",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ปทุมวัน",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ป้อมปราบศัตรูพ่าย",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "พระโขนง",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "มีนบุรี",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ลาดกระบัง",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ยานนาวา",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "สัมพันธวงศ์",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "พญาไท",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ธนบุรี",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บางกอกใหญ่",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ห้วยขวาง",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "คลองสาน",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ตลิ่งชัน",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บางกอกน้อย",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บางขุนเทียน",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ภาษีเจริญ",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "หนองแขม",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ราษฎร์บูรณะ",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บางพลัด",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ดินแดง",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บึงกุ่ม",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "สาทร",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บางซื่อ",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "จตุจักร",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บางคอแหลม",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ประเวศ",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "คลองเตย",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "สวนหลวง",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "จอมทอง",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ดอนเมือง",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ราชเทวี",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ลาดพร้าว",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "วัฒนา",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บางแค",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "หลักสี่",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "สายไหม",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "คันนายาว",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "สะพานสูง",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "วังทองหลาง",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "คลองสามวา",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บางนา",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ทวีวัฒนา",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "ทุ่งครุ",
+		"province": "กรุงเทพฯ"
+	},
+	{
+		"district": "บางบอน",
+		"province": "กรุงเทพฯ"
+	}
+]

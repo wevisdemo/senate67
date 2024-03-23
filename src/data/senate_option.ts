@@ -1,9 +1,36 @@
-interface CheckbocInfo {
+import defaultProvince from "./province.json";
+
+interface CheckboxInfo {
 	title: string;
 	description?: string;
 }
 
-const occupationList: CheckbocInfo[] = [
+interface LocationQuestion {
+	title: string;
+	canAppend: boolean;
+}
+
+export const locationQuestions: LocationQuestion[] = [
+	{
+		title: "อำเภอ/เขตที่คุณเกิด (ที่ตั้งโรงพยาบาล หรือสถานที่ในสูติบัตร)",
+		canAppend: false,
+	},
+	{
+		title:
+			"อำเภอ/เขตที่มีชื่ออยูในทะเบียนบ้าน หรือเคยมีชื่ออยู่ในทะเบียนบ้าน ติดต่อกันไม่น้อยกว่า 2 ปี",
+		canAppend: true,
+	},
+	{
+		title: "อำเภอ/เขต ที่ทำงาน หรือเคยทำงาน ติดต่อกันไม่น้อยกว่า 2 ปี",
+		canAppend: true,
+	},
+	{
+		title: "อำเภอ/เขต ที่เคยศึกษาในสถานศึกษาติดต่อกันไม่น้อยกว่า 2 ปี",
+		canAppend: true,
+	},
+];
+
+const occupationList: CheckboxInfo[] = [
 	{
 		title: "กลุ่มการบริหารราชการแผ่นดินและความมั่นคง",
 		description: "เช่น อดีตข้าราชการ เจ้าหน้าที่รัฐ หรืออื่นๆ ในทำนองเดียวกัน",
@@ -79,10 +106,57 @@ const occupationList: CheckbocInfo[] = [
 	},
 ];
 
-const personalList: CheckbocInfo[] = [
+const personalList: CheckboxInfo[] = [
 	{ title: "เป็นผู้หญิง โดยเพศกำเนิด" },
 	{
 		title:
 			"เป็นผู้สูงอายุ คนพิการหรือทุพพลภาพ กลุ่มชาติพันธุ์ กลุ่มอัตลักษณ์อื่น",
 	},
 ];
+
+export interface Location {
+	district: string;
+	province: string;
+}
+
+// create function to get locations those import from ./province.json
+export const getLocations = (): Location[] => {
+	const locations: Location[] = defaultProvince;
+	return locations;
+};
+
+export const getProvinceList = (): string[] => {
+	const locations: Location[] = getLocations();
+	const provinces: string[] = locations.map((location) => location.province);
+	// remove duplicate province
+	return [...new Set(provinces)];
+};
+
+export const getDistrictList = (province: string): string[] => {
+	const locations: Location[] = getLocations();
+	const districts: string[] = locations
+		.filter((location) => location.province === province)
+		.map((location) => location.district);
+	return districts;
+};
+
+export interface LocationMap {
+	[key: string]: string[];
+}
+
+export const getLocationMap = (): LocationMap => {
+	const locations: Location[] = getLocations();
+	const locationMap: LocationMap = {};
+	locations.forEach((location) => {
+		if (!locationMap[location.province]) {
+			locationMap[location.province] = [];
+		}
+		locationMap[location.province].push(location.district);
+	});
+	return locationMap;
+};
+
+// function to random integer 4 number
+export const random4Digit = (): number => {
+	return Math.floor(1000 + Math.random() * 9000);
+};

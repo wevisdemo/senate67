@@ -63,10 +63,9 @@ const ResultForRegisterSection: React.FC = () => {
 				</div>
 				<div className="grid space-y-[10px]">
 					{mockResults.map((result, index) => (
-						<div className="flex items-center">
+						<div className="flex items-center" key={`result-${index}`}>
 							<span className="body-03 mr-[8px]">{index}</span>
 							<ResultCard
-								key={`result-${index}`}
 								province={result.province}
 								district={result.district}
 								attribute={result.attribute}
