@@ -104,7 +104,7 @@ const ResultForRegisterSection: React.FC<PropsType> = ({
 					แสดงตัวเป็นผู้สมัคร
 					<OpenInNew className="fill-base-100" />
 				</a>
-				{isHideFeature() && (
+				{!isHideFeature() && (
 					<>
 						<p className="text-center">สำรวจผู้สมัครคนอื่นๆ ได้ที่</p>
 
