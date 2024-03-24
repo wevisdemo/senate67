@@ -43,7 +43,7 @@ const DistrictSelectionSection: React.FC<PropsType> = ({
 							onchangeResult={(locationListResult) => {
 								handleChange(locationListResult, index);
 							}}
-							title="อำเภอ/เขตที่คุณเกิด (ที่ตั้งโรงพยาบาล หรือสถานที่ในสูติบัตร)"
+							title={question.title}
 							canAppend={question.canAppend}
 						/>
 					);
