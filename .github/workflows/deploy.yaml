@@ -27,6 +27,7 @@ jobs:
         run: npm run build
         env:
           PUBLIC_BUILD_TARGET: staging
+          CANDIDATE_CSV_URL: ${{ secrets.CANDIDATE_CSV_URL }}
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
@@ -51,6 +52,7 @@ jobs:
         run: npm run build
         env:
           PUBLIC_BUILD_TARGET: production
+          CANDIDATE_CSV_URL: ${{ secrets.CANDIDATE_CSV_URL }}
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
