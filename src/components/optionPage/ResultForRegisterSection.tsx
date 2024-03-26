@@ -108,7 +108,10 @@ const ResultForRegisterSection: React.FC<PropsType> = ({
 					<>
 						<p className="text-center">สำรวจผู้สมัครคนอื่นๆ ได้ที่</p>
 
-						<a className="btn btn-primary w-full text-base-100" href="/">
+						<a
+							className="btn btn-primary w-full text-base-100"
+							href="/candidates"
+						>
 							ค้นหาผู้สมัคร
 							<ArrowRight className="fill-base-100" />
 						</a>

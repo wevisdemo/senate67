@@ -1,0 +1,25 @@
+---
+import ArrowDown from "../icons/ArrowDown.astro";
+const { contents } = Astro.props as {
+	contents: { id: string; title: string }[];
+};
+---
+
+<div id="table-of-contents-candidate" class="rounded-sm py-[10px] text-accent">
+	<ul class="flex flex-row">
+		{
+			contents.map((item, idx, arr) => (
+				<>
+					<li class="flex-1 px-[10px]">
+						<a
+							href={`#${item.id}`}
+							class="inline-flex justify-center items-center w-full py-[5px] font-bold gap-2 body-03"
+						>
+							{item.title} <ArrowDown color="#FF8827" />
+						</a>
+					</li>
+				</>
+			))
+		}
+	</ul>
+</div>

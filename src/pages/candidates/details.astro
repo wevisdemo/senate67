@@ -1,0 +1,131 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CandidateAvatar from "../../components/candidate/CandidateAvatar.vue";
+import CandidateDepartmentAndGroupDetails from "../../components/candidate/CandidateDepartmentAndGroupDetails.vue";
+import CandidateSocialMediaList from "../../components/candidate/CandidateSocialMediaList.vue";
+import TableOfContents from "../../components/candidate/TableOfContents.astro";
+import StandPointList from "../../components/candidate/StandPointList.vue";
+import SocialMediaButtons from "../../components/socialMedia/SocialMediaButtons.astro";
+
+const contents = [
+	{ title: "ข้อมูลทั่วไป", id: "profile" },
+	{ title: "จุดยืน", id: "standpoint" },
+	{ title: "วิสัยทัศน์", id: "vision" },
+];
+---
+
+<Layout title="ภูริพันธุ์ รุจิขจร ณ อยุทธยา">
+	<section class="max-w-screen-xl mx-auto px-5 mt-24">
+		<img src="/example-candidate-video.svg" alt="" />
+
+		<div class="max-w-[650px] mx-auto">
+			<div class="flex space-x-2 py-10">
+				<div class="basis-3/4 text-left">
+					<CandidateAvatar section="details" />
+				</div>
+				<div class="basis-1/4">
+					<CandidateDepartmentAndGroupDetails />
+				</div>
+			</div>
+
+			<TableOfContents contents={contents} />
+		</div>
+	</section>
+	<section class="bg-info mx-auto p-5">
+		<div class="max-w-[650px] mx-auto">
+			<div class="bg-white" id="profile">
+				<div class="bg-base-200 p-3 rounded-t-md">
+					<p class="body-03">ข้อมูลทั่วไป</p>
+				</div>
+				<div class="bg-base-100 p-3 rounded-b-md">
+					<div class="flex space-x-3 px-3 pt-2">
+						<div class="basis-1/4 sm:basis-[15%]">
+							<p class="body-03">อายุ</p>
+						</div>
+						<div class="basis-3/4 sm:basis-[85%]">
+							<p class="body-03 font-bold">45 ปี</p>
+						</div>
+					</div>
+					<div class="flex space-x-3 px-3">
+						<div class="basis-1/4 sm:basis-[15%]">
+							<p class="body-03">การศึกษา</p>
+						</div>
+						<div class="basis-3/4 sm:basis-[85%]">
+							<p class="body-03 font-bold">ปริญญาเอก</p>
+						</div>
+					</div>
+					<div class="flex space-x-3 px-3">
+						<div class="basis-1/4 sm:basis-[15%]">
+							<p class="body-03">อาชีพ</p>
+						</div>
+						<div class="basis-3/4 sm:basis-[85%]">
+							<p class="body-03 font-bold">อาจารย์</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg-white pt-3">
+				<div class="bg-base-200 p-3 rounded-t-md">
+					<p class="body-03">ช่องทางติดต่อ</p>
+				</div>
+				<div class="bg-base-100 p-3 rounded-b-md">
+					<CandidateSocialMediaList section="details" />
+				</div>
+			</div>
+
+			<div class="bg-white pt-3" id="standpoint">
+				<div class="bg-base-200 p-3 rounded-t-md">
+					<p class="body-03">จุดยืน</p>
+				</div>
+				<div class="bg-base-100 p-3 rounded-b-md">
+					<StandPointList />
+				</div>
+			</div>
+
+			<div class="bg-white pt-3" id="vision">
+				<div class="bg-base-200 p-3 rounded-t-md">
+					<p class="body-03">วิสัยทัศน์</p>
+				</div>
+				<div class="bg-base-100 p-3 rounded-b-md">
+					<p class="body-01 font-bold">
+						แนวทางการพิจารณาเห็นชอบผู้ดำรงตำแหน่งในองค์กรอิสระ
+					</p>
+					<p class="body-01">
+						Lorem ipsum dolor sit amet consectetur. Urna tristique eget nibh sem
+						aliquet nisi vitae sed aenean. Id auctor blandit morbi dictum
+						aliquam venenatis fringilla et. Id nisi habitant tempor sit nisl
+						aliquet vitae et. Duis pellentesque dictum odio nunc gravida
+						bibendum lectus consectetur. Dui eu commodo et aliquam varius.
+						Faucibus arcu dolor fermentum tellus odio. Hac sem faucibus nunc
+						arcu leo in ullamcorper. Interdum sapien lacus posuere fringilla
+						aliquam sed. Ultrices suspendisse commodo volutpat pulvinar ac.
+					</p>
+
+					<hr class="border-base-300 my-5" />
+
+					<p class="body-01 font-bold">
+						เหตุผลความตั้งใจในการลงสมัคร สว. ครั้งนี้
+					</p>
+					<p class="body-01">
+						Lorem ipsum dolor sit amet consectetur. Urna tristique eget nibh sem
+						aliquet nisi vitae sed aenean. Id auctor blandit morbi dictum
+						aliquam venenatis fringilla et. Id nisi habitant tempor sit nisl
+						aliquet vitae et. Duis pellentesque dictum odio nunc gravida
+						bibendum lectus consectetur. Dui eu commodo et aliquam varius.
+						Faucibus arcu dolor fermentum tellus odio. Hac sem faucibus nunc
+						arcu leo in ullamcorper. Interdum sapien lacus posuere fringilla
+						aliquam sed. Ultrices suspendisse commodo volutpat pulvinar ac.
+					</p>
+				</div>
+			</div>
+
+			<div class="py-10 text-center">
+				<p class="body-01 pb-3">แชร์ผู้สมัครคนนี้</p>
+				<div class="flex justify-center">
+					<SocialMediaButtons className="fill-[#000]" color="#000" />
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

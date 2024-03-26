@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CandidateList from "../components/candidate/CandidateList.vue";
+---
+
+<Layout title="ค้นหาผู้สมัคร สว.">
+	<section
+		class="flex items-center justify-center bg-primary pt-36 pb-10 text-center px-4"
+	>
+		<div class="text-center max-w-[650px] w-full">
+			<h1 class="heading-responsive-01 text-base-100 pb-3">
+				ค้นหาผู้สมัคร สว.
+			</h1>
+
+			<p class="max-w-[650px] mx-auto body-01 text-base-100">
+				ทั้งหมด xx คน ในฐานข้อมูล
+			</p>
+
+			<a
+				class="mx-auto inline-flex content-center items-center gap-2 text-secondary underline pt-5"
+				href="#"
+				target="_blank"
+				>ดูวิธีคัดเลือก สว.
+			</a>
+
+			<div class="pt-14">
+				<p class="heading-02 mb-2 text-base-100">กรองหาผู้สมัคร</p>
+
+				<div
+					class="flex space-y-[10px] sm:space-y-0 sm:space-x-[5px] flex-col sm:flex-row"
+				>
+					<select class="select w-full body-01">
+						<option>ทุกจังหวัด</option>
+					</select>
+
+					<select class="select w-full body-01">
+						<option>ทุกอำเภอ/เขต</option>
+					</select>
+
+					<select class="select w-full body-01">
+						<option>ทุกกลุ่มอาชีพ</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</section>
+	<CandidateList client:load />
+</Layout>
