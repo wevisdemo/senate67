@@ -8,7 +8,7 @@ export interface CheckboxInfo {
 export interface Result {
 	province: string;
 	district: string;
-	attribute: string;
+	group: string;
 }
 
 interface LocationQuestion {

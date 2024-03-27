@@ -1,21 +1,32 @@
 import React from "react";
-import WeWatchPhoneButton from "../buttons/WeWatchPhoneButton.astro";
-import ECTPhoneButton from "../buttons/ECTPhoneButton.astro";
 import Phone from "../icons/Phone.tsx";
 import OpenInNew from "../icons/OpenInNew.tsx";
 import ArrowRight from "../icons/ArrowRight.tsx";
 import ResultCard from "./ResultCard.tsx";
 import type { Result } from "../../data/senate_option.ts";
+import type { Candidate } from "../../data/candidate.ts";
+import { isProd } from "../../utils/flag.ts";
 
 interface PropsType {
 	results: Result[];
+	candidates: Candidate[];
 }
 
 const ResultForRegisterSection: React.FC<PropsType> = ({
 	results,
+	candidates,
 }: PropsType) => {
-	const isHideFeature = (): boolean => {
-		return import.meta.env.PUBLIC_BUILD_TARGET === "production" ? true : false;
+	const getCandidateCount = (
+		province: string,
+		district: string,
+		group: string,
+	): number => {
+		return candidates.filter(
+			(candidate) =>
+				candidate.application.province === province &&
+				candidate.application.district === district &&
+				candidate.application.group === group,
+		).length;
 	};
 
 	return (
@@ -37,9 +48,14 @@ const ResultForRegisterSection: React.FC<PropsType> = ({
 							</h2>
 							<p className="body-01">เลือกสมัครได้แบบเดียวเท่านั้นนะ</p>
 						</div>
-						<div className="flex text-left pl-[12px]">
+						<div className="flex text-left pl-[15px]">
 							<span className="body-03 w-[50%]">อำเภอ/เขต</span>
 							<span className="body-03 w-[50%]">กลุ่มอาชีพ/คุณสมบัติ</span>
+							{!isProd() && (
+								<span className="body-03 w-[65px] md:text-nowrap">
+									มีผู้สมัครแล้ว
+								</span>
+							)}
 						</div>
 					</>
 				)}
@@ -50,9 +66,13 @@ const ResultForRegisterSection: React.FC<PropsType> = ({
 							<ResultCard
 								province={result.province}
 								district={result.district}
-								attribute={result.attribute}
+								group={result.group}
+								candidate_count={getCandidateCount(
+									result.province,
+									result.district,
+									result.group,
+								)}
 							/>
-							{/* todo: implement xx total candidate */}
 						</div>
 					))}
 				</div>
@@ -104,7 +124,7 @@ const ResultForRegisterSection: React.FC<PropsType> = ({
 					แสดงตัวเป็นผู้สมัคร
 					<OpenInNew className="fill-base-100" />
 				</a>
-				{!isHideFeature() && (
+				{!isProd() && (
 					<>
 						<p className="text-center">สำรวจผู้สมัครคนอื่นๆ ได้ที่</p>
 
