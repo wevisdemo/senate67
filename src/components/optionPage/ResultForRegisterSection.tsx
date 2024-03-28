@@ -9,25 +9,19 @@ import { isProd } from "../../utils/flag.ts";
 
 interface PropsType {
 	results: Result[];
-	candidates: Candidate[];
+	candidateGroupCount: Map<string, number>;
 }
 
 const ResultForRegisterSection: React.FC<PropsType> = ({
 	results,
-	candidates,
+	candidateGroupCount,
 }: PropsType) => {
 	const getCandidateCount = (
 		province: string,
 		district: string,
 		group: string,
-	): number => {
-		return candidates.filter(
-			(candidate) =>
-				candidate.application.province === province &&
-				candidate.application.district === district &&
-				candidate.application.group === group,
-		).length;
-	};
+	): number =>
+		candidateGroupCount.get([province, district, group].join("|")) ?? 0;
 
 	return (
 		<section className="flex flex-col justify-center items-center text-center py-[60px] md:py-[120px]">
