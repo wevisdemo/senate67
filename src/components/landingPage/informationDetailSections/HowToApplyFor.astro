@@ -90,7 +90,7 @@ import { isProd } from "../../../utils/flag";
 	<ECTPhoneButton />
 
 	{
-		isProd() && (
+		!isProd() && (
 			<>
 				<p class="text-center">
 					เพื่อประกอบการพิจารณา ลองสำรวจผู้สมัครคนอื่นๆ

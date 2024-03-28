@@ -32,7 +32,7 @@ const updated_at = new Date().toLocaleString("th-TH", {
 				</div>
 
 				{
-					isProd() && (
+					!isProd() && (
 						<div class="text-center">
 							<p class="body-01 text-neutral">มีผู้แสดงตัวเป็นผู้สมัครแล้ว</p>
 							<p class="heading-responsive-01 text-neutral leading-[44px]">
@@ -53,7 +53,7 @@ const updated_at = new Date().toLocaleString("th-TH", {
 						>แสดงตัวเป็นผู้สมัคร <OpenInNew className=" fill-base-100" />
 					</a>
 					{
-						isProd() && (
+						!isProd() && (
 							<button class="btn w-full bg-primary text-base-100">
 								ค้นหาผู้สมัคร
 							</button>

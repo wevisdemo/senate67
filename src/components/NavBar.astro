@@ -7,7 +7,7 @@ const navigationRoutes = [
 	{ name: "ฉันสมัคร สว. ได้ไหม?", url: "/checklist" },
 ];
 
-if (isProd()) {
+if (!isProd()) {
 	navigationRoutes.push({ name: "ค้นหาผู้สมัคร", url: "/candidates" });
 	navigationRoutes.push({ name: "ผลการเลือกตั้ง", url: "/result" });
 }
