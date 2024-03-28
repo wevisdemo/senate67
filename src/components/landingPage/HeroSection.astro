@@ -3,9 +3,12 @@ import SenateHeroLogo from "./SenateHeroLogo.astro";
 import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
 import OpenInNew from "../icons/OpenInNew.astro";
 import ArrowRight from "../icons/ArrowRight.astro";
+import { getCandidates } from "../../data/get_candidates";
 
-const registered_senates = 0;
-const updated_at = new Date("2023-03-16").toLocaleString("th-TH", {
+const candidate_senates = await getCandidates();
+
+const registered_senates = candidate_senates.length;
+const updated_at = new Date().toLocaleString("th-TH", {
 	year: "numeric",
 	month: "short",
 	day: "numeric",
