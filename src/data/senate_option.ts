@@ -1,3 +1,4 @@
+import { ApplicationGroup } from "./application_group";
 import defaultProvince from "./province.json";
 
 export interface CheckboxInfo {
@@ -36,86 +37,39 @@ export const locationQuestions: LocationQuestion[] = [
 	},
 ];
 
-export const occupationListData: CheckboxInfo[] = [
-	{
-		title: "กลุ่มการบริหารราชการแผ่นดินและความมั่นคง",
-		description: "เช่น อดีตข้าราชการ เจ้าหน้าที่รัฐ หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มกฎหมายและกระบวนการยุติธรรม",
+const occupationDescriptionMap = new Map<string, string>([
+	[
+		ApplicationGroup.GovernmentAndNationalSecurity,
+		"เช่น อดีตข้าราชการ เจ้าหน้าที่รัฐ",
+	],
+	[
+		ApplicationGroup.LawAndJustice,
+		"เช่น ผู้พิพากษา อัยการ ตำรวจ ผู้ประกอบวิชาชีพกฎหมาย",
+	],
+	[ApplicationGroup.Education, "เช่น ครู อาจารย์ นักวิจัย ผู้บริหารสถานศึกษา"],
+	[ApplicationGroup.Healthcare, "เช่น การแพทย์ พยาบาล เภสัชกร"],
+	[ApplicationGroup.OtherEntrepreneurs, "เช่น อดีตข้าราชการ เจ้าหน้าที่รัฐ"],
+	[
+		ApplicationGroup.TourismAndHotel,
+		"เช่น มัคคุเทศก์ ผู้ประกอบกิจการอื่นหรือพนักงานโรงแรม",
+	],
+]);
+
+export const occupationListData: CheckboxInfo[] = Object.values(
+	ApplicationGroup,
+)
+	.map((title) => ({
+		title,
 		description:
-			"เช่น ผู้พิพากษา อัยการ ตำรวจ ผู้ประกอบวิชาชีพกฎหมาย หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มการศึกษา",
-		description:
-			"เช่น ครู อาจารย์ นักวิจัย ผู้บริหารสถานศึกษา หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มการสาธารณสุข",
-		description: "เช่น การแพทย์ พยาบาล เภสัชกร  หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มอาชีพทำนา ปลูกพืชล้มลุก",
-		description: "หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มอาชีพทำสวน ป่าไม้ ปศุสัตว์ ประมง",
-		description: "หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มพนักงานลูกจ้างที่ไม่ใช่ราชการหรือหน่วยงานรัฐ ผู้ใช้แรงงาน",
-		description: "หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title:
-			"กลุ่มผู้ประกอบอาชีพด้านสิ่งแวดล้อม ผังเมือง อสังหาฯ และสาธารณูปโภค ทรัพยากรธรรมชาติ พลังงาน",
-		description: "หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มผู้ประกอบกิจการขนาดกลางและขนาดย่อยตามกฎหมาย",
-		description: "หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มผู้ประกอบกิจการอื่นนอกจากข้อที่แล้ว",
-		description: "เช่น อดีตข้าราชการ เจ้าหน้าที่รัฐ หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มผู้ประกอบธุรกิจหรืออาชีพด้านการท่องเที่ยว",
-		description:
-			"เช่น มัคคุเทศก์ ผู้ประกอบกิจการอื่นหรือพนักงานโรงแรม หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มผู้ประกอบอุตสาหกรรม",
-		description: "หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title:
-			"กลุ่มผู้ประกอบอาชีพด้านวิทยาศาสตร์ เทคโนโลยี การสื่อสาร การพัฒนานวัตกรรม",
-		description: "หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มศิลปะ วัฒนธรรม ดนตรี การแสดงและบันเทิง นักกีฬา",
-		description: "หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มประชาสังคม กลุ่มองค์กรสาธารณประโยชน์",
-		description: "หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มสื่อสารมวลชน ผู้สร้างสรรค์วรรณกรรม",
-		description: "หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-	{
-		title: "กลุ่มผู้ประกอบวิชาชีพ ผู้ประกอบอาชีพอิสระ",
-		description: "หรืออื่นๆ ในทำนองเดียวกัน",
-	},
-];
+			`${occupationDescriptionMap.get(title) ?? ""} หรืออื่นๆ ในทำนองเดียวกัน`.trim(),
+	}))
+	.filter(({ title }) => title !== ApplicationGroup.Other);
 
 export const personalListData: CheckboxInfo[] = [
-	{ title: "เป็นผู้หญิง โดยเพศกำเนิด" },
+	{ title: ApplicationGroup.Women, description: "เป็นผู้หญิง โดยเพศกำเนิด" },
 	{
-		title:
+		title: ApplicationGroup.ElderlyDisabledEthicityAndOtherIdentity,
+		description:
 			"เป็นผู้สูงอายุ คนพิการหรือทุพพลภาพ กลุ่มชาติพันธุ์ กลุ่มอัตลักษณ์อื่น",
 	},
 ];

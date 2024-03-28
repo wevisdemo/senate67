@@ -5,6 +5,7 @@ import {
 	occupationListData,
 	type CheckboxInfo,
 } from "../../data/senate_option.ts";
+import { ApplicationGroup } from "../../data/application_group.ts";
 
 interface PropsType {
 	onChangeResults: (results: string[]) => void;
@@ -45,10 +46,10 @@ const OccupationSelectionSection: React.FC<PropsType> = ({
 					);
 				})}
 				<Checkbox
-					title="กลุ่มอื่นๆ"
-					description="ผู้สมัครทุกคนมีสิทธิสมัครใน “กลุ่มอื่นๆ” ได้หมด"
+					title={ApplicationGroup.Other}
+					description={`ผู้สมัครทุกคนมีสิทธิสมัครใน ${ApplicationGroup.Other} ได้หมด`}
 					forceChecked={true}
-					onCheck={(isChecked) => handleChange("กลุ่มอื่นๆ", isChecked)}
+					onCheck={() => {}}
 				/>
 			</div>
 		</section>

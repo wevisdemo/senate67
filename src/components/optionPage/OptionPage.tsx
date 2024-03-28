@@ -1,3 +1,4 @@
+import { ApplicationGroup } from "../../data/application_group.ts";
 import type { Location, Result } from "../../data/senate_option.ts";
 import DistrictSelectionSection from "./DistrictSelectionSection";
 import OccupationSelectionSection from "./OccupationSelectionSection.tsx";
@@ -11,7 +12,9 @@ interface PropsType {
 
 const OptionsPage: React.FC<PropsType> = ({ candidateGroupCount }) => {
 	const [locations, setLocations] = useState<Location[]>([]);
-	const [occupations, setOccupations] = useState<string[]>(["กลุ่มอื่นๆ"]);
+	const [occupations, setOccupations] = useState<string[]>([
+		ApplicationGroup.Other,
+	]);
 	const [personals, setPersonals] = useState<string[]>([]);
 
 	const getResults = (): Result[] => {
