@@ -1,6 +1,8 @@
 <script setup>
 defineProps({
 	section: String,
+	name: String,
+	alias: String,
 });
 </script>
 
@@ -16,9 +18,9 @@ defineProps({
 		/>
 		<div>
 			<h1 class="heading-responsive-02 text-neutral pb-3 leading-10">
-				ภูริพันธุ์ รุจิขจร ณ อยุทธยา
+				{{ name }}
 			</h1>
-			<p class="body-03">(ชื่ออื่นๆ ที่คนรู้จัก)</p>
+			<p class="body-03">({{ alias }})</p>
 		</div>
 	</div>
 </template>

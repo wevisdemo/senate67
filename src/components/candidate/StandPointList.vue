@@ -13,6 +13,10 @@ const standpoint_list = [
 		name: "ยกเลิกกฎหมายปราบปรามการค้าประเวณี",
 	},
 ];
+
+defineProps({
+	standpoint_list: Array || Object,
+});
 </script>
 
 <template>

@@ -3,17 +3,21 @@
 		<div
 			class="bg-secondary px-3 flex-1 flex items-center justify-center flex-col rounded-t-lg"
 		>
-			<p class="body-03 font-bold">กรุงเทพมหานคร</p>
-			<p class="body-03">เขตคลองเตย</p>
+			<p class="body-03 font-bold">{{ application.province }}</p>
+			<p class="body-03">เขต{{ application.district }}</p>
 		</div>
 		<div
 			class="bg-primary text-secondary px-3 flex-1 flex items-center justify-center rounded-b-lg"
 		>
-			<p class="body-03 font-bold">กลุ่มบริหารราชการแผ่นดิน และความมั่นคง</p>
+			<p class="body-03 font-bold">{{ application.group }}</p>
 		</div>
 	</div>
 </template>
 
-<script setup></script>
+<script setup>
+defineProps({
+	application: Array || Object,
+});
+</script>
 
 <style lang="scss" scoped></style>
