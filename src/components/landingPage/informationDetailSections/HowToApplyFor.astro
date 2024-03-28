@@ -5,6 +5,7 @@ import ECTPhoneButton from "../../buttons/ECTPhoneButton.astro";
 import PossibleApplyGroups from "./PossibleApplyGroups.astro";
 import OpenInNew from "../../icons/OpenInNew.astro";
 import ArrowRight from "../../icons/ArrowRight.astro";
+import { isProd } from "../../../utils/flag";
 ---
 
 <InformationDetailCard id="how-to-apply-for" title="วิธีสมัคร สว.">
@@ -89,7 +90,7 @@ import ArrowRight from "../../icons/ArrowRight.astro";
 	<ECTPhoneButton />
 
 	{
-		import.meta.env.PUBLIC_BUILD_TARGET !== "production" && (
+		isProd() && (
 			<>
 				<p class="text-center">
 					เพื่อประกอบการพิจารณา ลองสำรวจผู้สมัครคนอื่นๆ
