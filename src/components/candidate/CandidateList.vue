@@ -1,26 +1,115 @@
-<script setup>
+<script lang="ts" setup>
+import { ref } from "vue";
+
 import CandidateAvatar from "../candidate/CandidateAvatar.vue";
 import CandidateDepartmentAndGroupDetails from "../candidate/CandidateDepartmentAndGroupDetails.vue";
 import CandidateSocialMediaList from "../candidate/CandidateSocialMediaList.vue";
+import CandidateFilterList from "../candidate/CandidateFilterList.vue";
 import StandPointList from "../candidate/StandPointList.vue";
 
 const props = defineProps({
-	candidates: Array || Object,
+	candidates: Object,
+	application_group: Object,
+	provinces: Object,
+	districts: Object,
+	total_candidate: Number,
 });
 
-console.log(props.candidates);
+const groupResults = ref([]);
+
+const getCandidatesData = async (province, district, application) => {
+	groupResults.value = [];
+
+	if (province == "ทุกจังหวัด")
+		if (application == "ทุกกลุ่มอาชีพ") {
+			groupResults.value = props.candidates;
+		} else {
+			groupResults.value = props.candidates.filter((c) => {
+				return c.application.group == application;
+			});
+		}
+	else {
+		if (district == "ทุกอำเภอ/เขต") {
+			if (application == "ทุกกลุ่มอาชีพ")
+				groupResults.value = props.candidates.filter((c) => {
+					return c.application.province == province;
+				});
+			else
+				groupResults.value = props.candidates.filter((c) => {
+					return (
+						c.application.province == province &&
+						c.application.group == application
+					);
+				});
+		} else {
+			if (application == "ทุกกลุ่มอาชีพ") {
+				groupResults.value = props.candidates.filter((c) => {
+					return (
+						c.application.province == province &&
+						c.application.district == district
+					);
+				});
+			} else {
+				groupResults.value = props.candidates.filter((c) => {
+					return (
+						c.application.province == province &&
+						c.application.district == district &&
+						c.application.group == application
+					);
+				});
+			}
+		}
+	}
+};
+
+groupResults.value = props.candidates;
 </script>
 
 <template>
+	<section
+		class="flex items-center justify-center bg-primary pt-36 pb-10 text-center"
+	>
+		<div class="text-center max-w-[650px] w-full">
+			<div class="px-4">
+				<h1 class="heading-responsive-01 text-base-100 pb-3">
+					ค้นหาผู้สมัคร สว.
+				</h1>
+
+				<p class="max-w-[650px] mx-auto body-01 text-base-100">
+					ทั้งหมด {{ total_candidate }} คน ในฐานข้อมูล
+				</p>
+
+				<a
+					class="mx-auto inline-flex content-center items-center gap-2 text-secondary underline pt-5"
+					href="/checklist"
+					target="_blank"
+					>ดูวิธีคัดเลือก สว.
+				</a>
+			</div>
+
+			<div class="pt-14 px-4 z-[99] relative sm:z-0 bg-primary">
+				<p class="heading-02 mb-2 text-base-100">
+					กรองหาผู้สมัครที่คุณมีสิทธิ์เลือก
+				</p>
+
+				<CandidateFilterList
+					:provinces="provinces"
+					:districts="districts"
+					:occupations="application_group"
+					@filter="getCandidatesData"
+				/>
+			</div>
+		</div>
+	</section>
 	<section class="bg-info py-10 text-center px-3">
 		<div class="mx-auto max-w-[650px]">
 			<p class="heading-02 mb-2 text-neutral">
-				ผลลัพธ์ : {{ props.candidates.length }} คน
+				ผลลัพธ์ : {{ groupResults.length }} คน
 			</p>
 
 			<div
 				class="mt-5 bg-base-100 p-2 sm:p-5 rounded-[10px]"
-				v-for="item in props.candidates"
+				v-for="item in groupResults"
 			>
 				<div class="flex space-x-2">
 					<div class="flex-1 text-left">
@@ -44,7 +133,7 @@ console.log(props.candidates);
 							</div>
 
 							<div class="flex space-x-3 px-3 pt-2">
-								<div class="basis-1/4 sm:basis-[15%]">
+								<div class="basis-[33%] sm:basis-[15%]">
 									<p class="body-03">อายุ</p>
 								</div>
 								<div class="basis-3/4 sm:basis-[85%]">
@@ -52,7 +141,7 @@ console.log(props.candidates);
 								</div>
 							</div>
 							<div class="flex space-x-3 px-3">
-								<div class="basis-1/4 sm:basis-[15%]">
+								<div class="basis-[33%] sm:basis-[15%]">
 									<p class="body-03">การศึกษา</p>
 								</div>
 								<div class="basis-3/4 sm:basis-[85%]">
@@ -60,7 +149,7 @@ console.log(props.candidates);
 								</div>
 							</div>
 							<div class="flex space-x-3 px-3">
-								<div class="basis-1/4 sm:basis-[15%]">
+								<div class="basis-[33%] sm:basis-[15%]">
 									<p class="body-03">อาชีพ</p>
 								</div>
 								<div class="basis-3/4 sm:basis-[85%]">
@@ -93,9 +182,13 @@ console.log(props.candidates);
 				</div>
 			</div>
 
-			<button class="btn w-full bg-primary text-base-100 mt-14">
+			<a
+				target="_blank"
+				href="https://forms.gle/AiPQPxvqFex2a7Hk8"
+				class="btn w-full bg-primary text-base-100 mt-14"
+			>
 				แสดงตัวเป็นผู้สมัคร <img src="/link-icon.svg" class="inline pr-2" />
-			</button>
+			</a>
 		</div>
 	</section>
 </template>

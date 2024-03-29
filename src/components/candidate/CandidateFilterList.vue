@@ -1,23 +1,37 @@
-<script setup>
+<script setup lang="ts">
+import { ref, watch } from "vue";
+
 const props = defineProps({
-	provinces: Array || Object,
-	districts: Array || Object,
-	occupations: Array || Object,
+	provinces: Object,
+	districts: Object,
+	occupations: Object,
 });
 
+const emit = defineEmits(["filter"]);
+
 const district = props.districts;
-let selectedProvince = "ทุกจังหวัด";
-let selectedDistrict = "ทุกอำเภอ/เขต";
-let selectedOccupation = "ทุกกลุ่มอาชีพ";
-let selected_district_list = [];
+const selectedProvince = ref("ทุกจังหวัด");
+const selectedDistrict = ref("ทุกอำเภอ/เขต");
+const selectedOccupation = ref("ทุกกลุ่มอาชีพ");
+let selected_district_list = ref([]);
 
-function onChangeDistrict() {
-	selected_district_list = [];
-	if (selectedProvince != "ทุกจังหวัด")
-		selected_district_list = district[selectedProvince];
+const onChangeDistrict = async () => {
+	selected_district_list.value = [];
+	if (selectedProvince.value != "ทุกจังหวัด")
+		selected_district_list.value = district[selectedProvince.value];
+	else selectedDistrict.value = "ทุกอำเภอ/เขต";
 
-	console.log(selected_district_list);
-}
+	emit(
+		"filter",
+		selectedProvince.value,
+		selectedDistrict.value,
+		selectedOccupation.value,
+	);
+};
+
+watch(selectedProvince, async (newProvince, oldProvince) => {
+	if (newProvince != oldProvince) selectedDistrict.value = "ทุกอำเภอ/เขต";
+});
 </script>
 
 <template>
@@ -28,21 +42,36 @@ function onChangeDistrict() {
 			class="select w-full body-01"
 			v-model="selectedProvince"
 			@change="onChangeDistrict"
+			:class="{ 'bg-secondary': selectedProvince != 'ทุกจังหวัด' }"
 		>
 			<option value="ทุกจังหวัด">ทุกจังหวัด</option>
 			<option v-for="item in props.provinces" :value="item">
 				{{ item }}
-			</option></select
-		>.
+			</option>
+		</select>
 
-		<select class="select w-full body-01" v-model="selectedDistrict">
+		<select
+			:class="{ 'bg-secondary': selectedDistrict != 'ทุกอำเภอ/เขต' }"
+			class="select w-full body-01"
+			v-model="selectedDistrict"
+			@change="
+				$emit('filter', selectedProvince, selectedDistrict, selectedOccupation)
+			"
+		>
 			<option value="ทุกอำเภอ/เขต">ทุกอำเภอ/เขต</option>
 			<option v-for="item in selected_district_list" :value="item">
 				{{ item }}
 			</option>
 		</select>
 
-		<select class="select w-full body-01" v-model="selectedOccupation">
+		<select
+			:class="{ 'bg-secondary': selectedOccupation != 'ทุกกลุ่มอาชีพ' }"
+			class="select w-full body-01"
+			v-model="selectedOccupation"
+			@change="
+				$emit('filter', selectedProvince, selectedDistrict, selectedOccupation)
+			"
+		>
 			<option value="ทุกกลุ่มอาชีพ">ทุกกลุ่มอาชีพ</option>
 			<option v-for="item in props.occupations" :value="item">
 				{{ item }}
@@ -51,4 +80,8 @@ function onChangeDistrict() {
 	</div>
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped>
+select option {
+	background-color: #ffffff !important;
+}
+</style>

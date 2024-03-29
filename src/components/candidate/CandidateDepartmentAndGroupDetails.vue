@@ -16,7 +16,7 @@
 
 <script setup>
 defineProps({
-	application: Array || Object,
+	application: Object,
 });
 </script>
 

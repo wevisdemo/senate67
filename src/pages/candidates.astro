@@ -18,36 +18,12 @@ const districtList = getLocationMap();
 ---
 
 <Layout title="ค้นหาผู้สมัคร สว.">
-	<section
-		class="flex items-center justify-center bg-primary pt-36 pb-10 text-center px-4"
-	>
-		<div class="text-center max-w-[650px] w-full">
-			<h1 class="heading-responsive-01 text-base-100 pb-3">
-				ค้นหาผู้สมัคร สว.
-			</h1>
-
-			<p class="max-w-[650px] mx-auto body-01 text-base-100">
-				ทั้งหมด {registered_senates} คน ในฐานข้อมูล
-			</p>
-
-			<a
-				class="mx-auto inline-flex content-center items-center gap-2 text-secondary underline pt-5"
-				href="/checklist"
-				target="_blank"
-				>ดูวิธีคัดเลือก สว.
-			</a>
-
-			<div class="pt-14">
-				<p class="heading-02 mb-2 text-base-100">กรองหาผู้สมัคร</p>
-
-				<CandidateFilterList
-					provinces={provinceList}
-					districts={districtList}
-					occupations={applicationGroup}
-					client:load
-				/>
-			</div>
-		</div>
-	</section>
-	<CandidateList candidates={candidate_senates} client:load />
+	<CandidateList
+		candidates={candidate_senates}
+		total_candidate={registered_senates}
+		application_group={applicationGroup}
+		provinces={provinceList}
+		districts={districtList}
+		client:load
+	/>
 </Layout>

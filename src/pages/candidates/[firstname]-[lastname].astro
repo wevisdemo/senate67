@@ -7,6 +7,28 @@ import TableOfContents from "../../components/candidate/TableOfContents.astro";
 import StandPointList from "../../components/candidate/StandPointList.vue";
 import SocialMediaButtons from "../../components/socialMedia/SocialMediaButtons.astro";
 
+import { getCandidates } from "../../data/get_candidates";
+
+const candidate_senates = await getCandidates();
+
+export async function getStaticPaths() {
+	const candidate_senates_list = await getCandidates();
+
+	const candidate_list = candidate_senates_list.map((data) => {
+		return { params: { firstname: data.firstName, lastname: data.lastName } };
+	});
+
+	return candidate_list;
+}
+
+const { firstname, lastname } = Astro.params;
+
+const selected_candidate = candidate_senates.filter(
+	(x) => x.firstName == firstname && x.lastName == lastname,
+);
+
+const fullname = firstname + " " + lastname;
+
 const contents = [
 	{ title: "ข้อมูลทั่วไป", id: "profile" },
 	{ title: "จุดยืน", id: "standpoint" },
@@ -14,17 +36,23 @@ const contents = [
 ];
 ---
 
-<Layout title="ภูริพันธุ์ รุจิขจร ณ อยุทธยา">
+<Layout title={fullname}>
 	<section class="max-w-screen-xl mx-auto px-5 mt-24">
-		<img src="/example-candidate-video.svg" alt="" />
+		<!-- <img src="/example-candidate-video.svg" alt="" /> -->
 
 		<div class="max-w-[650px] mx-auto">
 			<div class="flex space-x-2 py-10">
 				<div class="basis-3/4 text-left">
-					<CandidateAvatar section="details" />
+					<CandidateAvatar
+						section="details"
+						name={fullname}
+						alias={selected_candidate[0].aliasName}
+					/>
 				</div>
 				<div class="basis-1/4">
-					<CandidateDepartmentAndGroupDetails />
+					<CandidateDepartmentAndGroupDetails
+						application={selected_candidate[0].application}
+					/>
 				</div>
 			</div>
 
@@ -43,7 +71,7 @@ const contents = [
 							<p class="body-03">อายุ</p>
 						</div>
 						<div class="basis-3/4 sm:basis-[85%]">
-							<p class="body-03 font-bold">45 ปี</p>
+							<p class="body-03 font-bold">{selected_candidate[0].age} ปี</p>
 						</div>
 					</div>
 					<div class="flex space-x-3 px-3">
@@ -51,7 +79,7 @@ const contents = [
 							<p class="body-03">การศึกษา</p>
 						</div>
 						<div class="basis-3/4 sm:basis-[85%]">
-							<p class="body-03 font-bold">ปริญญาเอก</p>
+							<p class="body-03 font-bold">{selected_candidate[0].education}</p>
 						</div>
 					</div>
 					<div class="flex space-x-3 px-3">
@@ -59,7 +87,9 @@ const contents = [
 							<p class="body-03">อาชีพ</p>
 						</div>
 						<div class="basis-3/4 sm:basis-[85%]">
-							<p class="body-03 font-bold">อาจารย์</p>
+							<p class="body-03 font-bold">
+								{selected_candidate[0].occupation}
+							</p>
 						</div>
 					</div>
 				</div>
@@ -70,7 +100,10 @@ const contents = [
 					<p class="body-03">ช่องทางติดต่อ</p>
 				</div>
 				<div class="bg-base-100 p-3 rounded-b-md">
-					<CandidateSocialMediaList section="details" />
+					<CandidateSocialMediaList
+						section="details"
+						contacts={selected_candidate[0].contacts}
+					/>
 				</div>
 			</div>
 
@@ -79,7 +112,9 @@ const contents = [
 					<p class="body-03">จุดยืน</p>
 				</div>
 				<div class="bg-base-100 p-3 rounded-b-md">
-					<StandPointList />
+					<StandPointList
+						standpoints={selected_candidate[0].politicalStances}
+					/>
 				</div>
 			</div>
 
@@ -92,14 +127,7 @@ const contents = [
 						แนวทางการพิจารณาเห็นชอบผู้ดำรงตำแหน่งในองค์กรอิสระ
 					</p>
 					<p class="body-01">
-						Lorem ipsum dolor sit amet consectetur. Urna tristique eget nibh sem
-						aliquet nisi vitae sed aenean. Id auctor blandit morbi dictum
-						aliquam venenatis fringilla et. Id nisi habitant tempor sit nisl
-						aliquet vitae et. Duis pellentesque dictum odio nunc gravida
-						bibendum lectus consectetur. Dui eu commodo et aliquam varius.
-						Faucibus arcu dolor fermentum tellus odio. Hac sem faucibus nunc
-						arcu leo in ullamcorper. Interdum sapien lacus posuere fringilla
-						aliquam sed. Ultrices suspendisse commodo volutpat pulvinar ac.
+						{selected_candidate[0].visionQuestionaires[0].answer}
 					</p>
 
 					<hr class="border-base-300 my-5" />
@@ -108,14 +136,7 @@ const contents = [
 						เหตุผลความตั้งใจในการลงสมัคร สว. ครั้งนี้
 					</p>
 					<p class="body-01">
-						Lorem ipsum dolor sit amet consectetur. Urna tristique eget nibh sem
-						aliquet nisi vitae sed aenean. Id auctor blandit morbi dictum
-						aliquam venenatis fringilla et. Id nisi habitant tempor sit nisl
-						aliquet vitae et. Duis pellentesque dictum odio nunc gravida
-						bibendum lectus consectetur. Dui eu commodo et aliquam varius.
-						Faucibus arcu dolor fermentum tellus odio. Hac sem faucibus nunc
-						arcu leo in ullamcorper. Interdum sapien lacus posuere fringilla
-						aliquam sed. Ultrices suspendisse commodo volutpat pulvinar ac.
+						{selected_candidate[0].visionQuestionaires[1].answer}
 					</p>
 				</div>
 			</div>

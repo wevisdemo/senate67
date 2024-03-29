@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
 	section: String,
-	contacts: Array || Object,
+	contacts: Object,
 });
 </script>
 
@@ -13,20 +13,20 @@ defineProps({
 		<div class="flex items-center" v-if="contacts.facebookUrl != ''">
 			<img src="/facebook-icon.svg" class="inline pr-2" />
 			<a
-				:href="'https://www.' + contacts.facebookUrl"
+				:href="contacts.facebookUrl"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-neutral underline body-03"
+				class="text-neutral underline body-03 word-break"
 				>{{ contacts.facebookUrl }}</a
 			>
 		</div>
 		<div class="flex items-center" v-if="contacts.xUrl != ''">
 			<img src="/x-icon.svg" class="inline pr-2" />
 			<a
-				:href="'https://www.' + contacts.xUrl"
+				:href="contacts.xUrl"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-neutral underline body-03"
+				class="text-neutral underline body-03 word-break"
 				>{{ contacts.xUrl }}
 			</a>
 		</div>
