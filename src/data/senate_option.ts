@@ -58,12 +58,16 @@ const occupationDescriptionMap = new Map<string, string>([
 export const occupationListData: CheckboxInfo[] = Object.values(
 	ApplicationGroup,
 )
+ .filter((group) => ![
+  ApplicationGroup.ElderlyDisabledEthicityAndOtherIdentity, 
+  ApplicationGroup.Women, 
+  ApplicationGroup.Other
+ ].includes(group))
 	.map((title) => ({
 		title,
 		description:
 			`${occupationDescriptionMap.get(title) ?? ""} หรืออื่นๆ ในทำนองเดียวกัน`.trim(),
-	}))
-	.filter(({ title }) => title !== ApplicationGroup.Other);
+	}));
 
 export const personalListData: CheckboxInfo[] = [
 	{ title: ApplicationGroup.Women, description: "เป็นผู้หญิง โดยเพศกำเนิด" },
