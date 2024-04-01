@@ -5,7 +5,10 @@ const { contents } = Astro.props as {
 };
 ---
 
-<div id="table-of-contents" class="bg-info rounded-sm p-[10px] text-[#0058C1]">
+<div
+	id="table-of-contents"
+	class="bg-base-100 rounded-sm p-[10px] text-[#0058C1]"
+>
 	<h2 class="body-02 font-bold md:hidden">สารบัญ</h2>
 	<ul class="flex flex-col md:flex-row">
 		{
@@ -16,7 +19,7 @@ const { contents } = Astro.props as {
 							href={`#${item.id}`}
 							class="inline-flex justify-between w-full py-[5px]"
 						>
-							{item.title} <ArrowDown />
+							{item.title} <ArrowDown color="#0058C1" />
 						</a>
 					</li>
 					{idx !== arr.length - 1 && (

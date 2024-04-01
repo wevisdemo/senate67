@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+import { ref, onBeforeMount } from "vue";
 
 import CandidateAvatar from "../candidate/CandidateAvatar.vue";
 import CandidateDepartmentAndGroupDetails from "../candidate/CandidateDepartmentAndGroupDetails.vue";
@@ -17,7 +17,18 @@ const props = defineProps({
 
 const groupResults = ref([]);
 
-const getCandidatesData = async (province, district, application) => {
+const province_query = ref("");
+const district_query = ref("");
+const occupation_query = ref("");
+const url = ref("");
+const params = ref("");
+
+const getCandidatesData = async (
+	province,
+	district,
+	application,
+	isClearFilter,
+) => {
 	groupResults.value = [];
 
 	if (province == "ทุกจังหวัด")
@@ -60,9 +71,24 @@ const getCandidatesData = async (province, district, application) => {
 			}
 		}
 	}
+
+	if (params.size != 0 && isClearFilter) {
+		province_query.value = "";
+		district_query.value = "";
+		occupation_query.value = "";
+	}
 };
 
-groupResults.value = props.candidates;
+onBeforeMount(() => {
+	url.value = new URL(window.location.href);
+	params.value = url.value.searchParams;
+
+	if (params.value.size != 0) {
+		province_query.value = params.value.get("province");
+		district_query.value = params.value.get("district");
+		occupation_query.value = params.value.get("occupation");
+	} else groupResults.value = props.candidates;
+});
 </script>
 
 <template>
@@ -78,13 +104,6 @@ groupResults.value = props.candidates;
 				<p class="max-w-[650px] mx-auto body-01 text-base-100">
 					ทั้งหมด {{ total_candidate }} คน ในฐานข้อมูล
 				</p>
-
-				<a
-					class="mx-auto inline-flex content-center items-center gap-2 text-secondary underline pt-5"
-					href="/checklist"
-					target="_blank"
-					>ดูวิธีคัดเลือก สว.
-				</a>
 			</div>
 
 			<div class="pt-14 px-4 z-[99] relative sm:z-0 bg-primary">
@@ -93,6 +112,9 @@ groupResults.value = props.candidates;
 				</p>
 
 				<CandidateFilterList
+					:province_query="province_query"
+					:district_query="district_query"
+					:occupation_query="occupation_query"
 					:provinces="provinces"
 					:districts="districts"
 					:occupations="application_group"

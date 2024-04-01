@@ -24,7 +24,7 @@ defineProps({
 			</div>
 		</div>
 		<div class="basis-4/6 sm:basis-5/6">
-			<p class="body-03">
+			<p class="body-01">
 				{{ item.statement }}
 			</p>
 		</div>

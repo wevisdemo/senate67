@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, watch, onMounted, nextTick } from "vue";
 
 const props = defineProps({
 	provinces: Object,
 	districts: Object,
 	occupations: Object,
+	province_query: String,
+	district_query: String,
+	occupation_query: String,
 });
 
 const emit = defineEmits(["filter"]);
@@ -17,17 +20,53 @@ let selected_district_list = ref([]);
 
 const onChangeDistrict = async () => {
 	selected_district_list.value = [];
-	if (selectedProvince.value != "ทุกจังหวัด")
+	if (selectedProvince.value != "ทุกจังหวัด") {
 		selected_district_list.value = district[selectedProvince.value];
-	else selectedDistrict.value = "ทุกอำเภอ/เขต";
+
+		nextTick(() => {
+			selectedDistrict.value =
+				props.district_query != "" ? props.district_query : "ทุกอำเภอ/เขต";
+		});
+	} else selectedDistrict.value = "ทุกอำเภอ/เขต";
+
+	nextTick(() => {
+		emit(
+			"filter",
+			selectedProvince.value,
+			selectedDistrict.value,
+			selectedOccupation.value,
+			false,
+		);
+	});
+};
+
+const clearFitler = () => {
+	selectedProvince.value = "ทุกจังหวัด";
+	selectedDistrict.value = "ทุกอำเภอ/เขต";
+	selectedOccupation.value = "ทุกกลุ่มอาชีพ";
 
 	emit(
 		"filter",
 		selectedProvince.value,
 		selectedDistrict.value,
 		selectedOccupation.value,
+		true,
 	);
 };
+
+onMounted(() => {
+	const url = new URL(window.location.href);
+	const params = url.searchParams;
+
+	if (params.size != 0) {
+		selectedProvince.value =
+			props.province_query != null ? props.province_query : "ทุกจังหวัด";
+		selectedOccupation.value =
+			props.occupation_query != null ? props.occupation_query : "ทุกกลุ่มอาชีพ";
+
+		onChangeDistrict();
+	}
+});
 
 watch(selectedProvince, async (newProvince, oldProvince) => {
 	if (newProvince != oldProvince) selectedDistrict.value = "ทุกอำเภอ/เขต";
@@ -78,6 +117,11 @@ watch(selectedProvince, async (newProvince, oldProvince) => {
 			</option>
 		</select>
 	</div>
+
+	<p class="text-secondary pt-3 cursor-pointer font-bold" @click="clearFitler">
+		<span class="underline"> ล้างตัวเลือก</span>
+		<img src="/clear-icon.svg" alt="" class="inline pb-[5px] pl-1" />
+	</p>
 </template>
 
 <style scoped>

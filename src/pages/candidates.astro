@@ -1,16 +1,36 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import CandidateList from "../components/candidate/CandidateList.vue";
-import CandidateFilterList from "../components/candidate/CandidateFilterList.vue";
 import { getCandidates } from "../data/get_candidates";
-import {
-	getLocationMap,
-	getProvinceList,
-	type Location,
-} from "../data/senate_option.ts";
+import { getLocationMap, getProvinceList } from "../data/senate_option.ts";
 import { ApplicationGroup } from "../data/application_group.ts";
 
-const candidate_senates = await getCandidates();
+const candidate_senates_data = await getCandidates();
+const candidate_senates = candidate_senates_data.map((candidate) => {
+	return {
+		title: candidate.title,
+		firstName: candidate.firstName,
+		lastName: candidate.lastName,
+		aliasName: candidate.aliasName,
+		age: candidate.age,
+		education: candidate.education,
+		occupation: candidate.occupation,
+		contacts: {
+			facebookUrl: candidate.contacts.facebookUrl,
+			xUrl: candidate.contacts.xUrl,
+			phoneNumber: candidate.contacts.phoneNumber,
+			email: candidate.contacts.email,
+		},
+		application: {
+			group: candidate.application.group,
+			province: candidate.application.province,
+			district: candidate.application.district,
+		},
+		politicalStances: candidate.politicalStances,
+		politicalStanceDescription: candidate.politicalStances,
+	};
+});
+
 const registered_senates = candidate_senates.length;
 const applicationGroup = Object.values(ApplicationGroup);
 const provinceList = getProvinceList();
@@ -24,6 +44,6 @@ const districtList = getLocationMap();
 		application_group={applicationGroup}
 		provinces={provinceList}
 		districts={districtList}
-		client:load
+		client:visible
 	/>
 </Layout>

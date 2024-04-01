@@ -12,13 +12,14 @@ import { getCandidates } from "../../data/get_candidates";
 const candidate_senates = await getCandidates();
 
 export async function getStaticPaths() {
-	const candidate_senates_list = await getCandidates();
+	const candidates = await getCandidates();
 
-	const candidate_list = candidate_senates_list.map((data) => {
-		return { params: { firstname: data.firstName, lastname: data.lastName } };
+	return candidates.map((candidate) => {
+		return {
+			params: { firstname: candidate.firstName, lastname: candidate.lastName },
+			props: { candidate },
+		};
 	});
-
-	return candidate_list;
 }
 
 const { firstname, lastname } = Astro.params;
@@ -63,7 +64,7 @@ const contents = [
 		<div class="max-w-[650px] mx-auto">
 			<div class="bg-white" id="profile">
 				<div class="bg-base-200 p-3 rounded-t-md">
-					<p class="body-03">ข้อมูลทั่วไป</p>
+					<p class="heading-03">ข้อมูลทั่วไป</p>
 				</div>
 				<div class="bg-base-100 p-3 rounded-b-md">
 					<div class="flex space-x-3 px-3 pt-2">
@@ -87,7 +88,7 @@ const contents = [
 							<p class="body-03">อาชีพ</p>
 						</div>
 						<div class="basis-3/4 sm:basis-[85%]">
-							<p class="body-03 font-bold">
+							<p class="body-03 font-bold whitespace-pre-line">
 								{selected_candidate[0].occupation}
 							</p>
 						</div>
@@ -97,7 +98,7 @@ const contents = [
 
 			<div class="bg-white pt-3">
 				<div class="bg-base-200 p-3 rounded-t-md">
-					<p class="body-03">ช่องทางติดต่อ</p>
+					<p class="heading-03">ช่องทางติดต่อ</p>
 				</div>
 				<div class="bg-base-100 p-3 rounded-b-md">
 					<CandidateSocialMediaList

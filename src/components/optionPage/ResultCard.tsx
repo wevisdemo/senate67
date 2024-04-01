@@ -13,7 +13,7 @@ const ResultCard: React.FC<PropsType> = ({
 	group,
 	candidate_count,
 }: PropsType) => {
-	let link = `/candidates?province=${province}&district=${province}&occupation=${group}`;
+	let link = `/candidates?province=${province}&district=${district}&occupation=${group}`;
 	return (
 		<div className="flex w-full text-left">
 			<div className="p-[10px] w-[50%] flex flex-col text-neutral bg-secondary">
