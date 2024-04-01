@@ -150,7 +150,7 @@ export default function ChecklistBody() {
 									<div className="flex flex-col items-center justify-center gap-[5px]">
 										<img src="/close.svg" alt="close" />
 										<p className="body-01 text-center text-accent">
-											{data.user_answer_explanation}
+											คุณขาดคุณสมบัติ สมัครเป็น สว. ในปี 2567 ไม่ได้
 										</p>
 									</div>
 								)}
