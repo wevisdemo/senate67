@@ -59,13 +59,17 @@ const updated_at = new Date().toLocaleString("th-TH", {
 						>แสดงตัวเป็นผู้สมัคร <OpenInNew className=" fill-base-100" />
 					</a>
 
-					<a
-						class="btn w-full bg-primary text-base-100"
-						href="/candidates"
-						target="_blank"
-					>
-						ค้นหาผู้สมัคร
-					</a>
+					{
+						!isProd() && (
+							<a
+								class="btn w-full bg-primary text-base-100"
+								href="/candidates"
+								target="_blank"
+							>
+								ค้นหาผู้สมัคร
+							</a>
+						)
+					}
 				</div>
 
 				<div class="flex justify-center">
