@@ -13,11 +13,13 @@ const props = defineProps<{
 	>
 		<div class="basis-2/6 sm:basis-1/6">
 			<div
-				:class="{
-					'bg-info': item.answer == 'agree',
-					'bg-accent': item.answer == 'disagree',
-					'bg-base-200': item.answer == 'to be considered',
-				}"
+				:class="
+					item.answer == 'agree'
+						? 'bg-info'
+						: item.answer == 'disagree'
+							? 'bg-accent'
+							: 'bg-base-200'
+				"
 				class="text-center p-1 rounded-sm"
 			>
 				<p class="body-03" v-if="item.answer == 'agree'">เห็นด้วย</p>
