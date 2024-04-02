@@ -1,13 +1,45 @@
-<script setup>
-defineProps({
+<script setup lang="ts">
+import { ref, onBeforeMount } from "vue";
+
+const props = defineProps({
 	standpoints: Object,
+	section: String,
+});
+
+const standpoints_list = ref([]);
+
+const default_standpoints = [
+	"เขียนรัฐธรรมนูญใหม่ “ทั้งฉบับ”",
+	"เขียนรัฐธรรมนูญใหม่ แต่ยกเว้นหมวด 1 หมวด 2",
+	"ให้มีสภาร่างรัฐธรรมนูญ (สสร.) ใหม่ จากการเลือกตั้ง100%",
+	"ยกเลิกสว. ใช้ระบบสภาเดี่ยว",
+	"นิรโทษกรรมคดีการเมือง “ทุกคดี”",
+];
+
+const getStandPointData = async () => {
+	if (props.section == "details") {
+		props.standpoints.forEach((standpoints) => {
+			standpoints_list.value.push(standpoints);
+		});
+	} else {
+		props.standpoints.forEach((standpoints) => {
+			default_standpoints.forEach((default_standpoints) => {
+				if (standpoints.statement == default_standpoints)
+					standpoints_list.value.push(standpoints);
+			});
+		});
+	}
+};
+
+onBeforeMount(() => {
+	getStandPointData();
 });
 </script>
 
 <template>
 	<div
 		class="flex gap-2 border-b border-b-base-300 py-1 items-center"
-		v-for="item in standpoints"
+		v-for="item in standpoints_list"
 	>
 		<div class="basis-2/6 sm:basis-1/6">
 			<div

@@ -30,6 +30,17 @@ const selected_candidate = candidate_senates.filter(
 
 const fullname = firstname + " " + lastname;
 
+const description =
+	selected_candidate[0].application.province +
+	" " +
+	"(" +
+	selected_candidate[0].application.district +
+	")" +
+	" - " +
+	selected_candidate[0].application.group;
+
+const pathname = "candidates/" + firstname + "-" + lastname;
+
 const contents = [
 	{ title: "ข้อมูลทั่วไป", id: "profile" },
 	{ title: "จุดยืน", id: "standpoint" },
@@ -37,10 +48,9 @@ const contents = [
 ];
 ---
 
-<Layout title={fullname}>
+<Layout title={fullname} desc={description}>
 	<section class="max-w-screen-xl mx-auto px-5 mt-24">
 		<!-- <img src="/example-candidate-video.svg" alt="" /> -->
-
 		<div class="max-w-[650px] mx-auto">
 			<div class="flex space-x-2 py-10">
 				<div class="basis-3/4 text-left">
@@ -115,6 +125,8 @@ const contents = [
 				<div class="bg-base-100 p-3 rounded-b-md">
 					<StandPointList
 						standpoints={selected_candidate[0].politicalStances}
+						section="details"
+						client:load
 					/>
 				</div>
 			</div>
@@ -145,7 +157,7 @@ const contents = [
 			<div class="py-10 text-center">
 				<p class="body-01 pb-3">แชร์ผู้สมัครคนนี้</p>
 				<div class="flex justify-center">
-					<SocialMediaButtons className="fill-[#000]" color="#000" />
+					<SocialMediaButtons color="#000" pathname={pathname} />
 				</div>
 			</div>
 		</div>

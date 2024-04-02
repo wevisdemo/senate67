@@ -3,25 +3,28 @@ import FacebookLogo from "./FacebookLogo.astro";
 import XLogo from "./XLogo.astro";
 import LineLogo from "./LineLogo.astro";
 import { PRODUCTION_URL } from "../../constants";
-const { color } = Astro.props;
+const { color, pathname } = Astro.props;
+const path = pathname != null ? pathname : "";
 ---
 
 <div class="flex gap-2 justify-center">
 	<a
-		href={`http://www.facebook.com/sharer/sharer.php?u=${PRODUCTION_URL}`}
+		href={`http://www.facebook.com/sharer/sharer.php?u=${PRODUCTION_URL}` +
+			path}
 		target="_blank"
 	>
 		<FacebookLogo color={color} />
 	</a>
 	<a
-		href={`https://twitter.com/intent/tweet?url=${PRODUCTION_URL}`}
+		href={`https://twitter.com/intent/tweet?url=${PRODUCTION_URL}` + path}
 		target="_blank"
 	>
 		<XLogo color={color} />
 	</a>
 
 	<a
-		href={`https://social-plugins.line.me/lineit/share?url=${PRODUCTION_URL}`}
+		href={`https://social-plugins.line.me/lineit/share?url=${PRODUCTION_URL}` +
+			path}
 		target="_blank"
 	>
 		<LineLogo color={color} />

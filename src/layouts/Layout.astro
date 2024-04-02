@@ -7,12 +7,13 @@ import { PRODUCTION_URL } from "../constants";
 
 interface Props {
 	title: string;
+	desc: string;
 }
 
-const { title } = Astro.props;
+const { title, desc } = Astro.props;
 const og = new URL("/og.png", PRODUCTION_URL).href;
 const siteName = "สว. 67 สมัครเพื่อโหวต";
-const description = "ประชาชนก็เลือกได้ ถ้าเข้าไปสมัคร!";
+const description = desc != null ? desc : "ประชาชนก็เลือกได้ ถ้าเข้าไปสมัคร!";
 ---
 
 <!doctype html>
