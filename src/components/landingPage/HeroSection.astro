@@ -17,8 +17,10 @@ const updated_at = new Date().toLocaleString("th-TH", {
 });
 ---
 
-<section class="flex items-center justify-center h-screen bg-secondary">
-	<div class="flex flex-col md:flex-row gap-10 items-center mt-10 md:mt-0">
+<section class="flex flex-col items-center h-screen bg-secondary">
+	<div
+		class="flex-1 flex flex-col md:flex-row items-center justify-center gap-10 mt-10 md:mt-0"
+	>
 		<SenateHeroLogo />
 		<div class="flex items-center mx-auto">
 			<div class="flex flex-col gap-5">
@@ -64,11 +66,6 @@ const updated_at = new Date().toLocaleString("th-TH", {
 					>
 						ค้นหาผู้สมัคร
 					</a>
-
-					<a
-						class="mx-auto text-accent underline text-[16px]"
-						href="#meet-the-campaign">รู้จักแคมเปญ</a
-					>
 				</div>
 
 				<div class="flex justify-center">
@@ -77,4 +74,13 @@ const updated_at = new Date().toLocaleString("th-TH", {
 			</div>
 		</div>
 	</div>
+	<a
+		class="static md:absolute bottom-0 flex flex-col justify-center text-primary body-01 font-bold items-center space-y-1 p-1 mb-4"
+		href="#meet-the-campaign"
+		><span>รู้จักแคมเปญ</span>
+		<svg width="36" height="16" viewBox="0 0 36 16" fill="none">
+			<path d="M1.5 1L18 14L34.5 1" stroke="currentColor" stroke-width="2"
+			></path>
+		</svg>
+	</a>
 </section>
