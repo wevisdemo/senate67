@@ -4,46 +4,38 @@ import CandidateList from "../components/candidate/CandidateList.vue";
 import { getCandidates } from "../data/get_candidates";
 import { getLocationMap, getProvinceList } from "../data/senate_option.ts";
 import { ApplicationGroup } from "../data/application_group.ts";
+import type { CandidateOverview } from "../data/candidate";
 
-const candidate_senates_data = await getCandidates();
-const candidate_senates = candidate_senates_data.map((candidate) => {
-	return {
-		title: candidate.title,
-		firstName: candidate.firstName,
-		lastName: candidate.lastName,
-		aliasName: candidate.aliasName,
-		age: candidate.age,
-		education: candidate.education,
-		occupation: candidate.occupation,
-		contacts: {
-			facebookUrl: candidate.contacts.facebookUrl,
-			xUrl: candidate.contacts.xUrl,
-			phoneNumber: candidate.contacts.phoneNumber,
-			email: candidate.contacts.email,
-		},
-		application: {
-			group: candidate.application.group,
-			province: candidate.application.province,
-			district: candidate.application.district,
-		},
-		politicalStances: candidate.politicalStances,
-		politicalStanceDescription: candidate.politicalStances,
-	};
-});
+const highlightStandpoints = [
+	"เขียนรัฐธรรมนูญใหม่ “ทั้งฉบับ”",
+	"เขียนรัฐธรรมนูญใหม่ แต่ยกเว้นหมวด 1 หมวด 2",
+	"ให้มีสภาร่างรัฐธรรมนูญ (สสร.) ใหม่ จากการเลือกตั้ง100%",
+	"ยกเลิกสว. ใช้ระบบสภาเดี่ยว",
+	"นิรโทษกรรมคดีการเมือง “ทุกคดี”",
+];
 
-const registered_senates = candidate_senates.length;
-const applicationGroup = Object.values(ApplicationGroup);
-const provinceList = getProvinceList();
-const districtList = getLocationMap();
+const candidates: CandidateOverview[] = (await getCandidates()).map(
+	({ visionQuestionaires, politicalStances, ...rest }) => ({
+		...rest,
+		politicalStances: politicalStances.filter(({ statement }) =>
+			highlightStandpoints.includes(statement),
+		),
+	}),
+);
+
+const total_candidate = candidates.length;
+const application_group = Object.values(ApplicationGroup);
+const provinces = getProvinceList();
+const districts = getLocationMap();
 ---
 
 <Layout title="ค้นหาผู้สมัคร สว.">
 	<CandidateList
-		candidates={candidate_senates}
-		total_candidate={registered_senates}
-		application_group={applicationGroup}
-		provinces={provinceList}
-		districts={districtList}
+		{candidates}
+		{total_candidate}
+		{application_group}
+		{provinces}
+		{districts}
 		client:visible
 	/>
 </Layout>

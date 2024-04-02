@@ -24,6 +24,8 @@ export interface Candidate {
 	visionQuestionaires: VisionQuestionaire[];
 }
 
+export type CandidateOverview = Omit<Candidate, "visionQuestionaires">;
+
 export interface PoliticalStance {
 	statement: string;
 	answer: "agree" | "disagree" | "to be considered" | "undisclosed" | null;

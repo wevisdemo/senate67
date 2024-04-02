@@ -6,28 +6,31 @@ import CandidateDepartmentAndGroupDetails from "../candidate/CandidateDepartment
 import CandidateSocialMediaList from "../candidate/CandidateSocialMediaList.vue";
 import CandidateFilterList from "../candidate/CandidateFilterList.vue";
 import StandPointList from "../candidate/StandPointList.vue";
+import type { CandidateOverview } from "../../data/candidate";
+import type { ApplicationGroup } from "../../data/application_group";
+import type { LocationMap } from "../../data/senate_option";
 
-const props = defineProps({
-	candidates: Object,
-	application_group: Object,
-	provinces: Object,
-	districts: Object,
-	total_candidate: Number,
-});
+const props = defineProps<{
+	candidates: CandidateOverview[];
+	application_group: ApplicationGroup[];
+	provinces: string[];
+	districts: LocationMap;
+	total_candidate: number;
+}>();
 
-const groupResults = ref([]);
+const groupResults = ref<CandidateOverview[]>([]);
 
 const province_query = ref("");
 const district_query = ref("");
 const occupation_query = ref("");
-const url = ref("");
-const params = ref("");
+const url = ref<URL>();
+const params = ref<URLSearchParams>();
 
 const getCandidatesData = async (
-	province,
-	district,
-	application,
-	isClearFilter,
+	province: string,
+	district: string,
+	application: string,
+	isClearFilter: boolean,
 ) => {
 	groupResults.value = [];
 
@@ -72,7 +75,7 @@ const getCandidatesData = async (
 		}
 	}
 
-	if (params.size != 0 && isClearFilter) {
+	if (params.value?.size != 0 && isClearFilter) {
 		province_query.value = "";
 		district_query.value = "";
 		occupation_query.value = "";
@@ -84,9 +87,9 @@ onBeforeMount(() => {
 	params.value = url.value.searchParams;
 
 	if (params.value.size != 0) {
-		province_query.value = params.value.get("province");
-		district_query.value = params.value.get("district");
-		occupation_query.value = params.value.get("occupation");
+		province_query.value = params.value.get("province") ?? "";
+		district_query.value = params.value.get("district") ?? "";
+		occupation_query.value = params.value.get("occupation") ?? "";
 	} else groupResults.value = props.candidates;
 });
 </script>
