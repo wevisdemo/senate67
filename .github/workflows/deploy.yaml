@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths-ignore:
       - "**/README.md"
+  schedule:
+    - cron: "55 16 * * *" # 23:55 GMT + 7
   workflow_dispatch:
 
 concurrency:
@@ -13,6 +15,7 @@ concurrency:
 
 jobs:
   staging:
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
