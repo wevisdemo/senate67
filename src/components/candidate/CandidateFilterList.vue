@@ -59,10 +59,12 @@ onMounted(() => {
 	const params = url.searchParams;
 
 	if (params.size != 0) {
-		selectedProvince.value =
-			props.province_query != null ? props.province_query : "ทุกจังหวัด";
-		selectedOccupation.value =
-			props.occupation_query != null ? props.occupation_query : "ทุกกลุ่มอาชีพ";
+		selectedProvince.value = props.province_query
+			? props.province_query
+			: "ทุกจังหวัด";
+		selectedOccupation.value = props.occupation_query
+			? props.occupation_query
+			: "ทุกกลุ่มอาชีพ";
 
 		onChangeDistrict();
 	}
