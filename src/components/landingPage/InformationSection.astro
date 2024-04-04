@@ -10,7 +10,6 @@ import ArrowRight from "../icons/ArrowRight.astro";
 import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
 import TableOfContents from "./informationDetailSections/TableOfContents.astro";
 import ArrowUp from "../icons/ArrowUp.astro";
-import { isProd } from "../../utils/flag";
 
 const contents = [
 	{ title: "ทำไมต้องมีแคมเปญนี้", id: "why-do-we-need-this" },
@@ -53,17 +52,9 @@ const contents = [
 				แสดงตัวเป็นผู้สมัคร <OpenInNew className=" fill-[#000]" />
 			</a>
 
-			{
-				!isProd() && (
-					<a
-						href="/candidates"
-						target="_blank"
-						class="btn btn-secondary w-full"
-					>
-						ค้นหาผู้สมัคร <ArrowRight className=" fill-[#000]" />
-					</a>
-				)
-			}
+			<a href="/candidates" target="_blank" class="btn btn-secondary w-full">
+				ค้นหาผู้สมัคร <ArrowRight className=" fill-[#000]" />
+			</a>
 		</div>
 
 		<div class="mx-auto">

@@ -1,5 +1,3 @@
-import { isProd } from "../../utils/flag";
-
 interface PropsType {
 	province: string;
 	district: string;
@@ -23,18 +21,16 @@ const ResultCard: React.FC<PropsType> = ({
 			<div className="p-[10px] w-[50%] text-secondary font-bold body-02 bg-primary">
 				<p>{group}</p>
 			</div>
-			{!isProd() && (
-				<div className="flex flex-col text-center w-[65px]">
-					<p className="heading-03">{candidate_count.toString()}</p>
-					<p className="body-03">คน</p>
-					<a
-						className="link-02 mx-auto inline-flex content-center items-center gap-2 text-accent underline"
-						href={link}
-					>
-						สำรวจ
-					</a>
-				</div>
-			)}
+			<div className="flex flex-col text-center w-[65px]">
+				<p className="heading-03">{candidate_count.toString()}</p>
+				<p className="body-03">คน</p>
+				<a
+					className="link-02 mx-auto inline-flex content-center items-center gap-2 text-accent underline"
+					href={link}
+				>
+					สำรวจ
+				</a>
+			</div>
 		</div>
 	);
 };

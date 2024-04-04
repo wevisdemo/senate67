@@ -5,7 +5,6 @@ import ECTPhoneButton from "../../buttons/ECTPhoneButton.astro";
 import PossibleApplyGroups from "./PossibleApplyGroups.astro";
 import OpenInNew from "../../icons/OpenInNew.astro";
 import ArrowRight from "../../icons/ArrowRight.astro";
-import { isProd } from "../../../utils/flag";
 ---
 
 <InformationDetailCard id="how-to-apply-for" title="วิธีสมัคร สว.">
@@ -89,18 +88,12 @@ import { isProd } from "../../../utils/flag";
 	<p class="text-center">หรือโทรถาม กกต. โดยตรง</p>
 	<ECTPhoneButton />
 
-	{
-		!isProd() && (
-			<>
-				<p class="text-center">
-					เพื่อประกอบการพิจารณา ลองสำรวจผู้สมัครคนอื่นๆ
-					ในพื้นที่และกลุ่มอาชีพเดียวกับคุณดู
-				</p>
-				<a class="btn btn-secondary w-full" href="candidates" target="_blank">
-					ค้นหาผู้สมัคร
-					<ArrowRight />
-				</a>
-			</>
-		)
-	}
+	<p class="text-center">
+		เพื่อประกอบการพิจารณา ลองสำรวจผู้สมัครคนอื่นๆ
+		ในพื้นที่และกลุ่มอาชีพเดียวกับคุณดู
+	</p>
+	<a class="btn btn-secondary w-full" href="candidates" target="_blank">
+		ค้นหาผู้สมัคร
+		<ArrowRight />
+	</a>
 </InformationDetailCard>
