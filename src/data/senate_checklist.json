@@ -8,7 +8,8 @@
 		"answer2_result": "failed",
 		"answer2_explanation": "อายุไม่ถึง 40 ปีเต็ม นับถึงเดือนพฤษภาคม 2567",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
 		"question": "มีสัญชาติไทยตั้งแต่เกิดหรือไม่?",
@@ -19,7 +20,8 @@
 		"answer2_result": "failed",
 		"answer2_explanation": "ไม่มีสัญชาติไทยตั้งแต่เกิด",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
 		"question": "ปัจจุบันคุณทำงานเป็นข้าราชการ พนักงาน หรือลูกจ้างของหน่วยงานรัฐ หรือรัฐวิสาหกิจ หรือไม่?",
@@ -30,7 +32,8 @@
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
 		"question": "เป็นตุลาการศาลรัฐธรรมนูญ​ หรือเป็นผู้ดำรงตำแหน่งในองค์กรอิสระ?",
@@ -41,7 +44,8 @@
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
 		"question": "เป็นเจ้าของหรือผู้ถือหุ้น ในกิจการหนังสือพิมพ์หรือสื่อมวลชน?",
@@ -52,7 +56,8 @@
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
 		"question": "เป็นสมาชิกพรรคการเมือง?",
@@ -63,7 +68,11 @@
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {
+			"text": "ตรวจสอบการเป็นสมาชิกพรรคการเมืองได้ที่",
+			"link": "https://party.ect.go.th/checkidparty"
+		}
 	},
 	{
 		"question": "เป็นพระภิกษุ สามเณร นักพรต หรือนักบวช?",
@@ -74,7 +83,8 @@
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
 		"question": "เป็นบุคคลล้มละลายอยู่จนถึงเดือนพฤษภาคม 2567 หรือเคยเป็นบุคคลล้มละลายทุจริต?",
@@ -85,18 +95,8 @@
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
-	},
-	{
-		"question": "เป็นบุคคลวิกลจริต หรือจิตฟั่นเฟือนไม่สมประกอบ?",
-		"answer1_label": "เป็น",
-		"answer1_result": "failed",
-		"answer1_explanation": "เป็นบุคคลวิกลจริต หรือจิตฟั่นเฟือนไม่สมประกอบ",
-		"answer2_label": "ไม่เป็น",
-		"answer2_result": "sucess",
-		"answer2_explanation": "",
-		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
 		"question": "อยู่ในระหว่างถูกเพิกถอนสิทธิเลือกตั้ง หรือระงับสิทธิสมัครรับเลือกตั้ง?",
@@ -107,7 +107,8 @@
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
 		"question": "เคยต้องคำพิพากษาถึงที่สุดว่า ทำความผิดต่อตำแหน่งหน้าที่ราชการ ความผิดเกี่ยวกับทรัพย์ที่กระทำโดยทุจริต ความผิดฐานฉ้อโกงประชาชน ความผิดฐานเป็นผู้ผลิตหรือผู้ค้ายาเสพติด ความผิดฐานเป็นเจ้ามือการพนัน ความผิดฐานค้ามนุษย์ ความผิดฐานฟอกเงิน?",
@@ -118,7 +119,8 @@
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
 		"question": "เคยต้องคำพิพากษาถึงที่สุดว่า ร่ำรวยผิดปกติ หรือมีความผิดตามกฎหมายป.ป.ช. หรือทุจริตการเลือกตั้ง?",
@@ -129,7 +131,8 @@
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
 		"question": "เคยพ้นจากราชการเพราะทุจริตต่อหน้าที่?",
@@ -140,21 +143,23 @@
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
-		"question": "เป็นรัฐมนตรี เป็นสส. เป็นผู้ดำรงตำแหน่งในพรรคการเมือง เป็นผู้บริหารท้องถิ่น เป็นสมาชิกสภาท้องถิ่น หรือพ้นจากตำแหน่งมาไม่เกิน 5 ปี นับจนถึงพ.ค.67?",
+		"question": "เป็นรัฐมนตรี เป็นสส. เป็นผู้ดำรงตำแหน่งในพรรคการเมือง เป็นผู้บริหารท้องถิ่น เป็นสมาชิกสภาท้องถิ่น และพ้นจากตำแหน่งมาไม่เกิน 5 ปี นับจนถึงพ.ค.67?",
 		"answer1_label": "ใช่",
 		"answer1_result": "failed",
-		"answer1_explanation": "เป็นรัฐมนตรี เป็นสส. เป็นผู้ดำรงตำแหน่งในพรรคการเมือง เป็นผู้บริหารท้องถิ่น เป็นสมาชิกสภาท้องถิ่น หรือพ้นจากตำแหน่งมาไม่เกิน 5 ปี นับจนถึงพ.ค.67",
+		"answer1_explanation": "เป็นรัฐมนตรี เป็นสส. เป็นผู้ดำรงตำแหน่งในพรรคการเมือง เป็นผู้บริหารท้องถิ่น เป็นสมาชิกสภาท้องถิ่น และพ้นจากตำแหน่งมาไม่เกิน 5 ปี นับจนถึงพ.ค.67",
 		"answer2_label": "ไม่ใช่",
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
-		"question": "เป็นบุพการี (บิดามารดา ปู่ย่า ตายาย) คู่สมรส หรือบุตร ของสส. สว. ข้าราชการการเมือง สมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น?",
+		"question": "เป็นบุพการี (บิดามารดา ปู่ย่า ตายาย) คู่สมรส หรือบุตร ของสส. สว. ข้าราชการการเมือง สมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น? (ถ้าบุพการี คู่สมรส หรือบุตร ลาออกตำแหน่งดังกล่าวแล้ว ให้ตอบว่า ไม่ใช่)",
 		"answer1_label": "ใช่",
 		"answer1_result": "failed",
 		"answer1_explanation": "เป็นบุพการี (บิดามารดา ปู่ย่า ตายาย) คู่สมรส หรือบุตร ของสส. สว. ข้าราชการการเมือง สมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น",
@@ -162,7 +167,8 @@
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
 	},
 	{
 		"question": "เป็นบุพการี (บิดามารดา ปู่ย่า ตายาย) คู่สมรส หรือบุตร ของผู้ที่จะสมัครสว. ในปี 2567?",
@@ -173,6 +179,41 @@
 		"answer2_result": "sucess",
 		"answer2_explanation": "",
 		"user_answer": "",
-		"user_answer_explanation": ""
+		"user_answer_explanation": "",
+		"description": {}
+	},
+	{
+		"question": "คุณถูกจำกัดสิทธิสมัคร สว. 2567 เนื่องจากไม่ได้ไปใช้สิทธิเลือกตั้ง สส. 2566 หรือไม่ได้ไปเลือกตั้งซ่อม สส. ในช่วงปี 2565 (เฉพาะเขตที่มีการเลือกตั้งซ่อม) และไม่ได้แจ้งเหตุไม่ไปใช้สิทธิเลือกตั้ง",
+		"answer1_label": "ใช่",
+		"answer1_result": "failed",
+		"answer1_explanation": "ไม่ได้ไปใช้สิทธิเลือกตั้ง สส. 2566 หรือไม่ได้ไปเลือกตั้งซ่อม สส. ในช่วงปี 2565 โดยไม่ได้แจ้งเหตุ",
+		"answer2_label": "ไม่ใช่",
+		"answer2_result": "sucess",
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": "",
+		"description": {
+			"text": "ตรวจสอบว่าถูกจำกัดสิทธิหรือไม่ ได้ทาง",
+			"link": "https://boraservices.bora.dopa.go.th/election/absvote/"
+		}
+	},
+	{
+		"question": "คุณเคยได้รับโทษจำคุก และพ้นโทษมายังไม่ถึง 10 ปี",
+		"answer1_label": "เคย",
+		"answer1_result": "failed",
+		"answer1_explanation": "เคยได้รับโทษจำคุก และพ้นโทษมายังไม่ถึง 10 ปี",
+		"answer2_label": "ไม่เคย",
+		"answer2_result": "sucess",
+		"answer2_explanation": "",
+		"user_answer": "",
+		"user_answer_explanation": "",
+		"description": {
+			"text": "ถ้าเป็นกรณีต่อไปนี้ ให้ตอบว่า “ไม่เคย”",
+			"list": [
+				"คดีนั้นรอลงอาญา",
+				"พ้นโทษมายังไม่ถึง 10 ปี แต่เป็นคดีความผิดจากการกระทำโดยประมาท",
+				"พ้นโทษมายังไม่ถึง 10 ปี แต่เป็นคดีความผิดลหุโทษ (ความผิดที่กฎหมายกำหนดโทษจำคุกไม่เกินหนึ่งเดือน ปรับไม่เกิน 10,000 บาท)"
+			]
+		}
 	}
 ]

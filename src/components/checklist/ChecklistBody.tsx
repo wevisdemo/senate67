@@ -112,6 +112,27 @@ export default function ChecklistBody() {
 							<div className="flex flex-col items-center justify-center gap-5 w-[288px] md:w-[650px]">
 								<QuestionLabel number={index + 1} />
 								<h1 className="heading-02 text-center">{data.question}</h1>
+								{data.description && (
+									<>
+										<h1 className="heading-02 text-center mb-0">
+											{data.description.text}
+										</h1>
+										{data.description.link && (
+											<a target="_blank" href={data.description.link}>
+												{data.description.link}
+											</a>
+										)}
+										{data.description.list && (
+											<div className="text-left">
+												{data.description.list.map((item, index) => (
+													<li className="text-left" key={index}>
+														{item}
+													</li>
+												))}
+											</div>
+										)}
+									</>
+								)}
 								<div className="flex gap-[10px]">
 									<SelectButton
 										isActive={data.user_answer === data.answer1_result}
