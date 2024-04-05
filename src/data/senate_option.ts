@@ -48,10 +48,13 @@ const occupationDescriptionMap = new Map<string, string>([
 	],
 	[ApplicationGroup.Education, "เช่น ครู อาจารย์ นักวิจัย ผู้บริหารสถานศึกษา"],
 	[ApplicationGroup.Healthcare, "เช่น การแพทย์ พยาบาล เภสัชกร"],
-	[ApplicationGroup.OtherEntrepreneurs, "เช่น อดีตข้าราชการ เจ้าหน้าที่รัฐ"],
+	[
+		ApplicationGroup.OtherEntrepreneurs,
+		"เช่น ผู้ประกอบกิจการที่ขนาดใหญ่กว่า SMEs",
+	],
 	[
 		ApplicationGroup.TourismAndHotel,
-		"เช่น มัคคุเทศก์ ผู้ประกอบกิจการอื่นหรือพนักงานโรงแรม",
+		"เช่น ผู้ประกอบธุรกิจท่องเที่ยว มัคคุเทศก์ ผู้ประกอบกิจการโรงแรม พนักงานโรงแรม หรืออื่น ๆ ในทำนองเดียวกัน",
 	],
 ]);
 
