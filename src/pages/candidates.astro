@@ -14,16 +14,6 @@ const highlightStandpoints = [
 	"นิรโทษกรรมคดีการเมือง “ทุกคดี”",
 ];
 
-function compare(a, b) {
-	if (a.firstName < b.firstName) {
-		return -1;
-	}
-	if (a.firstName > b.firstName) {
-		return 1;
-	}
-	return 0;
-}
-
 const candidates: CandidateOverview[] = (await getCandidates())
 	.map(({ visionQuestionaires, politicalStances, ...rest }) => ({
 		...rest,
@@ -31,7 +21,7 @@ const candidates: CandidateOverview[] = (await getCandidates())
 			highlightStandpoints.includes(statement),
 		),
 	}))
-	.sort(compare);
+	.sort((a, z) => a.firstName.localeCompare(z.firstName));
 
 const total_candidate = candidates.length;
 const application_group = Object.values(ApplicationGroup);

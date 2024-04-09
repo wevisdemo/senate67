@@ -10,7 +10,10 @@ defineProps({
 		class="flex px-2 gap-1 flex-col"
 		:class="[section == 'details' ? 'sm:flex-row justify-between ' : 'pt-2']"
 	>
-		<div class="flex items-center" v-if="contacts.facebookUrl != ''">
+		<div
+			class="flex items-center"
+			v-if="contacts.facebookUrl != '' && contacts.facebookUrl != '-'"
+		>
 			<img src="/facebook-icon.svg" class="inline pr-2" />
 			<a
 				:href="contacts.facebookUrl"
@@ -20,7 +23,10 @@ defineProps({
 				>{{ contacts.facebookUrl }}</a
 			>
 		</div>
-		<div class="flex items-center" v-if="contacts.xUrl != ''">
+		<div
+			class="flex items-center"
+			v-if="contacts.xUrl != '' && contacts.xUrl != '-'"
+		>
 			<img src="/x-icon.svg" class="inline pr-2" />
 			<a
 				:href="contacts.xUrl"
@@ -30,11 +36,17 @@ defineProps({
 				>{{ contacts.xUrl }}
 			</a>
 		</div>
-		<div class="flex items-center" v-if="contacts.phoneNumber != ''">
+		<div
+			class="flex items-center"
+			v-if="contacts.phoneNumber != '' && contacts.phoneNumber != '-'"
+		>
 			<img src="/phone-icon.svg" class="inline pr-2" />
 			<span class="body-03">{{ contacts.phoneNumber }}</span>
 		</div>
-		<div class="flex items-center" v-if="contacts.email != ''">
+		<div
+			class="flex items-center"
+			v-if="contacts.email != '' && contacts.email != '-'"
+		>
 			<img src="/email-icon.svg" class="inline pr-2" />
 			<div>
 				<p class="body-03 word-break">{{ contacts.email }}</p>

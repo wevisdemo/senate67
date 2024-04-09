@@ -152,32 +152,32 @@ onBeforeMount(() => {
 
 				<div class="text-left">
 					<div class="flex space-x-2 pt-3">
-						<div class="flex-1">
+						<div class="flex-1 w-3/5 sm:w-auto">
 							<div class="bg-base-200 px-3 py-0.5 rounded-md">
 								<p class="body-03">ข้อมูลทั่วไป</p>
 							</div>
 
 							<div class="flex space-x-3 px-3 pt-2">
-								<div class="basis-[33%] sm:basis-[15%]">
+								<div class="w-1/4 sm:w-[15%]">
 									<p class="body-03 mt-[2px]">อายุ</p>
 								</div>
-								<div class="basis-3/4 sm:basis-[85%]">
+								<div class="w-3/4 sm:w-[85%]">
 									<p class="body-01 font-bold">{{ item.age }} ปี</p>
 								</div>
 							</div>
 							<div class="flex space-x-3 px-3">
-								<div class="basis-[33%] sm:basis-[15%]">
+								<div class="w-1/4 sm:w-[15%]">
 									<p class="body-03 mt-[2px]">การศึกษา</p>
 								</div>
-								<div class="basis-3/4 sm:basis-[85%]">
+								<div class="w-3/4 sm:w-[85%]">
 									<p class="body-01 font-bold">{{ item.education }}</p>
 								</div>
 							</div>
 							<div class="flex space-x-3 px-3">
-								<div class="basis-[33%] sm:basis-[15%]">
+								<div class="w-1/4 sm:w-[15%]">
 									<p class="body-03 mt-[2px]">อาชีพ</p>
 								</div>
-								<div class="basis-3/4 sm:basis-[85%]">
+								<div class="w-3/4 sm:w-[85%]">
 									<p class="body-01 font-bold">{{ item.occupation }}</p>
 								</div>
 							</div>
