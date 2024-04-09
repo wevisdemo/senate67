@@ -1,27 +1,28 @@
 <script setup lang="ts">
 import { ref, watch, onMounted, nextTick } from "vue";
+import type { LocationMap } from "../../data/senate_option";
+import type { ApplicationGroup } from "../../data/application_group";
 
-const props = defineProps({
-	provinces: Object,
-	districts: Object,
-	occupations: Object,
-	province_query: String,
-	district_query: String,
-	occupation_query: String,
-});
+const props = defineProps<{
+	provinces: string[];
+	districts: LocationMap;
+	occupations: ApplicationGroup[];
+	province_query: string;
+	district_query: string;
+	occupation_query: string;
+}>();
 
 const emit = defineEmits(["filter"]);
 
-const district = props.districts;
 const selectedProvince = ref("ทุกจังหวัด");
 const selectedDistrict = ref("ทุกอำเภอ/เขต");
 const selectedOccupation = ref("ทุกกลุ่มอาชีพ");
-let selected_district_list = ref([]);
+let selected_district_list = ref<string[]>([]);
 
 const onChangeDistrict = async () => {
 	selected_district_list.value = [];
 	if (selectedProvince.value != "ทุกจังหวัด") {
-		selected_district_list.value = district[selectedProvince.value];
+		selected_district_list.value = props.districts[selectedProvince.value];
 
 		nextTick(() => {
 			selectedDistrict.value =
