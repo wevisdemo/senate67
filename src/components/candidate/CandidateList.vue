@@ -223,7 +223,6 @@ onBeforeMount(() => {
 						<a
 							class="font-bold text-accent underline"
 							:href="'/candidates/' + firstName + '-' + lastName"
-							target="_blank"
 							>ดูเพิ่มเติม
 						</a>
 						<img src="/arrow.svg" class="-rotate-90" alt="" />
@@ -231,7 +230,6 @@ onBeforeMount(() => {
 				</div>
 
 				<a
-					target="_blank"
 					href="https://forms.gle/AiPQPxvqFex2a7Hk8"
 					class="btn w-full bg-primary text-base-100 mt-14"
 				>
