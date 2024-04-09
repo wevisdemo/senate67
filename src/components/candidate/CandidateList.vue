@@ -139,72 +139,90 @@ onBeforeMount(() => {
 
 				<div
 					class="mt-5 bg-base-100 p-2 sm:p-5 rounded-[10px]"
-					v-for="item in groupResults"
+					v-for="{
+						firstName,
+						lastName,
+						aliasName,
+						contacts,
+						application,
+						age,
+						education,
+						occupation,
+						politicalStances,
+					} in groupResults"
 				>
 					<div class="flex space-x-2">
 						<div class="flex-1 text-left">
 							<CandidateAvatar
-								:name="item.firstName + ' ' + item.lastName"
-								:alias="item.aliasName"
+								:name="firstName + ' ' + lastName"
+								:alias="aliasName"
 							/>
 						</div>
 						<div class="max-w-[120px] sm:max-w-[150px] w-full">
-							<CandidateDepartmentAndGroupDetails
-								:application="item.application"
-							/>
+							<CandidateDepartmentAndGroupDetails :application="application" />
 						</div>
 					</div>
 
 					<div class="text-left">
 						<div class="flex space-x-2 pt-3">
-							<div class="flex-1">
-								<div class="bg-base-200 px-3 py-0.5 rounded-md">
-									<p class="body-03">ข้อมูลทั่วไป</p>
+							<div class="flex-1 overflow-hidden text-ellipsis">
+								<div class="body-03 bg-base-200 px-2 py-0.5 rounded-md">
+									ข้อมูลทั่วไป
 								</div>
 
-								<div class="flex space-x-3 px-3 pt-2">
-									<div class="basis-[33%] sm:basis-[15%]">
-										<p class="body-03 mt-[2px]">อายุ</p>
-									</div>
-									<div class="basis-3/4 sm:basis-[85%]">
-										<p class="body-01 font-bold">{{ item.age }} ปี</p>
-									</div>
-								</div>
-								<div class="flex space-x-3 px-3">
-									<div class="basis-[33%] sm:basis-[15%]">
-										<p class="body-03 mt-[2px]">การศึกษา</p>
-									</div>
-									<div class="basis-3/4 sm:basis-[85%]">
-										<p class="body-01 font-bold">{{ item.education }}</p>
-									</div>
-								</div>
-								<div class="flex space-x-3 px-3">
-									<div class="basis-[33%] sm:basis-[15%]">
-										<p class="body-03 mt-[2px]">อาชีพ</p>
-									</div>
-									<div class="basis-3/4 sm:basis-[85%]">
-										<p class="body-01 font-bold">{{ item.occupation }}</p>
-									</div>
-								</div>
+								<table class="space-y-2">
+									<tr>
+										<td class="body-03 mt-[2px]">อายุ</td>
+										<td class="body-01 font-bold flex">{{ age }} ปี</td>
+									</tr>
+									<tr>
+										<td
+											class="body-03 mt-[2px] whitespace-nowrap flex justify-start"
+										>
+											การศึกษา
+										</td>
+										<td
+											class="body-01 font-bold break-words whitespace-pre-wrap"
+										>
+											{{ education }}
+										</td>
+									</tr>
+									<tr>
+										<td class="body-03 mt-[2px] flex justify-start">อาชีพ</td>
+										<td
+											class="body-01 font-bold break-words whitespace-pre-wrap"
+										>
+											{{ occupation }}
+										</td>
+									</tr>
+								</table>
 							</div>
-							<div class="max-w-[120px] sm:max-w-[150px] w-full">
-								<div class="bg-base-200 px-3 py-0.5 body-03 rounded-md">
+							<div
+								v-if="
+									contacts.email ||
+									contacts.facebookUrl ||
+									contacts.phoneNumber ||
+									contacts.xUrl
+								"
+								class="max-w-[120px] sm:max-w-[150px] w-full"
+							>
+								<div class="body-03 bg-base-200 px-2 py-0.5 rounded-md">
 									ช่องทางติดต่อ
 								</div>
-								<CandidateSocialMediaList :contacts="item.contacts" />
+								<CandidateSocialMediaList :contacts="contacts" />
 							</div>
 						</div>
 
-						<div class="bg-base-200 px-3 py-0.5 rounded-md my-2">
-							<p class="body-03">จุดยืน</p>
+						<div class="body-03 bg-base-200 px-2 py-0.5 mt-2 rounded-md">
+							จุดยืน
 						</div>
-						<StandPointList :standpoints="item.politicalStances" />
+						<StandPointList :standpoints="politicalStances" />
 					</div>
 
 					<div class="text-right py-2 flex space-x-1 justify-end">
 						<a
 							class="font-bold text-accent underline"
-							:href="'/candidates/' + item.firstName + '-' + item.lastName"
+							:href="'/candidates/' + firstName + '-' + lastName"
 							target="_blank"
 							>ดูเพิ่มเติม
 						</a>
@@ -224,4 +242,8 @@ onBeforeMount(() => {
 	</div>
 </template>
 
-<style scoped></style>
+<style scoped>
+td {
+	@apply pl-2 pt-2;
+}
+</style>

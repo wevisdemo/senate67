@@ -47,7 +47,7 @@ const contents = [
 	<section class="max-w-screen-xl mx-auto px-5 mt-24">
 		<!-- <img src="/example-candidate-video.svg" alt="" /> -->
 		<div class="max-w-[650px] mx-auto">
-			<div class="flex space-x-2 py-10">
+			<div class="flex space-x-2 mb-5">
 				<div class="basis-3/4 text-left">
 					<CandidateAvatar
 						section="details"
@@ -85,7 +85,9 @@ const contents = [
 							<p class="body-03">การศึกษา</p>
 						</div>
 						<div class="basis-3/4 sm:basis-[85%]">
-							<p class="body-03 font-bold">{candidate.education}</p>
+							<p class="body-03 font-bold break-words whitespace-pre-wrap">
+								{candidate.education}
+							</p>
 						</div>
 					</div>
 					<div class="flex space-x-3 px-3">
@@ -93,7 +95,7 @@ const contents = [
 							<p class="body-03">อาชีพ</p>
 						</div>
 						<div class="basis-3/4 sm:basis-[85%]">
-							<p class="body-03 font-bold whitespace-pre-line">
+							<p class="body-03 font-bold break-words whitespace-pre-wrap">
 								{candidate.occupation}
 							</p>
 						</div>
