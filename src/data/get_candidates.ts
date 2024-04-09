@@ -26,29 +26,29 @@ export async function getCandidates(): Promise<Candidate[]> {
 
 function mapCandidate(object: { [key: string]: string }): Candidate {
 	return {
-		title: object["คำนำหน้า"],
-		firstName: object["ชื่อ"],
-		lastName: object["นามสกุล"],
-		aliasName: object["ชื่ออื่นๆ ที่คนรู้จัก"],
-		age: Number(object["อายุ"]),
-		education: object["ประวัติการศึกษา"],
-		occupation: object["ประวัติการประกอบอาชีพ"],
+		title: object["คำนำหน้า"].trim(),
+		firstName: object["ชื่อ"].trim(),
+		lastName: object["นามสกุล"].trim(),
+		aliasName: object["ชื่ออื่นๆ ที่คนรู้จัก"].trim(),
+		age: Number(object["อายุ"].trim()),
+		education: object["ประวัติการศึกษา"].trim(),
+		occupation: object["ประวัติการประกอบอาชีพ"].trim(),
 		application: {
-			group: object["ประสงค์จะสมัครในกลุ่ม"] as ApplicationGroup,
-			province: object["จังหวัดที่คุณประสงค์จะลงสมัคร"],
-			district: object["อำเภอ/เขต ที่คุณประสงค์จะลงสมัคร"],
+			group: object["ประสงค์จะสมัครในกลุ่ม"].trim() as ApplicationGroup,
+			province: object["จังหวัดที่คุณประสงค์จะลงสมัคร"].trim(),
+			district: object["อำเภอ/เขต ที่คุณประสงค์จะลงสมัคร"].trim(),
 		},
 		contacts: {
-			facebookUrl: object["Facebook"],
-			xUrl: object["X (Twitter)"],
-			phoneNumber: object["หมายเลขโทรศัพท์"],
-			email: object["Email"],
+			facebookUrl: object["Facebook"].trim(),
+			xUrl: object["X (Twitter)"].trim(),
+			phoneNumber: object["หมายเลขโทรศัพท์"].trim(),
+			email: object["Email"].trim(),
 		},
 		politicalStances: mapPoliticalStances(object),
 		politicalStanceDescription:
 			object[
 				"คำอธิบายจุดยืนในฐานะสมาชิกรัฐสภาเพิ่มเติมที่ต้องการจะให้คนอื่นทราบ"
-			],
+			].trim(),
 		visionQuestionaires: mapVisionQuestionaires(object),
 	};
 }
