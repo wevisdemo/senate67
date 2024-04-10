@@ -72,7 +72,27 @@ const contents = [
 					<p class="heading-03">ข้อมูลทั่วไป</p>
 				</div>
 				<div class="bg-base-100 p-3 rounded-b-md">
-					<div class="flex space-x-3 px-3 pt-2">
+					<table class="space-y-2">
+						<tr>
+							<td class="body-03 mt-[2px]">อายุ</td>
+							<td class="body-01 font-bold flex">{candidate.age} ปี</td>
+						</tr>
+						<tr>
+							<td class="body-03 mt-[2px] whitespace-nowrap flex justify-start">
+								การศึกษา
+							</td>
+							<td class="body-01 font-bold break-words whitespace-pre-wrap"
+								>{candidate.education}</td
+							>
+						</tr>
+						<tr>
+							<td class="body-03 mt-[2px] flex justify-start">อาชีพ</td>
+							<td class="body-01 font-bold break-words whitespace-pre-wrap"
+								>{candidate.occupation}</td
+							>
+						</tr>
+					</table>
+					<!-- <div class="flex space-x-3 px-3 pt-2">
 						<div class="basis-1/4 sm:basis-[15%]">
 							<p class="body-03">อายุ</p>
 						</div>
@@ -99,7 +119,7 @@ const contents = [
 								{candidate.occupation}
 							</p>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 
@@ -159,3 +179,9 @@ const contents = [
 		</div>
 	</section>
 </Layout>
+
+<style scoped>
+	td {
+		@apply pl-2 pt-2;
+	}
+</style>
