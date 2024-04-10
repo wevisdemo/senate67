@@ -163,60 +163,55 @@ onBeforeMount(() => {
 						</div>
 					</div>
 
-					<div class="text-left">
-						<div class="flex space-x-2 pt-3">
-							<div class="flex-1 overflow-hidden text-ellipsis">
-								<div class="body-03 bg-base-200 px-2 py-0.5 rounded-md">
-									ข้อมูลทั่วไป
-								</div>
-
-								<table class="space-y-2">
-									<tr>
-										<td class="body-03 mt-[2px]">อายุ</td>
-										<td class="body-01 font-bold flex">{{ age }} ปี</td>
-									</tr>
-									<tr>
-										<td
-											class="body-03 mt-[2px] whitespace-nowrap flex justify-start"
-										>
-											การศึกษา
-										</td>
-										<td
-											class="body-01 font-bold break-words whitespace-pre-wrap"
-										>
-											{{ education }}
-										</td>
-									</tr>
-									<tr>
-										<td class="body-03 mt-[2px] flex justify-start">อาชีพ</td>
-										<td
-											class="body-01 font-bold break-words whitespace-pre-wrap"
-										>
-											{{ occupation }}
-										</td>
-									</tr>
-								</table>
+					<div class="flex flex-col text-left space-y-2">
+						<div class="overflow-hidden text-ellipsis">
+							<div class="body-03 bg-base-200 px-2 py-0.5 rounded-md">
+								ข้อมูลทั่วไป
 							</div>
-							<div
-								v-if="
-									contacts.email ||
-									contacts.facebookUrl ||
-									contacts.phoneNumber ||
-									contacts.xUrl
-								"
-								class="max-w-[120px] sm:max-w-[150px] w-full"
-							>
-								<div class="body-03 bg-base-200 px-2 py-0.5 rounded-md">
-									ช่องทางติดต่อ
-								</div>
-								<CandidateSocialMediaList :contacts="contacts" />
-							</div>
+							<table>
+								<tr>
+									<td class="body-03 mt-[2px]">อายุ</td>
+									<td class="body-01 font-bold flex">{{ age }} ปี</td>
+								</tr>
+								<tr>
+									<td
+										class="body-03 mt-[2px] whitespace-nowrap flex justify-start"
+									>
+										การศึกษา
+									</td>
+									<td class="body-01 font-bold break-words whitespace-pre-wrap">
+										{{ education }}
+									</td>
+								</tr>
+								<tr>
+									<td class="body-03 mt-[2px] flex justify-start">อาชีพ</td>
+									<td class="body-01 font-bold break-words whitespace-pre-wrap">
+										{{ occupation }}
+									</td>
+								</tr>
+							</table>
 						</div>
 
-						<div class="body-03 bg-base-200 px-2 py-0.5 mt-2 rounded-md">
-							จุดยืน
+						<div
+							v-if="
+								contacts.email ||
+								contacts.facebookUrl ||
+								contacts.phoneNumber ||
+								contacts.xUrl
+							"
+							class="space-y-2"
+						>
+							<div class="body-03 bg-base-200 px-2 rounded-md">
+								ช่องทางติดต่อ
+							</div>
+							<CandidateSocialMediaList :contacts="contacts" />
 						</div>
-						<StandPointList :standpoints="politicalStances" />
+
+						<div class="space-y-1">
+							<div class="body-03 bg-base-200 px-2 rounded-md">จุดยืน</div>
+
+							<StandPointList :standpoints="politicalStances" />
+						</div>
 					</div>
 
 					<div class="text-right py-2 flex space-x-1 justify-end">

@@ -12,12 +12,10 @@ import { getCandidates } from "../../data/get_candidates";
 export async function getStaticPaths() {
 	const candidates = await getCandidates();
 
-	return candidates.map((candidate) => {
-		return {
-			params: { firstname: candidate.firstName, lastname: candidate.lastName },
-			props: { candidate },
-		};
-	});
+	return candidates.map((candidate) => ({
+		params: { firstname: candidate.firstName, lastname: candidate.lastName },
+		props: { candidate },
+	}));
 }
 
 const { firstname, lastname } = Astro.params;
@@ -128,10 +126,7 @@ const contents = [
 					<p class="heading-03">ช่องทางติดต่อ</p>
 				</div>
 				<div class="bg-base-100 p-3 rounded-b-md">
-					<CandidateSocialMediaList
-						section="details"
-						contacts={candidate.contacts}
-					/>
+					<CandidateSocialMediaList contacts={candidate.contacts} />
 				</div>
 			</div>
 

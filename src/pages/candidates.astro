@@ -6,6 +6,8 @@ import { getLocationMap, getProvinceList } from "../data/senate_option.ts";
 import { ApplicationGroup } from "../data/application_group.ts";
 import type { CandidateOverview } from "../data/candidate";
 
+const MAX_TEXT_LENGTH = 80;
+
 const highlightStandpoints = [
 	"เขียนรัฐธรรมนูญใหม่ “ทั้งฉบับ”",
 	"เขียนรัฐธรรมนูญใหม่ แต่ยกเว้นหมวด 1 หมวด 2",
@@ -14,10 +16,17 @@ const highlightStandpoints = [
 	"นิรโทษกรรมคดีการเมือง “ทุกคดี”",
 ];
 
+const trimLongText = (text: string) =>
+	text.length > MAX_TEXT_LENGTH
+		? `${text.slice(0, MAX_TEXT_LENGTH).trim()}...`
+		: text;
+
 const candidates: CandidateOverview[] = (await getCandidates())
-	.map(({ visionQuestionaires, politicalStances, ...rest }) => ({
+	.map(({ visionQuestionaires, ...rest }) => ({
 		...rest,
-		politicalStances: politicalStances.filter(({ statement }) =>
+		education: trimLongText(rest.education),
+		occupation: trimLongText(rest.occupation),
+		politicalStances: rest.politicalStances.filter(({ statement }) =>
 			highlightStandpoints.includes(statement),
 		),
 	}))
