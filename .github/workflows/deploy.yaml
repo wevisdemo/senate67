@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths-ignore:
       - "**/README.md"
+      - "scripts/**"
   schedule:
     - cron: "55 16 * * *" # 23:55 GMT + 7
   workflow_dispatch:
