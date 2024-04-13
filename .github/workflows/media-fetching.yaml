@@ -25,5 +25,5 @@ jobs:
           key: candidate-media
           path: public/candidate-media
         env:
-          CANDIDATE_MEDIA_CSV_URL: ${{ envs.CANDIDATE_MEDIA_CSV_URL }}
+          CANDIDATE_MEDIA_CSV_URL: ${{ env.CANDIDATE_MEDIA_CSV_URL }}
           GOOGLE_API_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GOOGLE_API_SERVICE_ACCOUNT_CREDENTIALS }}
