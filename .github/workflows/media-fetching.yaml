@@ -16,9 +16,9 @@ jobs:
           node-version: 20
           cache: npm
       - name: Install dependencies
-        run: npm i
+        run: cd scripts/media-fetcher && npm i
       - name: Fetch candidate media
-        run: npm run start
+        run: cd scripts/media-fetcher && npm run start
       - name: Cache candidate media
         uses: actions/cache/save@v4
         with:
