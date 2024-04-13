@@ -10,7 +10,8 @@
 		"@google-cloud/local-auth": "2.1.0",
 		"dotenv": "^16.4.5",
 		"googleapis": "105",
-		"sharp": "^0.33.2"
+		"sharp": "^0.33.2",
+		"csv-parse": "^5.5.5"
 	},
 	"devDependencies": {
 		"tsx": "^4.7.0",

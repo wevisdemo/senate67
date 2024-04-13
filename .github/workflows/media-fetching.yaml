@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  media-fetcher:
+  media-fetching:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,9 +16,11 @@ jobs:
           node-version: 20
           cache: npm
       - name: Install dependencies
-        run: cd scripts/media-fetcher && npm i
+        run: npm i
+        working-directory: ./scripts/media-fetcher
       - name: Fetch candidate media
-        run: cd scripts/media-fetcher && npm run start
+        run: npm start
+        working-directory: ./scripts/media-fetcher
       - name: Cache candidate media
         uses: actions/cache/save@v4
         with:
