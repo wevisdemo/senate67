@@ -21,11 +21,11 @@ jobs:
       - name: Fetch candidate media
         run: npm start
         working-directory: ./scripts/media-fetcher
+        env:
+          CANDIDATE_MEDIA_CSV_URL: ${{ env.CANDIDATE_MEDIA_CSV_URL }}
+          GOOGLE_API_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GOOGLE_API_SERVICE_ACCOUNT_CREDENTIALS }}
       - name: Cache candidate media
         uses: actions/cache/save@v4
         with:
           key: candidate-media
           path: public/candidate-media
-        env:
-          CANDIDATE_MEDIA_CSV_URL: ${{ env.CANDIDATE_MEDIA_CSV_URL }}
-          GOOGLE_API_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GOOGLE_API_SERVICE_ACCOUNT_CREDENTIALS }}
