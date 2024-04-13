@@ -1,28 +1,23 @@
-require("dotenv").config();
-import { existsSync, mkdirSync } from "fs";
-import { join } from "path";
-import { GDrive } from "./gdrive";
 import sharp = require("sharp");
-import { getFormResponses, FormResponse } from "./forms";
+import { join } from "path";
 import { Readable } from "stream";
 
-const GDRIVE_SERVICE_ACCOUNT_KEY_PATH = join(process.cwd(), "credentials.json");
-const DESTINATION_PATH = join(process.cwd(), "../../public/candidate-images");
+import { FormResponse } from "./forms";
+import { GDrive } from "./gdrive";
 
-async function main() {
-	// Ensure destination directory
-	if (!existsSync(DESTINATION_PATH)) {
-		mkdirSync(DESTINATION_PATH, { recursive: true });
-	}
+enum DownloadImageFailureReason {
+	EmptyImageUrl,
+	ErrorFetchingFromGDrive,
+	ErrorImageTransformation,
+}
 
-	const formResponses = await getFormResponses();
-	console.log(`Received ${formResponses.length} candidates to download files`);
-
-	const gDrive = new GDrive(GDRIVE_SERVICE_ACCOUNT_KEY_PATH);
-	await gDrive.auth();
-
+export async function downloadImages(
+	formResponses: FormResponse[],
+	gDrive: GDrive,
+	destinationPath: string,
+) {
 	const results = await Promise.allSettled(
-		formResponses.map((r) => downloadImage(r, gDrive)),
+		formResponses.map((r) => downloadImage(r, gDrive, destinationPath)),
 	);
 
 	const fulfilled: PromiseFulfilledResult<sharp.OutputInfo>[] = [];
@@ -75,13 +70,11 @@ async function main() {
 	}
 }
 
-enum DownloadImageFailureReason {
-	EmptyImageUrl,
-	ErrorFetchingFromGDrive,
-	ErrorImageTransformation,
-}
-
-async function downloadImage(formResponse: FormResponse, gDrive: GDrive) {
+async function downloadImage(
+	formResponse: FormResponse,
+	gDrive: GDrive,
+	destinationPath,
+) {
 	const fileName = `${formResponse.firstName}-${formResponse.lastName}.webp`;
 
 	if (!formResponse.imageUrl) {
@@ -111,7 +104,7 @@ async function downloadImage(formResponse: FormResponse, gDrive: GDrive) {
 
 		return await imageStream
 			.pipe(imageTransformer)
-			.toFile(join(DESTINATION_PATH, fileName));
+			.toFile(join(destinationPath, fileName));
 	} catch (e) {
 		return Promise.reject({
 			fileName,
@@ -120,5 +113,3 @@ async function downloadImage(formResponse: FormResponse, gDrive: GDrive) {
 		});
 	}
 }
-
-main();

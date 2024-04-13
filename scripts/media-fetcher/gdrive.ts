@@ -5,16 +5,16 @@ import { Auth, drive_v3, google } from "googleapis";
 // This will be refactored later for other WeVis's projects
 export class GDrive {
 	private static SCOPES = ["https://www.googleapis.com/auth/drive"];
-	private serviceAccountKeyPath: string;
+	private serviceAccountFileContent: { [key: string]: string };
 	private drive?: drive_v3.Drive;
 
-	constructor(serviceAccountKeyPath: string) {
-		this.serviceAccountKeyPath = serviceAccountKeyPath;
+	constructor(serviceAccountFileContent: { [key: string]: string }) {
+		this.serviceAccountFileContent = serviceAccountFileContent;
 	}
 
 	async auth() {
 		const client = new Auth.GoogleAuth({
-			keyFile: this.serviceAccountKeyPath,
+			credentials: this.serviceAccountFileContent,
 			scopes: GDrive.SCOPES,
 		});
 		this.drive = await google.drive({ version: "v3", auth: client });
