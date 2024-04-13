@@ -5,7 +5,10 @@ import { GDrive } from "./gdrive";
 import { getFormResponses } from "./forms";
 import { downloadImages } from "./images";
 
-const DESTINATION_PATH = join(process.cwd(), "../../public/candidate-images");
+const DESTINATION_IMAGE_PATH = join(
+	process.cwd(),
+	"../../public/candidate-media/images",
+);
 
 async function main() {
 	if (!process.env.GOOGLE_API_SERVICE_ACCOUNT_CREDENTIALS) {
@@ -15,8 +18,8 @@ async function main() {
 	}
 
 	// Ensure destination directory
-	if (!existsSync(DESTINATION_PATH)) {
-		mkdirSync(DESTINATION_PATH, { recursive: true });
+	if (!existsSync(DESTINATION_IMAGE_PATH)) {
+		mkdirSync(DESTINATION_IMAGE_PATH, { recursive: true });
 	}
 
 	const formResponses = await getFormResponses();
@@ -27,7 +30,7 @@ async function main() {
 	);
 	await gDrive.auth();
 
-	await downloadImages(formResponses, gDrive, DESTINATION_PATH);
+	await downloadImages(formResponses, gDrive, DESTINATION_IMAGE_PATH);
 }
 
 main();

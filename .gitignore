@@ -21,4 +21,4 @@ pnpm-debug.log*
 .DS_Store
 
 # generated files from scripts
-public/candidate-images
+public/candidate-media

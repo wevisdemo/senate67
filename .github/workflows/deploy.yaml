@@ -27,6 +27,11 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm i
+      - name: Restore cached candidate media
+        uses: actions/cache/restore@v4
+        with:
+          key: candidate-media
+          path: public/candidate-media
       - name: Build staging web
         run: npm run build
         env:

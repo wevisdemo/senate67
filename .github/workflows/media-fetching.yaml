@@ -1,0 +1,29 @@
+name: Fetch Candidate Media
+
+on:
+  schedule:
+    - cron: "50 16 * * *" # 23:50 GMT + 7
+  workflow_dispatch:
+
+jobs:
+  media-fetcher:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm i
+      - name: Fetch candidate media
+        run: npm run start
+      - name: Cache candidate media
+        uses: actions/cache/save@v4
+        with:
+          key: candidate-media
+          path: public/candidate-media
+        env:
+          CANDIDATE_MEDIA_CSV_URL: ${{ envs.CANDIDATE_MEDIA_CSV_URL }}
+          GOOGLE_API_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GOOGLE_API_SERVICE_ACCOUNT_CREDENTIALS }}

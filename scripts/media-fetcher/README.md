@@ -26,4 +26,4 @@ The Google API Service Account is needed for authentication and authorization of
 
 ### Grant Permission to the Targeted Folder
 
-The Service Account will have its own email (e.g. `xxxx@--project-name--.iam.gserviceaccount.com`), add that email address to the targeted folder as a `Editor`.
+The Service Account will have its own email (e.g. `xxxx@--project-name--.iam.gserviceaccount.com`), add that email address to the targeted folder as an `Editor`.
