@@ -138,11 +138,12 @@ onBeforeMount(() => {
 				</p>
 
 				<div
-					class="mt-5 bg-base-100 p-2 sm:p-5 rounded-[10px]"
+					class="mt-5 bg-base-100 p-2 sm:p-5 rounded-[10px] space-y-3"
 					v-for="{
 						firstName,
 						lastName,
 						aliasName,
+						avatarUrl,
 						contacts,
 						application,
 						age,
@@ -156,6 +157,7 @@ onBeforeMount(() => {
 							<CandidateAvatar
 								:name="firstName + ' ' + lastName"
 								:alias="aliasName"
+								:avatar="avatarUrl"
 							/>
 						</div>
 						<div class="max-w-[120px] sm:max-w-[150px] w-full">
@@ -214,7 +216,7 @@ onBeforeMount(() => {
 						</div>
 					</div>
 
-					<div class="text-right py-2 flex space-x-1 justify-end">
+					<div class="text-right flex space-x-1 justify-end">
 						<a
 							class="font-bold text-accent underline"
 							:href="'/candidates/' + firstName + '-' + lastName"

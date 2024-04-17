@@ -5,6 +5,7 @@ import type {
 	VisionQuestionaire,
 } from "./candidate";
 import { parse } from "csv-parse/sync";
+import { getAvatarUrl } from "./media_matcher";
 
 const POLITICAL_STANCE_STARTS_WITH = "คุณคิดเห็นอย่างไรกับประเด็นเหล่านี้? [";
 
@@ -25,11 +26,15 @@ export async function getCandidates(): Promise<Candidate[]> {
 }
 
 function mapCandidate(object: { [key: string]: string }): Candidate {
+	const firstName = object["ชื่อ"].trim();
+	const lastName = object["นามสกุล"].trim();
+
 	return {
 		title: object["คำนำหน้า"].trim(),
-		firstName: object["ชื่อ"].trim(),
-		lastName: object["นามสกุล"].trim(),
+		firstName,
+		lastName,
 		aliasName: object["ชื่ออื่นๆ ที่คนรู้จัก"].trim(),
+		avatarUrl: getAvatarUrl(firstName, lastName),
 		age: Number(object["อายุ"].trim()),
 		education: object["ประวัติการศึกษา"].trim(),
 		occupation: object["ประวัติการประกอบอาชีพ"].trim(),
