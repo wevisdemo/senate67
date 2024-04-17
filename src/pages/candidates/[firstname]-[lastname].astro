@@ -42,9 +42,20 @@ const contents = [
 ---
 
 <Layout title={fullname} desc={description}>
-	<section class="max-w-screen-xl mx-auto px-5 mt-24">
-		<!-- <img src="/example-candidate-video.svg" alt="" /> -->
-		<div class="max-w-[650px] mx-auto">
+	<section class="max-w-screen-xl mx-auto px-5 mt-16">
+		{
+			candidate.videoUrl && (
+				<div class="aspect-video py-5">
+					<iframe
+						class="rounded-lg"
+						src={candidate.videoUrl}
+						height="100%"
+						width="100%"
+					/>
+				</div>
+			)
+		}
+		<div class="max-w-[650px] mx-auto pt-8">
 			<div class="flex space-x-2 mb-5">
 				<div class="basis-3/4 text-left">
 					<CandidateAvatar

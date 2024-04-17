@@ -6,6 +6,7 @@ export interface Candidate {
 	lastName: string;
 	aliasName?: string;
 	avatarUrl: string;
+	videoUrl?: string;
 	age: number;
 	education: string;
 	occupation: string;
