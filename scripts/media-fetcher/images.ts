@@ -75,7 +75,7 @@ async function downloadImage(
 	gDrive: GDrive,
 	destinationPath,
 ) {
-	const fileName = `${formResponse.firstName}-${formResponse.lastName}.webp`;
+	const fileName = `${formResponse.firstName.trim()}-${formResponse.lastName.trim()}.webp`;
 
 	if (!formResponse.imageUrl) {
 		return Promise.reject({
