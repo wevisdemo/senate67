@@ -100,7 +100,7 @@ async function downloadImage(
 	try {
 		const imageTransformer = sharp()
 			.resize({ width: 240, height: 240, position: "top" })
-			.withMetadata()
+			.rotate()
 			.webp();
 
 		return await imageStream
