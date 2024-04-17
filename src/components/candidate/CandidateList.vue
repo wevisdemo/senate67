@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { ref, onBeforeMount } from "vue";
-
+// @ts-ignore
+import enterView from "enter-view";
+import { ref, onBeforeMount, onMounted } from "vue";
 import CandidateAvatar from "../candidate/CandidateAvatar.vue";
 import CandidateDepartmentAndGroupDetails from "../candidate/CandidateDepartmentAndGroupDetails.vue";
 import CandidateSocialMediaList from "../candidate/CandidateSocialMediaList.vue";
@@ -10,6 +11,8 @@ import type { CandidateOverview } from "../../data/candidate";
 import type { ApplicationGroup } from "../../data/application_group";
 import type { LocationMap } from "../../data/senate_option";
 import Spinner from "./Spinner.vue";
+
+const CANDIDATES_PER_PAGE = 10;
 
 const props = defineProps<{
 	candidates: CandidateOverview[];
@@ -26,6 +29,8 @@ const district_query = ref("");
 const occupation_query = ref("");
 const url = ref<URL>();
 const params = ref<URLSearchParams>();
+const loadMoreObserver = ref<HTMLElement>();
+const maxDisplayCandidateIndex = ref(CANDIDATES_PER_PAGE);
 
 const getCandidatesData = async (
 	province: string,
@@ -76,6 +81,8 @@ const getCandidatesData = async (
 		}
 	}
 
+	maxDisplayCandidateIndex.value = CANDIDATES_PER_PAGE;
+
 	if (params.value?.size != 0 && isClearFilter) {
 		province_query.value = "";
 		district_query.value = "";
@@ -92,6 +99,17 @@ onBeforeMount(() => {
 		district_query.value = params.value.get("district") ?? "";
 		occupation_query.value = params.value.get("occupation") ?? "";
 	} else groupResults.value = props.candidates;
+});
+
+onMounted(() => {
+	if (loadMoreObserver.value) {
+		enterView({
+			selector: [loadMoreObserver.value],
+			enter: () => {
+				maxDisplayCandidateIndex.value += CANDIDATES_PER_PAGE;
+			},
+		});
+	}
 });
 </script>
 
@@ -150,12 +168,13 @@ onBeforeMount(() => {
 						education,
 						occupation,
 						politicalStances,
-					} in groupResults"
+					} in groupResults.slice(0, maxDisplayCandidateIndex)"
+					:key="`${firstName}${lastName}`"
 				>
 					<div class="flex space-x-2">
 						<div class="flex-1 text-left">
 							<CandidateAvatar
-								:name="firstName + ' ' + lastName"
+								:name="`${firstName} ${lastName}`"
 								:alias="aliasName"
 								:avatar="avatarUrl"
 							/>
@@ -225,6 +244,8 @@ onBeforeMount(() => {
 						<img src="/arrow.svg" class="-rotate-90" alt="" />
 					</div>
 				</div>
+
+				<div ref="loadMoreObserver" class="-translate-y-[50vh]" />
 
 				<a
 					href="https://forms.gle/AiPQPxvqFex2a7Hk8"
