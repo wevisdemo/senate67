@@ -1,10 +1,12 @@
-<script setup>
-defineProps({
-	section: String,
-	name: String,
-	alias: String,
-	avatar: String,
-});
+<script setup lang="ts">
+const DEFAULT_AVATAR = "/example-candidate-image.svg";
+
+defineProps<{
+	section?: string;
+	name: string;
+	alias?: string;
+	avatar?: string;
+}>();
 </script>
 
 <template>
@@ -13,7 +15,7 @@ defineProps({
 		:class="section == 'details' ? 'flex-col' : 'flex-col sm:flex-row'"
 	>
 		<img
-			:src="avatar"
+			:src="avatar || DEFAULT_AVATAR"
 			class="max-w-[60px] sm:max-w-[130px] w-full object-cover rounded-full"
 			loading="lazy"
 		/>

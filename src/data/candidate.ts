@@ -5,7 +5,7 @@ export interface Candidate {
 	firstName: string;
 	lastName: string;
 	aliasName?: string;
-	avatarUrl: string;
+	avatarUrl?: string;
 	videoUrl?: string;
 	age: number;
 	education: string;

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 // @ts-ignore
 import enterView from "enter-view";
-import { ref, onBeforeMount, onMounted } from "vue";
+import { ref, onBeforeMount, onMounted, computed } from "vue";
 import CandidateAvatar from "../candidate/CandidateAvatar.vue";
 import CandidateDepartmentAndGroupDetails from "../candidate/CandidateDepartmentAndGroupDetails.vue";
 import CandidateSocialMediaList from "../candidate/CandidateSocialMediaList.vue";
@@ -31,6 +31,19 @@ const url = ref<URL>();
 const params = ref<URLSearchParams>();
 const loadMoreObserver = ref<HTMLElement>();
 const maxDisplayCandidateIndex = ref(CANDIDATES_PER_PAGE);
+
+const sortedCandidates = computed<CandidateOverview[] | null>(() =>
+	groupResults.value
+		? [
+				...shuffleArray(
+					groupResults.value.filter(({ avatarUrl }) => avatarUrl),
+				),
+				...shuffleArray(
+					groupResults.value.filter(({ avatarUrl }) => !avatarUrl),
+				),
+			]
+		: null,
+);
 
 const getCandidatesData = async (
 	province: string,
@@ -111,6 +124,17 @@ onMounted(() => {
 		});
 	}
 });
+
+function shuffleArray<T>(array: T[]) {
+	for (var i = array.length - 1; i > 0; i--) {
+		var j = Math.floor(Math.random() * (i + 1));
+		var temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+	}
+
+	return array;
+}
 </script>
 
 <template>
@@ -147,12 +171,12 @@ onMounted(() => {
 			</div>
 		</section>
 		<section class="flex-1 flex bg-info py-10 text-center px-3">
-			<div v-if="!groupResults" class="mx-auto w-full max-w-[650px]">
+			<div v-if="!sortedCandidates" class="mx-auto w-full max-w-[650px]">
 				<Spinner />
 			</div>
 			<div v-else class="mx-auto w-full max-w-[650px]">
 				<p class="heading-02 mb-2 text-neutral">
-					ผลลัพธ์ : {{ groupResults.length }} คน
+					ผลลัพธ์ : {{ sortedCandidates.length }} คน
 				</p>
 
 				<div
@@ -168,7 +192,7 @@ onMounted(() => {
 						education,
 						occupation,
 						politicalStances,
-					} in groupResults.slice(0, maxDisplayCandidateIndex)"
+					} in sortedCandidates.slice(0, maxDisplayCandidateIndex)"
 					:key="`${firstName}${lastName}`"
 				>
 					<div class="flex space-x-2">

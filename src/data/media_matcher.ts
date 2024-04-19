@@ -2,8 +2,6 @@ import { readdirSync, readFileSync, existsSync } from "fs";
 import { join } from "path";
 
 const AVATAR_PATH = "candidate-media/images";
-const DEFAULT_AVATAR = "/example-candidate-image.svg";
-
 const VIDEO_LINKS_JSON = join(
 	process.cwd(),
 	"public/candidate-media/video-links.json",
@@ -19,9 +17,7 @@ export function getAvatarUrl(firstName: string, lastName: string) {
 		filename.replaceAll(" ", "").includes(`${firstName}-${lastName}`),
 	);
 
-	return expectedAvatar
-		? join("/", AVATAR_PATH, expectedAvatar)
-		: DEFAULT_AVATAR;
+	return expectedAvatar && join("/", AVATAR_PATH, expectedAvatar);
 }
 
 export function getVideoUrl(
