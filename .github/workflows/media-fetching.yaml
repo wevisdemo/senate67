@@ -8,6 +8,8 @@ on:
 jobs:
   media-fetching:
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
@@ -24,6 +26,12 @@ jobs:
         env:
           CANDIDATE_MEDIA_CSV_URL: ${{ vars.CANDIDATE_MEDIA_CSV_URL }}
           GOOGLE_API_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GOOGLE_API_SERVICE_ACCOUNT_CREDENTIALS }}
+      - name: Delete previous cache
+        run: |
+          gh extension install actions/gh-actions-cache
+          set +e
+          gh actions-cache delete candidate-media --confirm
+          echo "Done"
       - name: Cache candidate media
         uses: actions/cache/save@v4
         with:
