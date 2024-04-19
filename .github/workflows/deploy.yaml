@@ -6,7 +6,7 @@ on:
     paths-ignore:
       - "**/README.md"
       - "scripts/**"
-      - ".github/workflows/media-fetcher.yaml"
+      - ".github/workflows/media-fetching.yaml"
   schedule:
     - cron: "55 16 * * *" # 23:55 GMT + 7
   workflow_dispatch:

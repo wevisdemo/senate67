@@ -32,6 +32,8 @@ jobs:
           set +e
           gh actions-cache delete candidate-media --confirm
           echo "Done"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Cache candidate media
         uses: actions/cache/save@v4
         with:
