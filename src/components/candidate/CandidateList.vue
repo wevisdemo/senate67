@@ -12,7 +12,7 @@ import type { ApplicationGroup } from "../../data/application_group";
 import type { LocationMap } from "../../data/senate_option";
 import Spinner from "./Spinner.vue";
 
-const CANDIDATES_PER_PAGE = 10;
+const CANDIDATES_PER_PAGE = 25;
 
 const props = defineProps<{
 	candidates: CandidateOverview[];
@@ -118,12 +118,18 @@ onMounted(() => {
 	if (loadMoreObserver.value) {
 		enterView({
 			selector: [loadMoreObserver.value],
-			enter: () => {
-				maxDisplayCandidateIndex.value += CANDIDATES_PER_PAGE;
-			},
+			enter: displayMore,
 		});
 	}
 });
+
+function displayMore() {
+	const nextDisplaySize = maxDisplayCandidateIndex.value + CANDIDATES_PER_PAGE;
+
+	maxDisplayCandidateIndex.value = groupResults.value
+		? Math.min(nextDisplaySize, groupResults.value.length)
+		: nextDisplaySize;
+}
 
 function shuffleArray<T>(array: T[]) {
 	for (var i = array.length - 1; i > 0; i--) {
@@ -270,6 +276,20 @@ function shuffleArray<T>(array: T[]) {
 				</div>
 
 				<div ref="loadMoreObserver" class="-translate-y-[50vh]" />
+
+				<button
+					v-if="maxDisplayCandidateIndex < sortedCandidates.length"
+					class="btn btn-ghost mt-6"
+					@click="displayMore"
+				>
+					โหลดเพิ่ม
+					<svg width="16" height="17" viewBox="0 0 16 17" fill="none">
+						<path
+							d="M12.295 8.62831L8.5 12.4183V2.33331H7.5V12.4183L3.705 8.62831L3 9.33331L8 14.3333L13 9.33331L12.295 8.62831Z"
+							fill="currentColor"
+						></path>
+					</svg>
+				</button>
 
 				<a
 					href="https://forms.gle/AiPQPxvqFex2a7Hk8"
