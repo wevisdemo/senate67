@@ -8,7 +8,7 @@ on:
       - "scripts/**"
       - ".github/workflows/media-fetching.yaml"
   schedule:
-    - cron: "55 16 * * *" # 23:55 GMT + 7
+    - cron: "*/10 0 * * *"
   workflow_dispatch:
 
 concurrency:
