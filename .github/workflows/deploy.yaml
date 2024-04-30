@@ -43,7 +43,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: senate67
+          projectName: senate67-v2
           directory: ./suspense-static #./dist
           branch: staging
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
@@ -73,6 +73,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: senate67
+          projectName: senate67-v2
           directory: ./suspense-static #./dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
