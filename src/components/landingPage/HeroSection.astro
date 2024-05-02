@@ -4,9 +4,20 @@ import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
 import ArrowRight from "../icons/ArrowRight.astro";
 ---
 
-<section class="flex flex-col items-center h-screen bg-secondary">
+<section class="flex w-full flex-col items-center h-screen bg-secondary pt-16">
+	<div class="flex w-full px-3 py-4 bg-accent justify-center">
+		<p class="mx-auto body-02">
+			เนื่องจากความไม่ชัดเจนของ <a
+				class="underline"
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://ratchakitcha.soc.go.th/documents/28301.pdf"
+				>ระเบียบกกต. ที่ประกาศช่วง 20.40 ของวันที่ 26 เมษายน 2567</a
+			> และมีผลบังคับใช้ภายในสี่ชั่วโมง เราจึงปกป้องสิทธิของผู้สมัครทุกคน และนำข้อมูลออกจากระบบออนไลน์ก่อนระเบียบมีผลบังคับใช้
+		</p>
+	</div>
 	<div
-		class="flex-1 flex flex-col md:flex-row items-center justify-center gap-10 mt-10 md:mt-0"
+		class="flex-1 flex flex-col md:flex-row items-center justify-center gap-10"
 	>
 		<SenateHeroLogo />
 		<div class="flex items-center mx-auto">
