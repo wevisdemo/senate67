@@ -3,10 +3,20 @@ import Layout from "../layouts/Layout.astro";
 import HeroSection from "../components/landingPage/HeroSection.astro";
 import InformationSection from "../components/landingPage/InformationSection.astro";
 import PartnerSection from "../components/landingPage/PartnerSection.astro";
+import { getEvents } from "../data/get_events";
+import EventSection from "../components/landingPage/EventSection.vue";
+
+const events = await getEvents();
+const nowEpoch = new Date().getTime();
+const upcomingEvents = events.filter(({ date }) => date.getTime() > nowEpoch);
+const pastEventCount = events.filter(
+	({ date }) => date.getTime() <= nowEpoch,
+).length;
 ---
 
 <Layout title="สว. 67 สมัครเพื่อโหวต">
 	<HeroSection />
 	<InformationSection />
+	<EventSection client:load {upcomingEvents} {pastEventCount} />
 	<PartnerSection />
 </Layout>

@@ -8,5 +8,8 @@ export async function getEvents(): Promise<Event[]> {
 
 	const res = await fetch(import.meta.env.EVENT_CSV_URL);
 	const content = await res.text();
-	return await parse(content, { columns: true });
+	return (await parse(content, { columns: true })).map((event: any) => ({
+		...event,
+		date: new Date(event.date),
+	}));
 }
