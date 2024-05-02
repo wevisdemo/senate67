@@ -7,8 +7,8 @@ on:
       - "**/README.md"
       - "scripts/**"
       - ".github/workflows/media-fetching.yaml"
-  # schedule:
-  #   - cron: "*/10 * * * *"
+  schedule:
+    - cron: "55 16 * * *" # 23:55 GMT + 7
   workflow_dispatch:
 
 concurrency:
@@ -21,58 +21,60 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # - name: Use Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 20
-      #     cache: npm
-      # - name: Install dependencies
-      #   run: npm i
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm i
       # - name: Restore cached candidate media
       #   uses: actions/cache/restore@v4
       #   with:
       #     key: candidate-media
       #     path: public/candidate-media
-      # - name: Build staging web
-      #   run: npm run build
-      #   env:
-      #     PUBLIC_BUILD_TARGET: staging
-      #     CANDIDATE_CSV_URL: ${{ vars.CANDIDATE_CSV_URL }}
+      - name: Build staging web
+        run: npm run build
+        env:
+          PUBLIC_BUILD_TARGET: staging
+          CANDIDATE_CSV_URL: ${{ vars.CANDIDATE_CSV_URL }}
+          EVENT_CSV_URL: ${{ vars.EVENT_CSV_URL }}
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: senate67-v2
-          directory: ./suspense-static #./dist
+          directory: ./dist
           branch: staging
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
   production:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # - name: Use Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: 20
-      #     cache: npm
-      # - name: Install dependencies
-      #   run: npm i
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm i
       # - name: Restore cached candidate media
       #   uses: actions/cache/restore@v4
       #   with:
       #     key: candidate-media
       #     path: public/candidate-media
-      # - name: Build production web
-      #   run: npm run build
-      #   env:
-      #     PUBLIC_BUILD_TARGET: production
-      #     CANDIDATE_CSV_URL: ${{ vars.CANDIDATE_CSV_URL }}
+      - name: Build production web
+        run: npm run build
+        env:
+          PUBLIC_BUILD_TARGET: production
+          CANDIDATE_CSV_URL: ${{ vars.CANDIDATE_CSV_URL }}
+          EVENT_CSV_URL: ${{ vars.EVENT_CSV_URL }}
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: senate67-v2
-          directory: ./suspense-static #./dist
+          directory: ./dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
