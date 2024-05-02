@@ -9,64 +9,46 @@ import InformationDetailCard from "./InformationDetailCard.astro";
 >
 	<table class="border-collapse border-spacing-2 max-w-[400px] mx-auto">
 		<tr>
-			<td class="border-b border-base-300 py-[5px] pr-5 align-top"
-				><b>11 พ.ค.</b></td
-			>
-			<td class="border-b border-base-300 py-[5px] pr-5 align-top"
-				>สว. ชุดเดิม<b class="text-accent">หมดอายุ</b></td
+			<td class="whitespace-nowrap"><b>11 พ.ค.</b></td>
+			<td
+				>สว. ชุดเดิม<b class="text-accent">หมดอายุ</b> ออกพระราชกฤษฎีกาให้เลือก สว.
+				ชุดใหม่</td
 			>
 		</tr>
 		<tr>
-			<td class="border-b border-base-300 py-[5px] pr-5 align-top">
-				<p><b>12 พ.ค.</b></p>
-				<p class="body-03 opacity-60 text-neutral">(อย่างเร็ว)</p>
+			<td class="whitespace-nowrap"><b>13 พ.ค.</b></td>
+			<td>ประกาศกำหนดวันรับสมัคร สว. (รู้วันรับสมัคร)</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td
+				><b class="text-accent">รับสมัคร</b>ผู้ประสงค์อยากเป็น สว.
+				ระยะเวลาห้าถึงเจ็ดวัน</td
+			>
+		</tr>
+		<tr>
+			<td class="whitespace-nowrap"><b>9 มิ.ย.</b></td>
+			<td>เลือกระดับ<b class="text-accent">อำเภอ</b></td>
+		</tr>
+		<tr>
+			<td class="whitespace-nowrap"><b>16 มิ.ย.</b></td>
+			<td>เลือกระดับ<b class="text-accent">จังหวัด</b></td>
+		</tr>
+		<tr>
+			<td><b>26 มิ.ย.</b></td>
+			<td>เลือกระดับ<b class="text-accent">ประเทศ</b></td>
+		</tr>
+		<tr>
+			<td class="whitespace-nowrap">
+				<b>2 ก.ค.</b>
 			</td>
-			<td class="border-b border-base-300 py-[5px] pr-5 align-top">
-				<p>ออกพระราชกฤษฎีกาให้เลือก สว. ชุดใหม่*</p>
-				<p class="body-03 opacity-60 text-neutral">
-					*หากตราพระราชกฤษฎีกาช้า กรอบเวลาก็จะช้าออกไป
-				</p>
-			</td>
-		</tr>
-		<tr>
-			<td class="border-b border-base-300 py-[5px] pr-5 align-top">
-				<p><b>27&nbsp;พ.ค. - 2&nbsp;มิ.ย.</b></p>
-				<p class="body-03 opacity-60 text-neutral">(ประมาณ)</p>
-			</td>
-			<td class="border-b border-base-300 py-[5px] pr-5 align-top"
-				><b class="text-accent">เปิดรับสมัคร</b>ผู้ประสงค์เป็น สว.</td
-			>
-		</tr>
-		<tr>
-			<td class="border-b border-base-300 py-[5px] pr-5 align-top"
-				><b>22 มิ.ย.</b></td
-			>
-			<td class="border-b border-base-300 py-[5px] pr-5 align-top"
-				>เลือกระดับ<b class="text-accent">อำเภอ</b></td
-			>
-		</tr>
-		<tr>
-			<td class="border-b border-base-300 py-[5px] pr-5 align-top"
-				><b>+7 วัน</b></td
-			>
-			<td class="border-b border-base-300 py-[5px] pr-5 align-top"
-				>เลือกระดับ<b class="text-accent">จังหวัด</b></td
-			>
-		</tr>
-		<tr>
-			<td class="border-b border-base-300 py-[5px] pr-5 align-top"
-				><b>+10 วัน</b></td
-			>
-			<td class="border-b border-base-300 py-[5px] pr-5 align-top"
-				>เลือกระดับ<b class="text-accent">ประเทศ</b></td
-			>
-		</tr>
-		<tr>
-			<td>
-				<p><b>14 ก.ค.</b></p>
-				<p class="body-03 opacity-60 text-neutral">(อย่างเร็ว)</p>
-			</td>
-			<td>ประกาศผลผู้ได้เป็น สว.</td>
+			<td>กกต. ประกาศผลการเลือก สว.</td>
 		</tr>
 	</table>
 </InformationDetailCard>
+
+<style scoped lang="postcss">
+	td {
+		@apply border-b border-base-300 py-[5px] pr-5 align-top;
+	}
+</style>
