@@ -1,15 +1,6 @@
 ---
-import { rollup } from "d3-array";
 import Layout from "../layouts/Layout.astro";
 import OptionPage from "../components/optionPage/OptionPage.tsx";
-import { getCandidates } from "../data/get_candidates";
-
-const candidateGroupCount = rollup(
-	await getCandidates(),
-	(group) => group.length,
-	({ application }) =>
-		[application.province, application.district, application.group].join("|"),
-);
 ---
 
 <Layout title="สว 67">
@@ -24,5 +15,5 @@ const candidateGroupCount = rollup(
 			ฉันมีทางเลือก สมัคร สว. แบบไหนบ้าง
 		</h1>
 	</section>
-	<OptionPage {candidateGroupCount} client:load />
+	<OptionPage client:load />
 </Layout>

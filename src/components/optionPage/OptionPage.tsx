@@ -6,11 +6,7 @@ import PersonalSelectionSection from "./PersonalSelectionSection.tsx";
 import ResultForRegisterSection from "./ResultForRegisterSection.tsx";
 import React, { useState } from "react";
 
-interface PropsType {
-	candidateGroupCount: Map<string, number>;
-}
-
-const OptionsPage: React.FC<PropsType> = ({ candidateGroupCount }) => {
+const OptionsPage: React.FC = () => {
 	const [locations, setLocations] = useState<Location[]>([]);
 	const [occupations, setOccupations] = useState<string[]>([
 		ApplicationGroup.Other,
@@ -44,10 +40,7 @@ const OptionsPage: React.FC<PropsType> = ({ candidateGroupCount }) => {
 			<PersonalSelectionSection
 				onChangeResults={(results) => setPersonals(results)}
 			/>
-			<ResultForRegisterSection
-				results={getResults()}
-				candidateGroupCount={candidateGroupCount}
-			/>
+			<ResultForRegisterSection results={getResults()} />
 		</>
 	);
 };
