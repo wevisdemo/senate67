@@ -33,30 +33,35 @@ const [container] = useKeenSlider({
 				><br />
 				กำลังจะเกิดขึ้น {{ upcomingEvents.length }} กิจกรรม
 			</p>
-			<div ref="container" class="keen-slider flex flex-row px-4">
+			<div ref="container" class="keen-slider flex flex-row px-2 md:px-0">
 				<div
 					v-for="(event, i) in upcomingEvents"
 					class="keen-slider__slide flex flex-col rounded h-full"
 					:key="event.name"
 				>
 					<div class="bg-secondary p-1">
-						{{ event.date.toLocaleDateString() }}
+						{{
+							event.date.toLocaleDateString("TH-th", { dateStyle: "medium" })
+						}}
 					</div>
-					<div class="flex flex-col p-2 bg-base-100">
-						<p class="heading-02">{{ event.name }}</p>
+					<div class="flex flex-col p-2 bg-base-100 body-02">
+						<p class="heading-03">{{ event.name }}</p>
 						<table>
 							<tr>
-								<td class="font-bold">เวลา</td>
+								<td class="font-bold pr-1">เวลา</td>
 								<td>{{ event.timeDescription }}</td>
 							</tr>
 							<tr>
-								<td class="font-bold">จังหวัด</td>
+								<td class="font-bold pr-1">จังหวัด</td>
 								<td>{{ event.province }}</td>
 							</tr>
 							<tr>
-								<td class="font-bold">สถานที่</td>
+								<td class="font-bold pr-1 whitespace-nowrap align-top">
+									สถานที่
+								</td>
 								<td>
 									{{ event.location }}<br /><a
+										class="underline text-accent"
 										:href="event.locationUrl"
 										target="_blank"
 										rel="noopener noreferrer"
@@ -67,6 +72,7 @@ const [container] = useKeenSlider({
 						</table>
 						<a
 							:href="event.MoreInfoUrl"
+							target="_blank"
 							class="underline text-primary place-self-end"
 							rel="noopener noreferrer"
 							>รายละเอียด</a
