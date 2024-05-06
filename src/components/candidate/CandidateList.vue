@@ -4,7 +4,6 @@ import enterView from "enter-view";
 import { ref, onBeforeMount, onMounted, computed } from "vue";
 import CandidateAvatar from "../candidate/CandidateAvatar.vue";
 import CandidateDepartmentAndGroupDetails from "../candidate/CandidateDepartmentAndGroupDetails.vue";
-import CandidateSocialMediaList from "../candidate/CandidateSocialMediaList.vue";
 import CandidateFilterList from "../candidate/CandidateFilterList.vue";
 import StandPointList from "../candidate/StandPointList.vue";
 import type { CandidateOverview } from "../../data/candidate";
@@ -243,15 +242,7 @@ function shuffleArray<T>(array: T[]) {
 							</table>
 						</div>
 
-						<div
-							v-if="
-								contacts.email ||
-								contacts.facebookUrl ||
-								contacts.phoneNumber ||
-								contacts.xUrl
-							"
-							class="space-y-2"
-						>
+						<div v-if="contacts" class="space-y-2">
 							<div class="body-03 bg-base-200 px-2 rounded-md">
 								ช่องทางติดต่อ
 							</div>
