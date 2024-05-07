@@ -188,6 +188,7 @@ function shuffleArray<T>(array: T[]) {
 				<div
 					class="mt-5 bg-base-100 p-2 sm:p-5 rounded-[10px] space-y-3"
 					v-for="{
+						id,
 						firstName,
 						lastName,
 						aliasName,
@@ -260,7 +261,7 @@ function shuffleArray<T>(array: T[]) {
 					<div class="text-right flex space-x-1 justify-end">
 						<a
 							class="font-bold text-accent underline"
-							:href="'/candidates/' + firstName + '-' + lastName"
+							:href="'/candidates/' + id"
 							>ดูเพิ่มเติม
 						</a>
 						<img src="/arrow.svg" class="-rotate-90" alt="" />

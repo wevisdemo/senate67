@@ -65,6 +65,7 @@ function mapCandidate(
 	const lastName = `${shortenGroup} ${getRunningSymbol(sequence)}`;
 
 	return {
+		id: `${firstName} ${lastName}`.replaceAll(" ", "-"),
 		firstName,
 		lastName,
 		age: Number(object["อายุ"].trim()),

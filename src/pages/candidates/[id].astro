@@ -15,15 +15,14 @@ export async function getStaticPaths() {
 	const candidates = await getCandidates();
 
 	return candidates.map((candidate) => ({
-		params: { firstname: candidate.firstName, lastname: candidate.lastName },
+		params: { id: candidate.id },
 		props: { candidate },
 	}));
 }
 
-const { firstname, lastname } = Astro.params;
 const { candidate } = Astro.props;
 
-const fullname = firstname + " " + lastname;
+const fullname = candidate.firstName + " " + candidate.lastName;
 
 const description =
 	candidate.application.province +
@@ -34,7 +33,7 @@ const description =
 	" - " +
 	candidate.application.group;
 
-const pathname = "candidates/" + firstname + "-" + lastname;
+const pathname = "candidates/" + candidate.id;
 
 const contents = [
 	{ title: "ข้อมูลทั่วไป", id: "profile" },

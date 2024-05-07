@@ -1,6 +1,7 @@
 import type { ApplicationGroup } from "./application_group";
 
 export interface Candidate {
+	id: string;
 	title?: string;
 	firstName: string;
 	lastName: string;
