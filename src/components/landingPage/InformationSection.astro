@@ -10,6 +10,7 @@ import ArrowRight from "../icons/ArrowRight.astro";
 import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
 import TableOfContents from "./informationDetailSections/TableOfContents.astro";
 import ArrowUp from "../icons/ArrowUp.astro";
+import { isProd } from "../../utils/flag";
 
 const contents = [
 	{ title: "ทำไมต้องมีแคมเปญนี้", id: "why-do-we-need-this" },
@@ -31,31 +32,29 @@ const contents = [
 		</h1>
 
 		<TableOfContents contents={contents} />
-
 		<WhyDoWeNeedThis />
-
 		<WhoCanApplyFor />
-
 		<HowToApplyFor />
-
 		<HowTheSystemWorks />
-
 		<Timeline />
-
 		<WhatTheyDo />
 
-		<div class="space-y-2">
-			<a
-				href="https://forms.gle/AiPQPxvqFex2a7Hk8"
-				class="btn btn-secondary w-full"
-			>
-				แสดงตัวเป็นผู้สมัคร <OpenInNew className=" fill-[#000]" />
-			</a>
+		{
+			!isProd() && (
+				<div class="space-y-2">
+					<a
+						href="https://forms.gle/AiPQPxvqFex2a7Hk8"
+						class="btn btn-secondary w-full"
+					>
+						แสดงตัวเป็นผู้สมัคร <OpenInNew className=" fill-[#000]" />
+					</a>
 
-			<a href="/candidates" class="btn btn-secondary w-full">
-				ค้นหาผู้สมัคร <ArrowRight className=" fill-[#000]" />
-			</a>
-		</div>
+					<a href="/candidates" class="btn btn-secondary w-full">
+						ค้นหาผู้สมัคร <ArrowRight className=" fill-[#000]" />
+					</a>
+				</div>
+			)
+		}
 
 		<div class="mx-auto">
 			<SocialMediaButtons color="#FCEB71" />

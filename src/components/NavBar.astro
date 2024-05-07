@@ -1,11 +1,15 @@
 ---
+import { isProd } from "../utils/flag";
 import SenateLogo from "./SenateLogo.astro";
 
 const navigationRoutes = [
 	{ name: "หน้าหลัก", url: "/" },
 	{ name: "ฉันสมัคร สว. ได้ไหม?", url: "/checklist" },
-	{ name: "ค้นหาผู้สมัคร", url: "/candidates" },
 ];
+
+if (!isProd()) {
+	navigationRoutes.push({ name: "ค้นหาผู้สมัคร", url: "/candidates" });
+}
 ---
 
 <div class="navbar bg-neutral top-0 fixed h-16 body-03 text-base-100 z-50">

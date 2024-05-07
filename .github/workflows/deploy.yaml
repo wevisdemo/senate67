@@ -70,6 +70,8 @@ jobs:
           PUBLIC_BUILD_TARGET: production
           CANDIDATE_CSV_URL: ${{ vars.CANDIDATE_CSV_URL }}
           EVENT_CSV_URL: ${{ vars.EVENT_CSV_URL }}
+      - name: Remove unreleased pages
+        run: rm -r ./dist/candidates
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:

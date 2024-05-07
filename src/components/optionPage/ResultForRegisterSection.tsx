@@ -4,6 +4,7 @@ import OpenInNew from "../icons/OpenInNew.tsx";
 import ArrowRight from "../icons/ArrowRight.tsx";
 import ResultCard from "./ResultCard.tsx";
 import type { Result } from "../../data/senate_option.ts";
+import { isProd } from "../../utils/flag.ts";
 
 interface PropsType {
 	results: Result[];
@@ -43,9 +44,11 @@ const ResultForRegisterSection: React.FC<PropsType> = ({
 						<div className="flex text-left pl-[15px]">
 							<span className="body-03 w-[50%]">อำเภอ/เขต</span>
 							<span className="body-03 w-[50%]">กลุ่มอาชีพ/คุณสมบัติ</span>
-							<span className="body-03 w-[65px] md:text-nowrap">
-								มีผู้สมัครแล้ว
-							</span>
+							{!isProd() && (
+								<span className="body-03 w-[65px] md:text-nowrap">
+									มีผู้สมัครแล้ว
+								</span>
+							)}
 						</div>
 					</>
 				)}
@@ -103,24 +106,31 @@ const ResultForRegisterSection: React.FC<PropsType> = ({
 					02-141-8888
 				</a>
 
-				<p className="text-center">
-					ถ้ามั่นใจแล้วว่าลงสมัครแน่ มาแสดงตัวกับเราหน่อย
-				</p>
-				<a
-					className="btn btn-primary w-full text-base-100"
-					href="https://forms.gle/AiPQPxvqFex2a7Hk8"
-					target="_blank"
-				>
-					แสดงตัวเป็นผู้สมัคร
-					<OpenInNew className="fill-base-100" />
-				</a>
+				{!isProd() && (
+					<>
+						<p className="text-center">
+							ถ้ามั่นใจแล้วว่าลงสมัครแน่ มาแสดงตัวกับเราหน่อย
+						</p>
+						<a
+							className="btn btn-primary w-full text-base-100"
+							href="https://forms.gle/AiPQPxvqFex2a7Hk8"
+							target="_blank"
+						>
+							แสดงตัวเป็นผู้สมัคร
+							<OpenInNew className="fill-base-100" />
+						</a>
 
-				<p className="text-center">สำรวจผู้สมัครคนอื่นๆ ได้ที่</p>
+						<p className="text-center">สำรวจผู้สมัครคนอื่นๆ ได้ที่</p>
 
-				<a className="btn btn-primary w-full text-base-100" href="/candidates">
-					ค้นหาผู้สมัคร
-					<ArrowRight className="fill-base-100" />
-				</a>
+						<a
+							className="btn btn-primary w-full text-base-100"
+							href="/candidates"
+						>
+							ค้นหาผู้สมัคร
+							<ArrowRight className="fill-base-100" />
+						</a>
+					</>
+				)}
 			</div>
 		</section>
 	);

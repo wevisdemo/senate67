@@ -4,6 +4,7 @@ import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
 import OpenInNew from "../icons/OpenInNew.astro";
 import ArrowRight from "../icons/ArrowRight.astro";
 import { getCandidates } from "../../data/get_candidates";
+import { isProd } from "../../utils/flag";
 
 const candidate_senates = await getCandidates();
 
@@ -45,28 +46,43 @@ const updated_at = new Date().toLocaleString("th-TH", {
 					</p>
 				</div>
 
-				<div class="text-center">
-					<p class="body-01 text-neutral">มีผู้แสดงตัวเป็นผู้สมัครแล้ว</p>
-					<p class="heading-responsive-01 text-neutral leading-[44px]">
-						{registered_senates} คน
-					</p>
-					<p class="body-03 text-neutral">อัปเดตข้อมูล {updated_at}</p>
-				</div>
+				{
+					!isProd() && (
+						<div class="text-center">
+							<p class="body-01 text-neutral">มีผู้แสดงตัวเป็นผู้สมัครแล้ว</p>
+							<p class="heading-responsive-01 text-neutral leading-[44px]">
+								{registered_senates} คน
+							</p>
+							<p class="body-03 text-neutral">อัปเดตข้อมูล {updated_at}</p>
+						</div>
+					)
+				}
 
 				<div class="flex flex-col justify-center gap-1">
 					<a class="btn w-full bg-primary text-base-100" href="/checklist"
 						>ฉันสมัคร สว. ได้ไหม? <ArrowRight className="fill-base-100" />
 					</a>
-					<a
-						class="btn w-full bg-primary text-base-100"
-						href="https://forms.gle/AiPQPxvqFex2a7Hk8"
-						target="_blank"
-						rel="noopener noreferrer"
-						>แสดงตัวเป็นผู้สมัคร <OpenInNew className=" fill-base-100" />
-					</a>
-					<a class="btn w-full bg-primary text-base-100" href="/candidates">
-						ค้นหาผู้สมัคร
-					</a>
+					{
+						!isProd() && (
+							<>
+								<a
+									class="btn w-full bg-primary text-base-100"
+									href="https://forms.gle/AiPQPxvqFex2a7Hk8"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									แสดงตัวเป็นผู้สมัคร <OpenInNew className=" fill-base-100" />
+								</a>
+								<a
+									class="btn w-full bg-primary text-base-100"
+									href="/candidates"
+								>
+									ค้นหาผู้สมัคร
+								</a>
+							</>
+						)
+					}
+
 					<a class="btn w-full bg-primary text-base-100" href="#events"
 						>ดูตารางกิจกรรม
 					</a>

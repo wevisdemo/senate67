@@ -10,6 +10,7 @@ import type { CandidateOverview } from "../../data/candidate";
 import type { ApplicationGroup } from "../../data/application_group";
 import type { LocationMap } from "../../data/senate_option";
 import Spinner from "./Spinner.vue";
+import { isProd } from "../../utils/flag";
 
 const CANDIDATES_PER_PAGE = 25;
 
@@ -283,6 +284,7 @@ function shuffleArray<T>(array: T[]) {
 				</button>
 
 				<a
+					v-if="!isProd()"
 					href="https://forms.gle/AiPQPxvqFex2a7Hk8"
 					class="btn w-full bg-primary text-base-100 mt-14"
 				>
