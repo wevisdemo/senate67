@@ -16,8 +16,10 @@ const updated_at = new Date().toLocaleString("th-TH", {
 });
 ---
 
-<section class="flex w-full flex-col items-center h-screen bg-secondary pt-16">
-	<div class="flex w-full px-3 py-4 bg-accent justify-center">
+<section
+	class="flex w-full flex-col items-center min-h-screen bg-secondary pt-16"
+>
+	<div class="flex w-full p-3 bg-accent justify-center mb-3">
 		<p class="mx-auto body-02">
 			เนื่องจากความไม่ชัดเจนของ <a
 				class="underline"
@@ -55,16 +57,18 @@ const updated_at = new Date().toLocaleString("th-TH", {
 					<a class="btn w-full bg-primary text-base-100" href="/checklist"
 						>ฉันสมัคร สว. ได้ไหม? <ArrowRight className="fill-base-100" />
 					</a>
-					<a class="btn w-full bg-primary text-base-100" href="#events"
-						>ดูตารางกิจกรรม
-					</a>
 					<a
 						class="btn w-full bg-primary text-base-100"
 						href="https://forms.gle/AiPQPxvqFex2a7Hk8"
+						target="_blank"
+						rel="noopener noreferrer"
 						>แสดงตัวเป็นผู้สมัคร <OpenInNew className=" fill-base-100" />
 					</a>
 					<a class="btn w-full bg-primary text-base-100" href="/candidates">
 						ค้นหาผู้สมัคร
+					</a>
+					<a class="btn w-full bg-primary text-base-100" href="#events"
+						>ดูตารางกิจกรรม
 					</a>
 				</div>
 
