@@ -1,6 +1,7 @@
 import {
 	ApplicationGroup,
 	applicationGroupShortenNames,
+	getApplicationGroup,
 } from "./application_group";
 import type {
 	Candidate,
@@ -40,7 +41,7 @@ export async function getCandidates(): Promise<Candidate[]> {
 		}
 		const shortenGroup =
 			applicationGroupShortenNames[
-				object[GROUP_QUESTION].trim() as ApplicationGroup
+				getApplicationGroup(object[GROUP_QUESTION].trim())
 			];
 		let sequence = 1;
 
@@ -72,7 +73,7 @@ function mapCandidate(
 		education: object["ประวัติการศึกษา"].trim(),
 		occupation: object["ประวัติการประกอบอาชีพ"].trim(),
 		application: {
-			group: object[GROUP_QUESTION].trim() as ApplicationGroup,
+			group: getApplicationGroup(object[GROUP_QUESTION].trim()),
 			province: object[PROVINCE_QUESTION].trim(),
 			district: object[DISTRICT_QUESITON].trim(),
 		},

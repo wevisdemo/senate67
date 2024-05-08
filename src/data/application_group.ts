@@ -43,3 +43,12 @@ export const applicationGroupShortenNames = {
 	[ApplicationGroup.ElderlyDisabledEthicityAndOtherIdentity]: "ผู้สูงอายุ",
 	[ApplicationGroup.Other]: "อื่นๆ",
 };
+
+export function getApplicationGroup(given: string): ApplicationGroup {
+	for (const group of Object.values(ApplicationGroup)) {
+		if (given.includes(group)) {
+			return group as ApplicationGroup;
+		}
+	}
+	throw new Error(`Error mapping given application group: ${given}`);
+}
