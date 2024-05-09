@@ -289,7 +289,7 @@ function shuffleArray<T>(array: T[]) {
 					href="https://forms.gle/AiPQPxvqFex2a7Hk8"
 					class="btn w-full bg-primary text-base-100 mt-14"
 				>
-					แสดงตัวเป็นผู้สมัคร <img src="/link-icon.svg" class="inline pr-2" />
+					แสดงจุดยืนผู้สมัคร <img src="/link-icon.svg" class="inline pr-2" />
 				</a>
 			</div>
 		</section>

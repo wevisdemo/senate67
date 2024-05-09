@@ -116,7 +116,7 @@ const ResultForRegisterSection: React.FC<PropsType> = ({
 							href="https://forms.gle/AiPQPxvqFex2a7Hk8"
 							target="_blank"
 						>
-							แสดงตัวเป็นผู้สมัคร
+							แสดงจุดยืนผู้สมัคร
 							<OpenInNew className="fill-base-100" />
 						</a>
 
