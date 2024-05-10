@@ -88,6 +88,14 @@ const contents = [
 							<td class="body-03 mt-[2px]">อายุ</td>
 							<td class="body-01 font-bold flex">{candidate.age} ปี</td>
 						</tr>
+						{
+							candidate.gender && (
+								<tr>
+									<td class="body-03 mt-[2px]">เพศ</td>
+									<td class="body-01 font-bold flex">{candidate.gender}</td>
+								</tr>
+							)
+						}
 						<tr>
 							<td class="body-03 mt-[2px] whitespace-nowrap flex justify-start">
 								การศึกษา
@@ -103,34 +111,6 @@ const contents = [
 							>
 						</tr>
 					</table>
-					<!-- <div class="flex space-x-3 px-3 pt-2">
-						<div class="basis-1/4 sm:basis-[15%]">
-							<p class="body-03">อายุ</p>
-						</div>
-						<div class="basis-3/4 sm:basis-[85%]">
-							<p class="body-03 font-bold">{candidate.age} ปี</p>
-						</div>
-					</div>
-					<div class="flex space-x-3 px-3">
-						<div class="basis-1/4 sm:basis-[15%]">
-							<p class="body-03">การศึกษา</p>
-						</div>
-						<div class="basis-3/4 sm:basis-[85%]">
-							<p class="body-03 font-bold break-words whitespace-pre-wrap">
-								{candidate.education}
-							</p>
-						</div>
-					</div>
-					<div class="flex space-x-3 px-3">
-						<div class="basis-1/4 sm:basis-[15%]">
-							<p class="body-03">อาชีพ</p>
-						</div>
-						<div class="basis-3/4 sm:basis-[85%]">
-							<p class="body-03 font-bold break-words whitespace-pre-wrap">
-								{candidate.occupation}
-							</p>
-						</div>
-					</div> -->
 				</div>
 			</div>
 

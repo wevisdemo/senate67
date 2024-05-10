@@ -196,6 +196,7 @@ function shuffleArray<T>(array: T[]) {
 						contacts,
 						application,
 						age,
+						gender,
 						education,
 						occupation,
 						politicalStances,
@@ -224,6 +225,10 @@ function shuffleArray<T>(array: T[]) {
 								<tr>
 									<td class="body-03 mt-[2px]">อายุ</td>
 									<td class="body-01 font-bold flex">{{ age }} ปี</td>
+								</tr>
+								<tr v-if="gender">
+									<td class="body-03 mt-[2px]">เพศ</td>
+									<td class="body-01 font-bold flex">{{ gender }}</td>
 								</tr>
 								<tr>
 									<td

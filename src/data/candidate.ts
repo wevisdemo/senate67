@@ -9,6 +9,7 @@ export interface Candidate {
 	avatarUrl?: string;
 	videoUrl?: string;
 	age: number;
+	gender?: string;
 	education: string;
 	occupation: string;
 	contacts?: {

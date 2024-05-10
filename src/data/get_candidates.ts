@@ -70,6 +70,7 @@ function mapCandidate(
 		firstName,
 		lastName,
 		age: Number(object["อายุ"].trim()),
+		gender: object["เพศ"].trim(),
 		education: object["ประวัติการศึกษา"].trim(),
 		occupation: object["ประวัติการประกอบอาชีพ"].trim(),
 		application: {
