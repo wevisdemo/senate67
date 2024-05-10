@@ -156,7 +156,10 @@
 		"answer2_explanation": "",
 		"user_answer": "",
 		"user_answer_explanation": "",
-		"description": {}
+		"description": {
+			"text": "ตรวจสอบได้ทาง",
+			"link": "https://party.ect.go.th/partypositioncheck"
+		}
 	},
 	{
 		"question": "เป็นบุพการี (บิดามารดา ปู่ย่า ตายาย) คู่สมรส หรือบุตร ของสส. สว. ข้าราชการการเมือง สมาชิกสภาท้องถิ่นหรือผู้บริหารท้องถิ่น? (ถ้าบุพการี คู่สมรส หรือบุตร ลาออกตำแหน่งดังกล่าวแล้ว ให้ตอบว่า ไม่ใช่)",

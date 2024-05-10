@@ -113,10 +113,8 @@ export default function ChecklistBody() {
 								<QuestionLabel number={index + 1} />
 								<h1 className="heading-02 text-center">{data.question}</h1>
 								{data.description && (
-									<>
-										<h1 className="heading-02 text-center mb-0">
-											{data.description.text}
-										</h1>
+									<div className="flex flex-col gap-2">
+										<p className="text-center mb-0">{data.description.text}</p>
 										{data.description.link && (
 											<a target="_blank" href={data.description.link}>
 												{data.description.link}
@@ -131,7 +129,7 @@ export default function ChecklistBody() {
 												))}
 											</div>
 										)}
-									</>
+									</div>
 								)}
 								<div className="flex gap-[10px]">
 									<SelectButton
