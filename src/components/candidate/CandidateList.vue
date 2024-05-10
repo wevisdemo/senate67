@@ -154,7 +154,7 @@ function shuffleArray<T>(array: T[]) {
 					</h1>
 
 					<p class="max-w-[650px] mx-auto body-01 text-base-100">
-						ทั้งหมด {{ total_candidate }} คน ในฐานข้อมูล
+						ทั้งหมด {{ total_candidate.toLocaleString() }} คน ในฐานข้อมูล
 					</p>
 				</div>
 
@@ -181,7 +181,7 @@ function shuffleArray<T>(array: T[]) {
 			</div>
 			<div v-else class="mx-auto w-full max-w-[650px]">
 				<p class="heading-02 mb-2 text-neutral">
-					ผลลัพธ์ : {{ sortedCandidates.length }} คน
+					ผลลัพธ์ : {{ sortedCandidates.length.toLocaleString() }} คน
 				</p>
 
 				<div
