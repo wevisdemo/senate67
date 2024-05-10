@@ -6,12 +6,10 @@ import CandidateSocialMediaList from "../../components/candidate/CandidateSocial
 import TableOfContents from "../../components/candidate/TableOfContents.astro";
 import StandPointList from "../../components/candidate/StandPointList.vue";
 import SocialMediaButtons from "../../components/socialMedia/SocialMediaButtons.astro";
+
 import { getCandidates } from "../../data/get_candidates";
-import { isProd } from "../../utils/flag";
 
 export async function getStaticPaths() {
-	if (isProd()) return [];
-
 	const candidates = await getCandidates();
 
 	return candidates.map((candidate) => ({
