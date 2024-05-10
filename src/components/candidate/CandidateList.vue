@@ -229,22 +229,6 @@ function shuffleArray<T>(array: T[]) {
 									<td class="body-03 mt-[2px]">เพศ</td>
 									<td class="body-01 font-bold flex">{{ gender }}</td>
 								</tr>
-								<tr>
-									<td
-										class="body-03 mt-[2px] whitespace-nowrap flex justify-start"
-									>
-										การศึกษา
-									</td>
-									<td class="body-01 font-bold break-words whitespace-pre-wrap">
-										{{ education }}
-									</td>
-								</tr>
-								<tr>
-									<td class="body-03 mt-[2px] flex justify-start">อาชีพ</td>
-									<td class="body-01 font-bold break-words whitespace-pre-wrap">
-										{{ occupation }}
-									</td>
-								</tr>
 							</table>
 						</div>
 
