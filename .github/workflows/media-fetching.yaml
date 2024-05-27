@@ -1,8 +1,8 @@
 name: Fetch Candidate Media
 
 on:
-  # schedule:
-  #   - cron: "50 16 * * *" # 23:50 GMT + 7
+  schedule:
+    - cron: "50 16 * * *" # 23:50 GMT + 7
   workflow_dispatch:
 
 jobs:
