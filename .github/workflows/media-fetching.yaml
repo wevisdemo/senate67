@@ -9,6 +9,8 @@ jobs:
   media-fetching:
     runs-on: ubuntu-latest
     permissions:
+      id-token: write
+      contents: read
       actions: write
     steps:
       - uses: actions/checkout@v4
@@ -39,4 +41,3 @@ jobs:
         with:
           key: candidate-media
           path: public/candidate-media
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
