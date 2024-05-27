@@ -1,29 +1,23 @@
-import {
-	ApplicationGroup,
-	applicationGroupShortenNames,
-	getApplicationGroup,
-} from "./application_group";
+import { ApplicationGroup } from "./application_group";
 import type {
 	Candidate,
 	PoliticalStance,
 	VisionQuestionaire,
 } from "./candidate";
 import { parse } from "csv-parse/sync";
+import { getAvatarUrl, getVideoUrl } from "./media_matcher";
 
 const POLITICAL_STANCE_STARTS_WITH = "คุณคิดเห็นอย่างไรกับประเด็นเหล่านี้? [";
 const DISTRICT_QUESITON = "อำเภอ/เขต ที่คุณลงสมัคร";
 const PROVINCE_QUESTION = "จังหวัดที่คุณลงสมัคร";
 const GROUP_QUESTION = "ท่านสมัครในกลุ่มใด";
-const DUPLICATED_DISTRICTS = ["จอมทอง", "เฉลิมพระเกียรติ"];
 
 export async function getCandidates(): Promise<Candidate[]> {
-	if (!import.meta.env.ANONYMOUS_CANDIDATE_CSV_URL) {
-		throw new Error(
-			"ANONYMOUS_CANDIDATE_CSV_URL env variable has not been set yet!",
-		);
+	if (!import.meta.env.CANDIDATE_CSV_URL) {
+		throw new Error("CANDIDATE_CSV_URL env variable has not been set yet!");
 	}
 
-	const res = await fetch(import.meta.env.ANONYMOUS_CANDIDATE_CSV_URL);
+	const res = await fetch(import.meta.env.CANDIDATE_CSV_URL);
 	const content = await res.text();
 	const parsed = await parse(content, { columns: true });
 
@@ -31,52 +25,35 @@ export async function getCandidates(): Promise<Candidate[]> {
 		(obj: { [key: string]: string }) => obj["ToBeDisplayed"] === "TRUE",
 	);
 
-	const candidateSequence: { [key: string]: number } = {};
-
-	return toBeDisplayedCandidates.map((object: { [key: string]: string }) => {
-		let districtProvince = object[DISTRICT_QUESITON].trim();
-
-		if (DUPLICATED_DISTRICTS.includes(districtProvince)) {
-			districtProvince += `-${object[PROVINCE_QUESTION].trim()}`;
-		}
-		const shortenGroup =
-			applicationGroupShortenNames[
-				getApplicationGroup(object[GROUP_QUESTION].trim())
-			];
-		let sequence = 1;
-
-		const currentSequence =
-			candidateSequence[`${districtProvince}-${shortenGroup}`];
-		if (currentSequence) {
-			sequence = currentSequence + 1;
-		}
-
-		candidateSequence[`${districtProvince}-${shortenGroup}`] = sequence;
-		return mapCandidate(object, districtProvince, shortenGroup, sequence);
-	});
+	return toBeDisplayedCandidates.map(mapCandidate);
 }
 
-function mapCandidate(
-	object: { [key: string]: string },
-	districtProvince: string,
-	shortenGroup: string,
-	sequence: number,
-): Candidate {
-	const firstName = districtProvince;
-	const lastName = `${shortenGroup} ${getRunningSymbol(sequence)}`;
+function mapCandidate(object: { [key: string]: string }): Candidate {
+	const firstName = object["ชื่อ"].trim();
+	const lastName = object["นามสกุล"].trim();
 
 	return {
 		id: `${firstName} ${lastName}`.replaceAll(" ", "-"),
+		title: object["คำนำหน้า"].trim(),
 		firstName,
 		lastName,
+		aliasName: object["ชื่ออื่นๆ ที่คนรู้จัก"].trim(),
+		avatarUrl: getAvatarUrl(firstName, lastName),
+		videoUrl: getVideoUrl(firstName, lastName),
 		age: Number(object["อายุ"].trim()),
 		gender: object["เพศ"].trim(),
 		education: object["ประวัติการศึกษา"].trim(),
 		occupation: object["ประวัติการประกอบอาชีพ"].trim(),
 		application: {
-			group: getApplicationGroup(object[GROUP_QUESTION].trim()),
+			group: object[GROUP_QUESTION].trim() as ApplicationGroup,
 			province: object[PROVINCE_QUESTION].trim(),
 			district: object[DISTRICT_QUESITON].trim(),
+		},
+		contacts: {
+			facebookUrl: object["Facebook"].trim(),
+			xUrl: object["X (Twitter)"].trim(),
+			phoneNumber: object["หมายเลขโทรศัพท์"].trim(),
+			email: object["Email"].trim(),
 		},
 		politicalStances: mapPoliticalStances(object),
 		politicalStanceDescription:
@@ -85,18 +62,6 @@ function mapCandidate(
 			].trim(),
 		visionQuestionaires: mapVisionQuestionaires(object),
 	};
-}
-
-// Support just 2-latin-character symbols: maximum at ZZ = 676 possibilities
-function getRunningSymbol(sequence: number) {
-	const charCodes = [];
-	if (sequence > 26) {
-		charCodes.push(sequence / 26);
-	}
-	charCodes.push(sequence % 26);
-
-	// ASCII of A starts at 65, hence +64 turns 1 -> 65 = A
-	return String.fromCharCode(...charCodes.map((e) => e + 64));
 }
 
 function mapPoliticalStances(object: {

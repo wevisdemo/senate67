@@ -2,7 +2,7 @@ import type { ApplicationGroup } from "./application_group";
 
 export interface Candidate {
 	id: string;
-	title?: string;
+	title: string;
 	firstName: string;
 	lastName: string;
 	aliasName?: string;
@@ -12,11 +12,11 @@ export interface Candidate {
 	gender?: string;
 	education: string;
 	occupation: string;
-	contacts?: {
-		facebookUrl?: string;
-		xUrl?: string;
-		phoneNumber?: string;
-		email?: string;
+	contacts: {
+		facebookUrl: string;
+		xUrl: string;
+		phoneNumber: string;
+		email: string;
 	};
 	application: {
 		group: ApplicationGroup;
