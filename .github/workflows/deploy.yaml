@@ -37,7 +37,7 @@ jobs:
         run: npm run build
         env:
           PUBLIC_BUILD_TARGET: staging
-          ANONYMOUS_CANDIDATE_CSV_URL: ${{ vars.ANONYMOUS_CANDIDATE_CSV_URL }}
+          CANDIDATE_CSV_URL: ${{ vars.CANDIDATE_CSV_URL }}
           EVENT_CSV_URL: ${{ vars.EVENT_CSV_URL }}
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
@@ -68,7 +68,7 @@ jobs:
         run: npm run build
         env:
           PUBLIC_BUILD_TARGET: production
-          ANONYMOUS_CANDIDATE_CSV_URL: ${{ vars.ANONYMOUS_CANDIDATE_CSV_URL }}
+          CANDIDATE_CSV_URL: ${{ vars.CANDIDATE_CSV_URL }}
           EVENT_CSV_URL: ${{ vars.EVENT_CSV_URL }}
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
