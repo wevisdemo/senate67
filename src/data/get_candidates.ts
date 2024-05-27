@@ -11,9 +11,9 @@ import type {
 import { parse } from "csv-parse/sync";
 
 const POLITICAL_STANCE_STARTS_WITH = "คุณคิดเห็นอย่างไรกับประเด็นเหล่านี้? [";
-const DISTRICT_QUESITON = "อำเภอ/เขต ที่คุณประสงค์จะลงสมัคร";
-const PROVINCE_QUESTION = "จังหวัดที่คุณประสงค์จะลงสมัคร";
-const GROUP_QUESTION = "ประสงค์จะสมัครในกลุ่ม";
+const DISTRICT_QUESITON = "อำเภอ/เขต ที่คุณลงสมัคร";
+const PROVINCE_QUESTION = "จังหวัดที่คุณลงสมัคร";
+const GROUP_QUESTION = "ท่านสมัครในกลุ่มใด";
 const DUPLICATED_DISTRICTS = ["จอมทอง", "เฉลิมพระเกียรติ"];
 
 export async function getCandidates(): Promise<Candidate[]> {
