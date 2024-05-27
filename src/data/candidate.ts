@@ -13,10 +13,10 @@ export interface Candidate {
 	education: string;
 	occupation: string;
 	contacts: {
-		facebookUrl: string;
-		xUrl: string;
-		phoneNumber: string;
-		email: string;
+		facebookUrl?: string;
+		xUrl?: string;
+		phoneNumber?: string;
+		email?: string;
 	};
 	application: {
 		group: ApplicationGroup;

@@ -98,14 +98,21 @@ const contents = [
 				</div>
 			</div>
 
-			<div class="bg-white pt-3">
-				<div class="bg-base-200 p-3 rounded-t-md">
-					<p class="heading-03">ช่องทางติดต่อ</p>
-				</div>
-				<div class="bg-base-100 p-3 rounded-b-md">
-					<CandidateSocialMediaList contacts={candidate.contacts} />
-				</div>
-			</div>
+			{
+				(candidate.contacts.email ||
+					candidate.contacts.facebookUrl ||
+					candidate.contacts.phoneNumber ||
+					candidate.contacts.xUrl) && (
+					<div class="bg-white pt-3">
+						<div class="bg-base-200 p-3 rounded-t-md">
+							<p class="heading-03">ช่องทางติดต่อ</p>
+						</div>
+						<div class="bg-base-100 p-3 rounded-b-md">
+							<CandidateSocialMediaList contacts={candidate.contacts} />
+						</div>
+					</div>
+				)
+			}
 
 			<div class="bg-white pt-3" id="standpoint">
 				<div class="bg-base-200 p-3 rounded-t-md">
