@@ -17,6 +17,10 @@ const pastEventCount = events.filter(
 <Layout title="สว. 67 สมัครเพื่อโหวต">
 	<HeroSection />
 	<InformationSection />
-	<EventSection client:load {upcomingEvents} {pastEventCount} />
+	{
+		upcomingEvents.length > 0 && (
+			<EventSection client:load {upcomingEvents} {pastEventCount} />
+		)
+	}
 	<PartnerSection />
 </Layout>
