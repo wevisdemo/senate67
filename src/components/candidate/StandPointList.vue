@@ -24,7 +24,10 @@ const props = defineProps<{
 			>
 				<p class="body-03" v-if="item.answer == 'agree'">เห็นด้วย</p>
 				<p class="body-03" v-else-if="item.answer == 'disagree'">ไม่เห็นด้วย</p>
-				<p class="body-03" v-else>พร้อมพิจารณา</p>
+				<p class="body-03" v-else-if="item.answer == 'to be considered'">
+					พร้อมพิจารณา
+				</p>
+				<p class="body-03" v-else>ไม่พร้อมเปิดเผยต่อสาธารณะ</p>
 			</div>
 		</div>
 		<div class="basis-4/6 sm:basis-5/6">
