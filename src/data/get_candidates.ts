@@ -1,4 +1,4 @@
-import { ApplicationGroup } from "./application_group";
+import { ApplicationGroup, getApplicationGroup } from "./application_group";
 import type {
 	Candidate,
 	PoliticalStance,
@@ -45,7 +45,7 @@ function mapCandidate(object: { [key: string]: string }): Candidate {
 		education: object["ประวัติการศึกษา"].trim(),
 		occupation: object["ประวัติการประกอบอาชีพ"].trim(),
 		application: {
-			group: object[GROUP_QUESTION].trim() as ApplicationGroup,
+			group: getApplicationGroup(object[GROUP_QUESTION].trim()),
 			province: object[PROVINCE_QUESTION].trim(),
 			district: object[DISTRICT_QUESITON].trim(),
 		},

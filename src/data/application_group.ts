@@ -20,3 +20,12 @@ export enum ApplicationGroup {
 	ElderlyDisabledEthicityAndOtherIdentity = "กลุ่มผู้สูงอายุ คนพิการ ชาติพันธุ์ กลุ่มอัตลักษณ์อื่น",
 	Other = "กลุ่มอื่นๆ",
 }
+
+export function getApplicationGroup(given: string): ApplicationGroup {
+	for (const group of Object.values(ApplicationGroup)) {
+		if (given.includes(group)) {
+			return group as ApplicationGroup;
+		}
+	}
+	throw new Error(`Error mapping given application group: ${given}`);
+}
