@@ -98,13 +98,13 @@ const contents = [
 							<td class="body-03 mt-[2px] whitespace-nowrap flex justify-start">
 								การศึกษา
 							</td>
-							<td class="body-01 font-bold break-words whitespace-pre-wrap"
+							<td class="body-01 font-bold free-text-wrap"
 								>{candidate.education}</td
 							>
 						</tr>
 						<tr>
 							<td class="body-03 mt-[2px] flex justify-start">อาชีพ</td>
-							<td class="body-01 font-bold break-words whitespace-pre-wrap"
+							<td class="body-01 font-bold free-text-wrap"
 								>{candidate.occupation}</td
 							>
 						</tr>
@@ -143,7 +143,7 @@ const contents = [
 								<p class="body-01 font-bold mt-3">
 									คำอธิบายจุดยืนในฐานะสมาชิกรัฐสภาเพิ่มเติม
 								</p>
-								<p class="body-01 mt-1">
+								<p class="body-01 mt-1 free-text-wrap">
 									{candidate.politicalStanceDescription}
 								</p>
 							</>
@@ -160,7 +160,7 @@ const contents = [
 					<p class="body-01 font-bold">
 						แนวทางการพิจารณาเห็นชอบผู้ดำรงตำแหน่งในองค์กรอิสระ
 					</p>
-					<p class="body-01">
+					<p class="body-01 free-text-wrap">
 						{candidate.visionQuestionaires[0].answer || "-"}
 					</p>
 
@@ -169,7 +169,7 @@ const contents = [
 					<p class="body-01 font-bold">
 						เหตุผลความตั้งใจในการลงสมัคร สว. ครั้งนี้
 					</p>
-					<p class="body-01">
+					<p class="body-01 free-text-wrap">
 						{candidate.visionQuestionaires[1].answer || "-"}
 					</p>
 				</div>
@@ -185,8 +185,13 @@ const contents = [
 	</section>
 </Layout>
 
-<style scoped>
+<style lang="postcss" scoped>
 	td {
 		@apply pl-2 pt-2;
+	}
+
+	.free-text-wrap {
+		white-space: pre-line;
+		overflow-wrap: anywhere;
 	}
 </style>
