@@ -31,6 +31,7 @@ export async function getCandidates(): Promise<Candidate[]> {
 function mapCandidate(object: { [key: string]: string }): Candidate {
 	const firstName = object["ชื่อ-นามสกุล"].trim();
 	const lastName = object["นามสกุล"].trim();
+	const isShowingContact = object["ShowCantacts"] === "TRUE";
 
 	return {
 		id: `${firstName} ${lastName}`.trim().replaceAll(" ", "-"),
@@ -49,14 +50,20 @@ function mapCandidate(object: { [key: string]: string }): Candidate {
 			province: object[PROVINCE_QUESTION].trim(),
 			district: object[DISTRICT_QUESITON].trim(),
 		},
-		contacts: {
-			facebookUrl: object["Facebook"] ? object["Facebook"].trim() : undefined,
-			xUrl: object["X (Twitter)"] ? object["X (Twitter)"].trim() : undefined,
-			phoneNumber: object["หมายเลขโทรศัพท์"]
-				? object["หมายเลขโทรศัพท์"].trim()
-				: undefined,
-			email: object["Email"] ? object["Email"].trim() : undefined,
-		},
+		contacts: isShowingContact
+			? {
+					facebookUrl: object["Facebook"]
+						? object["Facebook"].trim()
+						: undefined,
+					xUrl: object["X (Twitter)"]
+						? object["X (Twitter)"].trim()
+						: undefined,
+					phoneNumber: object["หมายเลขโทรศัพท์"]
+						? object["หมายเลขโทรศัพท์"].trim()
+						: undefined,
+					email: object["Email"] ? object["Email"].trim() : undefined,
+				}
+			: {},
 		politicalStances: mapPoliticalStances(object),
 		politicalStanceDescription:
 			object[
