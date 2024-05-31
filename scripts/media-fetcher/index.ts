@@ -65,7 +65,11 @@ function runVideoMode(formResponses: FormResponse[]) {
 	);
 
 	withVideoResponses.map((response) => {
-		const key = `${response.firstName.trim()}-${response.lastName.trim()}`;
+		const key =
+			`${response.firstName.trim()} ${response.lastName.trim()}`.replaceAll(
+				" ",
+				"-",
+			);
 		const fileId = new URL(response.videoUrl).searchParams.get("id");
 		links[key] = `https://drive.google.com/file/d/${fileId}/preview`;
 	});

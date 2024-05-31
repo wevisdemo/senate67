@@ -14,7 +14,9 @@ const videoLinks = existsSync(VIDEO_LINKS_JSON)
 
 export function getAvatarUrl(firstName: string, lastName: string) {
 	const expectedAvatar = existingAvatar.find((filename) =>
-		filename.replaceAll(" ", "").includes(`${firstName}-${lastName}`),
+		filename
+			.replaceAll(" ", "")
+			.includes(`${firstName} ${lastName}`.trim().replaceAll(" ", "-")),
 	);
 
 	return expectedAvatar && join("/", AVATAR_PATH, expectedAvatar);
