@@ -29,7 +29,7 @@ export async function getCandidates(): Promise<Candidate[]> {
 }
 
 function mapCandidate(object: { [key: string]: string }): Candidate {
-	const firstName = object["ชื่อ-นามสกุล"].trim();
+	const firstName = object["ชื่อ-นามสกุล"].trim().replace(/  +/g, " ");
 	const lastName = object["นามสกุล"].trim();
 	const isShowingContact = object["ShowCantacts"] === "TRUE";
 
