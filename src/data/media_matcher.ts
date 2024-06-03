@@ -26,6 +26,6 @@ export function getVideoUrl(
 	firstName: string,
 	lastName: string,
 ): string | undefined {
-	const key = `${firstName.trim()}-${lastName.trim()}`;
+	const key = `${firstName} ${lastName}`.trim().replaceAll(" ", "-");
 	return videoLinks[key];
 }
