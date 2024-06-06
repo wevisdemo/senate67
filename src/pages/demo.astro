@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ChecklistBody from "../components/checklist/ChecklistBody";
+// import AutoComplete from "../components/optionPage/AutoComplete";
+import AutoComplete from "../components/candidate/AutoComplete.vue";
+import Demo2 from "../components/candidate/Demo2.vue";
+---
+
+<Layout title="สว 67">
+	<div class="mt-[100px]">
+		<!-- <AutoComplete 
+            options={
+                [
+                     '1' ,
+                     '2' ,
+                     '3' ,
+                     '4' ,
+                     '5' ,
+                     '6' ,
+                     '7' ,
+                     '8' ,
+                     '9' ,
+                     '10' ,
+                ]
+            }
+            onChange={(e) => console.log(e)}
+            value="1"
+            placeholder="Select an option"
+            disabled={false}
+        /> -->
+		<Demo2 client:load />
+	</div>
+</Layout>

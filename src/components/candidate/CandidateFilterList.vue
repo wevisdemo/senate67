@@ -2,8 +2,11 @@
 import { ref, watch, onMounted, nextTick } from "vue";
 import type { LocationMap } from "../../data/senate_option";
 import type { ApplicationGroup } from "../../data/application_group";
+import type { CandidateOverview, DropdownOption } from "../../data/candidate";
+import AutoComplete from "./AutoComplete.vue";
 
 const props = defineProps<{
+	candidates: CandidateOverview[];
 	provinces: string[];
 	districts: LocationMap;
 	occupations: ApplicationGroup[];
@@ -41,6 +44,13 @@ const onChangeDistrict = async () => {
 	});
 };
 
+const candidateOptions: DropdownOption[] = props.candidates.map(
+	(candidate) => ({
+		value: candidate.id,
+		label: candidate.firstName + " " + candidate.lastName,
+	}),
+);
+
 const clearFitler = () => {
 	selectedProvince.value = "ทุกจังหวัด";
 	selectedDistrict.value = "ทุกอำเภอ/เขต";
@@ -74,12 +84,23 @@ onMounted(() => {
 watch(selectedProvince, async (newProvince, oldProvince) => {
 	if (newProvince != oldProvince) selectedDistrict.value = "ทุกอำเภอ/เขต";
 });
+
+const onSelectCandidate = (candidate: DropdownOption) => {
+	window.location.href = `/candidates/${candidate.value}`;
+};
 </script>
 
 <template>
 	<div
 		class="flex space-y-[10px] sm:space-y-0 sm:space-x-[5px] flex-col sm:flex-row"
 	>
+		<AutoComplete
+			:options="candidateOptions"
+			:value="null"
+			placeholder="ค้นด้วยชื่อ"
+			@change="onSelectCandidate"
+		/>
+
 		<select
 			class="select w-full body-01"
 			v-model="selectedProvince"
