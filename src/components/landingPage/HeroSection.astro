@@ -19,6 +19,17 @@ const updated_at = new Date().toLocaleString("th-TH", {
 <section
 	class="flex w-full flex-col items-center min-h-screen bg-secondary pt-16"
 >
+	<div class="flex w-full p-3 bg-accent justify-center mb-3">
+		<p class="mx-auto body-02 text-center">
+			ทีมงาน senate67 กำลังตรวจสอบกับ <a
+				class="underline"
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://github.com/PanJ/senate67">รายชื่อผู้สมัครทางการของ กกต.</a
+			> และคัดชื่อที่ไม่ได้สมัครออกจากระบบ สำหรับผู้ที่กรอกข้อมูลใหม่จะดำเนินการตรวจสอบและแสดงผลภายใน
+			1 วัน
+		</p>
+	</div>
 	<div
 		class="flex-1 flex flex-col md:flex-row items-center justify-center gap-10"
 	>
@@ -26,16 +37,14 @@ const updated_at = new Date().toLocaleString("th-TH", {
 		<div class="flex items-center mx-auto">
 			<div class="flex flex-col gap-5">
 				<div class="text-center body-02">
-					<p class="text-neutral">
-						สว. ระบบใหม่ “แบ่งกลุ่มอาชีพ” และ “เลือกกันเอง”
-					</p>
+					<p class="text-neutral">สว.ระบบใหม่</p>
 					<p class="font-bold text-primary">
-						ประชาชนก็เลือกได้ ถ้าเข้าไปสมัคร!
+						ผู้สมัครต้องเลือกกันเอง ต้องทำความรู้จักกันเอง
 					</p>
 				</div>
 
 				<div class="text-center">
-					<p class="body-01 text-neutral">มีผู้แสดงตัวเป็นผู้สมัครแล้ว</p>
+					<p class="body-01 text-neutral">มีผู้ประกาศตัวให้คนอื่นรู้จักแล้ว</p>
 					<p class="heading-responsive-01 text-neutral leading-[44px]">
 						{registered_senates.toLocaleString()} คน
 					</p>
