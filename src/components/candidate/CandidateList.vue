@@ -6,6 +6,7 @@ import CandidateAvatar from "../candidate/CandidateAvatar.vue";
 import CandidateDepartmentAndGroupDetails from "../candidate/CandidateDepartmentAndGroupDetails.vue";
 import CandidateSocialMediaList from "../candidate/CandidateSocialMediaList.vue";
 import CandidateFilterList from "../candidate/CandidateFilterList.vue";
+import CandidateCard from "../candidate/CandidateCard.vue";
 import StandPointList from "../candidate/StandPointList.vue";
 import type { CandidateOverview } from "../../data/candidate";
 import type { ApplicationGroup } from "../../data/application_group";
@@ -187,99 +188,14 @@ function shuffleArray<T>(array: T[]) {
 				</p>
 
 				<div
-					class="mt-5 bg-base-100 p-2 sm:p-5 rounded-[10px] space-y-3"
-					v-for="{
-						id,
-						firstName,
-						lastName,
-						aliasName,
-						avatarUrl,
-						contacts,
-						application,
-						age,
-						gender,
-						education,
-						occupation,
-						politicalStances,
-					} in sortedCandidates.slice(0, maxDisplayCandidateIndex)"
-					:key="`${firstName}${lastName}`"
+					class=""
+					v-for="candidate in sortedCandidates.slice(
+						0,
+						maxDisplayCandidateIndex,
+					)"
+					:key="`${candidate.firstName}${candidate.lastName}`"
 				>
-					<div class="flex space-x-2">
-						<div class="flex-1 text-left">
-							<CandidateAvatar
-								:name="`${firstName} ${lastName}`"
-								:alias="aliasName"
-								:avatar="avatarUrl"
-							/>
-						</div>
-						<div class="max-w-[120px] sm:max-w-[150px] w-full">
-							<CandidateDepartmentAndGroupDetails :application="application" />
-						</div>
-					</div>
-
-					<div class="flex flex-col text-left space-y-2">
-						<div class="overflow-hidden text-ellipsis">
-							<div class="body-03 bg-base-200 px-2 py-0.5 rounded-md">
-								ข้อมูลทั่วไป
-							</div>
-							<table>
-								<tr>
-									<td class="body-03 mt-[2px]">อายุ</td>
-									<td class="body-01 font-bold flex">{{ age }} ปี</td>
-								</tr>
-								<tr v-if="gender">
-									<td class="body-03 mt-[2px]">เพศ</td>
-									<td class="body-01 font-bold flex">{{ gender }}</td>
-								</tr>
-								<tr>
-									<td
-										class="body-03 mt-[2px] whitespace-nowrap flex justify-start"
-									>
-										การศึกษา
-									</td>
-									<td class="body-01 font-bold break-words whitespace-pre-wrap">
-										{{ education }}
-									</td>
-								</tr>
-								<tr>
-									<td class="body-03 mt-[2px] flex justify-start">อาชีพ</td>
-									<td class="body-01 font-bold break-words whitespace-pre-wrap">
-										{{ occupation }}
-									</td>
-								</tr>
-							</table>
-						</div>
-
-						<div
-							v-if="
-								contacts.email ||
-								contacts.facebookUrl ||
-								contacts.phoneNumber ||
-								contacts.xUrl
-							"
-							class="space-y-2"
-						>
-							<div class="body-03 bg-base-200 px-2 rounded-md">
-								ช่องทางติดต่อ
-							</div>
-							<CandidateSocialMediaList :contacts="contacts" />
-						</div>
-
-						<div class="space-y-1">
-							<div class="body-03 bg-base-200 px-2 rounded-md">จุดยืน</div>
-
-							<StandPointList :standpoints="politicalStances" />
-						</div>
-					</div>
-
-					<div class="text-right flex space-x-1 justify-end">
-						<a
-							class="font-bold text-accent underline"
-							:href="'/candidates/' + id"
-							>ดูเพิ่มเติม
-						</a>
-						<img src="/arrow.svg" class="-rotate-90" alt="" />
-					</div>
+					<CandidateCard :candidate="candidate" />
 				</div>
 
 				<div ref="loadMoreObserver" class="-translate-y-[50vh]" />
