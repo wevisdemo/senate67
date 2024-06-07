@@ -28,6 +28,11 @@ export interface Candidate {
 	visionQuestionaires: VisionQuestionaire[];
 }
 
+export interface DropdownOption {
+	value: string;
+	label: string;
+}
+
 export type CandidateOverview = Omit<Candidate, "visionQuestionaires">;
 
 export interface PoliticalStance {
