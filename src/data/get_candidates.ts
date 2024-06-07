@@ -6,6 +6,15 @@ import type {
 } from "./candidate";
 import { parse } from "csv-parse/sync";
 import { getAvatarUrl, getVideoUrl } from "./media_matcher";
+import {
+	getOfficialCandidates,
+	type OfficialCandidate,
+} from "./ect_candidates";
+import {
+	convertApplicationGroup,
+	convertLocation,
+	type Location,
+} from "./ect_adapter";
 
 const POLITICAL_STANCE_STARTS_WITH = "คุณคิดเห็นอย่างไรกับประเด็นเหล่านี้? [";
 const DISTRICT_QUESITON = "อำเภอ/เขต ที่คุณลงสมัคร";
@@ -25,13 +34,45 @@ export async function getCandidates(): Promise<Candidate[]> {
 		(obj: { [key: string]: string }) => obj["ToBeDisplayed"] === "TRUE",
 	);
 
-	return toBeDisplayedCandidates.map(mapCandidate);
+	const officialCandidates = await getOfficialCandidates();
+	let matchedCount = 0;
+
+	const mapped = toBeDisplayedCandidates.map((candidate: any, i: number) => {
+		const firstName: string = candidate["ชื่อ-นามสกุล"]
+			.trim()
+			.replace(/  +/g, " ");
+		const lastName: string = candidate["นามสกุล"].trim();
+		const fullName = `${firstName} ${lastName}`.trim();
+		const matchedIndex = officialCandidates.findIndex((c) =>
+			fullName.includes(c.full_name_for_lookup),
+		);
+		if (matchedIndex !== -1) {
+			matchedCount += 1;
+		}
+		return mapCandidate(candidate, officialCandidates[matchedIndex]);
+	});
+
+	console.log(`Matched with ECT official candidates: ${matchedCount} records`);
+	return mapped;
 }
 
-function mapCandidate(object: { [key: string]: string }): Candidate {
+function mapCandidate(
+	object: { [key: string]: string },
+	officialCandidate?: OfficialCandidate,
+): Candidate {
 	const firstName = object["ชื่อ-นามสกุล"].trim().replace(/  +/g, " ");
 	const lastName = object["นามสกุล"].trim();
 	const isShowingContact = object["ShowCantacts"] === "TRUE";
+	let officialGroup: ApplicationGroup | undefined;
+	let officialLocation: Location | undefined;
+
+	if (officialCandidate) {
+		officialGroup = convertApplicationGroup(officialCandidate.job_group);
+		officialLocation = convertLocation(
+			officialCandidate.province,
+			officialCandidate.district,
+		);
+	}
 
 	return {
 		id: `${firstName} ${lastName}`.trim().replaceAll(" ", "-"),
@@ -46,9 +87,15 @@ function mapCandidate(object: { [key: string]: string }): Candidate {
 		education: object["ประวัติการศึกษา"].trim(),
 		occupation: object["ประวัติการประกอบอาชีพ"].trim(),
 		application: {
-			group: getApplicationGroup(object[GROUP_QUESTION].trim()),
-			province: object[PROVINCE_QUESTION].trim(),
-			district: object[DISTRICT_QUESITON].trim(),
+			group: officialGroup
+				? officialGroup
+				: getApplicationGroup(object[GROUP_QUESTION].trim()),
+			province: officialLocation
+				? officialLocation.province
+				: object[PROVINCE_QUESTION].trim(),
+			district: officialLocation
+				? officialLocation.district
+				: object[DISTRICT_QUESITON].trim(),
 		},
 		contacts: isShowingContact
 			? {
