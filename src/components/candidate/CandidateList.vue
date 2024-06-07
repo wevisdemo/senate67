@@ -172,6 +172,7 @@ function shuffleArray<T>(array: T[]) {
 						:districts="districts"
 						:occupations="application_group"
 						@filter="getCandidatesData"
+						:candidates="props.candidates"
 					/>
 				</div>
 			</div>

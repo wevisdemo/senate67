@@ -44,12 +44,13 @@ const onChangeDistrict = async () => {
 	});
 };
 
-const candidateOptions: DropdownOption[] = props.candidates.map(
-	(candidate) => ({
+const candidateOptions = () => {
+	if (!props.candidates) return [];
+	return props.candidates.map((candidate) => ({
 		value: candidate.id,
 		label: candidate.firstName + " " + candidate.lastName,
-	}),
-);
+	}));
+};
 
 const clearFitler = () => {
 	selectedProvince.value = "ทุกจังหวัด";
@@ -91,55 +92,67 @@ const onSelectCandidate = (candidate: DropdownOption) => {
 </script>
 
 <template>
-	<div
-		class="flex space-y-[10px] sm:space-y-0 sm:space-x-[5px] flex-col sm:flex-row"
-	>
+	<div class="flex space-y-[10px] flex-col">
 		<AutoComplete
-			:options="candidateOptions"
+			:options="candidateOptions()"
 			:value="null"
 			placeholder="ค้นด้วยชื่อ"
 			@change="onSelectCandidate"
 		/>
 
-		<select
-			class="select w-full body-01"
-			v-model="selectedProvince"
-			@change="onChangeDistrict"
-			:class="{ 'bg-secondary': selectedProvince != 'ทุกจังหวัด' }"
+		<div
+			class="flex space-y-[10px] sm:space-y-0 sm:space-x-[5px] flex-col sm:flex-row"
 		>
-			<option value="ทุกจังหวัด">ทุกจังหวัด</option>
-			<option v-for="item in props.provinces" :value="item">
-				{{ item }}
-			</option>
-		</select>
+			<select
+				class="select w-full body-01"
+				v-model="selectedProvince"
+				@change="onChangeDistrict"
+				:class="{ 'bg-secondary': selectedProvince != 'ทุกจังหวัด' }"
+			>
+				<option value="ทุกจังหวัด">ทุกจังหวัด</option>
+				<option v-for="item in props.provinces" :value="item">
+					{{ item }}
+				</option>
+			</select>
 
-		<select
-			:class="{ 'bg-secondary': selectedDistrict != 'ทุกอำเภอ/เขต' }"
-			class="select w-full body-01"
-			v-model="selectedDistrict"
-			@change="
-				$emit('filter', selectedProvince, selectedDistrict, selectedOccupation)
-			"
-		>
-			<option value="ทุกอำเภอ/เขต">ทุกอำเภอ/เขต</option>
-			<option v-for="item in selected_district_list" :value="item">
-				{{ item }}
-			</option>
-		</select>
+			<select
+				:class="{ 'bg-secondary': selectedDistrict != 'ทุกอำเภอ/เขต' }"
+				class="select w-full body-01"
+				v-model="selectedDistrict"
+				@change="
+					$emit(
+						'filter',
+						selectedProvince,
+						selectedDistrict,
+						selectedOccupation,
+					)
+				"
+			>
+				<option value="ทุกอำเภอ/เขต">ทุกอำเภอ/เขต</option>
+				<option v-for="item in selected_district_list" :value="item">
+					{{ item }}
+				</option>
+			</select>
 
-		<select
-			:class="{ 'bg-secondary': selectedOccupation != 'ทุกกลุ่มอาชีพ' }"
-			class="select w-full body-01"
-			v-model="selectedOccupation"
-			@change="
-				$emit('filter', selectedProvince, selectedDistrict, selectedOccupation)
-			"
-		>
-			<option value="ทุกกลุ่มอาชีพ">ทุกกลุ่มอาชีพ</option>
-			<option v-for="item in props.occupations" :value="item">
-				{{ item }}
-			</option>
-		</select>
+			<select
+				:class="{ 'bg-secondary': selectedOccupation != 'ทุกกลุ่มอาชีพ' }"
+				class="select w-full body-01"
+				v-model="selectedOccupation"
+				@change="
+					$emit(
+						'filter',
+						selectedProvince,
+						selectedDistrict,
+						selectedOccupation,
+					)
+				"
+			>
+				<option value="ทุกกลุ่มอาชีพ">ทุกกลุ่มอาชีพ</option>
+				<option v-for="item in props.occupations" :value="item">
+					{{ item }}
+				</option>
+			</select>
+		</div>
 	</div>
 
 	<p class="text-secondary pt-3 cursor-pointer font-bold" @click="clearFitler">
