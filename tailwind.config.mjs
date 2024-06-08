@@ -25,6 +25,7 @@ export default {
 					"base-200": "#F2F2F2",
 					"base-300": "#D4D4D4",
 					info: "#83D3FF",
+					"accent-focus": "#FF5C00",
 				},
 			},
 		],
