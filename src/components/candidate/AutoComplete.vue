@@ -1,11 +1,11 @@
 <!-- ./components/Autocomplete.vue -->
 
 <template>
-	<div class="dropdown w-full" ref="dropdownRef">
+	<div class="dropdown w-full body-01" ref="dropdownRef">
 		<label class="input input-bordered flex items-center gap-2">
 			<input
 				type="text"
-				class="grow"
+				class="grow placeholder:text-neutral"
 				v-model="inputValue"
 				:placeholder="placeholder"
 				:disabled="disabled"
@@ -36,9 +36,9 @@
 					:key="index"
 					:tabindex="index + 1"
 					@click="selectOption(item)"
-					class="border-b border-b-base-content/10 w-full"
+					class="w-full body-01"
 				>
-					<button>{{ item.label }}</button>
+					<button v-html="displayLabel(item.label)"></button>
 				</li>
 			</ul>
 		</div>
@@ -104,6 +104,27 @@ export default {
 			);
 		});
 
+		function displayLabel(label: string): string {
+			if (!inputValue.value) return `<p>${label}</p>`;
+			const markOpenTag = "<b>";
+			const markCloseTag = "</b>";
+
+			// Escape special characters in targetText to avoid issues in regex
+			const escapedTargetText = inputValue.value.replace(
+				/[.*+?^${}()|[\]\\]/g,
+				"\\$&",
+			);
+
+			// Create a regex to find the target text
+			const regex = new RegExp(`(${escapedTargetText})`, "gi");
+
+			// Replace the target text with the marked version
+			const result = label.replace(regex, `${markOpenTag}$1${markCloseTag}`);
+
+			// Return the final string wrapped in <p> tags
+			return `<p>${result}</p>`;
+		}
+
 		const selectOption = (option: DropdownOption) => {
 			inputValue.value = option.label;
 			// this.$emit('change', option);
@@ -131,6 +152,7 @@ export default {
 			handleBlur,
 			displayOptions,
 			selectOption,
+			displayLabel,
 		};
 	},
 };

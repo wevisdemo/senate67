@@ -160,7 +160,7 @@ function shuffleArray<T>(array: T[]) {
 					</p>
 				</div>
 
-				<div class="pt-14 px-4 z-[99] relative sm:z-0 bg-primary">
+				<div class="pt-14 px-4 z-[99] relative sm:z-10 bg-primary">
 					<p class="heading-02 mb-2 text-base-100">
 						กรองหาผู้สมัครที่คุณมีสิทธิ์เลือก
 					</p>
