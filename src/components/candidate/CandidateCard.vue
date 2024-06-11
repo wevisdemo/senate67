@@ -12,7 +12,7 @@ const props = defineProps<{
 
 <template>
 	<div class="mt-5 bg-base-100 p-2 sm:p-5 rounded-[10px] space-y-3">
-		<div class="relative">
+		<div class="relative space-y-2">
 			<div
 				v-if="props.candidate.isEliminated"
 				class="absolute top-0 left-0 w-full h-full bg-base-100 bg-opacity-90 z-10 text-center"
@@ -59,7 +59,9 @@ const props = defineProps<{
 
 			<div class="flex flex-col text-left space-y-2">
 				<div class="overflow-hidden text-ellipsis">
-					<div class="body-03 bg-base-200 px-2 py-0.5 rounded-md">
+					<div
+						class="body-03 bg-base-200 px-2 py-0.5 my-2.5 rounded-md text-left"
+					>
 						ข้อมูลทั่วไป
 					</div>
 					<table>
@@ -102,12 +104,20 @@ const props = defineProps<{
 				"
 				class="space-y-2"
 			>
-				<div class="body-03 bg-base-200 px-2 rounded-md">ช่องทางติดต่อ</div>
+				<div
+					class="body-03 bg-base-200 px-2 py-0.5 my-2.5 rounded-md text-left"
+				>
+					ช่องทางติดต่อ
+				</div>
 				<CandidateSocialMediaList :contacts="props.candidate.contacts" />
 			</div>
 
 			<div class="space-y-1">
-				<div class="body-03 bg-base-200 px-2 rounded-md">จุดยืน</div>
+				<div
+					class="body-03 bg-base-200 px-2 py-0.5 my-2.5 rounded-md text-left"
+				>
+					จุดยืน
+				</div>
 
 				<StandPointList :standpoints="props.candidate.politicalStances" />
 			</div>
