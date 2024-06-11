@@ -182,10 +182,18 @@ function getLookUpFullName(object: { [key: string]: string }) {
 
 function mapIsEliminated(object: { [key: string]: string }) {
 	const fullName = getLookUpFullName(object);
-	const found = DistrictCandidates.find(
-		(candidate) =>
-			`${candidate["first_name"]} ${candidate["last_name"]}` === fullName,
-	);
+	const found = DistrictCandidates.find((candidate) => {
+		if (candidate["middle_name"] === " ") {
+			return (
+				`${candidate["first_name"]} ${candidate["last_name"]}` === fullName
+			);
+		} else {
+			return (
+				`${candidate["first_name"]} ${candidate["middle_name"]} ${candidate["last_name"]}` ===
+				fullName
+			);
+		}
+	});
 
 	return !found;
 }
