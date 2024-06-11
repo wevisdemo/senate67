@@ -2,12 +2,8 @@
 // @ts-ignore
 import enterView from "enter-view";
 import { ref, onBeforeMount, onMounted, computed } from "vue";
-import CandidateAvatar from "../candidate/CandidateAvatar.vue";
-import CandidateDepartmentAndGroupDetails from "../candidate/CandidateDepartmentAndGroupDetails.vue";
-import CandidateSocialMediaList from "../candidate/CandidateSocialMediaList.vue";
 import CandidateFilterList from "../candidate/CandidateFilterList.vue";
 import CandidateCard from "../candidate/CandidateCard.vue";
-import StandPointList from "../candidate/StandPointList.vue";
 import type { CandidateOverview } from "../../data/candidate";
 import type { ApplicationGroup } from "../../data/application_group";
 import type { LocationMap } from "../../data/senate_option";

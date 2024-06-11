@@ -7,16 +7,14 @@ import StandPointList from "../candidate/StandPointList.vue";
 
 const props = defineProps<{
 	candidate: CandidateOverview;
-	isEliminated?: boolean;
 }>();
 </script>
 
 <template>
 	<div class="mt-5 bg-base-100 p-2 sm:p-5 rounded-[10px] space-y-3">
 		<div class="relative">
-			<!-- TODO: add prop isEliminated or change condition when feature is ready -->
 			<div
-				v-if="props.isEliminated"
+				v-if="props.candidate.isEliminated"
 				class="absolute top-0 left-0 w-full h-full bg-base-100 bg-opacity-90 z-10 text-center"
 			>
 				<span

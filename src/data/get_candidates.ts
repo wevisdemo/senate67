@@ -117,6 +117,8 @@ function mapCandidate(
 				"คำอธิบายจุดยืนในฐานะสมาชิกรัฐสภาเพิ่มเติมที่ต้องการจะให้คนอื่นทราบ"
 			].trim(),
 		visionQuestionaires: mapVisionQuestionaires(object),
+		// TODO: Check if candidated is eliminated
+		isEliminated: false,
 	};
 }
 

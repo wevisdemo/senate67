@@ -4,6 +4,7 @@ export interface Candidate {
 	id: string;
 	title: string;
 	firstName: string;
+	isEliminated: boolean;
 	lastName: string;
 	aliasName?: string;
 	avatarUrl?: string;
