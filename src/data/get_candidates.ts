@@ -15,6 +15,8 @@ import {
 	convertLocation,
 	type Location,
 } from "./ect_adapter";
+import DistrictCandidates from "./ect_district_candidates.json";
+import { CACHE } from "./cache";
 
 const POLITICAL_STANCE_STARTS_WITH = "คุณคิดเห็นอย่างไรกับประเด็นเหล่านี้? [";
 const DISTRICT_QUESITON = "อำเภอ/เขต ที่คุณลงสมัคร";
@@ -22,6 +24,10 @@ const PROVINCE_QUESTION = "จังหวัดที่คุณลงสม�
 const GROUP_QUESTION = "ท่านสมัครในกลุ่มใด";
 
 export async function getCandidates(): Promise<Candidate[]> {
+	if (CACHE.candidates) {
+		return CACHE.candidates;
+	}
+
 	if (!import.meta.env.CANDIDATE_CSV_URL) {
 		throw new Error("CANDIDATE_CSV_URL env variable has not been set yet!");
 	}
@@ -38,11 +44,7 @@ export async function getCandidates(): Promise<Candidate[]> {
 	let matchedCount = 0;
 
 	const mapped = toBeDisplayedCandidates.map((candidate: any, i: number) => {
-		const firstName: string = candidate["ชื่อ-นามสกุล"]
-			.trim()
-			.replace(/  +/g, " ");
-		const lastName: string = candidate["นามสกุล"].trim();
-		const fullName = `${firstName} ${lastName}`.trim();
+		const fullName = getLookUpFullName(candidate);
 		const matchedIndex = officialCandidates.findIndex((c) =>
 			fullName.includes(c.full_name_for_lookup),
 		);
@@ -53,6 +55,8 @@ export async function getCandidates(): Promise<Candidate[]> {
 	});
 
 	console.log(`Matched with ECT official candidates: ${matchedCount} records`);
+
+	CACHE.candidates = mapped;
 	return mapped;
 }
 
@@ -117,8 +121,7 @@ function mapCandidate(
 				"คำอธิบายจุดยืนในฐานะสมาชิกรัฐสภาเพิ่มเติมที่ต้องการจะให้คนอื่นทราบ"
 			].trim(),
 		visionQuestionaires: mapVisionQuestionaires(object),
-		// TODO: Check if candidated is eliminated
-		isEliminated: false,
+		isEliminated: mapIsEliminated(object),
 	};
 }
 
@@ -169,4 +172,20 @@ function mapVisionQuestionaires(object: {
 			answer: object["5. เหตุผลความตั้งใจในการลงสมัคร สว. ครั้งนี้"].trim(),
 		},
 	];
+}
+
+function getLookUpFullName(object: { [key: string]: string }) {
+	const firstName: string = object["ชื่อ-นามสกุล"].trim().replace(/  +/g, " ");
+	const lastName: string = object["นามสกุล"].trim();
+	return `${firstName} ${lastName}`.trim();
+}
+
+function mapIsEliminated(object: { [key: string]: string }) {
+	const fullName = getLookUpFullName(object);
+	const found = DistrictCandidates.find(
+		(candidate) =>
+			`${candidate["first_name"]} ${candidate["last_name"]}` === fullName,
+	);
+
+	return !found;
 }
