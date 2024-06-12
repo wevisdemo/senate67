@@ -32,8 +32,11 @@ const candidates: CandidateOverview[] = (await getCandidates())
 	}))
 	.sort((a, z) => a.firstName.localeCompare(z.firstName));
 
-const total_candidate = candidates.length;
-const application_group = Object.values(ApplicationGroup);
+const totalCandidate = candidates.length;
+const passedCandidate = candidates.filter(
+	({ isEliminated }) => !isEliminated,
+).length;
+const applicationGroup = Object.values(ApplicationGroup);
 const provinces = getProvinceList();
 const districts = getLocationMap();
 ---
@@ -41,8 +44,9 @@ const districts = getLocationMap();
 <Layout title="ค้นหาผู้สมัคร สว.">
 	<CandidateList
 		{candidates}
-		{total_candidate}
-		{application_group}
+		{totalCandidate}
+		{passedCandidate}
+		{applicationGroup}
 		{provinces}
 		{districts}
 		client:load

@@ -2,12 +2,14 @@
 import SenateHeroLogo from "./SenateHeroLogo.astro";
 import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
 import OpenInNew from "../icons/OpenInNew.astro";
-import ArrowRight from "../icons/ArrowRight.astro";
 import { getCandidates } from "../../data/get_candidates";
 
-const candidate_senates = await getCandidates();
+const candidates = await getCandidates();
 
-const registered_senates = candidate_senates.length;
+const registeredCandidates = candidates.length;
+const passedCandidated = candidates.filter(
+	({ isEliminated }) => !isEliminated,
+).length;
 const updated_at = new Date().toLocaleString("th-TH", {
 	year: "numeric",
 	month: "short",
@@ -45,10 +47,13 @@ const updated_at = new Date().toLocaleString("th-TH", {
 
 				<div class="text-center">
 					<p class="body-01 text-neutral">มีผู้ประกาศตัวให้คนอื่นรู้จักแล้ว</p>
-					<p class="heading-responsive-01 text-neutral leading-[44px]">
-						{registered_senates.toLocaleString()} คน
+					<p class="heading-responsive-01 text-neutral leading-tight">
+						{registeredCandidates.toLocaleString()} คน
 					</p>
-					<p class="body-03 text-neutral">อัปเดตข้อมูล {updated_at}</p>
+					<p class="heading-responsive-03 text-primary leading-tight">
+						เข้ารอบ {passedCandidated.toLocaleString()} คน
+					</p>
+					<p class="body-03 text-neutral mt-1">อัปเดตข้อมูล {updated_at}</p>
 				</div>
 
 				<div class="flex flex-col justify-center gap-1 w-72">

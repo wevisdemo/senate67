@@ -13,10 +13,11 @@ const CANDIDATES_PER_PAGE = 25;
 
 const props = defineProps<{
 	candidates: CandidateOverview[];
-	application_group: ApplicationGroup[];
+	applicationGroup: ApplicationGroup[];
 	provinces: string[];
 	districts: LocationMap;
-	total_candidate: number;
+	totalCandidate: number;
+	passedCandidate: number;
 }>();
 
 const groupResults = ref<CandidateOverview[] | null>(null);
@@ -148,13 +149,27 @@ function getCandidateSourtingScore({
 			class="flex items-center justify-center bg-primary pt-36 pb-10 text-center h-full"
 		>
 			<div class="text-center max-w-[650px] w-full">
-				<div class="px-4">
+				<div class="px-4 space-y-3">
 					<h1 class="heading-responsive-01 text-base-100 pb-3">
 						ค้นหาผู้สมัคร สว.
 					</h1>
 
-					<p class="max-w-[650px] mx-auto body-01 text-base-100">
-						ทั้งหมด {{ total_candidate.toLocaleString() }} คน ในฐานข้อมูล
+					<p class="body-01 text-base-100">
+						ทั้งหมด {{ totalCandidate.toLocaleString() }} คน ในฐานข้อมูล
+					</p>
+
+					<p class="body-01 text-secondary">
+						เข้ารอบ {{ passedCandidate.toLocaleString() }} คน<br />
+						<span class="body-03"
+							>ที่มา:
+							<a
+								class="underline"
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://github.com/PanJ/senate67"
+								>รายชื่อผู้สมัครทางการของ กกต.</a
+							></span
+						>
 					</p>
 				</div>
 
@@ -169,7 +184,7 @@ function getCandidateSourtingScore({
 						:occupation_query="occupation_query"
 						:provinces="provinces"
 						:districts="districts"
-						:occupations="application_group"
+						:occupations="applicationGroup"
 						@filter="getCandidatesData"
 						:candidates="props.candidates"
 					/>
@@ -181,12 +196,11 @@ function getCandidateSourtingScore({
 				<Spinner />
 			</div>
 			<div v-else class="mx-auto w-full max-w-[650px]">
-				<p class="heading-02 mb-2 text-neutral">
+				<p class="heading-02">
 					ผลลัพธ์ : {{ sortedCandidates.length.toLocaleString() }} คน
 				</p>
 
 				<div
-					class=""
 					v-for="candidate in sortedCandidates.slice(
 						0,
 						maxDisplayCandidateIndex,
