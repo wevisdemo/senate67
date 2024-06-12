@@ -31,14 +31,9 @@ const maxDisplayCandidateIndex = ref(CANDIDATES_PER_PAGE);
 
 const sortedCandidates = computed<CandidateOverview[] | null>(() =>
 	groupResults.value
-		? [
-				...shuffleArray(
-					groupResults.value.filter(({ avatarUrl }) => avatarUrl),
-				),
-				...shuffleArray(
-					groupResults.value.filter(({ avatarUrl }) => !avatarUrl),
-				),
-			]
+		? shuffleArray([...groupResults.value]).sort(
+				(a, z) => getCandidateSourtingScore(z) - getCandidateSourtingScore(a),
+			)
 		: null,
 );
 
@@ -137,6 +132,13 @@ function shuffleArray<T>(array: T[]) {
 	}
 
 	return array;
+}
+
+function getCandidateSourtingScore({
+	isEliminated,
+	avatarUrl,
+}: CandidateOverview) {
+	return (isEliminated ? 0 : 2) + (avatarUrl ? 1 : 0);
 }
 </script>
 
