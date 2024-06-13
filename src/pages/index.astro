@@ -6,7 +6,9 @@ import PartnerSection from "../components/landingPage/PartnerSection.astro";
 import { getEvents } from "../data/get_events";
 import EventSection from "../components/landingPage/EventSection.vue";
 
-const events = await getEvents();
+const events = (await getEvents()).sort(
+	(a, z) => a.date.getTime() - z.date.getTime(),
+);
 const nowEpoch = new Date().getTime();
 const upcomingEvents = events.filter(({ date }) => date.getTime() > nowEpoch);
 const pastEventCount = events.filter(

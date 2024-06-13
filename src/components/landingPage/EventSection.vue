@@ -47,7 +47,7 @@ const [container] = useKeenSlider({
 					<div class="flex flex-col p-2 bg-base-100 body-02">
 						<p class="heading-03">{{ event.name }}</p>
 						<table>
-							<tr>
+							<tr v-if="event.timeDescription">
 								<td class="font-bold pr-1">เวลา</td>
 								<td>{{ event.timeDescription }}</td>
 							</tr>
@@ -61,6 +61,7 @@ const [container] = useKeenSlider({
 								</td>
 								<td>
 									{{ event.location }}<br /><a
+										v-if="event.locationUrl"
 										class="underline text-accent"
 										:href="event.locationUrl"
 										target="_blank"
@@ -71,6 +72,7 @@ const [container] = useKeenSlider({
 							</tr>
 						</table>
 						<a
+							v-if="event.MoreInfoUrl"
 							:href="event.MoreInfoUrl"
 							target="_blank"
 							class="underline text-primary place-self-end"
