@@ -3,8 +3,12 @@ import SenateHeroLogo from "./SenateHeroLogo.astro";
 import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
 import OpenInNew from "../icons/OpenInNew.astro";
 import { getCandidates } from "../../data/get_candidates";
+import { getEvents } from "../../data/get_events";
 
 const candidates = await getCandidates();
+const upcomingEventsCount = (await getEvents()).filter(
+	({ date }) => date.getTime() > new Date().getTime(),
+).length;
 
 const registeredCandidates = candidates.length;
 const passedCandidated = candidates.filter(
@@ -60,6 +64,13 @@ const updated_at = new Date().toLocaleString("th-TH", {
 					<a class="btn w-full bg-primary text-base-100" href="/candidates">
 						ค้นหาผู้สมัคร
 					</a>
+					{
+						upcomingEventsCount > 0 && (
+							<a class="btn w-full bg-primary text-base-100" href="/#events">
+								ดูตารางกิจกรรม
+							</a>
+						)
+					}
 					<a
 						class="btn w-full bg-primary text-base-100"
 						href="https://forms.gle/UPhNQLN9SmzSXAC9A"
