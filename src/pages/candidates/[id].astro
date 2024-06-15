@@ -56,13 +56,20 @@ const contents = [
 		}
 		<div class="max-w-[650px] mx-auto pt-8">
 			<div class="flex space-x-2 mb-5">
-				<div class="basis-3/4 text-left">
+				<div class="basis-3/4 text-left flex flex-col">
 					<CandidateAvatar
 						section="details"
 						name={fullname}
 						alias={candidate.aliasName}
 						avatar={candidate.avatarUrl}
 					/>
+					{
+						candidate.isEliminated && (
+							<span class="bg-[#FF5C00] heading-02 text-base-100 px-[5px] mt-[5px] w-fit">
+								ตกรอบ
+							</span>
+						)
+					}
 				</div>
 				<div class="basis-1/4">
 					<CandidateDepartmentAndGroupDetails
