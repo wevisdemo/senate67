@@ -181,6 +181,9 @@ function getLookUpFullName(object: { [key: string]: string }) {
 }
 
 function mapIsEliminated(object: { [key: string]: string }) {
+	if (object["OverwriteStatus"] === "ผ่านเข้ารอบ") return false;
+	if (object["OverwriteStatus"] === "ไม่ผ่านเข้ารอบ") return true;
+
 	const fullName = getLookUpFullName(object);
 	const found = DistrictCandidates.find((candidate) => {
 		if (candidate["middle_name"] === " ") {
