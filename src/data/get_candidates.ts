@@ -15,7 +15,7 @@ import {
 	convertLocation,
 	type Location,
 } from "./ect_adapter";
-import DistrictCandidates from "./ect_district_candidates.json";
+import ProvinceCandidates from "./ect_province_candidates.json";
 import { CACHE } from "./cache";
 
 const POLITICAL_STANCE_STARTS_WITH = "คุณคิดเห็นอย่างไรกับประเด็นเหล่านี้? [";
@@ -185,7 +185,7 @@ function mapIsEliminated(object: { [key: string]: string }) {
 	if (object["OverwriteStatus"] === "ไม่ผ่านเข้ารอบ") return true;
 
 	const fullName = getLookUpFullName(object);
-	const found = DistrictCandidates.find((candidate) => {
+	const found = ProvinceCandidates.find((candidate) => {
 		if (candidate["middle_name"] === " ") {
 			return fullName.includes(
 				`${candidate["first_name"]} ${candidate["last_name"]}`,
