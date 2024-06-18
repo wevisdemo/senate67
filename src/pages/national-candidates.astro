@@ -43,7 +43,7 @@ const applicationGroup = Object.values(ApplicationGroup);
 const provinces = getProvinceList();
 ---
 
-<Layout title="รายชื่อผู้ผ่านเข้ารอบระดับจังหวัด">
+<Layout title="รายชื่อผู้ผ่านเข้ารอบระดับประเทศ">
 	<CandidateList
 		filterTitle="กรองหาผู้ผ่านเข้ารอบ"
 		showKnownCandidateCount
@@ -54,7 +54,7 @@ const provinces = getProvinceList();
 	>
 		<div slot="header" class="px-4 space-y-3">
 			<h1 class="heading-responsive-01 text-base-100">
-				รายชื่อผู้ผ่านเข้ารอบระดับจังหวัด
+				รายชื่อผู้ผ่านเข้ารอบระดับประเทศ
 			</h1>
 			<p class="body-01 text-base-100">
 				ทั้งหมด {totalCandidate.toLocaleString()} คน
