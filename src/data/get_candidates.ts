@@ -185,17 +185,25 @@ function mapIsEliminated(object: { [key: string]: string }) {
 	if (object["OverwriteStatus"] === "ไม่ผ่านเข้ารอบ") return true;
 
 	const fullName = getLookUpFullName(object);
-	const found = ProvinceCandidates.find((candidate) => {
-		if (candidate["middle_name"] === " ") {
-			return fullName.includes(
-				`${candidate["first_name"]} ${candidate["last_name"]}`,
-			);
-		} else {
-			return fullName.includes(
-				`${candidate["first_name"]} ${candidate["middle_name"]} ${candidate["last_name"]}`,
-			);
-		}
-	});
+
+	const found = ProvinceCandidates.find((candidate) =>
+		matchWithEctCandidate(fullName, candidate),
+	);
 
 	return !found;
+}
+
+export function matchWithEctCandidate(
+	fullName: string,
+	ectCandidate: (typeof ProvinceCandidates)[number],
+): boolean {
+	if (ectCandidate["middle_name"] === " ") {
+		return fullName.includes(
+			`${ectCandidate["first_name"]} ${ectCandidate["last_name"]}`,
+		);
+	} else {
+		return fullName.includes(
+			`${ectCandidate["first_name"]} ${ectCandidate["middle_name"]} ${ectCandidate["last_name"]}`,
+		);
+	}
 }

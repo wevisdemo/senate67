@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { computed } from "vue";
 import type { CandidateOverview } from "../../data/candidate";
 import CandidateAvatar from "../candidate/CandidateAvatar.vue";
 import CandidateDepartmentAndGroupDetails from "../candidate/CandidateDepartmentAndGroupDetails.vue";
@@ -8,13 +9,15 @@ import StandPointList from "../candidate/StandPointList.vue";
 const props = defineProps<{
 	candidate: CandidateOverview;
 }>();
+
+const isKnownCandidate = computed(() => "politicalStances" in props.candidate);
 </script>
 
 <template>
 	<div class="mt-5 bg-base-100 p-2 sm:p-5 rounded-[10px] space-y-3">
 		<div class="relative space-y-2">
 			<div
-				v-if="props.candidate.isEliminated"
+				v-if="candidate.isEliminated"
 				class="absolute top-0 left-0 w-full h-full bg-base-100 bg-opacity-90 z-10 text-center"
 			>
 				<span
@@ -45,19 +48,24 @@ const props = defineProps<{
 			<div class="flex space-x-2">
 				<div class="flex-1 text-left">
 					<CandidateAvatar
-						:name="`${props.candidate.firstName} ${props.candidate.lastName}`"
-						:alias="props.candidate.aliasName"
-						:avatar="props.candidate.avatarUrl"
+						:name="`${candidate.firstName} ${candidate.lastName}`"
+						:alias="candidate.aliasName"
+						:avatar="candidate.avatarUrl"
+						:isUnknownCandidate="!isKnownCandidate"
 					/>
 				</div>
 				<div class="max-w-[120px] sm:max-w-[150px] w-full">
 					<CandidateDepartmentAndGroupDetails
-						:application="props.candidate.application"
+						:application="candidate.application"
+						:number="candidate.number"
 					/>
 				</div>
 			</div>
 
-			<div class="flex flex-col text-left space-y-2">
+			<div
+				v-if="'education' in candidate"
+				class="flex flex-col text-left space-y-2"
+			>
 				<div class="overflow-hidden text-ellipsis">
 					<div
 						class="body-03 bg-base-200 px-2 py-0.5 my-2.5 rounded-md text-left"
@@ -67,14 +75,12 @@ const props = defineProps<{
 					<table>
 						<tr>
 							<td class="body-03 mt-[2px]">อายุ</td>
-							<td class="body-01 font-bold flex">
-								{{ props.candidate.age }} ปี
-							</td>
+							<td class="body-01 font-bold flex">{{ candidate.age }} ปี</td>
 						</tr>
-						<tr v-if="props.candidate.gender">
+						<tr v-if="candidate.gender">
 							<td class="body-03 mt-[2px]">เพศ</td>
 							<td class="body-01 font-bold flex">
-								{{ props.candidate.gender }}
+								{{ candidate.gender }}
 							</td>
 						</tr>
 						<tr>
@@ -82,13 +88,13 @@ const props = defineProps<{
 								การศึกษา
 							</td>
 							<td class="body-01 font-bold break-words whitespace-pre-wrap">
-								{{ props.candidate.education }}
+								{{ candidate.education }}
 							</td>
 						</tr>
 						<tr>
 							<td class="body-03 mt-[2px] flex justify-start">อาชีพ</td>
 							<td class="body-01 font-bold break-words whitespace-pre-wrap">
-								{{ props.candidate.occupation }}
+								{{ candidate.occupation }}
 							</td>
 						</tr>
 					</table>
@@ -97,10 +103,11 @@ const props = defineProps<{
 
 			<div
 				v-if="
-					props.candidate.contacts.email ||
-					props.candidate.contacts.facebookUrl ||
-					props.candidate.contacts.phoneNumber ||
-					props.candidate.contacts.xUrl
+					'contacts' in candidate &&
+					(candidate.contacts.email ||
+						candidate.contacts.facebookUrl ||
+						candidate.contacts.phoneNumber ||
+						candidate.contacts.xUrl)
 				"
 				class="space-y-2"
 			>
@@ -109,24 +116,24 @@ const props = defineProps<{
 				>
 					ช่องทางติดต่อ
 				</div>
-				<CandidateSocialMediaList :contacts="props.candidate.contacts" />
+				<CandidateSocialMediaList :contacts="candidate.contacts" />
 			</div>
 
-			<div class="space-y-1">
+			<div v-if="'politicalStances' in candidate" class="space-y-1">
 				<div
 					class="body-03 bg-base-200 px-2 py-0.5 my-2.5 rounded-md text-left"
 				>
 					จุดยืน
 				</div>
 
-				<StandPointList :standpoints="props.candidate.politicalStances" />
+				<StandPointList :standpoints="candidate.politicalStances" />
 			</div>
 		</div>
 
-		<div class="text-right flex space-x-1 justify-end">
+		<div v-if="isKnownCandidate" class="text-right flex space-x-1 justify-end">
 			<a
 				class="font-bold text-accent underline"
-				:href="'/candidates/' + props.candidate.id"
+				:href="'/candidates/' + candidate.id"
 				>ดูเพิ่มเติม
 			</a>
 			<img src="/arrow.svg" class="-rotate-90" alt="" />

@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { ref, watch, onMounted, nextTick } from "vue";
+import { ref, watch, onMounted, nextTick, computed } from "vue";
 import type { LocationMap } from "../../data/senate_option";
 import type { ApplicationGroup } from "../../data/application_group";
 import type { CandidateOverview, DropdownOption } from "../../data/candidate";
 import AutoComplete from "./AutoComplete.vue";
 
 const props = defineProps<{
-	candidates: CandidateOverview[];
+	candidates?: CandidateOverview[];
 	provinces: string[];
-	districts: LocationMap;
+	districts?: LocationMap;
 	occupations: ApplicationGroup[];
 	province_query: string;
 	district_query: string;
@@ -24,7 +24,7 @@ let selected_district_list = ref<string[]>([]);
 
 const onChangeDistrict = async () => {
 	selected_district_list.value = [];
-	if (selectedProvince.value != "ทุกจังหวัด") {
+	if (props.districts && selectedProvince.value != "ทุกจังหวัด") {
 		selected_district_list.value = props.districts[selectedProvince.value];
 
 		nextTick(() => {
@@ -44,13 +44,12 @@ const onChangeDistrict = async () => {
 	});
 };
 
-const candidateOptions = () => {
-	if (!props.candidates) return [];
-	return props.candidates.map((candidate) => ({
+const candidateOptions = computed(() =>
+	props.candidates?.map((candidate) => ({
 		value: candidate.id,
 		label: candidate.firstName + " " + candidate.lastName,
-	}));
-};
+	})),
+);
 
 const clearFitler = () => {
 	selectedProvince.value = "ทุกจังหวัด";
@@ -94,7 +93,8 @@ const onSelectCandidate = (candidate: DropdownOption) => {
 <template>
 	<div class="flex space-y-[10px] flex-col">
 		<AutoComplete
-			:options="candidateOptions()"
+			v-if="candidateOptions"
+			:options="candidateOptions"
 			:value="null"
 			placeholder="ค้นด้วยชื่อ"
 			@change="onSelectCandidate"
@@ -116,6 +116,7 @@ const onSelectCandidate = (candidate: DropdownOption) => {
 			</select>
 
 			<select
+				v-if="districts"
 				:class="{ 'bg-secondary': selectedDistrict != 'ทุกอำเภอ/เขต' }"
 				class="select w-full body-01"
 				v-model="selectedDistrict"

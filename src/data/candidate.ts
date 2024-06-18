@@ -2,6 +2,7 @@ import type { ApplicationGroup } from "./application_group";
 
 export interface Candidate {
 	id: string;
+	number?: number;
 	title: string;
 	firstName: string;
 	isEliminated: boolean;
@@ -34,7 +35,21 @@ export interface DropdownOption {
 	label: string;
 }
 
-export type CandidateOverview = Omit<Candidate, "visionQuestionaires">;
+export type CandidateOverview =
+	| KnownCandidateOverview
+	| UnknownCandidateOverview;
+
+type KnownCandidateOverview = Omit<Candidate, "visionQuestionaires">;
+
+export type UnknownCandidateOverview = Omit<
+	Candidate,
+	| "education"
+	| "occupation"
+	| "contacts"
+	| "politicalStances"
+	| "politicalStanceDescription"
+	| "visionQuestionaires"
+>;
 
 export interface PoliticalStance {
 	statement: string;

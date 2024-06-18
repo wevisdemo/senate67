@@ -12,12 +12,13 @@ import Spinner from "./Spinner.vue";
 const CANDIDATES_PER_PAGE = 25;
 
 const props = defineProps<{
+	filterTitle: string;
 	candidates: CandidateOverview[];
 	applicationGroup: ApplicationGroup[];
 	provinces: string[];
-	districts: LocationMap;
-	totalCandidate: number;
-	passedCandidate: number;
+	districts?: LocationMap;
+	canSearchByName?: boolean;
+	showKnownCandidateCount?: boolean;
 }>();
 
 const groupResults = ref<CandidateOverview[] | null>(null);
@@ -136,10 +137,13 @@ function shuffleArray<T>(array: T[]) {
 }
 
 function getCandidateSourtingScore({
+	politicalStances,
 	isEliminated,
 	avatarUrl,
 }: CandidateOverview) {
-	return (isEliminated ? 0 : 2) + (avatarUrl ? 1 : 0);
+	return (
+		(politicalStances ? 4 : 0) + (isEliminated ? 0 : 2) + (avatarUrl ? 1 : 0)
+	);
 }
 </script>
 
@@ -149,33 +153,11 @@ function getCandidateSourtingScore({
 			class="flex items-center justify-center bg-primary pt-36 pb-10 text-center h-full"
 		>
 			<div class="text-center max-w-[650px] w-full">
-				<div class="px-4 space-y-3">
-					<h1 class="heading-responsive-01 text-base-100 pb-3">
-						ค้นหาผู้สมัคร สว.
-					</h1>
-
-					<p class="body-01 text-base-100">
-						ทั้งหมด {{ totalCandidate.toLocaleString() }} คน ในฐานข้อมูล
-					</p>
-
-					<p class="body-01 text-secondary">
-						เข้ารอบ {{ passedCandidate.toLocaleString() }} คน<br />
-						<span class="body-03"
-							>ที่มา:
-							<a
-								class="underline"
-								target="_blank"
-								rel="noopener noreferrer"
-								href="https://github.com/PanJ/senate67"
-								>รายชื่อผู้สมัครทางการของ กกต.</a
-							></span
-						>
-					</p>
-				</div>
+				<slot name="header" />
 
 				<div class="pt-14 px-4 z-[99] relative sm:z-10 bg-primary">
 					<p class="heading-02 mb-2 text-base-100">
-						กรองหาผู้สมัครที่คุณมีสิทธิ์เลือก
+						{{ filterTitle }}
 					</p>
 
 					<CandidateFilterList
@@ -186,7 +168,7 @@ function getCandidateSourtingScore({
 						:districts="districts"
 						:occupations="applicationGroup"
 						@filter="getCandidatesData"
-						:candidates="props.candidates"
+						:candidates="canSearchByName ? candidates : undefined"
 					/>
 				</div>
 			</div>
@@ -199,6 +181,13 @@ function getCandidateSourtingScore({
 				<p class="heading-02">
 					ผลลัพธ์ : {{ sortedCandidates.length.toLocaleString() }} คน
 				</p>
+
+				<p v-if="showKnownCandidateCount">
+					แสดงจุดยืนแล้ว
+					{{ candidates.filter((c) => "politicalStances" in c).length }} คน
+				</p>
+
+				<slot name="before-list" />
 
 				<div
 					v-for="candidate in sortedCandidates.slice(

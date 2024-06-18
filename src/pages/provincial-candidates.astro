@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CandidateList from "../components/candidate/CandidateList.vue";
+import { getCandidateOverview } from "../data/get_candidates_overview";
+import { matchWithEctCandidate } from "../data/get_candidates";
+import { getProvinceList } from "../data/senate_option";
+import { ApplicationGroup } from "../data/application_group";
+import ProvinceCandidates from "../data/ect_province_candidates.json";
+import type { CandidateOverview } from "../data/candidate";
+import { convertApplicationGroup, convertLocation } from "../data/ect_adapter";
+import OpenInNew from "../components/icons/OpenInNew.astro";
+
+const knownCandidates = await getCandidateOverview();
+
+const candidates: CandidateOverview[] = ProvinceCandidates.map((ect) => {
+	const id = [ect.first_name, ect.middle_name, ect.last_name]
+		.filter((name) => name.trim())
+		.join("-")
+		.replaceAll(" ", "-");
+
+	const knownCandidate = knownCandidates.find((c) =>
+		matchWithEctCandidate(c.id.replaceAll("-", " "), ect),
+	);
+
+	return {
+		id,
+		...(knownCandidate || {}),
+		isEliminated: false,
+		number: ect.mno,
+		title: ect.title,
+		firstName: ect.first_name,
+		lastName: ect.last_name,
+		age: ect.age,
+		application: {
+			group: convertApplicationGroup(`${ect.job_group}`),
+			...convertLocation(`${ect.province}`, `${ect.district}`),
+		},
+	};
+});
+
+const totalCandidate = candidates.length;
+const applicationGroup = Object.values(ApplicationGroup);
+const provinces = getProvinceList();
+---
+
+<Layout title="รายชื่อผู้ผ่านเข้ารอบระดับจังหวัด">
+	<CandidateList
+		filterTitle="กรองหาผู้ผ่านเข้ารอบ"
+		showKnownCandidateCount
+		{candidates}
+		{applicationGroup}
+		{provinces}
+		client:load
+	>
+		<div slot="header" class="px-4 space-y-3">
+			<h1 class="heading-responsive-01 text-base-100">
+				รายชื่อผู้ผ่านเข้ารอบระดับจังหวัด
+			</h1>
+			<p class="body-01 text-base-100">
+				ทั้งหมด {totalCandidate.toLocaleString()} คน
+			</p>
+		</div>
+
+		<a
+			slot="before-list"
+			class="text-primary"
+			href="https://forms.gle/AiPQPxvqFex2a7Hk8"
+			target="_blank"
+			rel="noopener noreferrer"
+			><span class="underline">แสดงจุดยืน</span>
+			<OpenInNew className="fill-current inline" />
+		</a>
+	</CandidateList>
+</Layout>
