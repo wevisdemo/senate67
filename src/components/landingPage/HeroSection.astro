@@ -4,6 +4,7 @@ import SocialMediaButtons from "../socialMedia/SocialMediaButtons.astro";
 import OpenInNew from "../icons/OpenInNew.astro";
 import { getCandidates } from "../../data/get_candidates";
 import { getEvents } from "../../data/get_events";
+import ArrowRight from "../icons/ArrowRight.astro";
 
 const candidates = await getCandidates();
 const upcomingEventsCount = (await getEvents()).filter(
@@ -61,8 +62,18 @@ const updated_at = new Date().toLocaleString("th-TH", {
 				</div>
 
 				<div class="flex flex-col justify-center gap-1 w-72">
-					<a class="btn w-full bg-primary text-base-100" href="/candidates">
-						ค้นหาผู้สมัคร
+					<a
+						class="btn w-full bg-primary text-base-100"
+						href="/provincial-candidates"
+					>
+						รายชื่อผู้ผ่านเข้ารอบระดับจังหวัด <ArrowRight />
+					</a>
+					<a
+						class="btn w-full bg-primary text-base-100"
+						href="https://forms.gle/AiPQPxvqFex2a7Hk8"
+						target="_blank"
+						rel="noopener noreferrer"
+						>แสดงตัวเป็นผู้สมัคร <OpenInNew className="fill-base-100" />
 					</a>
 					{
 						upcomingEventsCount > 0 && (
@@ -79,11 +90,10 @@ const updated_at = new Date().toLocaleString("th-TH", {
 						>รายงานผลการสังเกตการณ์ <OpenInNew className=" fill-base-100" />
 					</a>
 					<a
-						class="btn w-full bg-primary text-base-100"
-						href="https://forms.gle/AiPQPxvqFex2a7Hk8"
-						target="_blank"
-						rel="noopener noreferrer"
-						>แสดงตัวเป็นผู้สมัคร <OpenInNew className=" fill-base-100" />
+						class="btn btn-primary btn-outline hover:text-base-100 w-full"
+						href="/candidates"
+					>
+						ค้นหาผู้สมัคร <ArrowRight />
 					</a>
 					<p class="font-bold text-[#ec672c] text-center m-2">
 						ผู้สมัครขอแก้ไขข้อมูลได้ โดยแจ้งมาทางอีเมล senate2567@gmail.com
