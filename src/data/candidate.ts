@@ -33,6 +33,7 @@ export interface Candidate {
 export interface DropdownOption {
 	value: string;
 	label: string;
+	disabled: boolean;
 }
 
 export type CandidateOverview =

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { ApplicationGroup } from "../../data/application_group";
+import type { CandidateOverview } from "../../data/candidate";
 
 defineProps<{
-	application: ApplicationGroup;
+	application: CandidateOverview["application"];
 	number?: number;
 }>();
 </script>

@@ -12,12 +12,7 @@
 				@focus="handleFocus"
 				@blur="handleBlur"
 			/>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 16 16"
-				fill="currentColor"
-				class="w-4 h-4 opacity-70"
-			>
+			<svg viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
 				<path
 					fill-rule="evenodd"
 					d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
@@ -35,10 +30,17 @@
 					v-for="(item, index) in displayOptions"
 					:key="index"
 					:tabindex="index + 1"
-					@click="selectOption(item)"
 					class="w-full body-01"
 				>
-					<button v-html="displayLabel(item.label)"></button>
+					<div v-if="item.disabled" class="opacity-40 pointer-events-none">
+						<span v-html="displayLabel(item.label)"></span>
+						<span class="body-03">(ยังไม่ได้แสดงจุดยืน)</span>
+					</div>
+					<button
+						v-else
+						@click="selectOption(item)"
+						v-html="displayLabel(item.label)"
+					></button>
 				</li>
 			</ul>
 		</div>
@@ -157,7 +159,3 @@ export default {
 	},
 };
 </script>
-
-<style scoped>
-/* Add any scoped styles if necessary */
-</style>

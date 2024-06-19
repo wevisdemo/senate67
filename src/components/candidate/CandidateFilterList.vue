@@ -6,7 +6,7 @@ import type { CandidateOverview, DropdownOption } from "../../data/candidate";
 import AutoComplete from "./AutoComplete.vue";
 
 const props = defineProps<{
-	candidates?: CandidateOverview[];
+	candidates: CandidateOverview[];
 	provinces: string[];
 	districts?: LocationMap;
 	occupations: ApplicationGroup[];
@@ -48,6 +48,7 @@ const candidateOptions = computed(() =>
 	props.candidates?.map((candidate) => ({
 		value: candidate.id,
 		label: candidate.firstName + " " + candidate.lastName,
+		disabled: !("politicalStances" in candidate),
 	})),
 );
 

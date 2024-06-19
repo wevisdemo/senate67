@@ -17,7 +17,6 @@ const props = defineProps<{
 	applicationGroup: ApplicationGroup[];
 	provinces: string[];
 	districts?: LocationMap;
-	canSearchByName?: boolean;
 	showKnownCandidateCount?: boolean;
 }>();
 
@@ -136,13 +135,11 @@ function shuffleArray<T>(array: T[]) {
 	return array;
 }
 
-function getCandidateSourtingScore({
-	politicalStances,
-	isEliminated,
-	avatarUrl,
-}: CandidateOverview) {
+function getCandidateSourtingScore(candidate: CandidateOverview) {
 	return (
-		(politicalStances ? 4 : 0) + (isEliminated ? 0 : 2) + (avatarUrl ? 1 : 0)
+		("politicalStances" in candidate ? 4 : 0) +
+		(candidate.isEliminated ? 0 : 2) +
+		(candidate.avatarUrl ? 1 : 0)
 	);
 }
 </script>
@@ -168,7 +165,7 @@ function getCandidateSourtingScore({
 						:districts="districts"
 						:occupations="applicationGroup"
 						@filter="getCandidatesData"
-						:candidates="canSearchByName ? candidates : undefined"
+						:candidates="candidates"
 					/>
 				</div>
 			</div>
