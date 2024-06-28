@@ -63,36 +63,38 @@ const updated_at = new Date().toLocaleString("th-TH", {
 
 				<div class="flex flex-col justify-center gap-1 w-72">
 					<a
-						class="btn w-full bg-primary text-base-100"
-						href="/national-candidates"
+						class="btn bg-primary text-base-100"
+						href="https://docs.google.com/spreadsheets/d/1zJSO-l1nXAaj0g9YBoCzZrEyunBlRoHFiGsrN2fzDsQ/edit"
+						target="_blank"
+						rel="noopener noreferrer"
 					>
+						ดูผลคะแนนดิบ รอบระดับประเทศ <OpenInNew className=" fill-base-100" />
+					</a>
+					<a class="btn bg-primary text-base-100" href="/national-candidates">
 						รายชื่อผู้เข้ารอบระดับประเทศ <ArrowRight />
 					</a>
-					<a
-						class="btn w-full bg-primary text-base-100"
+					<!-- <a
+						class="btn text-base-100"
 						href="https://forms.gle/AiPQPxvqFex2a7Hk8"
 						target="_blank"
 						rel="noopener noreferrer"
 						>แสดงตัวเป็นผู้สมัคร <OpenInNew className="fill-base-100" />
-					</a>
+					</a> -->
 					{
 						upcomingEventsCount > 0 && (
-							<a class="btn w-full bg-primary text-base-100" href="/#events">
+							<a class="btn btn-primary btn-outline" href="/#events">
 								ดูตารางกิจกรรม
 							</a>
 						)
 					}
 					<a
-						class="btn w-full bg-primary text-base-100"
+						class="btn btn-primary btn-outline"
 						href="https://forms.gle/UPhNQLN9SmzSXAC9A"
 						target="_blank"
 						rel="noopener noreferrer"
 						>รายงานผลการสังเกตการณ์ <OpenInNew className=" fill-base-100" />
 					</a>
-					<a
-						class="btn btn-primary btn-outline hover:text-base-100 w-full"
-						href="/candidates"
-					>
+					<a class="btn btn-primary btn-outline" href="/candidates">
 						ค้นหาผู้สมัครทั้งหมด <ArrowRight />
 					</a>
 					<p class="font-bold text-[#ec672c] text-center m-2">
