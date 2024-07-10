@@ -1,10 +1,10 @@
 name: Fetch Candidate Media
 
 on:
-  schedule:
-    - cron: "50 4 * * *" # 11:50 GMT+7
-    - cron: "50 10 * * *" # 17:50 GMT+7
-    - cron: "50 16 * * *" # 23:50 GMT+7
+  # schedule:
+  #   - cron: "50 4 * * *" # 11:50 GMT+7
+  #   - cron: "50 10 * * *" # 17:50 GMT+7
+  #   - cron: "50 16 * * *" # 23:50 GMT+7
   workflow_dispatch:
 
 jobs:

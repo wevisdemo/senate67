@@ -1,16 +1,16 @@
 name: Deploy Web to Cloudflare Pages
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - "**/README.md"
-      - "scripts/**"
-      - ".github/workflows/media-fetching.yaml"
-  schedule:
-    - cron: "55 4 * * *" # 11:55 GMT+7
-    - cron: "55 10 * * *" # 17:55 GMT+7
-    - cron: "55 16 * * *" # 23:55 GMT+7
+  # push:
+  #   branches: [main]
+  #   paths-ignore:
+  #     - "**/README.md"
+  #     - "scripts/**"
+  #     - ".github/workflows/media-fetching.yaml"
+  # schedule:
+  #   - cron: "55 4 * * *" # 11:55 GMT+7
+  #   - cron: "55 10 * * *" # 17:55 GMT+7
+  #   - cron: "55 16 * * *" # 23:55 GMT+7
   workflow_dispatch:
 
 concurrency:
